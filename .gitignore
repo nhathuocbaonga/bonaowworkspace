@@ -1,0 +1,46 @@
+# ---- Dependencies & build artifacts (tu tao lai duoc) ----
+node_modules/
+.next/
+dist/
+build/
+out/
+.turbo/
+.vercel/
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ---- Secrets (KHONG day len) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# ---- Databases / caches ----
+*.sqlite
+*.sqlite3
+*.db
+*.sst
+*.log
+.cache/
+
+# ---- OS ----
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ---- Nested repo (day rieng) ----
+agent-cskh-zalo/
+
+# ---- Local machine settings (chua khoa - KHONG day len) ----
+**/settings.local.json
+.claude/settings.local.json
+*.local.json

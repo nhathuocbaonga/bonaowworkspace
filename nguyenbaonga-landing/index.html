@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>6 AI Agent Làm Nghề Cùng Bạn — Khoá học AI cho chủ nhà thuốc &amp; shop mỹ phẩm | Nguyễn Bảo Nga</title>
+<meta name="description" content="Khoá học “6 AI Agent làm nghề cùng bạn” của Nguyễn Bảo Nga: giúp chủ nhà thuốc &amp; shop mỹ phẩm tự làm ảnh, video, content và vận hành cửa hàng bằng AI — không cần biết công nghệ." />
+<meta name="theme-color" content="#F45B25" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="6 AI Agent Làm Nghề Cùng Bạn — Nguyễn Bảo Nga" />
+<meta property="og:description" content="Tự làm ảnh, video, content &amp; vận hành cửa hàng bằng AI — cùng Nguyễn Bảo Nga." />
+<meta property="og:url" content="https://6ai.nguyenbaonga.com" />
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1gPSPXtYEXbWPAIvMS0o7-WkEWtLRCC1Z=w1200" />
+<meta property="og:locale" content="vi_VN" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F45B25'/%3E%3Ctext x='16' y='22' font-size='15' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'%3E6%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --orange:#F45B25; --orange-d:#D8480F;
+    --navy:#0F1A63; --ink:#151A44; --blue:#273BF2;
+    --lav:#DFDAFE; --peach:#FBD9CD; --mint:#A9F1FE;
+    --cream:#FFF7F0; --gray:#6B6B6B; --line:#ECECF2; --white:#fff;
+    --radius:20px; --radius-sm:14px;
+    --shadow:0 24px 60px -24px rgba(15,26,99,.30);
+    --shadow-sm:0 10px 28px -14px rgba(15,26,99,.26);
+    --maxw:1180px;
+    --sans:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --disp:"Oswald", "Montserrat", sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{padding:72px 0}
+  h1,h2,h3{line-height:1.16;letter-spacing:-.01em;font-weight:800}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;
+    font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);
+    background:var(--peach);padding:8px 16px;border-radius:999px}
+  .kicker.on-dark{background:rgba(255,255,255,.12);color:#fff}
+  .h2{font-size:clamp(27px,4.2vw,44px);color:var(--ink)}
+  .h2 .o{color:var(--orange)} .h2 .b{color:var(--blue)}
+  .lead{color:var(--gray);font-size:clamp(16px,1.6vw,19px)}
+  .center{text-align:center}
+  .mt10{margin-top:10px}.mt16{margin-top:16px}.mt24{margin-top:24px}.mt40{margin-top:42px}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);
+    font-weight:700;font-size:16px;padding:16px 30px;border-radius:999px;cursor:pointer;border:2px solid transparent;
+    transition:.2s ease;white-space:nowrap;line-height:1}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 26px -10px rgba(244,91,37,.6)}
+  .btn-primary:hover{background:var(--orange-d);transform:translateY(-2px)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:#0a1350;transform:translateY(-2px)}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+  .btn-white{background:#fff;color:var(--orange)}
+  .btn-white:hover{transform:translateY(-2px)}
+  .btn-lg{padding:18px 36px;font-size:17px}
+
+  /* announce bar */
+  .announce{background:var(--navy);color:#fff;text-align:center;font-size:14px;padding:9px 16px;font-weight:600}
+  .announce b{color:var(--mint)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mark{width:44px;height:44px;border-radius:12px;background:var(--orange);color:#fff;display:grid;place-items:center;
+    font-family:var(--disp);font-weight:700;font-size:22px;box-shadow:0 8px 18px -8px rgba(244,91,37,.7)}
+  .brand .bt{display:flex;flex-direction:column;line-height:1.05}
+  .brand .bt b{font-size:18px;font-weight:800;letter-spacing:.04em}
+  .brand .bt span{font-size:11px;color:var(--gray);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .menu{display:flex;align-items:center;gap:26px}
+  .menu a{font-weight:600;font-size:15px;opacity:.85}
+  .menu a:hover{opacity:1;color:var(--orange)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:3px;background:var(--navy);border-radius:3px}
+
+  /* hero */
+  .hero{background:radial-gradient(1000px 460px at 88% -6%, var(--peach), transparent 60%),
+        radial-gradient(760px 460px at -6% 30%, var(--lav), transparent 58%);padding:52px 0 66px}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(31px,4.7vw,52px);font-weight:900;margin:18px 0 16px}
+  .hero h1 .o{color:var(--orange)}
+  .hero .sub{font-size:clamp(16px,1.7vw,19px);color:var(--gray);max-width:560px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .hero-trust{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:26px}
+  .hero-trust .t{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);font-weight:600}
+  .tick{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
+  .hero-photo{position:relative}
+  .hero-photo .frame{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;
+    background:linear-gradient(160deg,var(--navy),var(--blue));border:6px solid #fff}
+  .hero-photo .frame img{width:100%;height:100%;object-fit:cover}
+  .video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;
+    box-shadow:var(--shadow);border:6px solid #fff;background:linear-gradient(150deg,var(--navy),var(--blue))}
+  .video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    color:#fff;text-align:center;padding:20px;
+    background:radial-gradient(560px 300px at 50% 34%,rgba(244,91,37,.4),transparent 60%),linear-gradient(150deg,var(--navy),var(--blue))}
+  .video-ph .play{width:66px;height:66px;border-radius:50%;background:var(--orange);display:grid;place-items:center;
+    box-shadow:0 12px 26px -8px rgba(244,91,37,.7);margin-bottom:6px;animation:vpulse 2s infinite}
+  .video-ph b{font-size:18px;font-weight:800}
+  .video-ph small{font-size:13px;opacity:.85}
+  @keyframes vpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  .float-badge{position:absolute;background:#fff;border-radius:16px;padding:13px 16px;box-shadow:var(--shadow-sm);
+    display:flex;align-items:center;gap:11px;border:1px solid var(--line)}
+  .float-badge .n{font-family:var(--disp);font-size:26px;font-weight:700;color:var(--orange)}
+  .float-badge small{display:block;font-size:12px;color:var(--gray);font-weight:600;max-width:120px}
+  .fb-1{top:20px;right:-10px}.fb-2{bottom:24px;left:-14px}
+
+  /* metrics */
+  .metrics{background:var(--navy)}
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;color:#fff}
+  .metric{padding:6px;border-right:1px solid rgba(255,255,255,.14)}
+  .metric:last-child{border-right:0}
+  .metric .num{font-family:var(--disp);font-size:clamp(30px,4.4vw,48px);font-weight:700;color:var(--mint)}
+  .metric .lb{font-size:14px;opacity:.9}
+
+  /* generic cards grid */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm);transition:.22s}
+  .card:hover{transform:translateY(-5px)}
+
+  /* problem */
+  .problem{background:var(--cream)}
+  .pain{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px}
+  .pain .x{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--peach);color:var(--orange-d);display:grid;place-items:center;font-weight:800}
+  .pain h3{font-size:16px;margin-bottom:4px}
+  .pain p{font-size:14px;color:var(--gray)}
+
+  /* solution */
+  .sol-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:5px solid #fff;
+    background:linear-gradient(160deg,var(--lav),#fff);aspect-ratio:4/3}
+  .sol-media img{width:100%;height:100%;object-fit:cover}
+  .sol-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:20px}
+  .sol-list li{display:flex;gap:12px;font-size:16px}
+  .sol-list .ic{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--orange);color:#fff;display:grid;place-items:center;margin-top:2px}
+
+  /* benefits */
+  .benefit .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:26px;margin-bottom:14px}
+  .benefit h3{font-size:18px;margin-bottom:8px}
+  .benefit p{font-size:14.5px;color:var(--gray)}
+
+  /* program / agents */
+  .program{background:linear-gradient(180deg,#fff,var(--cream))}
+  .agent{position:relative;overflow:hidden}
+  .agent .tag{font-family:var(--disp);font-weight:700;font-size:15px;color:#fff;background:var(--orange);
+    width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px}
+  .agent h3{font-size:19px;margin-bottom:8px}
+  .agent p{font-size:14.5px;color:var(--gray)}
+  .agent .ribbon{position:absolute;top:0;right:0;background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-bottom-left-radius:12px}
+
+  /* differentiators */
+  .diff{background:var(--ink);color:#fff}
+  .diff .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff}
+  .diff .card h3{color:#fff;font-size:18px;margin-bottom:8px}
+  .diff .card p{color:#c9cde6;font-size:14.5px}
+  .diff .ic{font-size:28px;margin-bottom:12px}
+
+  /* about */
+  .about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1;border:5px solid #fff;
+    background:linear-gradient(160deg,var(--peach),#fff)}
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--orange-d)}
+  .about .sign{margin-top:22px;font-family:var(--disp);font-weight:600;font-size:22px;color:var(--navy)}
+
+  /* process */
+  .process{background:var(--cream)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;position:relative}
+  .step .no{font-family:var(--disp);font-size:40px;font-weight:700;color:var(--peach);line-height:1}
+  .step h3{font-size:17px;margin:8px 0 6px}
+  .step p{font-size:14px;color:var(--gray)}
+
+  /* testimonials */
+  .tst{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column}
+  .tst .tphoto{aspect-ratio:1/1;overflow:hidden;background:linear-gradient(160deg,var(--lav),#fff)}
+  .tst .tphoto img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .tst .tbody{padding:22px 24px 24px}
+  .tst .course{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--orange-d);background:var(--peach);padding:5px 13px;border-radius:999px}
+  .tst .stars{color:var(--orange);letter-spacing:2px}
+  .tst p{margin:12px 0 18px;font-size:15px}
+  .tst .who{display:flex;align-items:center;gap:12px}
+  .tst .av{width:46px;height:46px;border-radius:50%;background:var(--lav);color:var(--navy);display:grid;place-items:center;font-weight:800;font-family:var(--disp)}
+  .tst .who b{display:block;font-size:15px}.tst .who span{font-size:13px;color:var(--gray)}
+
+  /* pricing */
+  .pricing{background:linear-gradient(180deg,var(--cream),#fff)}
+  .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch;max-width:780px;margin-left:auto;margin-right:auto}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:.22s}
+  .plan:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .plan.pop{border:2px solid var(--orange);transform:scale(1.03)}
+  .plan.pop:hover{transform:scale(1.03) translateY(-6px)}
+  .plan .head{padding:24px;background:var(--cream)}
+  .plan.pop .head{background:var(--orange);color:#fff}
+  .plan .head .name{font-family:var(--disp);font-size:15px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .plan .price{font-family:var(--disp);font-size:38px;font-weight:700;margin-top:6px}
+  .plan .old{font-size:15px;text-decoration:line-through;opacity:.6;font-weight:600;margin-left:8px}
+  .plan .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .plan li{display:flex;gap:10px;font-size:14.5px}
+  .plan li .ic{flex:0 0 auto;width:20px;height:20px;border-radius:6px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:12px;margin-top:2px}
+  .plan .foot{margin-top:auto}
+  .badge-pop{display:inline-block;background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+
+  /* FAQ */
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:2px 22px;margin-bottom:14px;transition:.2s}
+  .faq details[open]{border-color:var(--orange);box-shadow:var(--shadow-sm)}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--disp);font-size:26px;color:var(--orange);transition:.2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p.ans{padding:0 0 20px;color:var(--gray);font-size:15px}
+
+  /* form / final cta */
+  .final{background:radial-gradient(700px 380px at 100% 0,rgba(244,91,37,.25),transparent 60%),var(--navy);color:#fff}
+  .final-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .final h2{font-size:clamp(26px,4vw,42px);font-weight:900}
+  .final p{opacity:.9;margin-top:14px;font-size:18px}
+  .final .hero-trust{margin-top:22px}
+  .final .hero-trust .t{color:#fff}
+  form.lead-form{background:#fff;border-radius:var(--radius);padding:28px;color:var(--ink);box-shadow:var(--shadow)}
+  form.lead-form h3{font-size:20px;margin-bottom:4px}
+  form.lead-form .sc{font-size:14px;color:var(--gray);margin-bottom:16px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+  .field input,.field select{width:100%;padding:14px 15px;border:1.6px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:15px;transition:.15s;background:#fff}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--orange)}
+  .field .err{color:#d8480f;font-size:13px;margin-top:5px;display:none}
+  .field.invalid input,.field.invalid select{border-color:#d8480f}
+  .field.invalid .err{display:block}
+  .form-msg{display:none;padding:14px 16px;border-radius:12px;font-size:14.5px;font-weight:600;margin-bottom:14px}
+  .form-msg.ok{display:block;background:#e7f8ee;color:#1b7a45;border:1px solid #bfe8cf}
+  .form-msg.bad{display:block;background:#fdecec;color:#c0392b;border:1px solid #f5c6c6}
+
+  /* footer */
+  footer{background:var(--ink);color:#c9cde6;padding:60px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}
+  footer h4{color:#fff;font-size:15px;margin-bottom:15px;font-family:var(--disp);letter-spacing:.06em;text-transform:uppercase}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+  footer a:hover{color:var(--orange)}
+  .foot-contact li{display:flex;gap:9px;align-items:flex-start}
+  .foot-social{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+  .foot-social a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.2s;font-weight:700}
+  .foot-social a:hover{background:var(--orange)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:38px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#8a90b8}
+
+  /* floating + mobile bar */
+  .float{position:fixed;right:16px;bottom:84px;z-index:60;display:flex;flex-direction:column;gap:11px}
+  .float a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 10px 22px -6px rgba(0,0,0,.35);font-weight:700;transition:.2s}
+  .float a:hover{transform:scale(1.08)}
+  .float .zl{background:#0068ff;font-size:12px}
+  .float .ph{background:var(--orange)}
+  /* live social proof */
+  .proof{position:fixed;left:16px;bottom:16px;z-index:62;max-width:310px;background:#fff;border:1px solid var(--line);
+    border-radius:14px;box-shadow:0 18px 44px -18px rgba(15,26,99,.42);padding:12px 30px 12px 12px;display:flex;gap:11px;
+    align-items:center;transform:translateY(170%);opacity:0;transition:.5s cubic-bezier(.2,.7,.2,1)}
+  .proof.show{transform:none;opacity:1}
+  .proof .pic{width:42px;height:42px;border-radius:50%;background:var(--peach);color:var(--orange-d);display:grid;
+    place-items:center;font-weight:800;font-family:var(--disp);flex:0 0 auto;font-size:18px}
+  .proof .tx b{font-size:14px}
+  .proof .tx span{display:block;font-size:12.5px;color:var(--gray);line-height:1.35}
+  .proof .tx span b{color:var(--ink)}
+  .proof .tx em{display:block;font-size:11px;color:var(--orange-d);font-weight:600;font-style:normal;margin-top:1px}
+  .proof .cl{position:absolute;top:5px;right:8px;color:#c3c3c3;cursor:pointer;font-size:17px;line-height:1;background:none;border:0}
+  /* checkout overlay */
+  .overlay{position:fixed;inset:0;z-index:80;background:rgba(15,26,99,.55);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;padding:18px}
+  .overlay.open{display:flex}
+  .co-card{background:#fff;border-radius:18px;max-width:420px;width:100%;padding:26px;position:relative;
+    box-shadow:var(--shadow);max-height:92vh;overflow:auto;text-align:center}
+  .co-card h3{font-size:20px;margin-bottom:14px;padding-right:16px;text-align:left}
+  .co-x{position:absolute;top:8px;right:14px;background:none;border:0;font-size:27px;color:#aaa;cursor:pointer;line-height:1}
+  .co-card .field,.co-card .form-msg{text-align:left}
+  .co-goi-name{font-weight:700;color:var(--orange-d);margin-bottom:12px}
+  .co-qrbox{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:10px;display:inline-grid;place-items:center}
+  .co-qrbox img{width:250px;height:250px;object-fit:contain;background:#fff}
+  .co-bank{font-size:14px;color:var(--ink);margin:14px 0 8px;line-height:1.7}
+  .co-bank b{color:var(--orange-d)}
+  .co-note{font-size:13px;color:#4a5578;background:#EEF3FF;border:1px solid #dbe4ff;border-radius:10px;padding:11px 13px;margin-bottom:14px;text-align:left}
+  .mbar{display:none}
+
+  .js .fade{opacity:0;transform:translateY(22px);transition:.6s cubic-bezier(.2,.7,.2,1)}
+  .js .fade.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .hero-grid,.grid-2,.final-grid{grid-template-columns:1fr;gap:34px}
+    .hero-photo,.about-photo,.sol-media{max-width:440px;margin:0 auto}
+    .grid-3,.price-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}
+    .grid-4,.steps{grid-template-columns:repeat(2,1fr)}
+    .metrics-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .metric{border-right:0}
+    .plan.pop{transform:none}.plan.pop:hover{transform:translateY(-6px)}
+  }
+  @media(max-width:640px){
+    section{padding:52px 0}
+    .menu{position:fixed;inset:70px 0 auto 0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;
+      padding:8px 22px 18px;border-bottom:1px solid var(--line);transform:translateY(-150%);transition:.3s;box-shadow:var(--shadow-sm)}
+    .menu.open{transform:none}
+    .menu a{padding:13px 0;width:100%;border-bottom:1px solid var(--line)}
+    .burger{display:flex}
+    .nav-cta .btn{display:none}
+    .grid-4,.steps{grid-template-columns:1fr}
+    .float{bottom:76px}
+    .float a{width:48px;height:48px}
+    .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:61;background:#fff;border-top:1px solid var(--line);
+      padding:9px 12px;gap:10px;box-shadow:0 -8px 24px -14px rgba(0,0,0,.3)}
+    .mbar a{flex:1;text-align:center;padding:13px 8px;border-radius:12px;font-weight:700;font-size:14px}
+    .mbar .z{background:var(--orange);color:#fff}
+    .mbar .c{background:var(--navy);color:#fff}
+    body{padding-bottom:66px}
+    .proof{left:10px;right:auto;bottom:132px;max-width:78vw}
+  }
+</style>
+</head>
+<body id="top">
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="announce">🔥 Ưu đãi khai giảng khoá <b>6 AI Agent</b> — chỉ từ 499k cho 30 học viên đăng ký sớm nhất tháng này</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Khoá học 6 AI Agent - Nguyễn Bảo Nga">
+      <span class="mark">6</span>
+      <span class="bt"><b>6AI Agent</b><span>Làm nghề cùng bạn</span></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Điều hướng chính">
+      <a href="#solution">Khoá học</a>
+      <a href="#program">6 AI Agent</a>
+      <a href="#about">Về chuyên gia</a>
+      <a href="#pricing">Học phí</a>
+      <a href="#faq">Hỏi đáp</a>
+      <a href="#register">Đăng ký</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://zalo.me/g/mtgphheicdm6helcj92w" target="_blank" rel="noopener">Tham gia nhóm Zalo</a>
+      <button class="burger" id="burger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="fade">
+      <span class="kicker">Khoá học 6 AI Agent • Cho chủ cửa hàng</span>
+      <h1>Tự làm <span class="o">ảnh, video, content</span> &amp; vận hành cửa hàng bằng AI — không cần biết công nghệ</h1>
+      <p class="sub">“6 AI Agent làm nghề cùng bạn” là hệ thống 6 “trợ lý AI” do Nguyễn Bảo Nga xây dựng riêng cho chủ nhà thuốc &amp; shop mỹ phẩm. Bạn tiết kiệm thời gian, ra nội dung mỗi ngày, chăm khách tốt hơn và tăng doanh thu — kể cả khi bạn “mù công nghệ”.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://zalo.me/g/mtgphheicdm6helcj92w" target="_blank" rel="noopener">Tham gia nhóm Zalo miễn phí</a>
+        <a class="btn btn-ghost btn-lg" href="#program">Xem 6 AI Agent</a>
+      </div>
+      <div class="hero-trust">
+        <div class="t"><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dược sĩ đồng hành thực chiến</div>
+        <div class="t"><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Cầm tay chỉ việc từng bước</div>
+        <div class="t"><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Học lại trọn đời</div>
+      </div>
+    </div>
+    <div class="hero-photo fade">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/lVyURCDS1RA" title="Giới thiệu khoá 6 AI Agent — Nguyễn Bảo Nga" allow="accelerated-motion; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="float-badge fb-1"><span class="n">+128%</span><small>Doanh thu tăng trưởng</small></div>
+      <div class="float-badge fb-2"><span class="n">6</span><small>AI Agent cầm tay chỉ việc</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics" style="padding:44px 0">
+  <div class="wrap metrics-grid">
+    <div class="metric fade"><div class="num">+128%</div><div class="lb">Doanh thu tăng trưởng</div></div>
+    <div class="metric fade"><div class="num">+86%</div><div class="lb">Khách hàng quay lại</div></div>
+    <div class="metric fade"><div class="num">+104%</div><div class="lb">Đơn hàng online</div></div>
+    <div class="metric fade"><div class="num">100+</div><div class="lb">Chủ cửa hàng đồng hành</div></div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap center">
+    <span class="kicker">Bạn có đang gặp?</span>
+    <h2 class="h2 mt16">Làm chủ cửa hàng mà <span class="o">quá tải &amp; loay hoay</span></h2>
+    <p class="lead mt10" style="max-width:640px;margin-left:auto;margin-right:auto">Những trăn trở rất thật của chị em đang kinh doanh nhà thuốc, mỹ phẩm.</p>
+  </div>
+  <div class="wrap grid-3 mt40">
+    <div class="pain fade"><span class="x">!</span><div><h3>Không có thời gian làm nội dung</h3><p>Bận bán hàng cả ngày, không kịp chụp ảnh, quay video, viết bài đăng đều đặn.</p></div></div>
+    <div class="pain fade"><span class="x">!</span><div><h3>Thuê ngoài thì tốn kém</h3><p>Thuê chụp ảnh, chạy quảng cáo, viết content… chi phí cao mà chưa chắc hiệu quả.</p></div></div>
+    <div class="pain fade"><span class="x">!</span><div><h3>Nghe “AI” là thấy khó</h3><p>Biết AI hữu ích nhưng không rành công nghệ, không biết bắt đầu từ đâu.</p></div></div>
+    <div class="pain fade"><span class="x">!</span><div><h3>Khách đến rồi đi</h3><p>Chưa có cách chăm sóc khách cũ bài bản để họ quay lại và giới thiệu bạn bè.</p></div></div>
+    <div class="pain fade"><span class="x">!</span><div><h3>Content mãi không “ra đơn”</h3><p>Đăng bài đều nhưng ít tương tác, ít khách nhắn tin, doanh thu chưa cải thiện.</p></div></div>
+    <div class="pain fade"><span class="x">!</span><div><h3>Vận hành rối, phụ thuộc trí nhớ</h3><p>Quản lý tồn kho, đơn hàng, nhân viên còn thủ công, dễ sai sót và mệt mỏi.</p></div></div>
+  </div>
+  <div class="wrap center mt40"><a class="btn btn-primary btn-lg" href="#register">🚀 Đăng ký ngay</a></div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="wrap grid-2">
+    <div class="sol-media fade">
+      <img src="https://lh3.googleusercontent.com/d/12Jg7EnZk3pzq-8OcyyAjNMbMJJoBCMPU=w1000" alt="Hệ thống 6 AI Agent - AI cho nhà thuốc và shop mỹ phẩm" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#DFDAFE,#fff)'" />
+    </div>
+    <div class="fade">
+      <span class="kicker">Giải pháp</span>
+      <h2 class="h2 mt16">6 “trợ lý AI” làm cùng bạn <span class="o">mỗi ngày</span></h2>
+      <p class="lead mt10"><strong>“6 AI Agent làm nghề cùng bạn”</strong> là bộ 6 “trợ lý AI” thiết kế riêng cho chủ cửa hàng: mỗi Agent lo một việc, có mẫu sẵn và hướng dẫn từng bước — bạn chỉ cần làm theo là ra kết quả.</p>
+      <ul class="sol-list">
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span> Tự làm ảnh sản phẩm &amp; video đẹp bằng điện thoại</li>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span> Viết content bán hàng, kịch bản livestream trong vài phút</li>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span> Chăm sóc khách &amp; trả lời tin nhắn nhanh, chuyên nghiệp</li>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span> Lên kế hoạch bán hàng &amp; báo cáo doanh thu dễ dàng</li>
+      </ul>
+      <div class="hero-cta"><a class="btn btn-primary" href="#program">Khám phá 6 AI Agent</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="problem">
+  <div class="wrap center">
+    <span class="kicker">Bạn nhận được gì</span>
+    <h2 class="h2 mt16">Lợi ích <span class="o">rõ ràng, đo được</span></h2>
+  </div>
+  <div class="wrap grid-4 mt40">
+    <div class="card benefit fade"><div class="ic" style="background:var(--peach)">⏱️</div><h3>Tiết kiệm thời gian</h3><p>Rút gọn hàng giờ làm nội dung xuống còn vài phút mỗi ngày.</p></div>
+    <div class="card benefit fade"><div class="ic" style="background:var(--lav)">💸</div><h3>Tiết kiệm chi phí</h3><p>Tự chủ ảnh, video, content — giảm phụ thuộc thuê ngoài.</p></div>
+    <div class="card benefit fade"><div class="ic" style="background:var(--mint)">📈</div><h3>Tăng doanh thu</h3><p>Nội dung đều &amp; đúng khách giúp ra đơn nhiều hơn.</p></div>
+    <div class="card benefit fade"><div class="ic" style="background:var(--peach)">❤️</div><h3>Giữ chân khách</h3><p>Chăm sóc bài bản để khách quay lại và giới thiệu.</p></div>
+  </div>
+  <div class="wrap center mt40"><a class="btn btn-primary btn-lg" href="#register">🚀 Đăng ký ngay</a></div>
+</section>
+
+<!-- PROGRAM / 6 AI AGENT -->
+<section class="program" id="program">
+  <div class="wrap center">
+    <span class="kicker">Nội dung chương trình</span>
+    <h2 class="h2 mt16">Bộ <span class="o">6 AI Agent</span> cho chủ cửa hàng</h2>
+    <p class="lead mt10" style="max-width:660px;margin-left:auto;margin-right:auto">Mỗi Agent là một trợ lý chuyên trách, kèm mẫu prompt &amp; video hướng dẫn thực hành.</p>
+  </div>
+  <div class="wrap grid-3 mt40">
+    <div class="card agent fade"><div class="tag">01</div><h3>Agent Hình ảnh</h3><p>Tạo ảnh sản phẩm, ảnh quảng cáo, banner đẹp chuẩn thương hiệu chỉ từ ảnh chụp điện thoại.</p></div>
+    <div class="card agent fade"><div class="tag">02</div><h3>Agent Video</h3><p>Dựng video ngắn, Reels, TikTok bắt trend nhanh — có kịch bản &amp; lời thoại gợi ý sẵn.</p></div>
+    <div class="card agent fade"><span class="ribbon">Được yêu thích</span><div class="tag">03</div><h3>Agent Content bán hàng</h3><p>Viết bài đăng, caption, kịch bản livestream “chạm” đúng nỗi lo &amp; nhu cầu khách.</p></div>
+    <div class="card agent fade"><div class="tag">04</div><h3>Agent Chăm sóc khách</h3><p>Soạn tin nhắn tư vấn, trả lời bình luận, nhắc lịch &amp; chăm khách cũ tự động hoá.</p></div>
+    <div class="card agent fade"><div class="tag">05</div><h3>Agent Marketing</h3><p>Lên ý tưởng chiến dịch, ưu đãi, nội dung quảng cáo để thu hút khách mới đều đặn.</p></div>
+    <div class="card agent fade"><div class="tag">06</div><h3>Agent Vận hành</h3><p>Hỗ trợ kế hoạch bán hàng, quản lý công việc &amp; tổng hợp báo cáo doanh thu dễ hiểu.</p></div>
+  </div>
+  <div class="wrap center mt40"><a class="btn btn-primary btn-lg" href="#register">Đăng ký học ngay</a></div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff">
+  <div class="wrap center">
+    <span class="kicker on-dark">Điểm khác biệt</span>
+    <h2 class="h2 mt16" style="color:#fff">Vì sao chọn <span class="o">Bảo Nga</span>?</h2>
+  </div>
+  <div class="wrap grid-4 mt40">
+    <div class="card fade"><div class="ic">👩‍⚕️</div><h3>Dược sĩ hiểu nghề</h3><p>Người chia sẻ là dược sĩ thực chiến, hiểu đúng đặc thù nhà thuốc &amp; mỹ phẩm.</p></div>
+    <div class="card fade"><div class="ic">🙌</div><h3>Cầm tay chỉ việc</h3><p>Không lý thuyết suông — có mẫu sẵn, làm theo là ra kết quả ngay.</p></div>
+    <div class="card fade"><div class="ic">👛</div><h3>Dễ cho người “mù công nghệ”</h3><p>Thiết kế riêng cho chị em 30–45, không cần kiến thức kỹ thuật.</p></div>
+    <div class="card fade"><div class="ic">🤝</div><h3>Cộng đồng đồng hành</h3><p>Nhóm Zalo hỗ trợ, cập nhật &amp; giải đáp liên tục sau khoá học.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT EXPERT -->
+<section id="about">
+  <div class="wrap grid-2">
+    <div class="about-photo fade">
+      <img src="https://lh3.googleusercontent.com/d/1n4x9qBGOg91fspjsO43OxfbOLgCowTlc=w1000" alt="Dược sĩ Nguyễn Bảo Nga - AI Mentor" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#FBD9CD,#fff)'" />
+    </div>
+    <div class="fade">
+      <span class="kicker">Về chuyên gia</span>
+      <h2 class="h2 mt16"><span class="o">Nguyễn Bảo Nga</span></h2>
+      <p class="lead mt10"><strong>Nhà sáng lập OWN.VN</strong> — hơn <strong>20 năm kinh nghiệm bán hàng &amp; xây dựng hệ thống</strong>. Nguyễn Bảo Nga đồng hành cùng chủ cửa hàng ứng dụng AI để <strong>tạo dòng tiền từ thương hiệu cá nhân</strong>.</p>
+      <p class="lead mt10">Với 6 AI Agent, bạn tạo <strong>nội dung đúng ngành nghề</strong> và <strong>bán hàng hiệu quả hơn</strong> mỗi ngày — bài bản, bền vững và giữ đúng cái tâm của người làm nghề.</p>
+      <div class="chips">
+        <span class="chip">20 năm kinh nghiệm</span><span class="chip">AI Mentor</span><span class="chip">Nhà sáng lập OWN.VN</span><span class="chip">Xây hệ thống &amp; bán hàng</span>
+      </div>
+      <p class="sign">“Phát triển bằng AI — nhưng luôn giữ cái tâm của người làm nghề.”</p>
+      <div class="mt24"><a class="btn btn-primary" href="#register">🚀 Đăng ký ngay</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap center">
+    <span class="kicker">Quy trình tham gia</span>
+    <h2 class="h2 mt16">Bắt đầu chỉ với <span class="o">4 bước</span></h2>
+  </div>
+  <div class="wrap steps mt40">
+    <div class="step fade"><div class="no">01</div><h3>Đăng ký</h3><p>Điền form hoặc nhắn Zalo để được tư vấn lộ trình phù hợp.</p></div>
+    <div class="step fade"><div class="no">02</div><h3>Vào nhóm Zalo</h3><p>Tham gia cộng đồng học viên, nhận tài liệu &amp; hỗ trợ.</p></div>
+    <div class="step fade"><div class="no">03</div><h3>Học theo lộ trình</h3><p>Học 6 AI Agent qua video, thực hành ngay trên cửa hàng của bạn.</p></div>
+    <div class="step fade"><div class="no">04</div><h3>Áp dụng &amp; đồng hành</h3><p>Được đồng hành, gỡ vướng đến khi ra kết quả thực tế.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap center">
+    <span class="kicker">Phản hồi khách hàng</span>
+    <h2 class="h2 mt16">Học viên &amp; khách hàng <span class="o">nói gì</span></h2>
+    <p class="lead mt10">Cảm nhận từ những chủ nhà thuốc &amp; shop mỹ phẩm đã ứng dụng 6 AI Agent vào công việc mỗi ngày.</p>
+  </div>
+  <div class="wrap grid-4 mt40">
+    <div class="tst fade">
+      <div class="tphoto"><img src="images/hocvien-1.png" alt="Học viên - dược sĩ tư vấn bán thuốc cho khách hàng tại nhà thuốc" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tbody">
+        <div class="stars">★★★★★</div>
+        <p>“Trước đây mình rất ngại soạn nội dung tư vấn cho khách. Từ khi học <b>Agent Content</b>, mình viết bài tư vấn và tin nhắn chăm khách rõ ràng, dễ hiểu chỉ trong vài phút. Khách tin tưởng và quay lại nhiều hơn hẳn.”</p>
+        <div class="who"><div class="av">H</div><div><b>Chị Thu Hà</b><span>Chủ nhà thuốc · Hải Phòng</span></div></div>      </div>
+    </div>
+    <div class="tst fade">
+      <div class="tphoto"><img src="images/hocvien-2.png" alt="Học viên - chủ shop mỹ phẩm bên quầy sản phẩm và standee" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tbody">
+        <div class="stars">★★★★★</div>
+        <p>“Mình mở shop mỹ phẩm nhưng không biết thiết kế. Nhờ <b>Agent Hình ảnh</b>, mình tự làm được ảnh sản phẩm, standee và banner đẹp như thuê ngoài mà không tốn tiền. Khách khen shop nhìn chuyên nghiệp hẳn lên.”</p>
+        <div class="who"><div class="av">L</div><div><b>Chị Mỹ Linh</b><span>Chủ shop mỹ phẩm · Hà Nội</span></div></div>      </div>
+    </div>
+    <div class="tst fade">
+      <div class="tphoto"><img src="images/hocvien-3.png" alt="Học viên - dược sĩ quay video giới thiệu sản phẩm tại nhà thuốc" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tbody">
+        <div class="stars">★★★★★</div>
+        <p>“Mình sợ nhất là quay video vì ngại ống kính. <b>Agent Video</b> cho sẵn kịch bản và lời thoại nên mình quay Reels đều đặn, có clip lên mấy chục nghìn view, đơn online tăng thật sự. Cảm ơn chị Nga rất nhiều!”</p>
+        <div class="who"><div class="av">P</div><div><b>Chị Phương Anh</b><span>Nhà thuốc · Nam Định</span></div></div>      </div>
+    </div>
+    <div class="tst fade">
+      <div class="tphoto"><img src="images/hocvien-4.png" alt="Học viên - dược sĩ khoe nội dung sản phẩm trên điện thoại tại nhà thuốc" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tbody">
+        <div class="stars">★★★★★</div>
+        <p>“Trước mình chỉ ngồi chờ khách quen. Nhờ <b>Agent Marketing</b> gợi ý chương trình ưu đãi và nội dung quảng cáo, nhà thuốc có thêm khách mới đều đặn, có hôm đơn tăng gần gấp đôi ngày thường.”</p>
+        <div class="who"><div class="av">A</div><div><b>Chị Ngọc Ánh</b><span>Chủ nhà thuốc · Bắc Ninh</span></div></div>      </div>
+    </div>
+  </div>
+  <div class="wrap center mt40"><a class="btn btn-primary btn-lg" href="#register">🚀 Đăng ký ngay</a></div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap center">
+    <span class="kicker">Học phí &amp; ưu đãi</span>
+    <h2 class="h2 mt16">Chọn gói <span class="o">phù hợp với bạn</span></h2>
+    <p class="lead mt10">Ưu đãi khai giảng có thời hạn — chọn gói phù hợp để bắt đầu ngay.</p>
+  </div>
+  <div class="wrap price-grid mt40">
+    <div class="plan fade">
+      <div class="head"><div class="name">Khởi động · 30 ngày</div><div class="price">499k<span class="old">2.990k</span></div></div>
+      <div class="body">
+        <ul>
+          <li><span class="ic">✓</span> Đồng hành 30 ngày</li>
+          <li><span class="ic">✓</span> Trọn bộ 6 AI Agent</li>
+          <li><span class="ic">✓</span> Video hướng dẫn thực hành chi tiết</li>
+          <li><span class="ic">✓</span> Bộ mẫu prompt &amp; kịch bản đầy đủ</li>
+          <li><span class="ic">✓</span> Học lại trọn đời</li>
+          <li><span class="ic">✓</span> Đồng hành trong nhóm Zalo học viên</li>
+          <li><span class="ic">✓</span> Đội ngũ trợ lý chăm sóc 24/7</li>
+        </ul>
+        <div class="foot"><button type="button" class="btn btn-ghost" style="width:100%" onclick="openCheckout('499000')">Chọn gói 499k</button></div>
+      </div>
+    </div>
+    <div class="plan pop fade">
+      <div class="head"><div class="badge-pop">Toàn diện · Bán chạy nhất</div><div class="name">Toàn diện · 90 ngày</div><div class="price">799k<span class="old" style="color:#fff">7.990k</span></div></div>
+      <div class="body">
+        <ul>
+          <li><span class="ic">✓</span> Đồng hành 90 ngày</li>
+          <li><span class="ic">✓</span> Trọn bộ 6 AI Agent</li>
+          <li><span class="ic">✓</span> Kho mẫu prompt &amp; kịch bản đầy đủ</li>
+          <li><span class="ic">✓</span> Video hướng dẫn thực hành chi tiết</li>
+          <li><span class="ic">✓</span> Đồng hành trong nhóm Zalo học viên</li>
+          <li><span class="ic">✓</span> Trợ lý chăm sóc 24/7</li>
+          <li><span class="ic">✓</span> Coaching riêng cá nhân 1 giờ</li>
+          <li><span class="ic">✓</span> Cập nhật nội dung mới miễn phí trong cộng đồng</li>
+        </ul>
+        <div class="foot"><button type="button" class="btn btn-primary" style="width:100%" onclick="openCheckout('799000')">Đăng ký gói 799k</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq problem" id="faq">
+  <div class="wrap center">
+    <span class="kicker">Câu hỏi thường gặp</span>
+    <h2 class="h2 mt16">Bạn đang <span class="o">băn khoăn</span> điều gì?</h2>
+  </div>
+  <div class="wrap mt40" style="max-width:800px">
+    <details open><summary>Tôi không rành công nghệ thì có học được không?</summary><p class="ans">Hoàn toàn được. Khoá học thiết kế riêng cho chị em 30–45 “mù công nghệ”: mọi thứ đều có mẫu sẵn và video cầm tay chỉ việc, chỉ cần điện thoại là làm được.</p></details>
+    <details><summary>Học xong bao lâu thì áp dụng được?</summary><p class="ans">Ngay trong khoá bạn đã thực hành trên chính cửa hàng của mình. Nhiều học viên tạo được ảnh, video và bài đăng đầu tiên chỉ sau buổi học đầu.</p></details>
+    <details><summary>Khoá học có phù hợp với ngành ngoài nhà thuốc/mỹ phẩm không?</summary><p class="ans">Có. Khoá học tối ưu cho nhà thuốc &amp; shop mỹ phẩm, nhưng cách làm ảnh, video, content và chăm khách áp dụng tốt cho hầu hết cửa hàng bán lẻ.</p></details>
+    <details><summary>Sau khoá học tôi có được hỗ trợ tiếp không?</summary><p class="ans">Có. Bạn được tham gia nhóm Zalo cộng đồng để hỏi đáp, cập nhật nội dung mới và đồng hành lâu dài.</p></details>
+    <details><summary>Tôi muốn tư vấn trước khi đăng ký thì làm sao?</summary><p class="ans">Bạn để lại thông tin ở form đăng ký hoặc nhắn Zalo / gọi 0978 459 369 để được tư vấn lộ trình phù hợp, hoàn toàn miễn phí.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section class="final" id="register">
+  <div class="wrap final-grid">
+    <div class="fade">
+      <span class="kicker on-dark">Bắt đầu ngay hôm nay</span>
+      <h2 class="mt16">Để AI làm cùng bạn — <span class="o">bắt đầu từ nhóm Zalo</span></h2>
+      <p>Đăng ký nhận tư vấn lộ trình 6 AI Agent phù hợp với cửa hàng của bạn, hoặc tham gia nhóm Zalo để học miễn phí mỗi ngày.</p>
+      <div class="hero-cta">
+        <a class="btn btn-white btn-lg" href="https://zalo.me/g/mtgphheicdm6helcj92w" target="_blank" rel="noopener">Tham gia nhóm Zalo</a>
+        <a class="btn btn-navy btn-lg" style="border-color:#fff" href="tel:0978459369">Gọi tư vấn: 0978 459 369</a>
+      </div>
+    </div>
+    <form class="lead-form fade" id="enrollForm" novalidate>
+      <h3>Đăng ký vào học</h3>
+      <p class="sc">Điền thông tin &amp; chọn gói — hệ thống hiện mã QR thanh toán ngay, tự động kích hoạt sau khi chuyển khoản.</p>
+      <div class="form-msg" id="enrollMsg" role="status" aria-live="polite"></div>
+      <div class="field" id="e-name">
+        <label for="en-name">Họ và tên *</label>
+        <input type="text" id="en-name" name="hoten" placeholder="VD: Nguyễn Thị A" autocomplete="name" />
+        <div class="err">Vui lòng nhập họ tên.</div>
+      </div>
+      <div class="field" id="e-phone">
+        <label for="en-phone">Số điện thoại (Zalo) *</label>
+        <input type="tel" id="en-phone" name="sdt" inputmode="tel" placeholder="VD: 0912xxxxxx" autocomplete="tel" />
+        <div class="err">Số điện thoại chưa đúng (10 số, bắt đầu bằng 0).</div>
+      </div>
+      <div class="field" id="e-email">
+        <label for="en-email">Email *</label>
+        <input type="email" id="en-email" name="email" placeholder="VD: ban@email.com" autocomplete="email" />
+        <div class="err">Email chưa đúng định dạng.</div>
+      </div>
+      <div class="field" id="e-goi">
+        <label for="en-goi">Chọn gói học *</label>
+        <select id="en-goi" name="goi">
+          <option value="">-- Chọn gói --</option>
+          <option value="499000">Khởi động · 30 ngày — 499k</option>
+          <option value="799000">Toàn diện · 90 ngày — 799k</option>
+        </select>
+        <div class="err">Vui lòng chọn gói học.</div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Đăng ký &amp; lấy mã QR thanh toán</button>
+      <p style="font-size:12px;color:var(--gray);margin-top:10px;text-align:center">🔒 Thanh toán an toàn qua VietQR · Tự động kích hoạt qua SePay</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top" style="color:#fff">
+        <span class="mark">6</span>
+        <span class="bt"><b style="color:#fff">6AI Agent</b><span style="color:#8a90b8">Làm nghề cùng bạn</span></span>
+      </a>
+      <p style="margin-top:16px;max-width:320px;font-size:14.5px">Đồng hành cùng chủ nhà thuốc &amp; shop mỹ phẩm phát triển bằng AI — bằng chuyên môn, công nghệ và cái tâm của người làm nghề.</p>
+      <div class="foot-social">
+        <a href="https://www.youtube.com/@nguyenbaonga" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+        <a href="https://www.tiktok.com/@nguyenbao.nga" target="_blank" rel="noopener" aria-label="TikTok">♪</a>
+        <a href="https://www.facebook.com/ngaduocsi.nguyenbaonga/" target="_blank" rel="noopener" aria-label="Facebook cá nhân">f</a>
+        <a href="https://www.facebook.com/nguyenbaonga.ngaduocsi" target="_blank" rel="noopener" aria-label="Fanpage">✦</a>
+        <a href="https://zalo.me/0978459369" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+      </div>
+    </div>
+    <div>
+      <h4>Khoá học</h4>
+      <ul>
+        <li><a href="#solution">Về khoá học</a></li>
+        <li><a href="#program">6 AI Agent</a></li>
+        <li><a href="#pricing">Học phí &amp; ưu đãi</a></li>
+        <li><a href="#faq">Câu hỏi thường gặp</a></li>
+        <li><a href="#register">Đăng ký</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hệ sinh thái</h4>
+      <ul>
+        <li><a href="https://nhathuocbaonga.com" target="_blank" rel="noopener">Nhà thuốc Bảo Nga</a></li>
+        <li><a href="https://adiaplus-nutrition-hub.lovable.app" target="_blank" rel="noopener">Bột ngũ cốc Adia+</a></li>
+        <li><a href="https://hangmychuan.vn" target="_blank" rel="noopener">Hàng Mỹ Chuẩn</a></li>
+        <li><a href="https://lovable.dev/projects/e68a6c26-f95c-47e3-aa81-9a49cf3b8dba" target="_blank" rel="noopener">AI cho chủ cửa hàng</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul class="foot-contact">
+        <li>📞 <a href="tel:0978459369"><b style="color:#fff">0978 459 369</b> — đặt hàng, tư vấn &amp; lớp học</a></li>
+        <li>✉️ <a href="mailto:nguyenbaonga06@gmail.com">nguyenbaonga06@gmail.com</a></li>
+        <li>💬 <a href="https://zalo.me/0978459369" target="_blank" rel="noopener">Zalo: 0978 459 369</a></li>
+        <li>📍 Kho hàng: Phường Hải An, TP. Hải Phòng</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 6AI Agent · OWN.VN · Nguyễn Bảo Nga · 6ai.nguyenbaonga.com — Đã đăng ký bản quyền.</span>
+    <span>Dược sĩ • AI Mentor</span>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT -->
+<div class="float">
+  <a class="zl" href="https://zalo.me/0978459369" target="_blank" rel="noopener" aria-label="Chat Zalo">Zalo</a>
+  <a class="ph" href="tel:0978459369" aria-label="Gọi điện">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.1 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- CHECKOUT / QR MODAL -->
+<div class="overlay" id="checkout" aria-hidden="true">
+  <div class="co-card" role="dialog" aria-modal="true">
+    <button class="co-x" onclick="closeOverlay()" aria-label="Đóng">×</button>
+    <div id="coStep1">
+      <h3 id="coStep1Title">Đăng ký vào học</h3>
+      <div class="form-msg" id="coMsg"></div>
+      <div class="field" id="c-name"><label for="co-name">Họ và tên *</label><input type="text" id="co-name" placeholder="VD: Nguyễn Thị A"><div class="err">Vui lòng nhập họ tên.</div></div>
+      <div class="field" id="c-phone"><label for="co-phone">Số điện thoại (Zalo) *</label><input type="tel" id="co-phone" inputmode="tel" placeholder="VD: 0912xxxxxx"><div class="err">Số điện thoại chưa đúng.</div></div>
+      <div class="field" id="c-email"><label for="co-email">Email *</label><input type="email" id="co-email" placeholder="VD: ban@email.com"><div class="err">Email chưa đúng định dạng.</div></div>
+      <input type="hidden" id="co-goi">
+      <button type="button" class="btn btn-primary" style="width:100%" onclick="coSubmit()">Xác nhận &amp; lấy mã QR</button>
+    </div>
+    <div id="coStep2" hidden>
+      <h3>Quét mã để thanh toán</h3>
+      <p class="co-goi-name" id="coGoiName"></p>
+      <div class="co-qrbox"><img id="coQR" alt="Mã QR VietQR thanh toán khoá 6 AI Agent" width="250" height="250"></div>
+      <div class="co-bank">Ngân hàng <b>MB</b> · STK <b>0978459369</b> · NGUYEN THI NGA<br>Số tiền: <b id="coAmount"></b> &nbsp;·&nbsp; Nội dung CK: <b id="coOrder"></b></div>
+      <p class="co-note">✅ Vui lòng chuyển khoản <b>đúng nội dung</b> ở trên. Hệ thống <b>SePay</b> sẽ tự động xác nhận thanh toán, tạo mã học viên và kích hoạt tài khoản, gửi thông tin học tập qua Email/Zalo của bạn.</p>
+      <a class="btn btn-primary" style="width:100%" id="coZalo" target="_blank" rel="noopener">Đã chuyển khoản → Vào nhóm Zalo</a>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE SOCIAL PROOF -->
+<div class="proof" id="proof" role="status" aria-live="polite">
+  <div class="pic" id="proofPic">N</div>
+  <div class="tx"><b id="proofName"></b><span id="proofAct"></span><em>Vừa đăng ký · vài giây trước</em></div>
+  <button class="cl" id="proofClose" aria-label="Đóng thông báo">×</button>
+</div>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mbar">
+  <a class="z" href="https://zalo.me/g/mtgphheicdm6helcj92w" target="_blank" rel="noopener">💬 Nhóm Zalo</a>
+  <a class="c" href="tel:0978459369">📞 Gọi ngay</a>
+</div>
+
+<script>
+  // mobile menu
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.fade').forEach(function(el){io.observe(el);});
+
+  // ===== Đăng ký vào học + thanh toán QR (VietQR) + SePay =====
+  var GROUP="https://zalo.me/g/mtgphheicdm6helcj92w";
+  var SAVE_ENDPOINT=""; // TODO: dán URL Google Apps Script Web App (lưu học viên về Google Sheet)
+  var BANK_BIN="970422", BANK_ACC="0978459369", BANK_NAME="NGUYEN THI NGA";
+  var GOI={"499000":"Khởi động · 30 ngày","799000":"Toàn diện · 90 ngày"};
+  function inv(id,bad){var el=document.getElementById(id);if(el)el.classList.toggle('invalid',bad);return !bad;}
+  function vName(v){return v.trim().length>=2;}
+  function vPhone(v){return /^0\d{9}$/.test(v.replace(/[\s.]/g,''));}
+  function vEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());}
+  function money(a){return parseInt(a,10).toLocaleString('vi-VN')+'đ';}
+  function orderCode(phone){var t=Date.now().toString(36).toUpperCase().slice(-5);var p=(phone||'').replace(/\D/g,'').slice(-4);return '6AI'+p+t;}
+  function buildQR(a,o){return 'https://img.vietqr.io/image/'+BANK_BIN+'-'+BANK_ACC+'-compact2.png?amount='+a+'&addInfo='+encodeURIComponent(o)+'&accountName='+encodeURIComponent(BANK_NAME);}
+  function saveLead(d){if(!SAVE_ENDPOINT)return;try{fetch(SAVE_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});}catch(e){}}
+  function openOverlay(){var o=document.getElementById('checkout');o.classList.add('open');o.setAttribute('aria-hidden','false');}
+  function closeOverlay(){var o=document.getElementById('checkout');o.classList.remove('open');o.setAttribute('aria-hidden','true');}
+  window.closeOverlay=closeOverlay;
+  document.getElementById('coZalo').href=GROUP;
+  document.getElementById('checkout').addEventListener('click',function(e){if(e.target===this)closeOverlay();});
+  function toQR(name,phone,email,amount){
+    var order=orderCode(phone);
+    saveLead({thoi_gian:new Date().toISOString(),ma_don:order,ho_ten:name,sdt:phone,email:email,goi:GOI[amount]||amount,so_tien:parseInt(amount,10),trang_thai:'Chờ thanh toán',nguon:'sale page 6ai.nguyenbaonga.com'});
+    document.getElementById('coGoiName').textContent=(GOI[amount]||'')+' — '+money(amount);
+    document.getElementById('coAmount').textContent=money(amount);
+    document.getElementById('coOrder').textContent=order;
+    document.getElementById('coQR').src=buildQR(amount,order);
+    document.getElementById('coStep1').hidden=true;
+    document.getElementById('coStep2').hidden=false;
+    openOverlay();
+  }
+  // Nút "Chọn gói" ở bảng giá -> mở modal nhập thông tin nhanh rồi ra QR
+  window.openCheckout=function(amount){
+    document.getElementById('coStep2').hidden=true;
+    document.getElementById('coStep1').hidden=false;
+    document.getElementById('co-goi').value=amount;
+    document.getElementById('coStep1Title').textContent='Đăng ký vào học — '+(GOI[amount]||'')+' ('+money(amount)+')';
+    var m=document.getElementById('coMsg');m.className='form-msg';m.textContent='';
+    openOverlay();
+  };
+  window.coSubmit=function(){
+    var n=document.getElementById('co-name').value,p=document.getElementById('co-phone').value,e=document.getElementById('co-email').value,a=document.getElementById('co-goi').value;
+    var ok=inv('c-name',!vName(n)); ok=inv('c-phone',!vPhone(p))&&ok; ok=inv('c-email',!vEmail(e))&&ok;
+    if(!ok){var m=document.getElementById('coMsg');m.className='form-msg bad';m.textContent='Vui lòng kiểm tra lại thông tin.';return;}
+    toQR(n.trim(),p.trim(),e.trim(),a);
+  };
+  // Form "Đăng ký vào học" ở section cuối
+  var ef=document.getElementById('enrollForm');
+  if(ef){ef.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=document.getElementById('en-name').value,p=document.getElementById('en-phone').value,e=document.getElementById('en-email').value,a=document.getElementById('en-goi').value;
+    var ok=inv('e-name',!vName(n)); ok=inv('e-phone',!vPhone(p))&&ok; ok=inv('e-email',!vEmail(e))&&ok; ok=inv('e-goi',!a)&&ok;
+    var m=document.getElementById('enrollMsg');
+    if(!ok){m.className='form-msg bad';m.textContent='Vui lòng kiểm tra lại thông tin & chọn gói học.';return;}
+    m.className='form-msg ok';m.textContent='Đã ghi nhận! Đang mở mã QR thanh toán…';
+    toQR(n.trim(),p.trim(),e.trim(),a);
+    ef.reset();
+  });}
+
+  // live social proof (cứ 30s hiện 1 người vừa đăng ký, 70% chọn gói 799k)
+  (function(){
+    var names=["Chị Hương","Chị Lan","Chị Thu","Chị Mai","Chị Hạnh","Chị Ngọc","Chị Yến","Chị Trang","Chị Vân","Chị Thảo","Chị Nhung","Chị Loan","Chị Phương","Chị Hà","Chị Oanh","Chị Dung","Chị Tuyết","Chị Hồng","Chị Kim","Cô Bích","Chị Nga","Chị Huyền"];
+    var tinh=["Hà Nội","TP.HCM","Hải Phòng","Đà Nẵng","Cần Thơ","Nghệ An","Bắc Ninh","Thanh Hoá","Nam Định","Quảng Ninh","Bình Dương","Hải Dương","Thái Bình","Vĩnh Phúc"];
+    var el=document.getElementById('proof');
+    if(!el) return;
+    var pn=document.getElementById('proofName'),pa=document.getElementById('proofAct'),pp=document.getElementById('proofPic'),hideT;
+    function pick(a){return a[Math.floor(Math.random()*a.length)];}
+    function show(){
+      var nm=pick(names), age=30+Math.floor(Math.random()*16); // 30-45 tuổi
+      var goi=Math.random()<0.7 ? 'gói Toàn diện 799k' : 'gói Khởi động 499k';
+      pn.textContent=nm+', '+age+' tuổi';
+      pa.innerHTML='vừa đăng ký <b>'+goi+'</b> · '+pick(tinh);
+      pp.textContent=nm.replace(/^(Chị|Cô)\s/,'').charAt(0);
+      el.classList.add('show');
+      clearTimeout(hideT); hideT=setTimeout(function(){el.classList.remove('show');},6500);
+    }
+    document.getElementById('proofClose').addEventListener('click',function(){el.classList.remove('show');});
+    setTimeout(function loop(){ show(); setTimeout(loop,30000); },5000);
+  })();
+</script>
+</body>
+</html>

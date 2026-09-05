@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADI A PLUS - Bột Ngũ Cốc Dinh Dưỡng Cao Cấp | Hotline: 0914284739</title>
+<meta name="description" content="ADI A PLUS - Bột ngũ cốc dinh dưỡng từ 19+ loại hạt thiên nhiên. Đã kiểm nghiệm, không chất bảo quản. Đặt hàng: 0914284739">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#8B5A2B;
+  --primary-dark:#6B3E1A;
+  --primary-light:#C4824A;
+  --gold:#D4A843;
+  --gold-light:#F0C96A;
+  --green:#4A7C3F;
+  --green-light:#6AAE5F;
+  --cream:#FDF6EC;
+  --cream2:#FFF0D6;
+  --white:#FFFFFF;
+  --text:#2C1A0E;
+  --text2:#5C3D1E;
+  --text3:#9B7B5A;
+  --red:#D63030;
+  --shadow:0 4px 24px rgba(139,90,43,.13);
+  --shadow2:0 8px 40px rgba(139,90,43,.22);
+  --radius:12px;
+  --radius2:20px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--cream);color:var(--text);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ===== UTILITY ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.section{padding:72px 0}
+.section-alt{background:var(--cream2)}
+.badge{display:inline-block;padding:4px 14px;border-radius:30px;font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.badge-gold{background:var(--gold);color:#fff}
+.badge-green{background:var(--green);color:#fff}
+.badge-red{background:var(--red);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;border:none;transition:all .25s ease;text-decoration:none}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 6px 20px rgba(139,90,43,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(139,90,43,.5)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;box-shadow:0 6px 20px rgba(212,168,67,.4)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(212,168,67,.5)}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.section-title{font-size:2rem;font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.3}
+.section-sub{font-size:1.05rem;color:var(--text2);margin-bottom:40px}
+.text-center{text-align:center}
+.text-gold{color:var(--gold)}
+.text-green{color:var(--green)}
+
+/* ===== HEADER ===== */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(253,246,236,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(212,168,67,.25);
+  transition:all .3s
+}
+#header.scrolled{box-shadow:var(--shadow)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1200px;margin:0 auto;padding:0 20px;height:70px
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-img{width:44px;height:44px;background:linear-gradient(135deg,var(--primary),var(--gold));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:900;letter-spacing:-1px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-size:1.3rem;font-weight:900;color:var(--primary);letter-spacing:1px}
+.logo-sub{font-size:.65rem;font-weight:600;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.header-nav{display:flex;align-items:center;gap:8px}
+.header-nav a{font-size:.88rem;font-weight:600;color:var(--text2);padding:6px 12px;border-radius:6px;transition:.2s}
+.header-nav a:hover{color:var(--primary);background:rgba(139,90,43,.08)}
+.header-cta{display:flex;align-items:center;gap:10px}
+.hotline-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:8px 18px;border-radius:50px;font-size:.9rem;font-weight:700;box-shadow:0 4px 14px rgba(139,90,43,.35);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 14px rgba(139,90,43,.35)}50%{box-shadow:0 4px 22px rgba(139,90,43,.6)}}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:24px;height:2.5px;background:var(--primary);border-radius:2px;transition:.3s}
+
+/* ===== HERO ===== */
+#hero{
+  min-height:100vh;padding-top:70px;
+  background:linear-gradient(145deg,#3D1C08 0%,#6B3E1A 30%,#8B5A2B 60%,#C4824A 85%,#D4A843 100%);
+  display:flex;align-items:center;position:relative;overflow:hidden
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='rgba(255,255,255,.08)'/%3E%3C/svg%3E");
+  opacity:.6
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;padding:60px 20px;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1
+}
+.hero-badge{background:rgba(212,168,67,.25);color:var(--gold-light);border:1px solid rgba(212,168,67,.4);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;margin-bottom:20px}
+.hero-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px}
+.hero-title span{color:var(--gold-light)}
+.hero-desc{font-size:1.1rem;color:rgba(255,255,255,.85);margin-bottom:32px;max-width:500px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat-item{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:16px;text-align:center;backdrop-filter:blur(6px)}
+.stat-num{font-size:1.8rem;font-weight:900;color:var(--gold-light);display:block}
+.stat-label{font-size:.75rem;color:rgba(255,255,255,.75);font-weight:500}
+.hero-image{position:relative}
+.hero-img-wrap{
+  position:relative;border-radius:24px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  animation:floatY 4s ease-in-out infinite
+}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.hero-img-wrap img{width:100%;object-fit:cover;aspect-ratio:3/4}
+.hero-float-badge{
+  position:absolute;bottom:20px;left:-20px;
+  background:#fff;border-radius:var(--radius);padding:12px 18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+  display:flex;align-items:center;gap:10px;animation:floatY2 3s ease-in-out infinite .5s
+}
+@keyframes floatY2{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.hero-float-badge .icon{font-size:1.8rem}
+.hero-float-badge strong{display:block;font-size:.85rem;font-weight:800;color:var(--primary)}
+.hero-float-badge span{font-size:.72rem;color:var(--text3)}
+
+/* ===== USP STRIP ===== */
+#usp{padding:50px 0;background:var(--white)}
+.usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.usp-card{
+  text-align:center;padding:28px 20px;border-radius:var(--radius2);
+  background:var(--cream);border:1.5px solid rgba(212,168,67,.2);
+  transition:all .3s;cursor:default
+}
+.usp-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+.usp-icon{font-size:2.6rem;margin-bottom:14px}
+.usp-title{font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:6px}
+.usp-desc{font-size:.85rem;color:var(--text3);line-height:1.5}
+
+/* ===== ABOUT ===== */
+#about{padding:80px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img-wrap{position:relative;border-radius:var(--radius2);overflow:hidden;box-shadow:var(--shadow2)}
+.about-img-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about-float{
+  position:absolute;top:24px;right:-16px;
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  color:#fff;border-radius:var(--radius);padding:14px 18px;
+  box-shadow:0 8px 24px rgba(74,124,63,.35);font-size:.82rem;font-weight:700;
+  writing-mode:horizontal-tb;text-align:center
+}
+.about-float2{
+  position:absolute;bottom:24px;left:-16px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:#fff;border-radius:var(--radius);padding:12px 16px;
+  box-shadow:0 8px 24px rgba(212,168,67,.4);font-size:.82rem;font-weight:700;text-align:center
+}
+.about-content .badge{margin-bottom:16px}
+.about-content h2{margin-bottom:20px}
+.about-content p{color:var(--text2);margin-bottom:24px;font-size:.98rem}
+.checklist{display:flex;flex-direction:column;gap:14px}
+.check-item{display:flex;align-items:flex-start;gap:12px}
+.check-icon{width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;flex-shrink:0;margin-top:2px}
+.check-text{font-size:.95rem;color:var(--text2)}
+.check-text strong{color:var(--primary);display:block;margin-bottom:2px}
+
+/* ===== INGREDIENTS ===== */
+#ingredients{padding:80px 0;background:var(--white)}
+.ingredients-hero{margin-bottom:50px;border-radius:var(--radius2);overflow:hidden;box-shadow:var(--shadow2)}
+.ingredients-hero img{width:100%;max-height:420px;object-fit:cover}
+.ingredients-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.ing-card{
+  background:var(--cream);border:1.5px solid rgba(212,168,67,.2);
+  border-radius:var(--radius);padding:20px 14px;text-align:center;transition:.3s
+}
+.ing-card:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-4px)}
+.ing-icon{font-size:2rem;margin-bottom:10px}
+.ing-name{font-size:.9rem;font-weight:700;color:var(--primary);margin-bottom:4px}
+.ing-benefit{font-size:.75rem;color:var(--text3);line-height:1.4}
+
+/* ===== CERTS ===== */
+#certs{padding:60px 0;background:var(--cream2)}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+.cert-card{
+  background:var(--white);border-radius:var(--radius2);padding:24px;
+  text-align:center;box-shadow:var(--shadow);border:2px solid rgba(212,168,67,.15);
+  display:flex;flex-direction:column;align-items:center;gap:14px
+}
+.cert-icon{font-size:2.8rem}
+.cert-name{font-size:1rem;font-weight:800;color:var(--primary)}
+.cert-desc{font-size:.85rem;color:var(--text3)}
+
+/* ===== ORDER ===== */
+#order{padding:80px 0;background:linear-gradient(180deg,var(--cream) 0%,var(--cream2) 100%)}
+.order-intro{text-align:center;margin-bottom:50px}
+.shipping-note{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  color:#fff;padding:10px 24px;border-radius:50px;font-size:.9rem;font-weight:700;
+  margin-top:14px
+}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod-card{
+  background:var(--white);border-radius:var(--radius2);overflow:hidden;
+  border:2px solid #E8D8C0;box-shadow:var(--shadow);
+  transition:all .3s;display:flex;flex-direction:column;position:relative
+}
+.prod-card:hover{transform:translateY(-6px);box-shadow:var(--shadow2)}
+.prod-card.featured{border-color:var(--gold);border-width:2.5px}
+.prod-card.vip{border-color:var(--primary)}
+.ribbon{
+  position:absolute;top:14px;right:-8px;z-index:2;
+  background:var(--red);color:#fff;font-size:.72rem;font-weight:800;
+  padding:4px 14px 4px 12px;border-radius:4px 0 0 4px;
+  box-shadow:2px 2px 6px rgba(0,0,0,.2);letter-spacing:.5px
+}
+.ribbon::after{content:'';position:absolute;bottom:-5px;right:0;border:5px solid transparent;border-left-color:#9E2020;border-bottom-color:transparent;border-right-width:0;border-bottom-width:5px}
+.ribbon.ribbon-gold{background:var(--gold)}
+.ribbon.ribbon-gold::after{border-left-color:#A07820}
+.ribbon.ribbon-vip{background:linear-gradient(135deg,var(--primary),var(--primary-light))}
+.ribbon.ribbon-vip::after{border-left-color:var(--primary-dark)}
+.prod-img{position:relative;overflow:hidden;background:var(--cream)}
+.prod-img img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-qty-badge{
+  position:absolute;top:12px;left:12px;z-index:1;
+  background:rgba(44,26,14,.75);color:#fff;
+  font-size:.78rem;font-weight:800;padding:4px 12px;border-radius:20px;
+  backdrop-filter:blur(4px)
+}
+.prod-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.prod-label{font-size:.75rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.prod-name{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.35}
+.prod-price-box{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:14px;text-align:center}
+.prod-price{font-size:1.5rem;font-weight:900;color:var(--primary)}
+.prod-price-note{font-size:.75rem;color:var(--text3);margin-top:3px}
+.prod-perks{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.perk{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--text2)}
+.perk::before{content:'✓';color:var(--green);font-weight:900;font-size:.9rem;flex-shrink:0}
+.btn-order{
+  width:100%;padding:14px;border-radius:50px;border:none;cursor:pointer;
+  font-size:.95rem;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  box-shadow:0 6px 18px rgba(139,90,43,.35);transition:all .25s
+}
+.btn-order:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(139,90,43,.5)}
+.prod-card.featured .btn-order{background:linear-gradient(135deg,var(--gold),var(--gold-light));box-shadow:0 6px 18px rgba(212,168,67,.4)}
+.prod-card.featured .btn-order:hover{box-shadow:0 10px 24px rgba(212,168,67,.55)}
+.prod-card.vip .btn-order{background:linear-gradient(135deg,var(--primary-dark),var(--primary));box-shadow:0 6px 18px rgba(107,62,26,.45)}
+
+/* ===== HOW TO ORDER ===== */
+#howtobuy{padding:72px 0;background:var(--white)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;margin-top:40px}
+.steps-grid::before{
+  content:'';position:absolute;top:36px;left:calc(100%/6);right:calc(100%/6);height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--primary),var(--gold));
+  z-index:0
+}
+.step-card{
+  text-align:center;padding:32px 20px;background:var(--cream);
+  border-radius:var(--radius2);border:1.5px solid rgba(212,168,67,.2);
+  position:relative;z-index:1
+}
+.step-num{
+  width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.4rem;font-weight:900;margin:0 auto 18px;
+  box-shadow:0 6px 16px rgba(139,90,43,.35)
+}
+.step-icon{font-size:1.8rem;margin-bottom:12px}
+.step-title{font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:8px}
+.step-desc{font-size:.88rem;color:var(--text3);line-height:1.55}
+
+/* ===== QR PAYMENT ===== */
+#payment{padding:72px 0;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 60%,var(--primary-light) 100%)}
+.payment-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.payment-info h2{color:#fff;font-size:1.8rem;margin-bottom:10px}
+.payment-info p{color:rgba(255,255,255,.8);margin-bottom:28px}
+.bank-rows{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.bank-row{
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,.12);border-radius:10px;padding:12px 18px;
+  border:1px solid rgba(255,255,255,.15)
+}
+.bank-row .label{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:500}
+.bank-row .value{font-size:.95rem;color:#fff;font-weight:800}
+.payment-note{
+  background:rgba(212,168,67,.2);border:1px solid rgba(212,168,67,.4);
+  border-radius:10px;padding:14px 18px;color:rgba(255,255,255,.9);
+  font-size:.88rem;line-height:1.55
+}
+.payment-qr{text-align:center}
+.qr-box{
+  background:#fff;border-radius:var(--radius2);padding:28px;
+  display:inline-block;box-shadow:0 16px 50px rgba(0,0,0,.35)
+}
+.qr-placeholder{
+  width:240px;height:240px;background:var(--cream);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  border:2.5px dashed var(--gold);color:var(--text2);font-size:.88rem;font-weight:600
+}
+.qr-placeholder svg{opacity:.4}
+.qr-name{font-size:1.1rem;font-weight:800;color:var(--primary);margin-top:14px}
+.qr-sub{font-size:.8rem;color:var(--text3);margin-top:4px}
+.payment-btns{display:flex;gap:12px;margin-top:24px;justify-content:center;flex-wrap:wrap}
+
+/* ===== ADS GALLERY ===== */
+#gallery{padding:72px 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.gallery-item{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.3s;cursor:pointer}
+.gallery-item:hover{transform:scale(1.02);box-shadow:var(--shadow2)}
+.gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* ===== TESTIMONIALS ===== */
+#testimonials{padding:72px 0;background:var(--cream2)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.review-card{
+  background:var(--white);border-radius:var(--radius2);padding:24px;
+  box-shadow:var(--shadow);border:1.5px solid rgba(212,168,67,.15);
+  display:flex;flex-direction:column;gap:14px
+}
+.review-header{display:flex;align-items:center;gap:12px}
+.review-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--gold)}
+.review-avatar-letter{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.2rem;font-weight:800;border:2px solid var(--gold)
+}
+.reviewer-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.reviewer-loc{font-size:.78rem;color:var(--text3)}
+.review-stars{color:var(--gold);font-size:1rem;letter-spacing:1px}
+.review-text{font-size:.9rem;color:var(--text2);line-height:1.65;font-style:italic}
+.review-img{border-radius:10px;overflow:hidden;margin-top:4px}
+.review-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* ===== FAQ ===== */
+#faq{padding:72px 0;background:var(--white)}
+.faq-list{max-width:780px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{border-radius:var(--radius);border:1.5px solid rgba(212,168,67,.25);background:var(--cream);overflow:hidden}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:18px 22px;cursor:pointer;font-size:.98rem;font-weight:700;color:var(--text);
+  transition:.2s
+}
+.faq-q:hover{color:var(--primary)}
+.faq-q .chevron{font-size:1rem;transition:transform .3s;flex-shrink:0;color:var(--gold)}
+.faq-q.open{color:var(--primary)}
+.faq-q.open .chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:.92rem;color:var(--text2);line-height:1.65}
+.faq-a.open{max-height:300px}
+.faq-a-inner{padding:0 22px 18px}
+
+/* ===== FOOTER ===== */
+#footer{background:var(--text);color:rgba(255,255,255,.85);padding:52px 0 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .logo-name{color:#fff;font-size:1.4rem}
+.footer-brand .logo-sub{color:var(--gold)}
+.footer-desc{font-size:.88rem;color:rgba(255,255,255,.6);margin-top:12px;margin-bottom:18px;line-height:1.65}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:.2s;color:#fff}
+.social-btn:hover{background:var(--gold);transform:translateY(-2px)}
+.footer-col h4{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:.5px}
+.footer-col ul{display:flex;flex-direction:column;gap:9px}
+.footer-col ul li a{font-size:.85rem;color:rgba(255,255,255,.6);transition:.2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-contact{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(255,255,255,.7)}
+.contact-item svg{flex-shrink:0;color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.45)}
+
+/* ===== FLOATING BTNS ===== */
+.float-btns{position:fixed;bottom:30px;right:22px;z-index:998;display:flex;flex-direction:column;gap:10px;align-items:center}
+.float-btn{
+  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);transition:transform .2s;cursor:pointer;border:none;color:#fff
+}
+.float-btn:hover{transform:scale(1.12)}
+.float-zalo{background:linear-gradient(135deg,#1e88e5,#0d47a1)}
+.float-phone{background:linear-gradient(135deg,var(--green),var(--green-light));animation:pulse 2s infinite}
+.back-top{background:rgba(44,26,14,.7);display:none}
+.back-top.show{display:flex}
+
+/* ===== ORDER MODAL ===== */
+.modal-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal-box{
+  background:#fff;border-radius:var(--radius2);padding:36px;max-width:480px;width:100%;
+  text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.35);animation:slideUp .3s ease
+}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-box h3{font-size:1.3rem;font-weight:900;color:var(--primary);margin:14px 0 10px}
+.modal-box p{color:var(--text2);font-size:.95rem;margin-bottom:20px}
+.modal-phone{font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px;letter-spacing:1px}
+.modal-note{font-size:.85rem;color:var(--text3);margin-bottom:24px}
+.modal-btns{display:flex;flex-direction:column;gap:10px}
+.modal-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text3);position:absolute;top:14px;right:18px}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+.fade-in{opacity:0;transition:opacity .7s ease}
+.fade-in.visible{opacity:1}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .usp-grid{grid-template-columns:repeat(2,1fr)}
+  .ingredients-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:768px){
+  .header-nav{display:none}
+  .header-nav.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(253,246,236,.98);padding:16px;border-bottom:1px solid rgba(212,168,67,.2);gap:4px;z-index:998}
+  .menu-toggle{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:36px}
+  .hero-image{order:-1;max-width:340px;margin:0 auto}
+  .hero-title{font-size:1.9rem}
+  .about-grid,.payment-inner{grid-template-columns:1fr;gap:36px}
+  .footer-grid{grid-template-columns:1fr}
+  .reviews-grid,.certs-grid,.steps-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .section-title{font-size:1.6rem}
+  .ingredients-grid{grid-template-columns:repeat(3,1fr)}
+  .steps-grid::before{display:none}
+}
+@media(max-width:480px){
+  .reviews-grid,.certs-grid,.steps-grid,.gallery-grid{grid-template-columns:1fr}
+  .ingredients-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{grid-template-columns:1fr;gap:8px}
+  .usp-grid{grid-template-columns:1fr 1fr}
+  .btn{padding:12px 22px;font-size:.92rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-img">A+</div>
+      <div class="logo-text">
+        <span class="logo-name">ADI A PLUS</span>
+        <span class="logo-sub">Bột Ngũ Cốc Dinh Dưỡng</span>
+      </div>
+    </a>
+    <nav class="header-nav" id="mainNav">
+      <a href="#about">Sản phẩm</a>
+      <a href="#ingredients">Thành phần</a>
+      <a href="#order">Đặt hàng</a>
+      <a href="#testimonials">Đánh giá</a>
+      <a href="#payment">Thanh toán</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0914284739" class="hotline-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        0914.284.739
+      </a>
+      <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🌾 Chính Hãng ADI A PHARMA</div>
+      <h1 class="hero-title">
+        ADI A PLUS<br>
+        <span>Bột Ngũ Cốc<br>Dinh Dưỡng</span>
+      </h1>
+      <p class="hero-desc">Công thức từ 19+ loại hạt ngũ cốc thiên nhiên — bổ sung dưỡng chất toàn diện, tốt cho cả gia đình. Đã được kiểm nghiệm & cấp phép lưu hành.</p>
+      <div class="hero-btns">
+        <a href="#order" class="btn btn-gold" style="font-size:1.05rem;padding:16px 36px">
+          🛒 ĐẶT HÀNG NGAY
+        </a>
+        <a href="tel:0914284739" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">
+          📞 Tư vấn miễn phí
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">19+</span>
+          <span class="stat-label">Loại ngũ cốc</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1000+</span>
+          <span class="stat-label">Khách tin dùng</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Thiên nhiên</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9" alt="ADI A PLUS Bột Ngũ Cốc" loading="eager" onerror="this.src='https://lh3.googleusercontent.com/d/1So_2hZ7-9kFQFuVLt0y84hWUlDiyvHAL'">
+        <div class="hero-float-badge">
+          <span class="icon">🏅</span>
+          <div>
+            <strong>Đã Kiểm Nghiệm</strong>
+            <span>Cục An toàn thực phẩm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP -->
+<section id="usp">
+  <div class="container">
+    <div class="usp-grid">
+      <div class="usp-card fade-up">
+        <div class="usp-icon">🌾</div>
+        <div class="usp-title">Nguyên Liệu Thiên Nhiên</div>
+        <div class="usp-desc">100% hạt ngũ cốc tự nhiên, không chất bảo quản, không phẩm màu nhân tạo</div>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-icon">🏥</div>
+        <div class="usp-title">Đã Được Kiểm Nghiệm</div>
+        <div class="usp-desc">Đạt tiêu chuẩn VSATTP Bộ Y tế, chứng nhận FDA, giấy phép lưu hành đầy đủ</div>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-icon">💪</div>
+        <div class="usp-title">Dinh Dưỡng Toàn Diện</div>
+        <div class="usp-desc">19+ loại hạt ngũ cốc, giàu protein, chất xơ, vitamin và khoáng chất thiết yếu</div>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-icon">👨‍👩‍👧‍👦</div>
+        <div class="usp-title">Phù Hợp Mọi Lứa Tuổi</div>
+        <div class="usp-desc">Trẻ em từ 2 tuổi, người lớn, người cao tuổi đều dùng được an toàn hàng ngày</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section id="video" class="section" style="background:#0d1f0f;padding:64px 0">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:36px">
+      <span class="badge badge-gold">Video Giới Thiệu</span>
+      <h2 class="section-title" style="margin-top:12px;color:#fff">ADI A PLUS — Dinh Dưỡng Cho Cả Gia Đình</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.7)">Khám phá câu chuyện và giá trị dinh dưỡng của ADI A PLUS qua video thực tế</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+        <iframe src="https://drive.google.com/file/d/1MfR1zeKGHmzJ1TLgrasYiBdbGdSdeUys/preview" width="100%" height="300" allow="autoplay" style="border:none;display:block"></iframe>
+        <div style="background:#1a3320;padding:12px 16px;color:#fff;font-weight:600;font-size:14px">📺 TVC ADI A PLUS</div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+        <iframe src="https://drive.google.com/file/d/10MhOHp8Ipj3pHzR4kUYJrxkxsdti_6ez/preview" width="100%" height="300" allow="autoplay" style="border:none;display:block"></iframe>
+        <div style="background:#1a3320;padding:12px 16px;color:#fff;font-weight:600;font-size:14px">👨‍👩‍👧‍👦 ADI A PLUS — Dinh Dưỡng Gia Đình</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADS BANNER: BẠN ĐANG THUỘC NHÓM NÀO -->
+<section style="background:#f3f8f0;padding:0">
+  <div style="max-width:960px;margin:0 auto">
+    <img src="https://lh3.googleusercontent.com/d/133wRivplS-8KgO5ga6WEMkF-K0oy7oEi" alt="ADI A PLUS giải pháp bữa sáng 30 giây" style="width:100%;display:block;border-radius:0" onerror="this.parentElement.parentElement.style.display='none'">
+  </div>
+</section>
+
+<!-- ABOUT PRODUCT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-in">
+        <img src="https://lh3.googleusercontent.com/d/1FdEzsfzzzR4fwY1Tl1GfDYTMhl5ooZS_" alt="Nhà máy sản xuất ADI A PLUS đạt chuẩn GMP" onerror="this.src='https://lh3.googleusercontent.com/d/1KFeq5JCh5CG9bdI1DkBsz7r7_2NBOUKL'">
+        <div class="about-float">✅ 100% Thiên Nhiên</div>
+        <div class="about-float2">🏆 Chứng Nhận<br>Chính Hãng</div>
+      </div>
+      <div class="about-content fade-up">
+        <span class="badge badge-gold" style="margin-bottom:16px">Vì Sao Chọn ADI A PLUS?</span>
+        <h2 class="section-title">Dưỡng Chất Từ Đất Trời — Năng Lượng Cho Cả Ngày</h2>
+        <p style="color:var(--text2);margin-bottom:24px">ADI A PLUS được nghiên cứu và sản xuất bởi ADI A PHARMA từ 19+ loại hạt ngũ cốc được tuyển chọn kỹ càng, mang lại nguồn dinh dưỡng thiết yếu cho cơ thể mỗi ngày.</p>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Bổ sung dưỡng chất từ 19+ loại ngũ cốc thiên nhiên</strong>
+              Yến mạch, hạt chia, quinoa, đậu đen, mè đen, hạt lanh, gạo lứt…
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Không chất bảo quản, không đường hóa học</strong>
+              Hoàn toàn tự nhiên, an toàn cho cả trẻ nhỏ và người cao tuổi
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Hỗ trợ tiêu hóa & tăng cường sức đề kháng</strong>
+              Chất xơ tự nhiên, probiotic hỗ trợ hệ vi sinh đường ruột
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Đã được cấp phép lưu hành</strong>
+              Chứng nhận an toàn thực phẩm từ Cục ATTP — Bộ Y tế Việt Nam
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Tiện dùng — pha nhanh trong 1 phút</strong>
+              Uống sáng thay bữa sáng hoặc bổ sung bất cứ lúc nào trong ngày
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:28px">
+          <a href="#order" class="btn btn-primary">Đặt Mua Ngay →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section id="ingredients" class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-green">Thành Phần</span>
+      <h2 class="section-title" style="margin-top:12px">19+ Loại Hạt Ngũ Cốc Thiên Nhiên</h2>
+      <p class="section-sub">Mỗi loại hạt được tuyển chọn kỹ càng, giàu giá trị dinh dưỡng và hương vị tự nhiên</p>
+    </div>
+    <div class="ingredients-hero fade-in">
+      <img src="https://lh3.googleusercontent.com/d/18pz-tOqZkP4Ghq4MMAHNpL984O7_f4LN" alt="19 loại hạt ngũ cốc ADI A PLUS" onerror="this.src='https://lh3.googleusercontent.com/d/1So_2hZ7-9kFQFuVLt0y84hWUlDiyvHAL'">
+    </div>
+    <div class="ingredients-grid">
+      <div class="ing-card fade-up"><div class="ing-icon">🌾</div><div class="ing-name">Yến Mạch</div><div class="ing-benefit">Giàu beta-glucan, tốt cho tim mạch</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">⚫</div><div class="ing-name">Mè Đen</div><div class="ing-benefit">Giàu canxi, tốt cho xương khớp</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🟤</div><div class="ing-name">Hạt Chia</div><div class="ing-benefit">Omega-3, chất xơ cao, no lâu</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🌱</div><div class="ing-name">Quinoa</div><div class="ing-benefit">Đủ 9 axit amin thiết yếu</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🖤</div><div class="ing-name">Đậu Đen</div><div class="ing-benefit">Chống oxy hóa, bổ máu</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🟡</div><div class="ing-name">Gạo Lứt</div><div class="ing-benefit">Chất xơ cao, hỗ trợ tiêu hóa</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🟠</div><div class="ing-name">Khoai Lang</div><div class="ing-benefit">Vitamin A, chất chống oxy hóa</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🟢</div><div class="ing-name">Đậu Xanh</div><div class="ing-benefit">Protein thực vật, mát gan</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🌻</div><div class="ing-name">Hạt Lanh</div><div class="ing-benefit">Omega-3, lignans tốt cho nội tiết</div></div>
+      <div class="ing-card fade-up"><div class="ing-icon">🌽</div><div class="ing-name">Bắp Rang</div><div class="ing-benefit">Năng lượng tự nhiên, vị thơm ngon</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INFOGRAPHIC HDSD -->
+<section style="background:#fff;padding:48px 0 0">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <img src="https://lh3.googleusercontent.com/d/19XhuPr1l--Td55B7V-2jJrCQHF-ff2dQ" alt="Thành phần, công dụng và hướng dẫn sử dụng ADI A PLUS" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.1);display:block;margin:0 auto" onerror="this.parentElement.parentElement.parentElement.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs" class="section-alt section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-gold">Chứng Nhận & Giấy Phép</span>
+      <h2 class="section-title" style="margin-top:12px">Sản Phẩm Được Kiểm Nghiệm Độc Lập</h2>
+      <p class="section-sub">Đầy đủ giấy tờ pháp lý, minh bạch 100% — chị yên tâm sử dụng</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card fade-up" style="grid-column:1/-1;padding:0;overflow:hidden;background:transparent;box-shadow:none">
+        <img src="https://lh3.googleusercontent.com/d/14cY6gMlhZGGZGxwWYtmxw7IwAxFRo5BT" alt="ADI A PLUS sản phẩm chứng nhận FDA" style="width:100%;max-width:600px;border-radius:16px;display:block;margin:0 auto" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-name">Chứng Nhận FDA</div>
+        <div class="cert-desc">Đạt tiêu chuẩn an toàn thực phẩm quốc tế FDA — chứng nhận năm 2025</div>
+        <a href="https://drive.google.com/file/d/1cpkojByWuvlysVzzTc_Ba_O4V5vQnRyD/view" target="_blank" class="btn btn-outline" style="font-size:.82rem;padding:8px 18px;margin-top:6px">Xem giấy phép</a>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">🔬</div>
+        <div class="cert-name">Phiếu Kiểm Nghiệm</div>
+        <div class="cert-desc">Kiểm nghiệm chất lượng độc lập, đảm bảo an toàn theo tiêu chuẩn Bộ Y tế</div>
+        <a href="https://drive.google.com/file/d/1Psgx0eNye3RDX89eRpoQ4OPX0gn0caAi/view" target="_blank" class="btn btn-outline" style="font-size:.82rem;padding:8px 18px;margin-top:6px">Xem kết quả</a>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">📋</div>
+        <div class="cert-name">Hồ Sơ Công Ty</div>
+        <div class="cert-desc">ADI A PHARMA — đầy đủ giấy phép kinh doanh, cơ sở sản xuất đạt chuẩn GMP</div>
+        <a href="https://drive.google.com/file/d/1AgV97jGs9A_daElTV_OLpx8EEhgDa9ED/view" target="_blank" class="btn btn-outline" style="font-size:.82rem;padding:8px 18px;margin-top:6px">Xem hồ sơ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="section">
+  <div class="container">
+    <div class="order-intro fade-up">
+      <span class="badge badge-red">🔥 Ưu Đãi Hôm Nay</span>
+      <h2 class="section-title" style="margin-top:12px">Chọn Gói Phù Hợp</h2>
+      <p class="section-sub">Mua càng nhiều — tiết kiệm càng lớn. Miễn phí vận chuyển từ 3 hộp toàn quốc!</p>
+      <div class="shipping-note">🚚 Miễn phí ship từ 3 hộp &nbsp;|&nbsp; ⚡ Giao hàng 1-3 ngày &nbsp;|&nbsp; 🔄 Đổi trả trong 7 ngày</div>
+    </div>
+    <div class="products-grid">
+
+      <!-- 1 hộp -->
+      <div class="prod-card fade-up">
+        <div class="prod-img">
+          <div class="prod-qty-badge">1 Hộp</div>
+          <img src="https://lh3.googleusercontent.com/d/1ApRcdi9q_tU6kvv1HaqKd0nqvzEKcIfh" alt="1 hộp ADI A PLUS" onerror="this.src='https://lh3.googleusercontent.com/d/1KFeq5JCh5CG9bdI1DkBsz7r7_2NBOUKL'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label">Dùng thử</div>
+          <div class="prod-name">ADI A PLUS Bột Ngũ Cốc — 1 Hộp</div>
+          <div class="prod-price-box">
+            <div class="prod-price">239.000đ</div>
+            <div class="prod-price-note">239.000đ / hộp</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Trải nghiệm sản phẩm lần đầu</span>
+            <span class="perk">Hướng dẫn sử dụng chi tiết</span>
+          </div>
+          <button class="btn-order" onclick="openModal('1 hộp ADI A PLUS — 239.000đ')">📞 ĐẶT NGAY</button>
+        </div>
+      </div>
+
+      <!-- 3 hộp -->
+      <div class="prod-card fade-up">
+        <div class="ribbon ribbon-gold">TIẾT KIỆM 5%</div>
+        <div class="prod-img">
+          <div class="prod-qty-badge">3 Hộp</div>
+          <img src="https://lh3.googleusercontent.com/d/16UDzwM0Opgzirs3sltAh5IiUjSgBOqcw" alt="3 hộp ADI A PLUS" onerror="this.src='https://lh3.googleusercontent.com/d/1KFeq5JCh5CG9bdI1DkBsz7r7_2NBOUKL'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label" style="color:var(--green)">✈️ Miễn phí vận chuyển</div>
+          <div class="prod-name">ADI A PLUS Bột Ngũ Cốc — 3 Hộp</div>
+          <div class="prod-price-box">
+            <div class="prod-price">717.000đ</div>
+            <div class="prod-price-note">239.000đ/hộp + Free ship</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Miễn phí vận chuyển toàn quốc</span>
+            <span class="perk">Đủ dùng cho 1 người / 1 tháng</span>
+            <span class="perk">Tặng hướng dẫn dinh dưỡng</span>
+          </div>
+          <button class="btn-order" onclick="openModal('3 hộp ADI A PLUS — 717.000đ')">📞 ĐẶT NGAY</button>
+        </div>
+      </div>
+
+      <!-- 6 hộp - FEATURED -->
+      <div class="prod-card featured fade-up">
+        <div class="ribbon">🔥 BÁN CHẠY NHẤT</div>
+        <div class="prod-img">
+          <div class="prod-qty-badge">6 Hộp</div>
+          <img src="https://lh3.googleusercontent.com/d/1NOmLvDAFUHR2CfolNjmqsq4dOaqhXhcf" alt="6 hộp ADI A PLUS" onerror="this.src='https://lh3.googleusercontent.com/d/14cY6gMlhZGGZGxwWYtmxw7IwAxFRo5BT'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label" style="color:var(--gold)">⭐ Lựa chọn tốt nhất</div>
+          <div class="prod-name">ADI A PLUS Bột Ngũ Cốc — 6 Hộp</div>
+          <div class="prod-price-box" style="background:linear-gradient(135deg,rgba(212,168,67,.12),rgba(212,168,67,.2));border:1px solid rgba(212,168,67,.3)">
+            <div class="prod-price">1.434.000đ</div>
+            <div class="prod-price-note">239.000đ/hộp + Free ship + Quà tặng</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Miễn phí vận chuyển toàn quốc</span>
+            <span class="perk">Đủ dùng cho cả gia đình 1 tháng</span>
+            <span class="perk">Tặng hộp ngũ cốc mini</span>
+            <span class="perk">Ưu đãi đặt tiếp lần sau</span>
+          </div>
+          <button class="btn-order" onclick="openModal('6 hộp ADI A PLUS — 1.434.000đ')">🛒 ĐẶT NGAY</button>
+        </div>
+      </div>
+
+      <!-- 12 hộp = 1 thùng -->
+      <div class="prod-card fade-up">
+        <div class="ribbon ribbon-gold">1 THÙNG = 12 HỘP</div>
+        <div class="prod-img">
+          <div class="prod-qty-badge">12 Hộp — 1 Thùng</div>
+          <img src="https://lh3.googleusercontent.com/d/1AsBHNCOptVYWoB-cIqcC7paeir6ogXqJ" alt="12 hộp ADI A PLUS 1 thùng" onerror="this.src='https://lh3.googleusercontent.com/d/1So_2hZ7-9kFQFuVLt0y84hWUlDiyvHAL'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label" style="color:#1976d2">📦 Gia đình & tích trữ</div>
+          <div class="prod-name">ADI A PLUS — 1 Thùng (12 Hộp)</div>
+          <div class="prod-price-box">
+            <div class="prod-price">2.868.000đ</div>
+            <div class="prod-price-note">239.000đ/hộp + Free ship toàn quốc</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Miễn phí vận chuyển + đóng thùng</span>
+            <span class="perk">Đủ dùng cho gia đình 2-3 tháng</span>
+            <span class="perk">Tặng quà kèm theo đơn</span>
+          </div>
+          <button class="btn-order" onclick="openModal('12 hộp (1 thùng) — 2.868.000đ')">📞 ĐẶT NGAY</button>
+        </div>
+      </div>
+
+      <!-- 24 hộp = 2 thùng -->
+      <div class="prod-card fade-up">
+        <div class="ribbon" style="background:#7B1FA2">2 THÙNG = 24 HỘP</div>
+        <div class="prod-img">
+          <div class="prod-qty-badge">24 Hộp — 2 Thùng</div>
+          <img src="https://lh3.googleusercontent.com/d/125L_voa57hS4FY6Ca2WPH413Tlnnpw_F" alt="24 hộp ADI A PLUS 2 thùng" onerror="this.src='https://lh3.googleusercontent.com/d/1rRnTDVFH1C6j-mLHKaCV4iNcUjLRuDai'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label" style="color:#7B1FA2">💎 Ưu đãi đặc biệt</div>
+          <div class="prod-name">ADI A PLUS — 2 Thùng (24 Hộp)</div>
+          <div class="prod-price-box">
+            <div class="prod-price">5.736.000đ</div>
+            <div class="prod-price-note">239.000đ/hộp + Ưu đãi đặc biệt</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Ưu tiên giao hàng nhanh</span>
+            <span class="perk">Tặng quà cao cấp kèm đơn</span>
+            <span class="perk">Hỗ trợ bán lẻ từng hộp</span>
+          </div>
+          <button class="btn-order" onclick="openModal('24 hộp (2 thùng) ADI A PLUS')">📞 ĐẶT NGAY</button>
+        </div>
+      </div>
+
+      <!-- 36 hộp = 3 thùng - VIP -->
+      <div class="prod-card vip fade-up">
+        <div class="ribbon ribbon-vip">3 THÙNG — ĐẠI LÝ</div>
+        <div class="prod-img">
+          <div class="prod-qty-badge">36 Hộp — 3 Thùng</div>
+          <img src="https://lh3.googleusercontent.com/d/1wwvgBP125wNcpC-GJnANqMfOWeQCTEHK" alt="36 hộp ADI A PLUS đại lý" onerror="this.src='https://lh3.googleusercontent.com/d/1FdEzsfzzzR4fwY1Tl1GfDYTMhl5ooZS_'">
+        </div>
+        <div class="prod-body">
+          <div class="prod-label" style="color:var(--primary)">👑 Dành cho Đại Lý</div>
+          <div class="prod-name">ADI A PLUS — 3 Thùng (36 Hộp)</div>
+          <div class="prod-price-box" style="background:linear-gradient(135deg,rgba(139,90,43,.08),rgba(139,90,43,.15));border:1px solid rgba(139,90,43,.25)">
+            <div class="prod-price">8.604.000đ</div>
+            <div class="prod-price-note">239.000đ/hộp + Chiết khấu đại lý</div>
+          </div>
+          <div class="prod-perks">
+            <span class="perk">Chiết khấu đại lý cao nhất</span>
+            <span class="perk">Miễn phí vận chuyển + đóng gói</span>
+            <span class="perk">Hỗ trợ content marketing</span>
+            <span class="perk">Đào tạo tư vấn sản phẩm</span>
+          </div>
+          <button class="btn-order" onclick="openModal('36 hộp (3 thùng) — Đại Lý ADI A PLUS')">👑 LIÊN HỆ ĐẠI LÝ</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="howtobuy" style="padding:72px 0;background:var(--white)">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-green">Cách Đặt Hàng</span>
+      <h2 class="section-title" style="margin-top:12px">Đặt Hàng Cực Đơn Giản</h2>
+      <p class="section-sub">3 bước nhận hàng tại nhà, không cần ra ngoài</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <div class="step-icon">📞</div>
+        <div class="step-title">Chọn Gói & Liên Hệ</div>
+        <div class="step-desc">Nhấn "Đặt Ngay" hoặc gọi trực tiếp hotline <strong style="color:var(--primary)">0914.284.739</strong> để được tư vấn gói phù hợp</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <div class="step-icon">💳</div>
+        <div class="step-title">Thanh Toán Tiện Lợi</div>
+        <div class="step-desc">Quét mã QR chuyển khoản hoặc thanh toán khi nhận hàng (COD). Sau khi chuyển khoản nhắn tin xác nhận</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <div class="step-icon">📦</div>
+        <div class="step-title">Nhận Hàng Tại Nhà</div>
+        <div class="step-desc">Đóng gói cẩn thận, giao tận nơi trong <strong style="color:var(--primary)">1-3 ngày làm việc</strong> trên toàn quốc</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section" style="background:var(--cream2)">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-gold">Hình Ảnh Thực Tế</span>
+      <h2 class="section-title" style="margin-top:12px">Sản Phẩm & Khách Hàng</h2>
+      <p class="section-sub">Hình ảnh thực tế từ nhà máy và phản hồi của khách hàng thân thiết</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1Rk2ZFRTT3TsG1ByJwhp6SfqzW_WrQtHF" alt="ADI A PLUS KOL review" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1oGniRUBoJnMEBg12PJScItjhr--KByeT" alt="ADI A PLUS testimonial" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1FdEzsfzzzR4fwY1Tl1GfDYTMhl5ooZS_" alt="ADI A PLUS nhà máy sản xuất" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1rRnTDVFH1C6j-mLHKaCV4iNcUjLRuDai" alt="ADI A PLUS sản phẩm 2" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1OxXOQkTGDqqEaJ6WOkDHsFl0NFC83n1V" alt="ADI A PLUS khách hàng" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1glLDWc0BKidM9ne2bRiZ-EiUWyCJM0as" alt="ADI A PLUS catalog" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9" alt="ADI A PLUS sản phẩm cao cấp" onerror="this.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1KcWA-Ql_80F9JjtrNVRoVU6lxmLGaaTW" alt="ADI A PLUS bộ sản phẩm" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QR PAYMENT -->
+<section id="payment">
+  <div class="container">
+    <div class="payment-inner">
+      <div class="payment-info fade-up">
+        <span class="badge" style="background:rgba(212,168,67,.3);color:var(--gold-light);border:1px solid rgba(212,168,67,.4);margin-bottom:16px">Thanh Toán</span>
+        <h2>Thanh Toán Nhanh<br>Quét Mã QR</h2>
+        <p style="margin-top:10px">Chuyển khoản siêu tốc qua ứng dụng ngân hàng bất kỳ. Nhắn tin xác nhận sau khi chuyển khoản.</p>
+        <div class="bank-rows">
+          <div class="bank-row">
+            <span class="label">Ngân hàng</span>
+            <span class="value">TECHCOMBANK</span>
+          </div>
+          <div class="bank-row">
+            <span class="label">Số tài khoản</span>
+            <span class="value">2968 3979 79</span>
+          </div>
+          <div class="bank-row">
+            <span class="label">Chủ tài khoản</span>
+            <span class="value">HÀ ĐĂNG KHẢI</span>
+          </div>
+          <div class="bank-row">
+            <span class="label">Nội dung CK</span>
+            <span class="value">[Họ tên] + [Địa chỉ nhận hàng]</span>
+          </div>
+        </div>
+        <div class="payment-note">
+          ⚠️ <strong>Lưu ý:</strong> Sau khi chuyển khoản, vui lòng nhắn tin vào Zalo/SMS số <strong>0914.284.739</strong> kèm ảnh chụp giao dịch để xác nhận đơn hàng và được giao hàng nhanh nhất.
+        </div>
+        <div class="payment-btns" style="justify-content:flex-start;margin-top:20px">
+          <a href="https://zalo.me/0914284739" target="_blank" class="btn btn-gold">
+            <svg width="18" height="18" viewBox="0 0 40 40" fill="currentColor"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0z" fill="#0068FF"/><path d="M27.5 25.8c-.3-.4-.6-.7-1-1-.3-.3-.4-.5-.4-.7 0-.2.1-.4.3-.6 1.2-1.2 1.9-2.7 1.9-4.4 0-3.5-3.3-6.4-7.3-6.4s-7.3 2.9-7.3 6.4c0 3.5 3.3 6.4 7.3 6.4.9 0 1.8-.1 2.6-.4l2.8 1.1c.2.1.4 0 .5-.1.1-.2.1-.3.1-.4l-.5-2z" fill="#fff"/></svg>
+            Zalo: 0914284739
+          </a>
+          <a href="tel:0914284739" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)">
+            📞 Gọi ngay
+          </a>
+        </div>
+      </div>
+      <div class="payment-qr fade-in">
+        <div class="qr-box">
+          <img src="https://img.vietqr.io/image/TCB-2968397979-compact2.jpg?addInfo=Dat%20hang%20ADI%20A%20PLUS&accountName=HA%20DANG%20KHAI" alt="QR thanh toán ADI A PLUS" style="width:240px;height:auto;border-radius:8px;display:block">
+          <div class="qr-name">Hà Đăng Khải</div>
+          <div class="qr-sub">TECHCOMBANK — STK: 2968 3979 79</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section" style="background:var(--cream2)">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-gold">Đánh Giá</span>
+      <h2 class="section-title" style="margin-top:12px">Khách Hàng Nói Gì Về ADI A PLUS?</h2>
+      <p class="section-sub">Hơn 1000+ khách hàng tin dùng — đây là chia sẻ của họ</p>
+    </div>
+    <div class="fade-in" style="margin:32px 0 40px;text-align:center">
+      <img src="https://lh3.googleusercontent.com/d/1Pq5zA_TVv5nto6RUaM5LWYwmJPDkj0cY" alt="Khách hàng nói gì về ADI A PLUS" style="width:100%;max-width:800px;border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#e91e63,#c2185b)">L</div>
+          <div>
+            <div class="reviewer-name">Chị Lan Anh</div>
+            <div class="reviewer-loc">📍 TP. Hồ Chí Minh</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Mình dùng ADI A PLUS được 2 tháng rồi, cảm giác tiêu hóa tốt hơn hẳn, buổi sáng pha uống thay bữa sáng rất tiện. Con nhà mình cũng thích uống vì vị ngọt tự nhiên. Sẽ đặt thêm thùng nữa!"</div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#2196f3,#1565c0)">T</div>
+          <div>
+            <div class="reviewer-name">Chị Thu Hương</div>
+            <div class="reviewer-loc">📍 Hà Nội</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Sản phẩm chất lượng, đóng gói đẹp, giao hàng nhanh. Mình đặt 6 hộp về cho cả nhà dùng. Mẹ mình 65 tuổi uống thấy tiêu hóa nhẹ nhàng hơn nhiều so với trước. Cảm ơn shop rất nhiều!"</div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#4caf50,#2e7d32)">M</div>
+          <div>
+            <div class="reviewer-name">Chị Mai</div>
+            <div class="reviewer-loc">📍 Đà Nẵng</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Lần đầu thử 1 hộp, dùng xong thấy thích quá nên đặt ngay 1 thùng. Vị ngon, uống xong no lâu, không bị cồn bụng. Giấy tờ đầy đủ, tin tưởng sản phẩm 100%. Recommend mạnh!"</div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#ff9800,#e65100)">H</div>
+          <div>
+            <div class="reviewer-name">Chị Hoài</div>
+            <div class="reviewer-loc">📍 Cần Thơ</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Mình làm đại lý ADI A PLUS được 3 tháng, khách hàng phản hồi rất tích cực. Hỗ trợ từ nhà phân phối tốt, giao hàng đúng hẹn. Chiết khấu hấp dẫn, ai muốn làm đại lý thì nên thử!"</div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#9c27b0,#6a1b9a)">N</div>
+          <div>
+            <div class="reviewer-name">Chị Ngân</div>
+            <div class="reviewer-loc">📍 Bình Dương</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Có giấy kiểm nghiệm rõ ràng nên rất yên tâm. Chồng mình tập gym dùng sau buổi tập thấy hồi phục tốt. Mình pha thêm sữa tươi uống buổi tối ngon lắm. Sẽ mua dài dài!"</div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar-letter" style="background:linear-gradient(135deg,#00bcd4,#006064)">P</div>
+          <div>
+            <div class="reviewer-name">Chị Phương</div>
+            <div class="reviewer-loc">📍 Vũng Tàu</div>
+          </div>
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Shop tư vấn rất nhiệt tình, giải thích rõ về thành phần và cách dùng. Sản phẩm đúng như mô tả, không có mùi lạ. 3 tuần uống thấy da sáng và ít mệt mỏi hơn. Rất hài lòng!"</div>
+      </div>
+    </div>
+    <!-- KOL images if available -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;max-width:800px;margin-left:auto;margin-right:auto">
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1Rk2ZFRTT3TsG1ByJwhp6SfqzW_WrQtHF" alt="KOL review ADI A PLUS" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="https://lh3.googleusercontent.com/d/1oGniRUBoJnMEBg12PJScItjhr--KByeT" alt="KOL review ADI A PLUS 3" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="badge badge-green">Giải Đáp</span>
+      <h2 class="section-title" style="margin-top:12px">Câu Hỏi Thường Gặp</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Sản phẩm ADI A PLUS có phù hợp với trẻ em không? <span class="chevron">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Có, ADI A PLUS phù hợp cho trẻ em từ 2 tuổi trở lên. Sản phẩm được làm từ 100% ngũ cốc tự nhiên, không chứa chất bảo quản hay phẩm màu nhân tạo. Tuy nhiên, ba mẹ nên cho trẻ dùng lượng nhỏ (1/2 khẩu phần) lúc đầu để cơ thể thích nghi.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Mỗi ngày uống bao nhiêu là đủ? <span class="chevron">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Khuyến nghị uống 1-2 ly mỗi ngày. Buổi sáng pha 2-3 muỗng với nước ấm hoặc sữa tươi để thay thế bữa sáng, hoặc uống bổ sung vào buổi tối trước khi ngủ để cơ thể hấp thụ dưỡng chất qua đêm.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Sản phẩm có tác dụng phụ không? <span class="chevron">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">ADI A PLUS là thực phẩm bổ sung dinh dưỡng từ ngũ cốc tự nhiên, không gây tác dụng phụ khi sử dụng đúng liều. Người có tiền sử dị ứng với bất kỳ thành phần ngũ cốc nào nên tham khảo ý kiến bác sĩ trước khi dùng.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Thời gian giao hàng là bao lâu? <span class="chevron">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Sau khi xác nhận đơn hàng, chúng tôi xử lý và giao trong vòng 1-3 ngày làm việc. Khu vực nội thành TP.HCM và Hà Nội thường nhận hàng trong ngày hoặc hôm sau. Tỉnh xa 2-3 ngày. Hoàn toàn miễn phí ship từ 3 hộp.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Có thể đổi trả nếu không hài lòng không? <span class="chevron">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Có! Chúng tôi hỗ trợ đổi trả trong vòng 7 ngày nếu sản phẩm lỗi, hỏng hóc từ nhà sản xuất hoặc không đúng mô tả. Vui lòng liên hệ hotline <strong>0914.284.739</strong> để được hỗ trợ nhanh nhất.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-img">A+</div>
+          <div class="logo-text">
+            <span class="logo-name">ADI A PLUS</span>
+            <span class="logo-sub" style="color:var(--gold)">Bột Ngũ Cốc Dinh Dưỡng</span>
+          </div>
+        </div>
+        <p class="footer-desc">Bổ dưỡng từ thiên nhiên — Khỏe đẹp mỗi ngày. Sản phẩm của ADI A PHARMA, đã được kiểm nghiệm và cấp phép lưu hành bởi Cục An toàn thực phẩm Bộ Y tế.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://zalo.me/0914284739" target="_blank" class="social-btn" title="Zalo">
+            <svg width="18" height="18" viewBox="0 0 40 40" fill="currentColor"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0z" fill="#0068FF"/><path d="M27.5 25.8c-.3-.4-.6-.7-1-1-.3-.3-.4-.5-.4-.7 0-.2.1-.4.3-.6 1.2-1.2 1.9-2.7 1.9-4.4 0-3.5-3.3-6.4-7.3-6.4s-7.3 2.9-7.3 6.4c0 3.5 3.3 6.4 7.3 6.4.9 0 1.8-.1 2.6-.4l2.8 1.1c.2.1.4 0 .5-.1.1-.2.1-.3.1-.4l-.5-2z" fill="#fff"/></svg>
+          </a>
+          <a href="#" class="social-btn" title="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Kết Nhanh</h4>
+        <ul>
+          <li><a href="#about">Giới thiệu sản phẩm</a></li>
+          <li><a href="#ingredients">Thành phần</a></li>
+          <li><a href="#certs">Giấy phép & Chứng nhận</a></li>
+          <li><a href="#order">Bảng giá & Đặt hàng</a></li>
+          <li><a href="#payment">Hướng dẫn thanh toán</a></li>
+          <li><a href="#testimonials">Đánh giá khách hàng</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span><a href="tel:0914284739" style="color:rgba(255,255,255,.7)">0914.284.739</a></span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span><a href="https://zalo.me/0914284739" target="_blank" style="color:rgba(255,255,255,.7)">Zalo: 0914284739</a></span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span style="font-size:.82rem">Hỗ trợ 8:00 – 21:00 mỗi ngày</span>
+          </div>
+        </div>
+        <div style="margin-top:20px">
+          <a href="#order" class="btn btn-gold" style="font-size:.88rem;padding:12px 22px">🛒 Đặt Hàng Ngay</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ADI A PLUS — ADI A PHARMA. Bản quyền thuộc về chủ thương hiệu.</p>
+      <p>Hotline: <a href="tel:0914284739" style="color:var(--gold)">0914.284.739</a> — Hà Đăng Khải</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <button class="float-btn back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Lên đầu trang">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <a href="tel:0914284739" class="float-btn float-phone" title="Gọi ngay">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <a href="https://zalo.me/0914284739" target="_blank" class="float-btn float-zalo" title="Chat Zalo">
+    <svg width="22" height="22" viewBox="0 0 40 40" fill="white"><path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4zm7.5 21.8c-.3-.4-.6-.7-1-1-.3-.3-.4-.5-.4-.7 0-.2.1-.4.3-.6 1.2-1.2 1.9-2.7 1.9-4.4 0-3.5-3.3-6.4-7.3-6.4s-7.3 2.9-7.3 6.4c0 3.5 3.3 6.4 7.3 6.4.9 0 1.8-.1 2.6-.4l2.8 1.1c.2.1.4 0 .5-.1.1-.2.1-.3.1-.4l-.5-2z"/></svg>
+  </a>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="position:relative">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div style="font-size:3rem">🛒</div>
+    <h3>Đặt Hàng <span id="modalProduct"></span></h3>
+    <p>Liên hệ ngay để được tư vấn và đặt hàng nhanh nhất!</p>
+    <div class="modal-phone">0914.284.739</div>
+    <div class="modal-note">Hoặc quét QR thanh toán & nhắn tin xác nhận đơn hàng</div>
+    <div class="modal-btns">
+      <a href="tel:0914284739" class="btn btn-primary" style="font-size:1.05rem">📞 Gọi ngay: 0914.284.739</a>
+      <a href="https://zalo.me/0914284739" target="_blank" class="btn btn-gold">💬 Nhắn Zalo đặt hàng</a>
+      <button onclick="closeModal();document.getElementById('payment').scrollIntoView({behavior:'smooth'})" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary)">📱 Xem QR thanh toán</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Header scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>20);
+  document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
+});
+
+// Mobile menu
+function toggleMenu(){
+  document.getElementById('mainNav').classList.toggle('open');
+}
+// Close menu when nav link clicked
+document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('mainNav').classList.remove('open');
+}));
+
+// FAQ accordion
+function toggleFaq(el){
+  const a=el.nextElementSibling;
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));
+  if(!isOpen){a.classList.add('open');el.classList.add('open');}
+}
+
+// Modal
+function openModal(product){
+  document.getElementById('modalProduct').textContent=product;
+  document.getElementById('orderModal').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('orderModal').classList.remove('show');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// Scroll animations
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up,.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

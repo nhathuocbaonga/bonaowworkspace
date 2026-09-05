@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "salepage",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5599", "--directory", "D:/BỘ NÃO BRAIN/bộ não/nguyenbaonga-768ai-salepage"],
+      "port": 5599
+    }
+  ]
+}

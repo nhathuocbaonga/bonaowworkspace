@@ -1,0 +1,74 @@
+[
+  {
+    "task": "Soạn báo cáo tuần 2dm.vn cho boss",
+    "hours": 2,
+    "value_to_q_goal": 15,
+    "deadline_hard": false,
+    "automatable": true,
+    "outsourceable": false,
+    "repeatable": true
+  },
+  {
+    "task": "Họp với agency Q4 plan",
+    "hours": 3,
+    "value_to_q_goal": 60,
+    "deadline_hard": true,
+    "automatable": false,
+    "outsourceable": false,
+    "repeatable": false
+  },
+  {
+    "task": "Reply 30 tin nhắn học viên FB",
+    "hours": 4,
+    "value_to_q_goal": 20,
+    "deadline_hard": false,
+    "automatable": true,
+    "outsourceable": true,
+    "repeatable": true
+  },
+  {
+    "task": "Quay 4 video tài chính cá nhân YT",
+    "hours": 8,
+    "value_to_q_goal": 90,
+    "deadline_hard": false,
+    "automatable": false,
+    "outsourceable": false,
+    "repeatable": true
+  },
+  {
+    "task": "Audit ngân sách 2dm Q3",
+    "hours": 3,
+    "value_to_q_goal": 70,
+    "deadline_hard": true,
+    "automatable": false,
+    "outsourceable": false,
+    "repeatable": false
+  },
+  {
+    "task": "Cà phê với 3 đối tác cũ (no agenda)",
+    "hours": 4,
+    "value_to_q_goal": 5,
+    "deadline_hard": false,
+    "automatable": false,
+    "outsourceable": false,
+    "repeatable": false
+  },
+  {
+    "task": "Review hợp đồng VA mới",
+    "hours": 1,
+    "value_to_q_goal": 40,
+    "deadline_hard": false,
+    "automatable": false,
+    "outsourceable": false,
+    "repeatable": false
+  },
+  {
+    "task": "Schedule 12 post FB tháng tới",
+    "hours": 2,
+    "value_to_q_goal": 30,
+    "deadline_hard": false,
+    "automatable": true,
+    "outsourceable": true,
+    "repeatable": true
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "name": "HANA - Chatbot Zalo OA (Q&A + Telegram Escalation)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "zalo-oa-webhook",
+        "responseMode": "onReceived",
+        "responseData": "success",
+        "options": {}
+      },
+      "id": "node-webhook",
+      "name": "Webhook - Nhan tin Zalo OA",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "webhookId": "zalo-oa-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nconst isTextMsg = body.event_name === 'user_send_text';\nreturn [{\n  json: {\n    isTextMsg,\n    zaloUserId: (body.sender && body.sender.id) || null,\n    oaId: (body.recipient && body.recipient.id) || null,\n    userMessage: (body.message && body.message.text) || ''\n  }\n}];"
+      },
+      "id": "node-filter-event",
+      "name": "Loc chi tin nhan text",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.isTextMsg}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "node-if-textmsg",
+      "name": "IF: La tin nhan text?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { skipped: true } }];"
+      },
+      "id": "node-skip",
+      "name": "Bo qua su kien khac",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 460]
+    },
+    {
+      "parameters": {
+        "url": "https://www.googleapis.com/drive/v3/files/1DppsBeoJJ9zAyeMJuqqw6hhIAbp1_gCEs3uzWn7beps/export",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "mimeType", "value": "text/plain" }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "node-fetch-doc",
+      "name": "Tai Q&A tu Google Doc",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.data || $input.first().json.body || $input.first().json;\nconst text = typeof raw === 'string' ? raw : JSON.stringify(raw);\nconst blocks = text.split('---');\nconst qaList = [];\nfor (const block of blocks) {\n  const qMatch = block.match(/\u2753\\s*C\u00c2U H\u1eceI:\\s*([\\s\\S]*?)(?:\\n\u2705|$)/);\n  const aMatch = block.match(/\u2705\\s*TR\u1ea2 L\u1edcI:\\s*([\\s\\S]*)/);\n  if (qMatch && aMatch) {\n    const question = qMatch[1].trim();\n    const answer = aMatch[1].trim();\n    const needExpert = answer.includes('C\u1ea6N CHUY\u00caN GIA');\n    qaList.push({ question, answer, needExpert });\n  }\n}\nconst prev = $('Loc chi tin nhan text').first().json;\nreturn [{ json: { qaList, userMessage: prev.userMessage, zaloUserId: prev.zaloUserId } }];"
+      },
+      "id": "node-parse-qa",
+      "name": "Parse danh sach Q&A",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nstaticData.sessions = staticData.sessions || {};\nconst zaloUserId = $json.zaloUserId;\nconst session = staticData.sessions[zaloUserId] || [];\nreturn [{ json: Object.assign({}, $json, { sessionHistory: session }) }];"
+      },
+      "id": "node-get-session",
+      "name": "Lay lich su phien",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 180]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "YOUR_ANTHROPIC_API_KEY" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'REPLACE_WITH_YOUR_CLAUDE_MODEL', max_tokens: 600, system: 'Ban la tro ly phan loai va soan cau tra loi cho phong kham tham my HANA qua Zalo. Dua vao danh sach qaList va tin nhan userMessage, hay tra loi DUY NHAT mot object JSON voi dung 5 khoa: intent (mot trong 4 gia tri: question, closing_satisfied, closing_unresolved, other), matched (true/false), needExpert (true/false), answer (chuoi hoac null), matchedQuestion (chuoi hoac null). Neu answer khop co chua cum CAN CHUYEN GIA thi needExpert phai la true. Khong in them chu nao ngoai object JSON do.', messages: [{ role: 'user', content: JSON.stringify({ qaList: $json.qaList, sessionHistory: $json.sessionHistory, userMessage: $json.userMessage }) }] }) }}",
+        "options": {}
+      },
+      "id": "node-call-claude",
+      "name": "Goi Claude API so khop",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1320, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "let aiText = '';\ntry {\n  aiText = $input.first().json.content[0].text;\n} catch (e) {}\nlet ai;\ntry {\n  const match = aiText.match(/\\{[\\s\\S]*\\}/);\n  ai = JSON.parse(match ? match[0] : aiText);\n} catch (e) {\n  ai = { intent: 'other', matched: false, needExpert: true, answer: null, matchedQuestion: null };\n}\nconst prev = $('Lay lich su phien').first().json;\nreturn [{ json: Object.assign({}, prev, { ai }) }];"
+      },
+      "id": "node-parse-ai",
+      "name": "Parse ket qua AI",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nconst zaloUserId = $json.zaloUserId;\nconst ai = $json.ai || {};\nconst session = staticData.sessions[zaloUserId] || [];\nsession.push({ q: $json.userMessage, a: ai.answer || null, matched: !!ai.matched, ts: new Date().toISOString() });\nstaticData.sessions[zaloUserId] = session.slice(-10);\n\nlet route = 'ESCALATE';\nif (ai.intent === 'closing_satisfied') {\n  route = 'CLOSE_SESSION';\n} else if (ai.matched && !ai.needExpert) {\n  route = 'AUTO_REPLY';\n}\n\nreturn [{ json: Object.assign({}, $json, { route }) }];"
+      },
+      "id": "node-update-session",
+      "name": "Cap nhat lich su phien",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 180]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.route}}",
+              "operation": "equal",
+              "value2": "AUTO_REPLY"
+            }
+          ]
+        }
+      },
+      "id": "node-if-autoreply",
+      "name": "IF: Tu dong tra loi duoc?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1980, 180]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openapi.zalo.me/v3.0/oa/message/cs",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "access_token", "value": "YOUR_ZALO_OA_ACCESS_TOKEN" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ recipient: { user_id: $json.zaloUserId }, message: { text: $json.ai.answer } }) }}",
+        "options": {}
+      },
+      "id": "node-zalo-reply",
+      "name": "Gui tra loi qua Zalo OA",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2200, 60]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.route}}",
+              "operation": "equal",
+              "value2": "CLOSE_SESSION"
+            }
+          ]
+        }
+      },
+      "id": "node-if-close",
+      "name": "IF: Khach hai long, dong phien?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [2200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nconst zaloUserId = $json.zaloUserId;\nconst session = staticData.sessions[zaloUserId] || [];\nconst lines = session.map((s, i) => (i + 1) + '. Hoi: ' + s.q + '\\n   Dap: ' + (s.a || '(chuyen sep tra loi)')).join('\\n');\nconst report = 'Da cham soc xong khach hang\\nZalo ID: ' + zaloUserId + '\\n\\nTom tat trao doi:\\n' + lines + '\\n\\nKet qua: Khach xac nhan hai long, khong con thac mac.';\nreturn [{ json: Object.assign({}, $json, { report }) }];"
+      },
+      "id": "node-build-report",
+      "name": "Soan bao cao hoan tat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, 240]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "={{$json.report}}",
+        "additionalFields": {}
+      },
+      "id": "node-telegram-report",
+      "name": "Bao cao hoan tat qua Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [2640, 240]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openapi.zalo.me/v3.0/oa/message/cs",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "access_token", "value": "YOUR_ZALO_OA_ACCESS_TOKEN" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ recipient: { user_id: $json.zaloUserId }, message: { text: 'Da HANA cam on chi rat nhieu a! Chuc chi luon xinh dep, hen gap lai chi.' } }) }}",
+        "options": {}
+      },
+      "id": "node-zalo-thanks",
+      "name": "Gui loi cam on qua Zalo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2860, 240]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (staticData.sessions) {\n  delete staticData.sessions[$json.zaloUserId];\n}\nreturn [{ json: { done: true } }];"
+      },
+      "id": "node-clear-session",
+      "name": "Xoa lich su phien",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3080, 240]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=Co khach can sep Phuong tra loi truc tiep tren Zalo!\n\nKhach (Zalo ID): {{$json.zaloUserId}}\nCau hoi: {{$json.userMessage}}\nLy do: {{$json.ai.needExpert ? 'Can chuyen gia xac nhan' : 'Chua co trong bo Q&A'}}\n\nVao Zalo OA de tra loi khach nhe.",
+        "additionalFields": {}
+      },
+      "id": "node-telegram-escalate",
+      "name": "Bao sep Phuong - can tra loi",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [2420, 420]
+    }
+  ],
+  "connections": {
+    "Webhook - Nhan tin Zalo OA": {
+      "main": [[{ "node": "Loc chi tin nhan text", "type": "main", "index": 0 }]]
+    },
+    "Loc chi tin nhan text": {
+      "main": [[{ "node": "IF: La tin nhan text?", "type": "main", "index": 0 }]]
+    },
+    "IF: La tin nhan text?": {
+      "main": [
+        [{ "node": "Tai Q&A tu Google Doc", "type": "main", "index": 0 }],
+        [{ "node": "Bo qua su kien khac", "type": "main", "index": 0 }]
+      ]
+    },
+    "Tai Q&A tu Google Doc": {
+      "main": [[{ "node": "Parse danh sach Q&A", "type": "main", "index": 0 }]]
+    },
+    "Parse danh sach Q&A": {
+      "main": [[{ "node": "Lay lich su phien", "type": "main", "index": 0 }]]
+    },
+    "Lay lich su phien": {
+      "main": [[{ "node": "Goi Claude API so khop", "type": "main", "index": 0 }]]
+    },
+    "Goi Claude API so khop": {
+      "main": [[{ "node": "Parse ket qua AI", "type": "main", "index": 0 }]]
+    },
+    "Parse ket qua AI": {
+      "main": [[{ "node": "Cap nhat lich su phien", "type": "main", "index": 0 }]]
+    },
+    "Cap nhat lich su phien": {
+      "main": [[{ "node": "IF: Tu dong tra loi duoc?", "type": "main", "index": 0 }]]
+    },
+    "IF: Tu dong tra loi duoc?": {
+      "main": [
+        [{ "node": "Gui tra loi qua Zalo OA", "type": "main", "index": 0 }],
+        [{ "node": "IF: Khach hai long, dong phien?", "type": "main", "index": 0 }]
+      ]
+    },
+    "IF: Khach hai long, dong phien?": {
+      "main": [
+        [{ "node": "Soan bao cao hoan tat", "type": "main", "index": 0 }],
+        [{ "node": "Bao sep Phuong - can tra loi", "type": "main", "index": 0 }]
+      ]
+    },
+    "Soan bao cao hoan tat": {
+      "main": [[{ "node": "Bao cao hoan tat qua Telegram", "type": "main", "index": 0 }]]
+    },
+    "Bao cao hoan tat qua Telegram": {
+      "main": [[{ "node": "Gui loi cam on qua Zalo", "type": "main", "index": 0 }]]
+    },
+    "Gui loi cam on qua Zalo": {
+      "main": [[{ "node": "Xoa lich su phien", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f7fb;
+  --surface: #ffffff;
+  --foreground: #1e1b2e;
+  --muted: #6b7280;
+  --border: #e7e5f0;
+
+  --brand: #6d5ef7;
+  --brand-foreground: #ffffff;
+  --brand-soft: #efecff;
+
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+
+  --jar-nec: #ef4444;
+  --jar-ffa: #f59e0b;
+  --jar-ltss: #3b82f6;
+  --jar-edu: #8b5cf6;
+  --jar-play: #ec4899;
+  --jar-give: #10b981;
+}
+
+.dark {
+  --background: #14121f;
+  --surface: #1d1a2b;
+  --foreground: #f1eefb;
+  --muted: #a29fb5;
+  --border: #302c45;
+
+  --brand: #8b7bff;
+  --brand-foreground: #14121f;
+  --brand-soft: #2a2444;
+
+  --success: #4ade80;
+  --success-soft: #16341f;
+  --warning: #fbbf24;
+  --warning-soft: #3a2c0c;
+  --danger: #f87171;
+  --danger-soft: #3a1414;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --color-jar-nec: var(--jar-nec);
+  --color-jar-ffa: var(--jar-ffa);
+  --color-jar-ltss: var(--jar-ltss);
+  --color-jar-edu: var(--jar-edu);
+  --color-jar-play: var(--jar-play);
+  --color-jar-give: var(--jar-give);
+
+  --font-sans: var(--font-be-vietnam);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+@media print {
+  aside,
+  nav,
+  header {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

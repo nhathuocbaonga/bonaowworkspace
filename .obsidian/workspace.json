@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "fe02bc2cce261ef2",
+    "type": "split",
+    "children": [
+      {
+        "id": "5cac76bc6573e7ad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "667dccc5f479e14b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Xem biểu đồ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "df7a13dd64ad5a49",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bcb6cb7ca64d00a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7cab392c5f002539",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Trình duyệt tệp"
+            }
+          },
+          {
+            "id": "b835b59c8be84268",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Tìm kiếm"
+            }
+          },
+          {
+            "id": "4e93bd3ba5675efb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Đánh dấu"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2e61a42f0a5fd4c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "a21913c814208da5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa3639db10e5d427",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Liên kết đến"
+            }
+          },
+          {
+            "id": "81a706f8deb535ac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "7d64ddc091897db9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ef2b13dc08cdbce9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "2502da3f14d5ba11",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Mở bộ chuyển đổi nhanh": false,
+      "graph:Mở xem biểu đồ": false,
+      "canvas:Tạo bảng mới": false,
+      "daily-notes:Mở ghi chú hôm nay": false,
+      "templates:Chèn mẫu": false,
+      "command-palette:Mở khay lệnh": false,
+      "bases:Tạo cơ sở mới": false
+    }
+  },
+  "active": "667dccc5f479e14b",
+  "lastOpenFiles": [
+    "Chưa đặt tên.base",
+    "bộ não.md",
+    "2026-06-07.md",
+    "Chưa đặt tên 1.canvas",
+    "Chưa đặt tên.canvas",
+    "SKILL/viral-eov-mapper/SKILL.md",
+    "SKILL/viral-eov-mapper",
+    "SKILL/viral-cta-rewriter/SKILL.md",
+    "SKILL/viral-cta-rewriter",
+    "SKILL/video-content-strategist/SKILL.md",
+    "SKILL/video-content-strategist",
+    "SKILL/video/references/ai-video-prompting.md",
+    "SKILL/video/evals/evals.json",
+    "SKILL/video/SKILL.md",
+    "SKILL/video/references",
+    "SKILL/video/evals",
+    "SKILL/video",
+    "SKILL/social-content/references/reverse-engineering.md",
+    "SKILL/social-content/references/post-templates.md",
+    "SKILL/social-content/references/platforms.md",
+    "SKILL/social-content/SKILL.md",
+    "SKILL/social-content/references",
+    "SKILL/social-content",
+    "SKILL/saas-metrics-coach/references/formulas.md",
+    "SKILL/saas-metrics-coach/references/benchmarks.md",
+    "SKILL/saas-metrics-coach/assets/input-template.md",
+    "SKILL/saas-metrics-coach/SKILL.md",
+    "SKILL/runbook-generator/references/runbook-templates.md",
+    "SKILL/runbook-generator/SKILL.md",
+    "SKILL/pr-review-expert/SKILL.md",
+    "SKILL/pricing/references/research-methods.md",
+    "SKILL/pricing/references/tier-structure.md",
+    "SKILL/pricing/SKILL.md",
+    "SKILL/performance-profiler/references/profiling-recipes.md",
+    "SKILL/performance-profiler/SKILL.md",
+    "SKILL/marketing-ops/SKILL.md",
+    "SKILL/marketing-ideas/references/ideas-by-category.md",
+    "Untitled.canvas"
+  ]
+}

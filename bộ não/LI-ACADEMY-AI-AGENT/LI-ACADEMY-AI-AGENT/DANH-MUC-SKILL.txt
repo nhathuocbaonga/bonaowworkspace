@@ -1,0 +1,404 @@
+================================================================
+LI ACADEMY AI AGENT - 392 SKILL TRON BO
+Toan bo kho 392 ky nang AI: kinh doanh + ky thuat + tuan thu + chuyen sau.
+Ngay dong goi: 2026-06-07
+Tong so skill: 392
+================================================================
+
+HUONG DAN CAI: chep TOAN BO thu muc con trong SKILL/
+vao   ~/.claude/skills/   roi khoi dong lai Claude Code.
+(Moi skill la mot thu muc rieng, giu nguyen ca thu muc.)
+
+DANH SACH SKILL:
+   1. 16buocbanhang                          - Viết sale page · landing page · bài bán hàng · email chào hàng · script livestream chốt đơ
+   2. a11y-audit                             - Accessibility audit skill for scanning, fixing, and verifying WCAG 2.2 Level A and AA comp
+   3. ab-testing                             - When the user wants to plan, design, or implement an A/B test or experiment, or build a gr
+   4. ab-test-setup                          - When the user wants to plan, design, or implement an A/B test or experiment. Also use when
+   5. ad-creative                            - When the user needs to generate, iterate, or scale ad creative for paid advertising. Use w
+   6. ads                                    - When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Ins
+   7. adversarial-reviewer                   - Adversarial code review that breaks the self-review monoculture. Use when you want a genui
+   8. agent-designer                         - Use when the user asks to design multi-agent systems, create agent architectures, define a
+   9. agenthub                               - Multi-agent collaboration plugin that spawns N parallel subagents competing on the same ta
+  10. agent-protocol                         - Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loo
+  11. agent-workflow-designer                - Design production-grade multi-agent workflows with clear pattern choice (sequential, paral
+  12. agile-product-owner                    - Agile product ownership for backlog management and sprint execution. Covers user story wri
+  13. ai-act-readiness                       - /cs:ai-act-readiness <system> — EU AI Act 6-question forcing interrogation. Use during AI-
+  14. aims-audit                             - /cs:aims-audit <scope> — ISO/IEC 42001 AIMS internal-audit 6-question forcing interrogatio
+  15. ai-security                            - Use when assessing AI/ML systems for prompt injection, jailbreak vulnerabilities, model in
+  16. ai-seo                                 - Optimize content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overvi
+  17. algorithmic-art                        - Creating algorithmic art using p5.js with seeded randomness and interactive parameter expl
+  18. alloydb-basics                         - >-
+  19. analytics                              - When the user wants to set up, improve, or audit analytics tracking and measurement. Also 
+  20. analytics-tracking                     - Set up, audit, and debug analytics tracking implementation — GA4, Google Tag Manager, even
+  21. api-design-reviewer                    - Comprehensive REST API design review with automated linting, breaking-change detection, an
+  22. api-test-suite-builder                 - Use when the user asks to generate API tests, create integration test suites, test REST en
+  23. apple-hig-expert                       - Expert guidance on Apple Human Interface Guidelines (HIG). Covers iOS, macOS, and visionOS
+  24. app-store-optimization                 - App Store Optimization (ASO) toolkit for researching keywords, analyzing competitor rankin
+  25. aso                                    - When the user wants to audit or optimize an App Store or Google Play listing. Also use whe
+  26. atlassian-admin                        - Atlassian Administrator for managing and organizing Atlassian products (Jira, Confluence, 
+  27. atlassian-templates                    - Atlassian Template and Files Creator/Modifier expert for creating, modifying, and managing
+  28. autoresearch-agent                     - Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Kar
+  29. aws-solution-architect                 - Design AWS architectures for startups using serverless patterns and IaC templates. Use whe
+  30. azure-cloud-architect                  - Design Azure architectures for startups and enterprises. Use when asked to design Azure in
+  31. banner-design                          - Design banners for social media, ads, website heroes, creative assets, and print. Multiple
+  32. behuman                                - Use when the user wants more human-like AI responses — less robotic, less listy, more auth
+  33. bigquery-basics                        - >-
+  34. board                                  - Read, write, and browse the AgentHub message board for agent coordination.
+  35. board-deck-builder                     - Assembles comprehensive board and investor update decks by pulling perspectives from all C
+  36. board-meeting                          - Multi-agent board meeting protocol for strategic decisions. Runs a structured 6-phase deli
+  37. board-prep                             - Board meeting preparation for the adversarial scenario, not the friendly one. Forces numbe
+  38. boardroom                              - /cs:boardroom <brief> — 6-phase multi-role deliberation across the C-suite with Phase 2 is
+  39. brand                                  - Brand voice, visual identity, messaging frameworks, asset management, brand consistency. A
+  40. brand-guidelines                       - Applies Anthropic's official brand colors and typography to any sort of artifact that may 
+  41. brief                                  - /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First 
+  42. browser-automation                     - Use when the user asks to automate browser tasks, scrape websites, fill forms, capture scr
+  43. browserstack                           - >-
+  44. business-growth-skills                 - 4 business growth agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, Ope
+  45. business-investment-advisor            - Business investment analysis and capital allocation advisor. Use when evaluating whether t
+  46. caio-review                            - /cs:caio-review <plan> — Eval-demanding Chief AI Officer interrogation of any plan that in
+  47. campaign-analytics                     - Analyzes campaign performance with multi-touch attribution, funnel conversion analysis, an
+  48. canvas-design                          - Create beautiful visual art in .png and .pdf documents using design philosophy. You should
+  49. capa-officer                           - CAPA system management for medical device QMS. Covers root cause analysis, corrective acti
+  50. capture                                - Captures and organizes chaotic brain dumps into a structured, actionable system with zero 
+  51. caveman                                - >
+  52. cco-review                             - /cs:cco-review <plan> — Retention-obsessed Chief Customer Officer interrogation of any pla
+  53. cdo-review                             - /cs:cdo-review <plan> — Decision-driven Chief Data Officer interrogation of any plan that 
+  54. ceo-advisor                            - Executive leadership guidance for strategic decision-making, organizational development, a
+  55. cfo-advisor                            - Financial leadership for startups and scaling companies. Financial modeling, unit economic
+  56. cfo-review                             - /cs:cfo-review <plan> — Numerate-skeptic interrogation of any plan that touches money. Uni
+  57. challenge                              - Pre-mortem plan analysis. Imagine the plan failed 12 months from now and work backwards to
+  58. changelog-generator                    - Produce consistent, auditable release notes from Conventional Commits. Separates commit pa
+  59. change-management                      - Framework for rolling out organizational changes without chaos. Covers the ADKAR model ada
+  60. chaos-engineering                      - Use when planning, running, or learning from chaos engineering experiments. Triggers on "c
+  61. chief-ai-officer-advisor               - Chief AI Officer advisory for startups: model build-vs-buy decisions (API vs fine-tune vs 
+  62. chief-customer-officer-advisor         - Chief Customer Officer advisory for startups: retention decomposition (gross retention vs 
+  63. chief-data-officer-advisor             - Chief Data Officer advisory for startups: AI training data rights and consent provenance, 
+  64. chief-of-staff                         - C-suite orchestration layer. Routes founder questions to the right advisor role(s), trigge
+  65. chro-advisor                           - People leadership for scaling companies. Hiring strategy, compensation design, org structu
+  66. churn-prevention                       - Reduce voluntary and involuntary churn through cancel flow design, save offers, exit surve
+  67. ci-cd-pipeline-builder                 - Generate pragmatic CI/CD pipelines from detected project stack signals — fast baseline gen
+  68. ciso-advisor                           - Security leadership for growth-stage companies. Risk quantification in dollars, compliance
+  69. ciso-review                            - /cs:ciso-review <plan> — Risk-paranoid interrogation of any plan that touches data, compli
+  70. claude-api                             - Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built with this skill sho
+  71. c-level-agents                         - Founder-mode executive team. 8 cs-* C-suite agents (CFO, CMO, CRO, CPO, COO, CHRO, CISO, C
+  72. c-level-skills                         - 10 C-level advisory agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, O
+  73. cloud-run-basics                       - >-
+  74. cloud-security                         - Use when assessing cloud infrastructure for security misconfigurations, IAM privilege esca
+  75. cloud-sql-basics                       - >-
+  76. cmo-advisor                            - Marketing leadership for scaling companies. Brand positioning, growth model design, market
+  77. cmo-review                             - /cs:cmo-review <plan> — Narrative-first interrogation of positioning, ICP, message house, 
+  78. codebase-onboarding                    - Analyze a codebase and generate onboarding documentation for engineers, tech leads, and co
+  79. code-reviewer                          - Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin. Analyzes PRs
+  80. code-to-prd                            - |
+  81. code-tour                              - Use when the user asks to create a CodeTour .tour file — persona-targeted, step-by-step wa
+  82. cold-email                             - When the user wants to write, improve, or build a sequence of B2B cold outreach emails to 
+  83. co-marketing                           - When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm par
+  84. command-guide                          - >
+  85. community-marketing                    - Build and leverage online communities to drive product growth and brand loyalty. Use when 
+  86. company-os                             - The meta-framework for how a company runs — the connective tissue between all C-suite role
+  87. competitive-intel                      - Systematic competitor tracking that feeds CMO positioning, CRO battlecards, and CPO roadma
+  88. competitive-teardown                   - Analyzes competitor products and companies by synthesizing data from pricing pages, app st
+  89. competitor-alternatives                - When the user wants to create competitor comparison or alternative pages for SEO and sales
+  90. competitor-profiling                   - When the user wants to research, profile, or analyze competitors from their URLs. Also use
+  91. competitors                            - When the user wants to create competitor comparison or alternative pages for SEO and sales
+  92. compliance-os                          - Compliance OS — meta-orchestrator that lets compliance teams CONFIGURE which frameworks ap
+  93. compliance-readiness                   - /cs:compliance-readiness <program> — Multi-framework compliance officer 6-question forcing
+  94. confluence-expert                      - Atlassian Confluence expert for creating and managing spaces, knowledge bases, and documen
+  95. content-creator                        - Deprecated redirect skill that routes legacy 'content creator' requests to the correct spe
+  96. content-humanizer                      - Makes AI-generated content sound genuinely human — not just cleaned up, but alive. Use whe
+  97. content-production                     - Full content production pipeline — takes a topic from blank page to published-ready piece.
+  98. content-strategy                       - When the user wants to plan a content strategy, decide what content to create, or figure o
+  99. context-engine                         - Loads and manages company context for all C-suite advisor skills. Reads ~/.claude/company-
+ 100. contract-and-proposal-writer           - Generate professional, jurisdiction-aware business documents: freelance contracts, project
+ 101. coo-advisor                            - Operations leadership for scaling companies. Process design, OKR execution, operational ca
+ 102. copy-editing                           - When the user wants to edit, review, or improve existing marketing copy. Also use when the
+ 103. copywriting                            - When the user wants to write, rewrite, or improve marketing copy for any page — including 
+ 104. coverage                               - >-
+ 105. cpo-advisor                            - Product leadership for scaling companies. Product vision, portfolio strategy, product-mark
+ 106. cpo-review                             - /cs:cpo-review <plan> — JTBD-driven interrogation of product roadmap, PMF signal, and port
+ 107. cro                                    - When the user wants to optimize, improve, or increase conversions on any marketing page or
+ 108. cro-advisor                            - Revenue leadership for B2B SaaS companies. Revenue forecasting, sales model design, pricin
+ 109. cro-review                             - /cs:cro-review <plan> — Pipeline-paranoid interrogation of revenue, win rate, NRR, and ram
+ 110. cross-eval                             - /cs:cross-eval <memo> — Multi-model consensus on a board memo or strategy brief. Claude + 
+ 111. cs-onboard                             - Founder onboarding interview that captures company context across 7 dimensions. Invoke wit
+ 112. cto-advisor                            - Technical leadership guidance for engineering teams, architecture decisions, and technolog
+ 113. cto-review                             - /cs:cto-review <plan> — Architecture and scaling interrogation. Tech debt, scaling cliffs,
+ 114. culture-architect                      - Build, measure, and evolve company culture as operational behavior — not wall posters. Cov
+ 115. customer-research                      - When the user wants to conduct, analyze, or synthesize customer research. Use when the use
+ 116. customer-success-manager               - Monitors customer health, predicts churn risk, and identifies expansion opportunities usin
+ 117. database-designer                      - Use when the user asks to design database schemas, plan data migrations, optimize queries,
+ 118. database-schema-designer               - Use when the user asks to create ERD diagrams, normalize database schemas, design table re
+ 119. data-quality-auditor                   - Audit datasets for completeness, consistency, accuracy, and validity. Profile data distrib
+ 120. decide                                 - /cs:decide <memo> — Log a decision to two-layer memory via decision-logger. Approved memo 
+ 121. decision-logger                        - Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 
+ 122. demo-video                             - Use when the user asks to create a demo video, product walkthrough, feature showcase, anim
+ 123. dependency-auditor                     - Audit and manage dependencies across multi-language projects. Identifies vulnerabilities, 
+ 124. design                                 - Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55
+ 125. design-system                          - Token architecture, component specifications, and slide generation. Three-layer tokens (pr
+ 126. directory-submissions                  - When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or 
+ 127. doc-coauthoring                        - Guide users through a structured workflow for co-authoring documentation. Use when user wa
+ 128. docker-development                     - Docker and container development agent skill and plugin for Dockerfile optimization, docke
+ 129. docx                                   - Use this skill whenever the user wants to create, read, edit, or manipulate Word documents
+ 130. dossier                                - Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific 
+ 131. emails                                 - When the user wants to create or optimize an email sequence, drip campaign, automated emai
+ 132. email-sequence                         - When the user wants to create or optimize an email sequence, drip campaign, automated emai
+ 133. email-template-builder                 - Build complete transactional email systems: React Email templates, provider integration (R
+ 134. engineering-advanced-skills            - 25 advanced engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Curso
+ 135. engineering-skills                     - 23 engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenCl
+ 136. env-secrets-manager                    - Manage environment-variable hygiene and secrets safety across local development and produc
+ 137. epic-design                            - >
+ 138. eu-ai-act-specialist                   - EU AI Act (Regulation (EU) 2024/1689) operational compliance for compliance teams. Three A
+ 139. eval                                   - Evaluate and rank agent results by metric or LLM judge for an AgentHub session.
+ 140. execute                                - /cs:execute <decision> — Generate a 90-day execution plan with weekly milestones, DRIs, an
+ 141. executive-mentor                       - Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for
+ 142. experiment-designer                    - Use when planning product experiments, writing testable hypotheses, estimating sample size
+ 143. extract                                - Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md
+ 144. fda-consultant-specialist              - FDA regulatory consultant for medical device companies. Provides 510(k)/PMA/De Novo pathwa
+ 145. fda-qsr-audit-prep                     - /cs:fda-qsr-audit-prep <scope> — FDA 21 CFR 820 (QSR / QMSR) audit 6-question forcing inte
+ 146. feature-flags-architect                - Use when adding, retiring, or auditing feature flags. Triggers on "add a flag", "ship behi
+ 147. finance-skills                         - Financial analyst agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenC
+ 148. financial-analyst                      - Performs financial ratio analysis, DCF valuation, budget variance analysis, and rolling fo
+ 149. firebase-basics                        - Use this skill whenever you are working on a project that uses Firebase products or servic
+ 150. fix                                    - >-
+ 151. focused-fix                            - Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-e
+ 152. form-cro                               - When the user wants to optimize any form that is NOT signup/registration — including lead 
+ 153. founder-coach                          - Personal leadership development for founders and first-time CEOs. Covers founder archetype
+ 154. founder-mode                           - /cs:founder-mode <question> — Auto-routes any founder question to the right C-role advisor
+ 155. free-tools                             - When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead 
+ 156. free-tool-strategy                     - When the user wants to build a free tool for marketing — lead generation, SEO value, or br
+ 157. freeze                                 - /cs:freeze <decision> <days> — Lock a strategic decision for a cooldown period to prevent 
+ 158. frontend-design                        - Create distinctive, production-grade frontend interfaces with high design quality. Use thi
+ 159. full-page-screenshot                   - Use when the user asks to capture a full-page screenshot, long screenshot, or complete pag
+ 160. gcp-cloud-architect                    - Design GCP architectures for startups and enterprises. Use when asked to design Google Clo
+ 161. gc-review                              - /cs:gc-review <plan> — General Counsel interrogation of contracts, IP, regulatory, term sh
+ 162. gdpr-audit-prep                        - /cs:gdpr-audit-prep <scope> — GDPR audit 6-question Article-cited forcing interrogation. U
+ 163. gdpr-dsgvo-expert                      - GDPR and German DSGVO compliance automation. Scans codebases for privacy risks, generates 
+ 164. gemini-api                             - Guides the usage of the Gemini API on Agent Platform with the Google Gen AI SDK. Use when 
+ 165. general-counsel-advisor                - General Counsel advisory for startups: contract review (MSA, SaaS, NDA, DPA, employment), 
+ 166. generate                               - >-
+ 167. git-worktree-manager                   - Run parallel feature work safely with Git worktrees. Standardizes branch isolation, port a
+ 168. gke-basics                             - Plan, create, and configure production-ready Google Kubernetes Engine (GKE) clusters using
+ 169. google-cloud-networking-observability  - >-
+ 170. google-cloud-recipe-auth               - Provides expert guidance on authenticating and authorizing to Google Cloud services and AP
+ 171. google-cloud-recipe-onboarding         - Guidance for a developer's first steps on Google Cloud, covering account creation, billing
+ 172. google-cloud-waf-cost-optimization     - Generates cost optimization guidance for Google Cloud workloads based on the Google Cloud 
+ 173. google-cloud-waf-reliability           - Generates reliability-focused guidance for Google Cloud workloads based on the design prin
+ 174. google-cloud-waf-security              - Generates security-focused guidance for Google Cloud workloads based on the design princip
+ 175. google-workspace-cli                   - Google Workspace administration via the gws CLI. Install, authenticate, and automate Gmail
+ 176. grants                                 - NIH grant research skill for clinical researchers. Grill-me intake (research idea + career
+ 177. grill-me                               - Interview the user relentlessly about a plan or design until reaching shared understanding
+ 178. grill-with-docs                        - Docs-anchored grilling session — challenges a plan against the project's existing language
+ 179. handoff                                - Compact the current conversation into a handoff document for another agent to pick up. Ref
+ 180. hard-call                              - /em -hard-call — Framework for Decisions With No Good Options
+ 181. helm-chart-builder                     - Helm chart development agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, 
+ 182. image                                  - When the user wants to create, generate, edit, or optimize images for marketing — blog her
+ 183. inbox-setup                            - One-time setup skill that builds a personalized inbox triage knowledge base via interactiv
+ 184. inbox-triage                           - Runs a full inbox triage using the knowledge base created by the 'inbox-setup' skill. Ligh
+ 185. incident-commander                     - Comprehensive incident response framework from detection through resolution and post-incid
+ 186. incident-response                      - Use when a security incident has been detected or declared and needs classification, triag
+ 187. information-security-manager-iso27001  - ISO 27001 ISMS implementation and cybersecurity governance for HealthTech and MedTech comp
+ 188. init                                   - >-
+ 189. internal-comms                         - A set of resources to help me write all kinds of internal communications, using the format
+ 190. internal-narrative                     - Build and maintain one coherent company story across all audiences — employees, investors,
+ 191. interview-system-designer              - This skill should be used when the user asks to "design interview processes", "create hiri
+ 192. intl-expansion                         - International market expansion strategy. Market selection, entry modes, localization, regu
+ 193. isms-audit-expert                      - Information Security Management System (ISMS) audit expert for ISO 27001 compliance verifi
+ 194. iso13485-audit-prep                    - /cs:iso13485-audit-prep <scope> — ISO 13485 QMS audit 6-question forcing interrogation. De
+ 195. iso27001-audit-prep                    - /cs:iso27001-audit-prep <scope> — ISO 27001 ISMS audit readiness 6-question forcing interr
+ 196. iso42001-specialist                    - ISO/IEC 42001:2023 AI Management System (AIMS) specialist for compliance teams running int
+ 197. jira-expert                            - Atlassian Jira expert for creating and managing projects, planning, product discovery, JQL
+ 198. karpathy-coder                         - Use when writing, reviewing, or committing code to enforce Karpathy's 4 coding principles 
+ 199. kubernetes-operator                    - Use when building a Kubernetes Operator — custom controllers that reconcile CRD state. Tri
+ 200. landing                                - Generates a premium single-page HTML landing page with 3D CSS animations, GSAP scroll effe
+ 201. landing-page-generator                 - Generates high-converting landing pages as complete Next.js/React (TSX) components with Ta
+ 202. launch                                 - When the user wants to plan a product launch, feature announcement, or release strategy. A
+ 203. launch-strategy                        - When the user wants to plan a product launch, feature announcement, or release strategy. A
+ 204. lead-magnets                           - When the user wants to create, plan, or optimize a lead magnet for email capture or lead g
+ 205. litreview                              - Academic literature orientation skill that searches papers via Consensus, builds a strateg
+ 206. llm-cost-optimizer                     - Use proactively whenever LLM API costs come up -- or should. Triggers include: 'my AI cost
+ 207. llm-wiki                               - Use when building or maintaining a persistent personal knowledge base (second brain) in Ob
+ 208. loop                                   - Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly,
+ 209. ma-playbook                            - M&A strategy for acquiring companies or being acquired. Due diligence, valuation, integrat
+ 210. marketing-context                      - Create and maintain the marketing context document that all marketing skills read before s
+ 211. marketing-demand-acquisition           - Creates demand generation campaigns, optimizes paid ad spend across LinkedIn, Google, and 
+ 212. marketing-ideas                        - When the user needs marketing ideas, inspiration, or strategies for their SaaS or software
+ 213. marketing-ops                          - Central router for the marketing skill ecosystem. Use when unsure which marketing skill to
+ 214. marketing-psychology                   - When the user wants to apply psychological principles, mental models, or behavioral scienc
+ 215. marketing-skills                       - 42 marketing agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw
+ 216. marketing-strategy-pmm                 - Product marketing skill for positioning, GTM strategy, competitive intelligence, and produ
+ 217. mcp-builder                            - Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to i
+ 218. mcp-server-builder                     - Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contrac
+ 219. mdr-745-specialist                     - EU MDR 2017/745 compliance specialist for medical device classification, technical documen
+ 220. meeting-analyzer                       - Analyzes meeting transcripts and recordings to surface behavioral patterns, communication 
+ 221. merge                                  - Merge the winning agent's branch into base, archive losers, and clean up worktrees.
+ 222. migrate                                - >-
+ 223. migration-architect                    - Zero-downtime migration planning, compatibility validation, and rollback strategy generati
+ 224. mkt-kane-anti-pattern-auditor          - Audit bài Facebook / Reels / YouTube để phát hiện 4 downward drivers (over-branding, over-
+ 225. mkt-kane-cross-industry-viral-scout    - Tìm viral pattern ở ngành khác (bác sĩ, luật sư, tài chính, bất động sản, thủ công) có thể
+ 226. mkt-kane-cta-non-autocratic-rewriter   - Rewrite CTA kiểu autocratic (Mua ngay! Follow ngay! Đăng ký liền!) sang 3 variants Democra
+ 227. mkt-kane-eov-reverse-engineer          - Bắt đầu ideation từ Effect on Viewer (emotion/reaction mong muốn) → reverse-engineer ra fo
+ 228. mkt-kane-fb-post-communication-algorithm - Viết bài Facebook blend Feelings (30%) + Facts (25%) + Fun (20%) — tổng ≥75% — theo 5 Rule
+ 229. mkt-kane-fb-post-golden-triangle       - Viết bài Facebook theo Golden Triangle của Brendan Kane: Personal story + Evidence/data + 
+ 230. mkt-kane-generalist-repackager         - Áp dụng Generalist Approach: take niche AI topic (Claude Code hooks, MCP server, AI agent)
+ 231. mkt-kane-gold-comparison-reviewer      - So sánh side-by-side draft của Hoang (script/post/video) vs 1 Gold reference theo 8 perfor
+ 232. mkt-kane-gsb-research-builder          - Build Gold-Silver-Bronze (GSB) comparative research sheet cho 1 creator hoặc 1 Viral Forma
+ 233. mkt-kane-reels-is-it-worth-it          - Viết Reels 45-90s theo format 'Is it Worth It?' của Tanner Leatherstein: deconstruct 1 pro
+ 234. mkt-kane-reels-jenga-tension           - Viết Reels 30-60s theo Jenga Theory của Brendan Kane: main question ở hook → stack 3 micro
+ 235. mkt-kane-reels-untold-stories          - Viết Reels 30-90s theo format Untold Stories của Daniel Wall: behind-the-scenes của chủ đề
+ 236. mkt-kane-reels-visual-metaphor         - Viết Reels 30-60s theo format Visual Metaphor của Dr. Julie Smith: dùng 1 physical prop (b
+ 237. mkt-kane-triple-f-boost                - Retrofit (viết lại) bài Facebook / script Reels / script YouTube có sẵn để đạt blend Feeli
+ 238. mkt-kane-viral-format-identifier       - Phân biệt Viral Format (storytelling structure lâu dài) vs Trend (nhất thời) từ 1 video/po
+ 239. mkt-kane-youtube-30-day-challenge      - Viết kịch bản YouTube dài 10-20 phút theo format 30-day challenge của Matt d'Avella (3.4M 
+ 240. mkt-kane-youtube-jenga-longform        - Viết kịch bản YouTube dạng Jenga longform 10-20 phút theo phong cách Mark Rober / Veritasi
+ 241. monorepo-navigator                     - Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna
+ 242. ms365-tenant-manager                   - Microsoft 365 tenant administration for Global Administrators. Automate M365 tenant setup,
+ 243. notebooklm                             - Browser automation skill for controlling Google's NotebookLM. Handles reading and querying
+ 244. observability-designer                 - Design production-ready observability strategies combining metrics, logs, and traces. Incl
+ 245. office-hours                           - /cs:office-hours <topic> — YC-style 6-question founder interrogation before any advice. Fo
+ 246. onboard                                - /cs:onboard — Founder interview that populates ~/.claude/company-context.md. The first com
+ 247. onboarding                             - When the user wants to optimize post-signup onboarding, user activation, first-run experie
+ 248. onboarding-cro                         - When the user wants to optimize post-signup onboarding, user activation, first-run experie
+ 249. org-health-diagnostic                  - Cross-functional organizational health check combining signals from all C-suite roles. Sco
+ 250. page-cro                               - When the user wants to optimize, improve, or increase conversions on any marketing page — 
+ 251. paid-ads                               - When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Ins
+ 252. patent                                 - Patent prior-art and landscape intelligence skill — not generic patent help. Commits to on
+ 253. paywalls                               - When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals,
+ 254. paywall-upgrade-cro                    - When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals,
+ 255. pdf                                    - Use this skill whenever the user wants to do anything with PDF files. This includes readin
+ 256. performance-profiler                   - Systematic performance profiling for Node.js, Python, and Go applications. Identifies CPU,
+ 257. phan-biet-khach-tai-chinh              - Phân biệt khách hàng tài chính ngân hàng vào 1 trong 8 segment chuẩn (Tân binh / Gánh nợ t
+ 258. pm-skills                              - 6 project management agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, 
+ 259. popup-cro                              - When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners 
+ 260. popups                                 - When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners 
+ 261. postmortem                             - /em -postmortem — Honest Analysis of What Went Wrong
+ 262. post-mortem                            - /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against 
+ 263. pptx                                   - Use this skill any time a .pptx file is involved in any way — as input, output, or both. T
+ 264. pricing                                - When the user wants help with pricing decisions, packaging, or monetization strategy. Also
+ 265. pricing-strategy                       - Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pa
+ 266. product-analytics                      - Use when defining product KPIs, building metric dashboards, running cohort or retention an
+ 267. product-discovery                      - Use when validating product opportunities, mapping assumptions, planning discovery sprints
+ 268. product-manager-toolkit                - Comprehensive toolkit for product managers including RICE prioritization, customer intervi
+ 269. product-marketing                      - When the user wants to create or update their product marketing context document. Also use
+ 270. product-skills                         - 10 product agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. 
+ 271. product-strategist                     - Strategic product leadership toolkit for Head of Product covering OKR cascade generation, 
+ 272. programmatic-seo                       - When the user wants to create SEO-driven pages at scale using templates and data. Also use
+ 273. promote                                - Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for 
+ 274. prompt-engineer-toolkit                - Analyzes and rewrites prompts for better AI output, creates reusable prompt templates for 
+ 275. prompt-governance                      - Use when managing prompts in production at scale: versioning prompts, running A/B tests on
+ 276. pr-review-expert                       - Use when the user asks to review pull requests, analyze code changes, check for security i
+ 277. pulse                                  - Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacke
+ 278. pw                                     - Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, 
+ 279. qms-audit-expert                       - ISO 13485 internal audit expertise for medical device QMS. Covers audit planning, executio
+ 280. quality-documentation-manager          - Document control system management for medical device QMS. Covers document numbering, vers
+ 281. quality-manager-qmr                    - Senior Quality Manager Responsible Person (QMR) for HealthTech and MedTech companies. Prov
+ 282. quality-manager-qms-iso13485           - ISO 13485 Quality Management System implementation and maintenance for medical device orga
+ 283. rag-architect                          - Use when the user asks to design RAG pipelines, optimize retrieval strategies, choose embe
+ 284. ra-qm-skills                           - 12 regulatory & QM agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, Op
+ 285. red-team                               - Use when planning or executing authorized red team engagements, attack path analysis, or o
+ 286. referral-program                       - When the user wants to design, launch, or optimize a referral or affiliate program. Use wh
+ 287. referrals                              - When the user wants to create, optimize, or analyze a referral program, affiliate program,
+ 288. reflect                                - Mid-conversation reflection skill that pauses execution and zooms out from detail-mode to 
+ 289. regulatory-affairs-head                - Senior Regulatory Affairs Manager for HealthTech and MedTech companies. Prepares FDA 510(k
+ 290. release-manager                        - Use when the user asks to plan releases, manage changelogs, coordinate deployments, create
+ 291. remember                               - Explicitly save important knowledge to auto-memory with timestamp and context. Use when a 
+ 292. report                                 - >-
+ 293. research                               - Default entry point for any research request — a hybrid router that classifies the questio
+ 294. research-summarizer                    - Structured research summarization agent skill for non-dev users. Handles academic papers, 
+ 295. resume                                 - Resume a paused experiment. Checkout the experiment branch, read results history, continue
+ 296. revenue-operations                     - Analyzes sales pipeline health, revenue forecasting accuracy, and go-to-market efficiency 
+ 297. review                                 - Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, 
+ 298. revops                                 - When the user wants help with revenue operations, lead lifecycle management, or marketing-
+ 299. risk-management-specialist             - Medical device risk management specialist implementing ISO 14971 throughout product lifecy
+ 300. roadmap-communicator                   - Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates t
+ 301. run                                    - Run a single experiment iteration. Edit the target file, evaluate, keep or discard.
+ 302. runbook-generator                      - Generate operational runbooks from a service name — deployment, incident response, mainten
+ 303. saas-metrics-coach                     - SaaS financial health advisor. Use when a user shares revenue or customer numbers, or ment
+ 304. saas-scaffolder                        - Generates complete, production-ready SaaS project boilerplate including authentication, da
+ 305. sales-enablement                       - When the user wants to create sales collateral, pitch decks, one-pagers, objection handlin
+ 306. sales-engineer                         - Analyzes RFP/RFI responses for coverage gaps, builds competitive feature comparison matric
+ 307. sample-skill                           - 
+ 308. scenario-war-room                      - Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-as
+ 309. schema                                 - When the user wants to add, fix, or optimize schema markup and structured data on their si
+ 310. schema-markup                          - When the user wants to implement, audit, or validate structured data (schema markup) on th
+ 311. scrum-master                           - Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the
+ 312. secrets-vault-manager                  - Use when the user asks to set up secret management infrastructure, integrate HashiCorp Vau
+ 313. security-pen-testing                   - Use when the user asks to perform security audits, penetration testing, vulnerability scan
+ 314. self-eval                              - Honestly evaluate AI work quality using a two-axis scoring system. Use after completing a 
+ 315. self-improving-agent                   - Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for pat
+ 316. senior-architect                       - This skill should be used when the user asks to "design system architecture", "evaluate mi
+ 317. senior-backend                         - Designs and implements backend systems including REST APIs, microservices, database archit
+ 318. senior-computer-vision                 - Computer vision engineering skill for object detection, image segmentation, and visual AI 
+ 319. senior-data-engineer                   - Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data inf
+ 320. senior-data-scientist                  - World-class senior data scientist skill specialising in statistical modeling, experiment d
+ 321. senior-devops                          - Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and clo
+ 322. senior-frontend                        - Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS applications. 
+ 323. senior-fullstack                       - Fullstack development toolkit with project scaffolding for Next.js, FastAPI, MERN, and Dja
+ 324. senior-ml-engineer                     - ML engineering skill for productionizing models, building MLOps pipelines, and integrating
+ 325. senior-pm                              - Senior Project Manager for enterprise software, SaaS, and digital transformation projects.
+ 326. senior-prompt-engineer                 - This skill should be used when the user asks to "optimize prompts", "design prompt templat
+ 327. senior-qa                              - Generates unit tests, integration tests, and E2E tests for React/Next.js applications. Sca
+ 328. senior-secops                          - Senior SecOps engineer skill for application security, vulnerability management, complianc
+ 329. senior-security                        - Security engineering toolkit for threat modeling, vulnerability analysis, secure architect
+ 330. seo-audit                              - When the user wants to audit, review, or diagnose SEO issues on their site. Also use when 
+ 331. setup                                  - Set up a new autoresearch experiment interactively. Collects domain, target file, eval com
+ 332. ship-gate                              - >
+ 333. signup                                 - When the user wants to optimize signup, registration, account creation, or trial activatio
+ 334. signup-flow-cro                        - When the user wants to optimize signup, registration, account creation, or trial activatio
+ 335. site-architecture                      - When the user wants to audit, redesign, or plan their website's structure, URL hierarchy, 
+ 336. skill-creator                          - Create new skills, modify and improve existing skills, and measure skill performance. Use 
+ 337. skill-security-auditor                 - >
+ 338. skill-tester                           - Validate, test, and score the quality of skills within the claude-skills ecosystem. Compre
+ 339. slack-gif-creator                      - Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constrain
+ 340. slides                                 - Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copy
+ 341. slo-architect                          - Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an
+ 342. snowflake-development                  - Use when writing Snowflake SQL, building data pipelines with Dynamic Tables or Streams/Tas
+ 343. soc2-audit-prep                        - /cs:soc2-audit-prep <scope> — SOC 2 Type II readiness 6-question forcing interrogation. Ob
+ 344. soc2-compliance                        - Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build cont
+ 345. social                                 - When the user wants help creating, scheduling, or optimizing social media content for Link
+ 346. social-content                         - When the user wants help creating, scheduling, or optimizing social media content for Link
+ 347. social-media-analyzer                  - Social media campaign analysis and performance tracking. Calculates engagement rates, ROI,
+ 348. social-media-manager                   - When the user wants to develop social media strategy, plan content calendars, manage commu
+ 349. spawn                                  - Launch N parallel subagents in isolated git worktrees to compete on the session task.
+ 350. spec-driven-workflow                   - Use when the user asks to write specs before code, define acceptance criteria, plan featur
+ 351. spec-to-repo                           - Use when the user says 'build me an app', 'create a project from this spec', 'scaffold a n
+ 352. sql-database-assistant                 - Use when the user asks to write SQL queries, optimize database performance, generate migra
+ 353. statistical-analyst                    - Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpre
+ 354. status                                 - Memory health dashboard showing line counts, topic files, capacity, stale entries, and rec
+ 355. storytelling-content                   - Chuyên gia viết nội dung kể chuyện (storytelling) theo phương pháp 6 kỹ thuật của Callaway
+ 356. strategic-alignment                    - Cascades strategy from boardroom to individual contributor. Detects and fixes misalignment
+ 357. stress-test                            - /em -stress-test — Business Assumption Stress Testing
+ 358. stripe-integration-expert              - Production-grade Stripe integrations: subscriptions with trials and proration, one-time pa
+ 359. syllabus                               - Generates a curated supplementary reading list from any course syllabus using Consensus ac
+ 360. tc-tracker                             - Use when the user asks to track technical changes, create change records, manage TC lifecy
+ 361. tdd-guide                              - Test-driven development skill for writing unit tests, generating test fixtures and mocks, 
+ 362. team-communications                    - Write internal company communications — 3P updates (Progress/Plans/Problems), company-wide
+ 363. tech-debt-tracker                      - Scan codebases for technical debt, score severity, track trends, and generate prioritized 
+ 364. tech-stack-evaluator                   - Technology stack evaluation and comparison with TCO analysis, security assessment, and eco
+ 365. terraform-patterns                     - Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI
+ 366. testrail                               - >-
+ 367. theme-factory                          - Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reporting
+ 368. threat-detection                       - Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral an
+ 369. toni-4-gio                             - Áp dụng framework DEAL (Definition → Elimination → Automation → Liberation) của Tim Ferris
+ 370. ui-design-system                       - UI design system toolkit for Senior UI Designer including design token generation, compone
+ 371. ui-styling                             - Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI 
+ 372. ui-ux-pro-max                          - UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 
+ 373. ux-researcher-designer                 - UX research and design toolkit for Senior UX Designer/Researcher including data-driven per
+ 374. video                                  - When the user wants to create, generate, or produce video content using AI tools or progra
+ 375. video-content-strategist               - Use when planning video content strategy, writing video scripts, optimizing YouTube channe
+ 376. viral-cta-rewriter                     - Rewrite CTA (call-to-action) của landing page, bio, caption, quảng cáo — loại bỏ language 
+ 377. viral-eov-mapper                       - Tách TACTIC (cái nhìn/nghe được) khỏi EOV (Effect on Viewer — cảm xúc tạo ra) để tránh cop
+ 378. viral-format-hunter                    - Đào format viral đang hoạt động trong 1 ngành cụ thể trên TikTok/YouTube/Instagram. Tìm cr
+ 379. viral-generalist-packager              - Đóng gói 1 chủ đề niche chuyên môn (tài chính, luật, y tế, thuế...) thành hook đại chúng —
+ 380. viral-gsb-analyzer                     - Phân tích Gold/Silver/Bronze một creator hoặc một format để rút ra 3-5 performance driver 
+ 381. viral-hook-writer                      - Viết 5-10 phương án Hook Point (3 giây đầu) cho 1 video — có promise of story, potential e
+ 382. viral-ideation-engine                  - Sinh 20-100 ý tưởng video dựa trên 1 format đã validate, chấm 1-5 theo tiêu chí Brendan Ka
+ 383. viral-myth-buster                      - Audit chiến lược social media của 1 brand/creator, phát hiện họ đang mắc myth nào trong 7 
+ 384. viral-post-mortem                      - Khám nghiệm tử thi 1 video đã đăng — so với Gold reference, xác định hit/miss, tách lỗi id
+ 385. viral-script-doctor                    - Chỉnh script video theo 5 Luật Communication Algorithm (Feelings + Facts + Fun + Non-Value
+ 386. vpe-advisor                            - VP of Engineering advisory for startups: delivery throughput (DORA 4 metrics + bottleneck 
+ 387. vpe-review                             - /cs:vpe-review <plan> — Throughput-first VP of Engineering interrogation of any plan that 
+ 388. webapp-testing                         - Toolkit for interacting with and testing local web applications using Playwright. Supports
+ 389. web-artifacts-builder                  - Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using mode
+ 390. write-a-skill                          - Create new agent skills with proper structure, progressive disclosure, and bundled resourc
+ 391. xlsx                                   - Use this skill any time a spreadsheet file is the primary input or output. This means any 
+ 392. x-twitter-growth                       - X/Twitter growth engine for building audience, crafting viral content, and analyzing engag

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADI A PLUS – Bột Ngũ Cốc Dinh Dưỡng Thiên Nhiên</title>
+  <meta name="description" content="ADI A PLUS – Bột ngũ cốc 19+ loại hạt thiên nhiên, đạt chuẩn FDA, ISO 22000. Dinh dưỡng toàn diện cho cả gia đình. Hotline: 0914284739">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2d7a3e',
+            'primary-dark': '#1e5a2c',
+            'primary-light': '#e8f5ec',
+            gold: '#d4920a',
+            'gold-light': '#fff8e8',
+          },
+          fontFamily: { sans: ['Be Vietnam Pro', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary: #2d7a3e;
+      --primary-dark: #1e5a2c;
+      --gold: #d4920a;
+    }
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Slider */
+    .slider-track { display: flex; transition: transform 0.6s cubic-bezier(.4,0,.2,1); }
+    .slide { min-width: 100%; position: relative; }
+
+    /* Pulse animation for hotline */
+    @keyframes pulse-ring {
+      0% { transform: scale(.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .pulse-ring::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50%;
+      background: inherit; animation: pulse-ring 1.4s ease-out infinite;
+    }
+
+    /* Product card hover */
+    .product-card { transition: transform .3s, box-shadow .3s; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(45,122,62,.18); }
+
+    /* Fade in animation */
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(30px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .6s ease forwards; }
+
+    /* Sticky header */
+    #header { position: sticky; top: 0; z-index: 100; }
+
+    /* Active nav */
+    .nav-link:hover { color: var(--primary); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+    /* Mobile menu */
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    #mobile-menu.open { max-height: 500px; }
+
+    /* Ingredient card */
+    .ing-card { border-left: 4px solid var(--primary); }
+
+    /* Video iframe wrapper */
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; }
+    .video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+    /* Floating buttons */
+    .float-btn { position: fixed; right: 20px; z-index: 999; border-radius: 50%; width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.25);
+      cursor: pointer; text-decoration: none; }
+    .float-phone { bottom: 150px; background: #25d366; color: #fff; }
+    .float-zalo { bottom: 90px; background: #0068ff; color: #fff; }
+    .float-fb { bottom: 30px; background: #1877f2; color: #fff; }
+
+    /* QR section */
+    .qr-card { background: linear-gradient(135deg, #e8f5ec 0%, #fff8e8 100%); border: 2px solid #2d7a3e22; }
+
+    /* Pricing highlight */
+    .price-highlight { background: linear-gradient(135deg, #2d7a3e, #1e5a2c); }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 28px !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ====== HEADER ====== -->
+<header id="header" class="bg-white shadow-md">
+  <!-- Top bar -->
+  <div class="bg-primary text-white text-sm py-2 hidden md:block">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span><i class="fas fa-map-marker-alt mr-1"></i> ADI A PHARMA – Phân phối toàn quốc</span>
+        <span><i class="fas fa-envelope mr-1"></i> hotro@adiapharma.vn</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:0914284739" class="font-bold hover:text-yellow-200 transition">
+          <i class="fas fa-phone-alt mr-1"></i> 0914 284 739
+        </a>
+        <a href="https://zalo.me/0914284739" class="hover:text-yellow-200 transition">
+          <i class="fab fa-whatsapp mr-1"></i> Zalo
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Main nav -->
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9" alt="ADI A PLUS" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'text-white font-bold text-xs text-center leading-tight\'>ADI<br>A+</span>'">
+      </div>
+      <div>
+        <div class="font-black text-xl text-primary leading-tight tracking-wide">ADI A PLUS</div>
+        <div class="text-xs text-gray-500 font-medium">Bột Ngũ Cốc Dinh Dưỡng</div>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden lg:flex items-center gap-8 font-medium text-gray-700">
+      <li><a href="#home" class="nav-link hover:text-primary transition">Trang chủ</a></li>
+      <li><a href="#about" class="nav-link hover:text-primary transition">Giới thiệu</a></li>
+      <li class="relative group">
+        <a href="#products" class="nav-link hover:text-primary transition flex items-center gap-1">
+          Sản phẩm <i class="fas fa-chevron-down text-xs"></i>
+        </a>
+        <ul class="absolute hidden group-hover:block bg-white shadow-xl rounded-xl py-3 w-52 top-full left-0 border border-gray-100">
+          <li><a href="#products" class="block px-5 py-2.5 hover:bg-primary-light hover:text-primary transition text-sm">Mua lẻ (1–6 hộp)</a></li>
+          <li><a href="#products" class="block px-5 py-2.5 hover:bg-primary-light hover:text-primary transition text-sm">Mua thùng (12–36 hộp)</a></li>
+        </ul>
+      </li>
+      <li><a href="#ingredients" class="nav-link hover:text-primary transition">Thành phần</a></li>
+      <li><a href="#video" class="nav-link hover:text-primary transition">Video</a></li>
+      <li><a href="#testimonials" class="nav-link hover:text-primary transition">Khách hàng</a></li>
+      <li><a href="#contact" class="nav-link hover:text-primary transition">Liên hệ</a></li>
+    </ul>
+
+    <!-- CTA + Mobile toggle -->
+    <div class="flex items-center gap-3">
+      <a href="tel:0914284739" class="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full font-semibold hover:bg-primary-dark transition shadow-md">
+        <i class="fas fa-phone-alt"></i> Đặt ngay
+      </a>
+      <button id="menu-toggle" class="lg:hidden text-gray-600 text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 font-medium">
+      <a href="#home" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Trang chủ</a>
+      <a href="#about" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Giới thiệu</a>
+      <a href="#products" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Sản phẩm & Giá</a>
+      <a href="#ingredients" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Thành phần</a>
+      <a href="#video" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Video</a>
+      <a href="#testimonials" class="py-2 border-b text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Khách hàng</a>
+      <a href="#contact" class="py-2 text-gray-700 hover:text-primary" onclick="closeMobileMenu()">Liên hệ</a>
+      <a href="tel:0914284739" class="bg-primary text-white text-center py-3 rounded-full font-bold">
+        <i class="fas fa-phone-alt mr-2"></i> 0914 284 739 – Đặt ngay
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO SLIDER ====== -->
+<section id="home" class="relative overflow-hidden" style="background: linear-gradient(135deg,#0d2e14,#1e5a2c)">
+  <div class="slider-container overflow-hidden relative">
+    <div class="slider-track" id="heroTrack">
+      <!-- Slide 1 -->
+      <div class="slide min-h-[520px] md:min-h-[600px] flex items-center">
+        <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center w-full">
+          <div class="text-white hero-text">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
+              <span class="w-2 h-2 bg-yellow-400 rounded-full"></span> Chứng nhận FDA & ISO 22000
+            </div>
+            <h1 class="font-black leading-tight mb-6" style="font-size:42px">
+              Bột Ngũ Cốc<br><span class="text-yellow-300">ADI A PLUS</span>
+            </h1>
+            <p class="text-white/80 text-lg mb-8 leading-relaxed">
+              19+ loại hạt ngũ cốc thiên nhiên — Dinh dưỡng toàn diện cho cả gia đình. Chỉ 30 giây cho một bữa sáng hoàn hảo.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#products" class="bg-yellow-400 text-gray-900 font-bold px-8 py-3.5 rounded-full hover:bg-yellow-300 transition shadow-lg">
+                Đặt hàng ngay <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="tel:0914284739" class="border-2 border-white/50 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition">
+                <i class="fas fa-phone-alt mr-2"></i> 0914 284 739
+              </a>
+            </div>
+            <div class="flex gap-8 mt-10">
+              <div class="text-center">
+                <div class="text-3xl font-black text-yellow-300">19+</div>
+                <div class="text-white/70 text-sm">Loại ngũ cốc</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-black text-yellow-300">1000+</div>
+                <div class="text-white/70 text-sm">Khách tin dùng</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-black text-yellow-300">100%</div>
+                <div class="text-white/70 text-sm">Thiên nhiên</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center relative">
+            <div class="relative w-72 h-72 md:w-96 md:h-96">
+              <div class="absolute inset-0 bg-white/10 rounded-full blur-3xl"></div>
+              <img src="https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9"
+                alt="ADI A PLUS" class="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+                onerror="this.src='https://lh3.googleusercontent.com/d/1So_2hZ7-9kFQFuVLt0y84hWUlDiyvHAL'">
+              <div class="absolute top-4 right-0 bg-white rounded-2xl px-4 py-2 shadow-xl text-sm font-bold text-primary z-20">
+                🏅 FDA Certified
+              </div>
+              <div class="absolute bottom-4 left-0 bg-yellow-400 rounded-2xl px-4 py-2 shadow-xl text-sm font-bold z-20">
+                ✅ ISO 22000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide min-h-[520px] md:min-h-[600px] flex items-center" style="background:linear-gradient(135deg,#1a3320,#2d5a1e)">
+        <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center w-full">
+          <div class="text-white">
+            <div class="inline-flex items-center gap-2 bg-yellow-400/20 px-4 py-2 rounded-full text-yellow-300 text-sm font-medium mb-6">
+              🌾 Dinh dưỡng từ đất trời
+            </div>
+            <h2 class="font-black text-4xl md:text-5xl leading-tight mb-6">
+              Bữa Sáng <span class="text-yellow-300">30 Giây</span><br>Dinh Dưỡng Cả Ngày
+            </h2>
+            <p class="text-white/80 text-lg mb-8">
+              Hòa tan trong nước ấm hoặc sữa — đơn giản, nhanh chóng, đủ chất cho ngày dài năng động.
+            </p>
+            <a href="#products" class="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 font-bold px-8 py-3.5 rounded-full hover:bg-yellow-300 transition shadow-lg">
+              Xem bảng giá <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          <div class="flex justify-center">
+            <img src="https://lh3.googleusercontent.com/d/1rRnTDVFH1C6j-mLHKaCV4iNcUjLRuDai"
+              alt="ADI A PLUS" class="w-80 h-80 object-cover rounded-3xl shadow-2xl border-4 border-white/20"
+              onerror="this.src='https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide min-h-[520px] md:min-h-[600px] flex items-center" style="background:linear-gradient(135deg,#0a1f0f,#1a4a24)">
+        <div class="max-w-6xl mx-auto px-4 py-16 w-full text-center">
+          <div class="text-white max-w-3xl mx-auto">
+            <span class="text-yellow-300 font-semibold text-lg">Gia đình Việt – Lựa chọn hàng đầu</span>
+            <h2 class="font-black text-4xl md:text-5xl leading-tight my-6">
+              Phù Hợp Mọi Lứa Tuổi<br><span class="text-yellow-300">Từ 2 Tuổi Trở Lên</span>
+            </h2>
+            <p class="text-white/80 text-xl mb-10">Trẻ em, người lớn, người cao tuổi — tất cả đều được dưỡng chất từ 19+ loại hạt thiên nhiên.</p>
+            <div class="flex justify-center gap-4 flex-wrap">
+              <a href="#products" class="bg-yellow-400 text-gray-900 font-bold px-8 py-3.5 rounded-full hover:bg-yellow-300 transition">Mua ngay</a>
+              <a href="#video" class="border-2 border-white/40 text-white px-8 py-3.5 rounded-full hover:bg-white/10 transition">Xem video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider controls -->
+    <button id="prevSlide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center z-10 transition">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="nextSlide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center z-10 transition">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <div id="sliderDots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <button class="w-3 h-3 rounded-full bg-white dot active" data-index="0"></button>
+      <button class="w-3 h-3 rounded-full bg-white/40 dot" data-index="1"></button>
+      <button class="w-3 h-3 rounded-full bg-white/40 dot" data-index="2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== USP / CRITERIA ====== -->
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center p-6 rounded-2xl bg-green-50 hover:shadow-lg transition">
+        <div class="text-4xl mb-3">🌾</div>
+        <h3 class="font-bold text-gray-800 mb-2">100% Thiên Nhiên</h3>
+        <p class="text-gray-500 text-sm">Không chất bảo quản, không phẩm màu nhân tạo</p>
+      </div>
+      <div class="text-center p-6 rounded-2xl bg-yellow-50 hover:shadow-lg transition">
+        <div class="text-4xl mb-3">🏅</div>
+        <h3 class="font-bold text-gray-800 mb-2">FDA & ISO 22000</h3>
+        <p class="text-gray-500 text-sm">Đạt chuẩn quốc tế, kiểm nghiệm độc lập</p>
+      </div>
+      <div class="text-center p-6 rounded-2xl bg-blue-50 hover:shadow-lg transition">
+        <div class="text-4xl mb-3">💪</div>
+        <h3 class="font-bold text-gray-800 mb-2">Dinh Dưỡng Toàn Diện</h3>
+        <p class="text-gray-500 text-sm">19+ loại hạt, giàu protein, chất xơ, vitamin</p>
+      </div>
+      <div class="text-center p-6 rounded-2xl bg-purple-50 hover:shadow-lg transition">
+        <div class="text-4xl mb-3">👨‍👩‍👧‍👦</div>
+        <h3 class="font-bold text-gray-800 mb-2">Mọi Lứa Tuổi</h3>
+        <p class="text-gray-500 text-sm">Từ 2 tuổi trở lên, an toàn dùng hàng ngày</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ADS BANNER ====== -->
+<section class="bg-gray-50 py-0">
+  <div class="max-w-5xl mx-auto">
+    <img src="https://lh3.googleusercontent.com/d/133wRivplS-8KgO5ga6WEMkF-K0oy7oEi"
+      alt="ADI A PLUS – Bạn đang thuộc nhóm nào?" class="w-full block"
+      onerror="this.parentElement.parentElement.style.display='none'">
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+        <img src="https://lh3.googleusercontent.com/d/1FdEzsfzzzR4fwY1Tl1GfDYTMhl5ooZS_"
+          alt="Nhà máy sản xuất ADI A PLUS" class="w-full rounded-3xl shadow-2xl"
+          onerror="this.src='https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9'">
+        <div class="absolute -bottom-4 -right-4 bg-primary text-white rounded-2xl px-5 py-3 shadow-xl">
+          <div class="font-bold">✅ GMP Standard</div>
+          <div class="text-sm text-green-200">Sản xuất đạt chuẩn</div>
+        </div>
+        <div class="absolute -top-4 -left-4 bg-yellow-400 rounded-2xl px-5 py-3 shadow-xl">
+          <div class="font-bold text-gray-900">🏭 ADI A PHARMA</div>
+          <div class="text-sm text-gray-700">Nhà sản xuất uy tín</div>
+        </div>
+      </div>
+      <div>
+        <span class="inline-block bg-green-100 text-primary font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Vì Sao Chọn ADI A PLUS?</span>
+        <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">Dưỡng Chất Từ Đất Trời —<br>Năng Lượng Cho Cả Ngày</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">ADI A PLUS được nghiên cứu và sản xuất bởi ADI A PHARMA từ 19+ loại hạt ngũ cốc được tuyển chọn kỹ càng, mang lại nguồn dinh dưỡng thiết yếu cho cơ thể mỗi ngày.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
+            <div><strong>Hòa tan nhanh trong 30 giây</strong> — pha với nước ấm hoặc sữa tươi, tiện dụng mọi lúc mọi nơi</div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
+            <div><strong>Không đường tinh luyện</strong> — vị ngọt tự nhiên từ hạt, phù hợp người ăn kiêng và tiểu đường</div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
+            <div><strong>Hỗ trợ tiêu hóa & giảm cân</strong> — giàu chất xơ, tạo cảm giác no lâu, cân bằng năng lượng</div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
+            <div><strong>An toàn cho cả nhà</strong> — từ trẻ 2 tuổi đến người cao tuổi đều dùng được mỗi ngày</div>
+          </div>
+        </div>
+        <a href="#products" class="mt-8 inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3.5 rounded-full hover:bg-primary-dark transition shadow-lg">
+          Xem bảng giá <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRODUCTS & PRICING ====== -->
+<section id="products" class="py-16" style="background:linear-gradient(180deg,#f0faf2 0%,#fff8e8 100%)">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-yellow-100 text-yellow-700 font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Bảng Giá Ưu Đãi</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Chọn Gói Phù Hợp Với Bạn</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Mua càng nhiều — tiết kiệm càng lớn. Miễn phí giao hàng cho đơn từ 3 hộp trở lên.</p>
+    </div>
+
+    <!-- Product image showcase -->
+    <div class="mb-10 text-center">
+      <img src="https://lh3.googleusercontent.com/d/1KcWA-Ql_80F9JjtrNVRoVU6lxmLGaaTW"
+        alt="ADI A PLUS bộ sản phẩm" class="w-full max-w-3xl mx-auto rounded-2xl shadow-xl"
+        onerror="this.style.display='none'">
+    </div>
+
+    <!-- Pricing grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 1 hộp -->
+      <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">🛍️</div>
+          <h3 class="font-bold text-xl mb-1">1 Hộp Lẻ</h3>
+          <p class="text-gray-400 text-sm">Dùng thử, trải nghiệm</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-primary">239.000đ</div>
+          <div class="text-gray-400 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 1 hộp ADI A PLUS</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Giao hàng toàn quốc</div>
+          <div class="flex items-center gap-2 text-gray-400"><i class="fas fa-times"></i> Không freeship</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 font-semibold py-3 rounded-xl transition">
+          Đặt mua
+        </a>
+      </div>
+
+      <!-- 3 hộp -->
+      <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-green-200">
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">🛒</div>
+          <h3 class="font-bold text-xl mb-1">Combo 3 Hộp</h3>
+          <p class="text-green-600 text-sm font-medium">Tiết kiệm & phổ biến</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-primary">717.000đ</div>
+          <div class="text-gray-400 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 3 hộp ADI A PLUS</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Giao hàng toàn quốc</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Freeship toàn quốc</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-xl transition">
+          Đặt ngay
+        </a>
+      </div>
+
+      <!-- 6 hộp – BEST -->
+      <div class="product-card rounded-2xl p-6 shadow-xl border-2 border-yellow-400 relative price-highlight text-white">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-black px-4 py-1 rounded-full">
+          🏆 BÁN CHẠY NHẤT
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">📦</div>
+          <h3 class="font-bold text-xl mb-1">Combo 6 Hộp</h3>
+          <p class="text-yellow-200 text-sm">Đủ dùng 1–2 tháng</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-yellow-300">1.434.000đ</div>
+          <div class="text-green-200 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-white/90 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-yellow-300"></i> 6 hộp ADI A PLUS</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-yellow-300"></i> Freeship toàn quốc</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-yellow-300"></i> Ưu tiên xử lý đơn</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition">
+          Mua ngay
+        </a>
+      </div>
+
+      <!-- 12 hộp -->
+      <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">📫</div>
+          <h3 class="font-bold text-xl mb-1">1 Thùng (12 hộp)</h3>
+          <p class="text-gray-400 text-sm">Dùng gia đình 2–3 tháng</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-primary">2.868.000đ</div>
+          <div class="text-gray-400 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 12 hộp – 1 thùng đầy đủ</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Freeship toàn quốc</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Quà tặng kèm theo</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 font-semibold py-3 rounded-xl transition">
+          Đặt mua
+        </a>
+      </div>
+
+      <!-- 24 hộp -->
+      <div class="product-card bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">🎁</div>
+          <h3 class="font-bold text-xl mb-1">2 Thùng (24 hộp)</h3>
+          <p class="text-blue-600 text-sm font-medium">Mua cho cả nhà</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-primary">5.736.000đ</div>
+          <div class="text-gray-400 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 24 hộp – 2 thùng</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Freeship ưu tiên</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Quà tặng đặc biệt</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-xl transition">
+          Đặt ngay
+        </a>
+      </div>
+
+      <!-- 36 hộp – đại lý -->
+      <div class="product-card bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 shadow-md border border-yellow-200">
+        <div class="text-center mb-6">
+          <div class="text-4xl mb-3">🏪</div>
+          <h3 class="font-bold text-xl mb-1">3 Thùng (36 hộp)</h3>
+          <p class="text-yellow-700 text-sm font-medium">Đại lý / kinh doanh</p>
+        </div>
+        <div class="text-center mb-6">
+          <div class="text-4xl font-black text-gold">8.604.000đ</div>
+          <div class="text-gray-500 text-sm mt-1">239.000đ / hộp</div>
+        </div>
+        <div class="space-y-2 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-2"><i class="fas fa-check text-gold"></i> 36 hộp – 3 thùng</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-gold"></i> Freeship + hỗ trợ vận chuyển</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check text-gold"></i> Hỗ trợ bán lại, đại lý</div>
+        </div>
+        <a href="tel:0914284739" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 rounded-xl transition">
+          Liên hệ ngay
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA hotline -->
+    <div class="mt-10 text-center p-8 bg-primary rounded-3xl shadow-xl text-white">
+      <h3 class="text-2xl font-bold mb-2">Đặt hàng nhanh qua hotline</h3>
+      <p class="text-green-200 mb-6">Tư vấn miễn phí, giao hàng nhanh, thanh toán khi nhận hàng (COD)</p>
+      <a href="tel:0914284739" class="inline-flex items-center gap-3 bg-white text-primary font-black px-10 py-4 rounded-full hover:bg-yellow-50 transition shadow-lg text-xl">
+        <i class="fas fa-phone-alt"></i> 0914 284 739
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== INGREDIENTS ====== -->
+<section id="ingredients" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-green-100 text-primary font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Thành Phần</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">19+ Loại Hạt Ngũ Cốc Thiên Nhiên</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Mỗi loại hạt được tuyển chọn kỹ càng, giàu giá trị dinh dưỡng và hương vị tự nhiên</p>
+    </div>
+
+    <!-- Ingredients hero image -->
+    <div class="mb-12">
+      <img src="https://lh3.googleusercontent.com/d/18pz-tOqZkP4Ghq4MMAHNpL984O7_f4LN"
+        alt="19 loại hạt ngũ cốc ADI A PLUS" class="w-full max-w-4xl mx-auto rounded-3xl shadow-xl block"
+        onerror="this.style.display='none'">
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+      <div class="ing-card bg-green-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🌾</div>
+        <div class="font-bold text-sm mb-1">Yến Mạch</div>
+        <div class="text-xs text-gray-500">Beta-glucan, tốt cho tim</div>
+      </div>
+      <div class="ing-card bg-gray-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">⚫</div>
+        <div class="font-bold text-sm mb-1">Mè Đen</div>
+        <div class="text-xs text-gray-500">Giàu canxi, xương khớp</div>
+      </div>
+      <div class="ing-card bg-blue-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🟤</div>
+        <div class="font-bold text-sm mb-1">Hạt Chia</div>
+        <div class="text-xs text-gray-500">Omega-3, chất xơ cao</div>
+      </div>
+      <div class="ing-card bg-yellow-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🌱</div>
+        <div class="font-bold text-sm mb-1">Quinoa</div>
+        <div class="text-xs text-gray-500">9 axit amin thiết yếu</div>
+      </div>
+      <div class="ing-card bg-purple-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🖤</div>
+        <div class="font-bold text-sm mb-1">Đậu Đen</div>
+        <div class="text-xs text-gray-500">Chống oxy hóa, bổ máu</div>
+      </div>
+      <div class="ing-card bg-amber-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🟡</div>
+        <div class="font-bold text-sm mb-1">Gạo Lứt</div>
+        <div class="text-xs text-gray-500">Chất xơ, hỗ trợ tiêu hóa</div>
+      </div>
+      <div class="ing-card bg-orange-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🟠</div>
+        <div class="font-bold text-sm mb-1">Khoai Lang</div>
+        <div class="text-xs text-gray-500">Vitamin A, chống oxy hóa</div>
+      </div>
+      <div class="ing-card bg-lime-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🟢</div>
+        <div class="font-bold text-sm mb-1">Đậu Xanh</div>
+        <div class="text-xs text-gray-500">Protein thực vật, mát gan</div>
+      </div>
+      <div class="ing-card bg-brown-50 bg-amber-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🌻</div>
+        <div class="font-bold text-sm mb-1">Hạt Lanh</div>
+        <div class="text-xs text-gray-500">Omega-3, tốt nội tiết</div>
+      </div>
+      <div class="ing-card bg-yellow-50 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">🌽</div>
+        <div class="font-bold text-sm mb-1">Bắp Rang</div>
+        <div class="text-xs text-gray-500">Năng lượng, vị thơm</div>
+      </div>
+    </div>
+
+    <!-- HDSD Infographic -->
+    <div class="rounded-3xl overflow-hidden shadow-xl">
+      <img src="https://lh3.googleusercontent.com/d/19XhuPr1l--Td55B7V-2jJrCQHF-ff2dQ"
+        alt="Thành phần Công dụng Hướng dẫn sử dụng ADI A PLUS" class="w-full block"
+        onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- ====== VIDEO ====== -->
+<section id="video" class="py-16" style="background:#0d1f0f">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-white/10 text-yellow-300 font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Video Giới Thiệu</span>
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">ADI A PLUS — Câu Chuyện Từ Đất Trời</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">Khám phá hành trình từ hạt ngũ cốc thiên nhiên đến sản phẩm dinh dưỡng hoàn hảo cho cả gia đình</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div>
+        <div class="video-wrap mb-4">
+          <iframe src="https://drive.google.com/file/d/1MfR1zeKGHmzJ1TLgrasYiBdbGdSdeUys/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="text-white font-semibold text-center">📺 TVC ADI A PLUS – Dinh dưỡng cho gia đình</div>
+      </div>
+      <div>
+        <div class="video-wrap mb-4">
+          <iframe src="https://drive.google.com/file/d/10MhOHp8Ipj3pHzR4kUYJrxkxsdti_6ez/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="text-white font-semibold text-center">👨‍👩‍👧‍👦 ADI A PLUS – Dành cho gia đình Việt</div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="video-wrap mb-3">
+          <iframe src="https://drive.google.com/file/d/19BKyGJkl67CDV1V3-BvS8TDA8lcdZuAb/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="text-gray-400 text-sm text-center">🎬 ADI A PLUS – 31 giây quảng cáo</div>
+      </div>
+      <div>
+        <div class="video-wrap mb-3">
+          <iframe src="https://drive.google.com/file/d/1TcYSjn3L5L1TYV04-V9bnN_q9tVcyyou/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="text-gray-400 text-sm text-center">💪 Năng lượng mỗi ngày</div>
+      </div>
+      <div>
+        <div class="video-wrap mb-3">
+          <iframe src="https://drive.google.com/file/d/1B-nbkOnMeGEI2Kg1jt6M_-ZHl7XdxzbP/preview" allow="autoplay"></iframe>
+        </div>
+        <div class="text-gray-400 text-sm text-center">🌿 Sản phẩm ADI A PLUS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CERTIFICATIONS ====== -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-yellow-100 text-yellow-700 font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Chứng Nhận & Giấy Phép</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Sản Phẩm Được Kiểm Nghiệm Độc Lập</h2>
+      <p class="text-gray-500">Đầy đủ giấy tờ pháp lý, minh bạch 100%</p>
+    </div>
+    <div class="mb-10">
+      <img src="https://lh3.googleusercontent.com/d/14cY6gMlhZGGZGxwWYtmxw7IwAxFRo5BT"
+        alt="ADI A PLUS chứng nhận FDA ISO" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl block"
+        onerror="this.style.display='none'">
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition">
+        <div class="text-5xl mb-4">🏅</div>
+        <h3 class="font-bold text-xl mb-2 text-primary">FDA Certified</h3>
+        <p class="text-gray-500 text-sm">Chứng nhận an toàn thực phẩm từ Cục An toàn thực phẩm — Bộ Y tế Việt Nam</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition">
+        <div class="text-5xl mb-4">✅</div>
+        <h3 class="font-bold text-xl mb-2 text-primary">ISO 22000</h3>
+        <p class="text-gray-500 text-sm">Hệ thống quản lý an toàn thực phẩm theo tiêu chuẩn quốc tế ISO 22000</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition">
+        <div class="text-5xl mb-4">🏭</div>
+        <h3 class="font-bold text-xl mb-2 text-primary">GMP Standard</h3>
+        <p class="text-gray-500 text-sm">Sản xuất theo tiêu chuẩn GMP — đảm bảo chất lượng nhất quán từng mẻ sản xuất</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section id="testimonials" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-green-100 text-primary font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Khách Hàng Nói Gì</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Hơn 1000+ Khách Hàng Tin Dùng</h2>
+    </div>
+
+    <!-- Reviews infographic -->
+    <div class="mb-12">
+      <img src="https://lh3.googleusercontent.com/d/1Pq5zA_TVv5nto6RUaM5LWYwmJPDkj0cY"
+        alt="Phản hồi khách hàng ADI A PLUS" class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl block"
+        onerror="this.style.display='none'">
+    </div>
+
+    <!-- Review cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Mình dùng ADI A PLUS được 2 tháng, cảm thấy người nhẹ nhàng hơn, tiêu hóa tốt hơn hẳn. Vị ngon, dễ uống, cả nhà ai cũng thích!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">H</div>
+          <div>
+            <div class="font-semibold">Chị Hoa</div>
+            <div class="text-xs text-gray-400">TP. Hồ Chí Minh</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Ba mình 70 tuổi dùng ADI A PLUS thay bữa sáng, tiêu hóa tốt hơn, ngủ ngon hơn. Đặt combo 6 hộp để dùng dần, giá rất hợp lý."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold">M</div>
+          <div>
+            <div class="font-semibold">Chị Mai</div>
+            <div class="text-xs text-gray-400">Hà Nội</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Mua cho con 5 tuổi dùng kèm sữa, bé rất thích uống. Mẹ yên tâm vì biết thành phần rõ ràng, có chứng nhận FDA đàng hoàng."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">T</div>
+          <div>
+            <div class="font-semibold">Chị Thảo</div>
+            <div class="text-xs text-gray-400">Đà Nẵng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HOW TO BUY / QR PAYMENT ====== -->
+<section id="contact" class="py-16" style="background:linear-gradient(135deg,#f0faf2,#fff8e8)">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-green-100 text-primary font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Cách Đặt Hàng</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Đặt Hàng Siêu Đơn Giản</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <!-- Steps -->
+      <div>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Chọn gói sản phẩm</h3>
+              <p class="text-gray-500">Chọn số lượng phù hợp từ bảng giá — mua càng nhiều tiết kiệm càng lớn</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Liên hệ đặt hàng</h3>
+              <p class="text-gray-500">Gọi/nhắn Zalo <strong>0914 284 739</strong> hoặc chuyển khoản qua QR code bên cạnh</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Xác nhận & giao hàng</h3>
+              <p class="text-gray-500">Chúng tôi xác nhận đơn và giao hàng toàn quốc — nhận hàng thanh toán (COD) hoặc thanh toán trước</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-yellow-400 text-gray-900 rounded-full flex items-center justify-center font-black text-xl flex-shrink-0">4</div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Nhận hàng & trải nghiệm</h3>
+              <p class="text-gray-500">Dùng đều đặn mỗi ngày, cảm nhận sự thay đổi rõ rệt sau 2–4 tuần</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="tel:0914284739" class="flex items-center justify-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary-dark transition shadow-lg">
+            <i class="fas fa-phone-alt"></i> 0914 284 739
+          </a>
+          <a href="https://zalo.me/0914284739" class="flex items-center justify-center gap-2 bg-blue-500 text-white font-bold px-8 py-4 rounded-full hover:bg-blue-600 transition shadow-lg">
+            <i class="fas fa-comment"></i> Nhắn Zalo
+          </a>
+        </div>
+      </div>
+
+      <!-- QR Payment -->
+      <div class="qr-card rounded-3xl p-8 text-center shadow-xl">
+        <h3 class="font-black text-2xl mb-2 text-primary">Thanh Toán QR</h3>
+        <p class="text-gray-500 mb-6 text-sm">Quét mã QR để chuyển khoản nhanh</p>
+        <div class="flex justify-center mb-6">
+          <img src="https://img.vietqr.io/image/TCB-2968397979-compact2.jpg?addInfo=Dat%20hang%20ADI%20A%20PLUS&accountName=HA%20DANG%20KHAI"
+            alt="QR thanh toán ADI A PLUS" class="w-60 h-auto rounded-2xl shadow-lg border-4 border-white"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="bg-white rounded-2xl p-5 text-left shadow-md space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="text-primary"><i class="fas fa-university"></i></span>
+            <span class="text-sm"><strong>Ngân hàng:</strong> TECHCOMBANK</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-primary"><i class="fas fa-credit-card"></i></span>
+            <span class="text-sm"><strong>STK:</strong> 2968 3979 79</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-primary"><i class="fas fa-user"></i></span>
+            <span class="text-sm"><strong>Chủ TK:</strong> HÀ ĐĂNG KHẢI</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-primary"><i class="fas fa-sticky-note"></i></span>
+            <span class="text-sm"><strong>Nội dung:</strong> Đặt hàng ADI A PLUS + SĐT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GALLERY ====== -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-green-100 text-primary font-semibold px-4 py-1.5 rounded-full text-sm mb-3">Hình Ảnh Thực Tế</span>
+      <h2 class="text-3xl font-black mb-4">Sản Phẩm & Nhà Máy</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1zcx3CcSr2aKcfU0tTrHZor28JB26IE-9" alt="ADI A PLUS" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1So_2hZ7-9kFQFuVLt0y84hWUlDiyvHAL" alt="ADI A PLUS" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1rRnTDVFH1C6j-mLHKaCV4iNcUjLRuDai" alt="ADI A PLUS" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1FdEzsfzzzR4fwY1Tl1GfDYTMhl5ooZS_" alt="Nhà máy ADI A PLUS" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1KcWA-Ql_80F9JjtrNVRoVU6lxmLGaaTW" alt="ADI A PLUS bộ sản phẩm" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/d/1glLDWc0BKidM9ne2bRiZ-EiUWyCJM0as" alt="ADI A PLUS catalog" class="w-full h-48 md:h-64 object-cover" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-6">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-black text-sm">ADI<br>A+</div>
+          <div>
+            <div class="font-black text-xl text-white">ADI A PLUS</div>
+            <div class="text-xs text-gray-400">Bột Ngũ Cốc Dinh Dưỡng</div>
+          </div>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Sản phẩm ngũ cốc từ 19+ loại hạt thiên nhiên — dinh dưỡng toàn diện, đạt chuẩn FDA & ISO 22000 cho cả gia đình.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition"><i class="fab fa-facebook-f text-white text-sm"></i></a>
+          <a href="https://zalo.me/0914284739" class="w-9 h-9 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-300 transition"><i class="fas fa-comment text-white text-sm"></i></a>
+          <a href="#" class="w-9 h-9 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-500 transition"><i class="fab fa-youtube text-white text-sm"></i></a>
+          <a href="#" class="w-9 h-9 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-500 transition"><i class="fab fa-instagram text-white text-sm"></i></a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-bold text-white text-lg mb-4">Liên kết nhanh</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#home" class="hover:text-primary transition">Trang chủ</a></li>
+          <li><a href="#about" class="hover:text-primary transition">Giới thiệu sản phẩm</a></li>
+          <li><a href="#products" class="hover:text-primary transition">Bảng giá & Đặt hàng</a></li>
+          <li><a href="#ingredients" class="hover:text-primary transition">Thành phần ngũ cốc</a></li>
+          <li><a href="#video" class="hover:text-primary transition">Video giới thiệu</a></li>
+          <li><a href="#testimonials" class="hover:text-primary transition">Phản hồi khách hàng</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-bold text-white text-lg mb-4">Thông tin liên hệ</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+            <span>ADI A PHARMA – Phân phối toàn quốc tại Việt Nam</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-phone-alt text-primary"></i>
+            <a href="tel:0914284739" class="hover:text-primary transition font-semibold">0914 284 739</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-comment text-primary"></i>
+            <a href="https://zalo.me/0914284739" class="hover:text-primary transition">Zalo: 0914 284 739</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-university text-primary"></i>
+            <span>TECHCOMBANK: 2968 3979 79</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <h3 class="font-bold text-white text-lg mb-4">Chứng nhận</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 bg-gray-800 rounded-xl p-3">
+            <div class="text-2xl">🏅</div>
+            <div>
+              <div class="font-semibold text-white text-sm">FDA Certified</div>
+              <div class="text-xs text-gray-400">Cục An toàn thực phẩm – BYT</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 bg-gray-800 rounded-xl p-3">
+            <div class="text-2xl">✅</div>
+            <div>
+              <div class="font-semibold text-white text-sm">ISO 22000</div>
+              <div class="text-xs text-gray-400">Tiêu chuẩn quốc tế</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 bg-gray-800 rounded-xl p-3">
+            <div class="text-2xl">🏭</div>
+            <div>
+              <div class="font-semibold text-white text-sm">GMP Standard</div>
+              <div class="text-xs text-gray-400">Nhà máy đạt chuẩn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      <p>© 2025 ADI A PLUS – ADI A PHARMA. Tất cả quyền được bảo lưu.</p>
+      <p class="mt-1">Sản phẩm không phải thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== FLOATING BUTTONS ====== -->
+<a href="tel:0914284739" class="float-btn float-phone relative" title="Gọi ngay">
+  <div class="pulse-ring bg-green-500 rounded-full absolute inset-0"></div>
+  <i class="fas fa-phone-alt text-xl relative z-10"></i>
+</a>
+<a href="https://zalo.me/0914284739" class="float-btn float-zalo" title="Chat Zalo">
+  <i class="fas fa-comment-dots text-xl"></i>
+</a>
+<a href="https://m.me/" class="float-btn float-fb" title="Facebook Messenger">
+  <i class="fab fa-facebook-messenger text-xl"></i>
+</a>
+
+<!-- Scroll to top -->
+<button id="scrollTop" class="fixed bottom-8 left-20 w-11 h-11 bg-gray-700 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-600 transition opacity-0 pointer-events-none z-50" title="Lên đầu trang">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ====== SCRIPTS ====== -->
+<script>
+  // Mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // Hero slider
+  let currentSlide = 0;
+  const totalSlides = 3;
+  const track = document.getElementById('heroTrack');
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(n) {
+    currentSlide = (n + totalSlides) % totalSlides;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-white', i === currentSlide);
+      d.classList.toggle('bg-white/40', i !== currentSlide);
+    });
+  }
+
+  document.getElementById('prevSlide').addEventListener('click', () => goToSlide(currentSlide - 1));
+  document.getElementById('nextSlide').addEventListener('click', () => goToSlide(currentSlide + 1));
+  dots.forEach(d => d.addEventListener('click', () => goToSlide(parseInt(d.dataset.index))));
+
+  // Auto slide every 5s
+  setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+  // Scroll to top
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.style.opacity = '1';
+      scrollTopBtn.style.pointerEvents = 'auto';
+    } else {
+      scrollTopBtn.style.opacity = '0';
+      scrollTopBtn.style.pointerEvents = 'none';
+    }
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>

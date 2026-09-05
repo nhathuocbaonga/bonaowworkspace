@@ -1,0 +1,484 @@
+// Prisma schema — kết nối PostgreSQL (Supabase), dùng chung cho dev & production.
+//
+// Lịch sử: bản dev ban đầu dùng SQLite (máy không có Docker để chạy Supabase local).
+// Từ khi có project Supabase thật, cả local dev lẫn production đều trỏ vào cùng 1
+// database Postgres qua DATABASE_URL trong .env — tránh lệch dữ liệu giữa 2 nơi.
+//
+// Ghi chú enum: các trường "kiểu enum" dưới đây dùng String (không dùng enum gốc
+// Prisma) để tương thích ngược với giai đoạn còn chạy SQLite — được ràng buộc bằng
+// union type TypeScript + Zod ở tầng ứng dụng (src/lib/enums.ts).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Gia đình — mỗi gia đình là 1 không gian dữ liệu riêng biệt
+model Family {
+  id        String   @id @default(cuid())
+  name      String
+  currency  String   @default("VND")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users         User[]
+  members       FamilyMember[]
+  accounts      Account[]
+  categories    Category[]
+  jars          Jar[]
+  transactions  Transaction[]
+  budgets       Budget[]
+  settings      Settings?
+  debts         Debt[]
+  receivables   Receivable[]
+  savingsGoals  SavingsGoal[]
+  recurringRules RecurringRule[]
+  auditLogs     AuditLog[]
+  telegramLinks     TelegramLink[]
+  telegramLinkCodes TelegramLinkCode[]
+
+  @@map("families")
+}
+
+/// Tài khoản đăng nhập (1 user có thể gắn với 1 hồ sơ thành viên)
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  familyId     String
+  createdAt    DateTime @default(now())
+
+  family       Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  memberProfile FamilyMember?
+
+  @@map("users")
+}
+
+/// Hồ sơ thành viên gia đình (Quản trị viên / Thành viên / Trẻ em)
+model FamilyMember {
+  id         String   @id @default(cuid())
+  familyId   String
+  userId     String?  @unique
+  name       String
+  role       String   @default("MEMBER") // ADMIN | MEMBER | CHILD
+  avatarColor String  @default("#6366f1")
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  user   User?  @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  ownedAccounts      Account[]              @relation("AccountOwner")
+  createdTransactions Transaction[]         @relation("TxCreatedBy")
+  paidTransactions    Transaction[]         @relation("TxPayer")
+  beneficiaries       TransactionBeneficiary[]
+  budgets             Budget[]
+  borrowedDebts       Debt[]                @relation("DebtBorrower")
+  responsibleDebts    Debt[]                @relation("DebtResponsible")
+  lentReceivables     Receivable[]          @relation("ReceivableLentBy")
+  savingsGoals        SavingsGoal[]
+  auditLogs           AuditLog[]
+  telegramLinks       TelegramLink[]
+  telegramLinkCodes   TelegramLinkCode[]
+
+  @@index([familyId])
+  @@map("family_members")
+}
+
+/// Tài khoản tiền: tiền mặt, ngân hàng, ví điện tử, thẻ tín dụng, sổ tiết kiệm...
+model Account {
+  id              String   @id @default(cuid())
+  familyId        String
+  name            String
+  type            String   // CASH | BANK | EWALLET | CREDIT_CARD | SAVINGS | INVESTMENT | GOLD
+  ownerMemberId   String?
+  openingBalance  Float    @default(0)
+  creditLimit     Float?
+  statementDate   Int?     // ngày chốt sao kê (1-31)
+  dueDate         Int?     // ngày thanh toán (1-31)
+  note            String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  family Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  owner  FamilyMember? @relation("AccountOwner", fields: [ownerMemberId], references: [id], onDelete: SetNull)
+
+  txFrom Transaction[] @relation("TxAccount")
+  txTo   Transaction[] @relation("TxToAccount")
+
+  @@index([familyId])
+  @@map("accounts")
+}
+
+/// Danh mục thu nhập / chi tiêu (gộp income_categories + expense_categories, phân biệt bằng `type`)
+model Category {
+  id            String   @id @default(cuid())
+  familyId      String
+  type          String   // INCOME | EXPENSE
+  name          String
+  group         String   // nhóm cha, vd "Ăn uống", "Nhà ở", "Con cái"...
+  parentId      String?
+  defaultJar    String?  // NEC|FFA|LTSS|EDU|PLAY|GIVE — lọ gợi ý mặc định
+  defaultNecessity String? // BAT_BUOC|CAN_THIET|CO_THE_CAT_GIAM|KHONG_CAN_THIET
+  icon          String   @default("Wallet")
+  isActive      Boolean  @default(true)
+  sortOrder     Int      @default(0)
+
+  family   Family     @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children Category[] @relation("CategoryTree")
+
+  transactions Transaction[]
+  splits       TransactionSplit[]
+  budgets      Budget[]
+
+  @@index([familyId, type])
+  @@map("categories")
+}
+
+/// 6 Chiếc Lọ (T. Harv Eker)
+model Jar {
+  id         String   @id @default(cuid())
+  familyId   String
+  code       String   // NEC | FFA | LTSS | EDU | PLAY | GIVE
+  name       String
+  percentage Float
+  color      String
+  icon       String
+  createdAt  DateTime @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  txExpense       Transaction[]     @relation("TxJar")
+  txTransferTo    Transaction[]     @relation("TxToJar")
+  jarAllocations  JarAllocation[]
+  budgets         Budget[]
+
+  @@unique([familyId, code])
+  @@index([familyId])
+  @@map("jars")
+}
+
+/// Phân bổ 1 khoản thu nhập vào các lọ (audit trail, hỗ trợ "phân bổ đủ 100%")
+model JarAllocation {
+  id            String @id @default(cuid())
+  transactionId String
+  jarId         String
+  amount        Float
+  percentage    Float
+
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  jar         Jar         @relation(fields: [jarId], references: [id], onDelete: Cascade)
+
+  @@index([transactionId])
+  @@map("jar_allocations")
+}
+
+/// Giao dịch — loại: INCOME | EXPENSE | ACCOUNT_TRANSFER | JAR_TRANSFER |
+/// DEBT_BORROW | DEBT_PRINCIPAL | LOAN_OUT | LOAN_COLLECT
+/// (trả lãi vay dùng chung type EXPENSE với danh mục "Trả lãi ngân hàng", gắn debtId)
+model Transaction {
+  id        String   @id @default(cuid())
+  familyId  String
+  type      String
+  amount    Float
+  date      DateTime
+  time      String?  // giờ chi, lưu dạng "HH:mm" tách khỏi date cho linh hoạt
+
+  // Thu nhập / Chi tiêu
+  categoryId    String?
+  accountId     String? // income: TK nhận | expense: TK thanh toán | transfer: TK nguồn
+  jarId         String? // expense: lọ bị trừ | jar_transfer: lọ nguồn
+  toAccountId   String? // account_transfer: TK đích
+  toJarId       String? // jar_transfer: lọ đích
+
+  createdByMemberId String  // người nhập giao dịch
+  payerMemberId     String? // người chi / người tạo ra thu nhập
+
+  isShared    Boolean @default(false) // chi chung cả gia đình hay cá nhân
+  paymentMethod String @default("TIEN_MAT") // TIEN_MAT|CHUYEN_KHOAN|THE|VI_DIEN_TU|KHAC
+  isFixed       Boolean @default(false) // cố định hay phát sinh
+  isRecurringSeed Boolean @default(false) // sinh ra từ giao dịch định kỳ (Giai đoạn 2)
+  necessity     String? // BAT_BUOC|CAN_THIET|CO_THE_CAT_GIAM|KHONG_CAN_THIET (chỉ áp dụng expense)
+  incomeKind    String? // FIXED|VARIABLE (thu nhập cố định/không cố định)
+  recurrenceKind String? // ONE_TIME|RECURRING (thu nhập một lần/định kỳ)
+
+  status      String  @default("DA_THANH_TOAN") // DA_THANH_TOAN|CHUA_THANH_TOAN|CHO_HOAN_TIEN|DA_HOAN_TIEN
+  location    String?
+  tags        String? // CSV
+  note        String?
+  attachmentUrl String?
+
+  debtId        String? // gắn với khoản nợ (DEBT_BORROW/DEBT_PRINCIPAL hoặc EXPENSE trả lãi)
+  receivableId  String? // gắn với khoản cho vay (LOAN_OUT/LOAN_COLLECT)
+  recurringRuleId String? // sinh ra từ quy tắc giao dịch định kỳ nào
+
+  isDeleted   Boolean  @default(false)
+  deletedAt   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  family    Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  category  Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  account   Account?      @relation("TxAccount", fields: [accountId], references: [id], onDelete: SetNull)
+  toAccount Account?      @relation("TxToAccount", fields: [toAccountId], references: [id], onDelete: SetNull)
+  jar       Jar?          @relation("TxJar", fields: [jarId], references: [id], onDelete: SetNull)
+  toJar     Jar?          @relation("TxToJar", fields: [toJarId], references: [id], onDelete: SetNull)
+  createdBy FamilyMember  @relation("TxCreatedBy", fields: [createdByMemberId], references: [id])
+  payer     FamilyMember? @relation("TxPayer", fields: [payerMemberId], references: [id], onDelete: SetNull)
+  debt        Debt?       @relation(fields: [debtId], references: [id], onDelete: SetNull)
+  receivable  Receivable? @relation(fields: [receivableId], references: [id], onDelete: SetNull)
+  recurringRule RecurringRule? @relation(fields: [recurringRuleId], references: [id], onDelete: SetNull)
+
+  splits         TransactionSplit[]
+  beneficiaries  TransactionBeneficiary[]
+  jarAllocations JarAllocation[]
+
+  @@index([familyId, date])
+  @@index([familyId, type])
+  @@index([debtId])
+  @@index([receivableId])
+  @@map("transactions")
+}
+
+/// Chia nhỏ 1 giao dịch thành nhiều danh mục/lọ khác nhau (vd hóa đơn siêu thị)
+model TransactionSplit {
+  id            String  @id @default(cuid())
+  transactionId String
+  categoryId    String?
+  jarId         String?
+  amount        Float
+  note          String?
+
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  category    Category?   @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  @@index([transactionId])
+  @@map("transaction_splits")
+}
+
+/// Chi cho ai — 1 giao dịch có thể gắn nhiều thành viên thụ hưởng
+model TransactionBeneficiary {
+  id            String @id @default(cuid())
+  transactionId String
+  memberId      String
+
+  transaction Transaction  @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  member      FamilyMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@unique([transactionId, memberId])
+  @@map("transaction_beneficiaries")
+}
+
+/// Ngân sách theo tháng — theo danh mục, thành viên, hoặc lọ
+model Budget {
+  id         String   @id @default(cuid())
+  familyId   String
+  month      Int
+  year       Int
+  scope      String   // CATEGORY | MEMBER | JAR
+  categoryId String?
+  memberId   String?
+  jarId      String?
+  amount     Float
+  createdAt  DateTime @default(now())
+
+  family   Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  category Category?     @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  member   FamilyMember? @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  jar      Jar?          @relation(fields: [jarId], references: [id], onDelete: Cascade)
+
+  @@index([familyId, year, month])
+  @@map("budgets")
+}
+
+/// Cài đặt gia đình
+model Settings {
+  id         String @id @default(cuid())
+  familyId   String @unique
+  currency   String @default("VND")
+  dateFormat String @default("dd/MM/yyyy")
+  timezone   String @default("Asia/Ho_Chi_Minh")
+  jarMode    String @default("AUTO_ADJUSTABLE") // AUTO | MANUAL | AUTO_ADJUSTABLE
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  @@map("settings")
+}
+
+// ===================== GIAI ĐOẠN 2 =====================
+
+/// Khoản nợ gia đình đang vay (ngân hàng, cá nhân...)
+model Debt {
+  id                  String    @id @default(cuid())
+  familyId            String
+  name                String
+  lender              String    // chủ nợ / ngân hàng (không nhất thiết là user trong hệ thống)
+  borrowerMemberId    String?
+  responsibleMemberId String?
+  principalAmount     Float
+  interestRate        Float?    // %/năm
+  startDate           DateTime
+  dueDate             DateTime?
+  paymentSchedule     String    @default("MONTHLY") // MONTHLY|QUARTERLY|YEARLY|ONE_TIME
+  installmentAmount   Float?
+  nextPaymentDate     DateTime?
+  collateral          String?
+  purpose             String?
+  note                String?
+  attachmentUrl       String?
+  status              String    @default("ACTIVE") // ACTIVE | PAID_OFF
+  createdAt           DateTime  @default(now())
+
+  family      Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  borrower    FamilyMember? @relation("DebtBorrower", fields: [borrowerMemberId], references: [id], onDelete: SetNull)
+  responsible FamilyMember? @relation("DebtResponsible", fields: [responsibleMemberId], references: [id], onDelete: SetNull)
+  transactions Transaction[]
+
+  @@index([familyId])
+  @@map("debts")
+}
+
+/// Khoản gia đình cho người khác vay (khoản phải thu)
+model Receivable {
+  id             String    @id @default(cuid())
+  familyId       String
+  borrowerName   String
+  lentByMemberId String?
+  amount         Float
+  lentDate       DateTime
+  dueDate        DateTime?
+  interestRate   Float?
+  note           String?
+  status         String    @default("OUTSTANDING") // OUTSTANDING | PARTIALLY_COLLECTED | COLLECTED | WRITTEN_OFF
+  createdAt      DateTime  @default(now())
+
+  family  Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  lentBy  FamilyMember? @relation("ReceivableLentBy", fields: [lentByMemberId], references: [id], onDelete: SetNull)
+  transactions Transaction[]
+
+  @@index([familyId])
+  @@map("receivables")
+}
+
+/// Mục tiêu tài chính (bao gồm cả Quỹ dự phòng khi isEmergencyFund = true)
+model SavingsGoal {
+  id             String    @id @default(cuid())
+  familyId       String
+  name           String
+  ownerMemberId  String?
+  targetAmount   Float
+  currentAmount  Float     @default(0)
+  startDate      DateTime  @default(now())
+  targetDate     DateTime?
+  isEmergencyFund Boolean  @default(false)
+  note           String?
+  status         String    @default("ACTIVE") // ACTIVE | COMPLETED | CANCELLED
+  createdAt      DateTime  @default(now())
+
+  family  Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  owner   FamilyMember? @relation(fields: [ownerMemberId], references: [id], onDelete: SetNull)
+  contributions GoalContribution[]
+
+  @@index([familyId])
+  @@map("savings_goals")
+}
+
+/// Mỗi lần nạp thêm/rút bớt tiền cho 1 mục tiêu tài chính (theo dõi tiến độ)
+model GoalContribution {
+  id      String   @id @default(cuid())
+  goalId  String
+  amount  Float    // âm nếu rút bớt
+  date    DateTime @default(now())
+  note    String?
+
+  goal SavingsGoal @relation(fields: [goalId], references: [id], onDelete: Cascade)
+
+  @@index([goalId])
+  @@map("goal_contributions")
+}
+
+/// Quy tắc giao dịch định kỳ — tự sinh giao dịch thật khi người dùng xác nhận đã thanh toán
+model RecurringRule {
+  id           String    @id @default(cuid())
+  familyId     String
+  name         String
+  type         String    // INCOME | EXPENSE
+  amount       Float
+  categoryId   String?
+  accountId    String?
+  jarId        String?
+  payerMemberId String?
+  isShared     Boolean   @default(false)
+  necessity    String?
+  frequency    String    // DAILY|WEEKLY|MONTHLY|QUARTERLY|YEARLY
+  startDate    DateTime
+  endDate      DateTime?
+  nextRunDate  DateTime
+  lastRunDate  DateTime?
+  isActive     Boolean   @default(true)
+  note         String?
+  createdAt    DateTime  @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  transactions Transaction[]
+
+  @@index([familyId])
+  @@map("recurring_rules")
+}
+
+/// Nhật ký chỉnh sửa dữ liệu — phục vụ minh bạch & khôi phục
+model AuditLog {
+  id         String   @id @default(cuid())
+  familyId   String
+  entityType String   // TRANSACTION | DEBT | RECEIVABLE | GOAL | RECURRING_RULE | ...
+  entityId   String
+  action     String   // CREATE | UPDATE | DELETE | RESTORE
+  memberId   String?
+  summary    String   // mô tả ngắn gọn bằng tiếng Việt, dễ đọc
+  detail     String?  // JSON chi tiết thay đổi (tùy chọn)
+  createdAt  DateTime @default(now())
+
+  family Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  member FamilyMember? @relation(fields: [memberId], references: [id], onDelete: SetNull)
+
+  @@index([familyId, createdAt])
+  @@index([familyId, entityType, entityId])
+  @@map("audit_logs")
+}
+
+/// Liên kết 1 chat Telegram với 1 thành viên gia đình — mỗi lệnh/ảnh gửi từ chat này
+/// sẽ được ghi nhận là giao dịch của đúng thành viên và gia đình tương ứng.
+model TelegramLink {
+  id        String   @id @default(cuid())
+  familyId  String
+  memberId  String
+  chatId    String   @unique
+  createdAt DateTime @default(now())
+
+  family Family       @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  member FamilyMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([familyId])
+  @@map("telegram_links")
+}
+
+/// Mã liên kết dùng 1 lần — tạo trong app (Cài đặt), nhập vào Telegram bằng lệnh /link
+/// để xác nhận đúng người trước khi ghi nhận giao dịch qua chat.
+model TelegramLinkCode {
+  code      String   @id
+  familyId  String
+  memberId  String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  family Family       @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  member FamilyMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@map("telegram_link_codes")
+}

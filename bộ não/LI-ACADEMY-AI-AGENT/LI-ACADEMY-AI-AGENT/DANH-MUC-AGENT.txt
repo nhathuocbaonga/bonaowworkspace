@@ -1,0 +1,811 @@
+================================================================
+LI ACADEMY AI AGENT - 800 AGENT TRON BO
+Toan bo kho 800 tro ly AI: van hanh + marketing + ky thuat chuyen sau.
+Ngay dong goi: 2026-06-07
+Tong so agent: 800
+================================================================
+
+HUONG DAN CAI: chep toan bo file .md trong thu muc AGENT/
+vao   ~/.claude/agents/   roi khoi dong lai Claude Code.
+
+DANH SACH AGENT:
+   1. ab-testing-toi-uu                          - Chạy thử nghiệm A/B trên quảng cáo, landing, content — quyết định bằng dữ liệu thay vì cảm
+   2. academic-anthropologist                    - Expert in cultural systems, rituals, kinship, belief systems, and ethnographic method — bu
+   3. academic-geographer                        - Expert in physical and human geography, climate systems, cartography, and spatial analysis
+   4. academic-historian                         - Expert in historical analysis, periodization, material culture, and historiography — valid
+   5. academic-narratologist                     - Expert in narrative theory, story structure, character arcs, and literary analysis — groun
+   6. academic-psychologist                      - Expert in human behavior, personality theory, motivation, and cognitive patterns — builds 
+   7. accessibility-expert                       - Expert in web accessibility including WCAG 2.1/3.0 compliance, ARIA implementation, screen
+   8. accessibility-tester                       - Use this agent when you need comprehensive accessibility testing, WCAG compliance verifica
+   9. accounts-payable-agent                     - Autonomous payment processing specialist that executes vendor payments, contractor invoice
+  10. ad-security-reviewer                       - Use this agent when you need to audit Active Directory security posture, evaluate privileg
+  11. affiliate-cong-tac-vien                    - Xây và quản lý mạng lưới cộng tác viên/affiliate giới thiệu khách, từ tuyển chọn, hoa hồng
+  12. agentic-identity-trust                     - Designs identity, authentication, and trust verification systems for autonomous AI agents 
+  13. agent-installer                            - Use this agent when the user wants to discover, browse, or install Claude Code agents from
+  14. agent-organizer                            - Use when assembling and optimizing multi-agent teams to execute complex projects that requ
+  15. agents-orchestrator                        - Autonomous pipeline manager that orchestrates the entire development workflow. You are the
+  16. ai-engineer                                - AI/LLM application expert for building RAG systems, prompt engineering, fine-tuning, and i
+  17. ai-writing-auditor                         - Use this agent when you need to audit content for AI writing patterns and rewrite text to 
+  18. angular-architect                          - Use when architecting enterprise Angular 15+ applications with complex state management, o
+  19. angular-expert                             - Expert in Angular framework including Angular 17+ features, RxJS reactive programming, NgR
+  20. ansible-expert                             - Expert in Ansible automation for configuration management, infrastructure provisioning, an
+  21. an-toan-y-khoa                             - Kiểm soát an toàn, vô khuẩn, chống chỉ định, xử lý sự cố y khoa. Kích hoạt khi cần rà soát
+  22. api-designer                               - Use this agent when designing new APIs, creating API specifications, or refactoring existi
+  23. api-documenter                             - Use this agent when creating or improving API documentation, writing OpenAPI specification
+  24. architect                                  - **TECHNICAL DESIGN SPECIALIST**: Transforms business requirements into technical architect
+  25. architect-review                           - Master software architect specializing in modern architecture patterns, clean architecture
+  26. architect-reviewer                         - Use this agent when you need to evaluate system design decisions, architectural patterns, 
+  27. arm-cortex-expert                          - >
+  28. ar-vr-developer                            - Augmented Reality and Virtual Reality development expert for immersive experiences, spatia
+  29. astro-expert                               - Expert in Astro framework for building fast, content-focused websites with minimal JavaScr
+  30. automation-governance-architect            - Governance-first architect for business automations (n8n-first) who audits value, risk, an
+  31. aws-infrastructure-expert                  - AWS infrastructure optimization specialist with deep expertise in service selection, cost 
+  32. azure-infra-engineer                       - Use when designing, deploying, or managing Azure infrastructure with focus on network arch
+  33. azure-infrastructure-expert                - Azure infrastructure optimization specialist with deep expertise in Azure service selectio
+  34. backend-architect                          - Expert backend architect specializing in scalable API design, microservices architecture, 
+  35. backend-developer                          - Use this agent when building server-side APIs, microservices, and backend systems that req
+  36. backend-security-coder                     - Expert in secure backend coding practices specializing in input validation, authentication
+  37. ban-goi-tra-truoc                          - Bán gói liệu trình trả trước và thẻ dịch vụ — tăng doanh thu lặp lại, giữ chân khách, ổn đ
+  38. ban-hang-qua-hotline                       - Tư vấn và chốt qua hotline/điện thoại — bắt cuộc gọi đến, biến thắc mắc thành lịch hẹn, ch
+  39. banking-api-expert                         - Banking API integration specialist with expertise in Open Banking (PSD2), ACH transfers, w
+  40. ban-le-my-pham                             - Xây dòng doanh thu bán lẻ mỹ phẩm/sản phẩm chăm sóc tại nhà cho khách sau điều trị, từ chọ
+  41. ban-them-cross-sell                        - Thiết kế gợi ý bán thêm/bán chéo đúng nhu cầu khách (combo, dịch vụ bổ trợ, sản phẩm chăm 
+  42. bao-cao-du-lieu                            - Tổng hợp dữ liệu đa nguồn thành báo cáo và biểu đồ. Kích hoạt khi cần làm báo cáo.
+  43. bao-cao-kinh-doanh                         - Tổng hợp số liệu kinh doanh thành báo cáo/dashboard dễ đọc (doanh thu, dịch vụ, khách, chi
+  44. bao-cao-kpi-phong-ban                      - Tổng hợp và báo cáo KPI từng phòng ban theo nhịp — minh bạch hiệu suất, phát hiện lệch mục
+  45. bao-hiem-trach-nhiem                       - Tư vấn bảo hiểm trách nhiệm nghề nghiệp, bảo hiểm tài sản–thiết bị, và phương án bảo vệ tà
+  46. bao-mat-du-lieu-kh                         - Bảo vệ hồ sơ khách hàng, ảnh before-after, thông tin y tế nhạy cảm; xây quy tắc thu thập–l
+  47. bao-mat-he-thong-it                        - Bảo vệ hệ thống IT phòng khám khỏi tấn công, rò rỉ, mất dữ liệu — phân quyền, sao lưu, ứng
+  48. bash-pro                                   - Master of defensive Bash scripting for production automation, CI/CD pipelines, and system 
+  49. bat-trend-sang-tao                         - Phát hiện trend đang lên và đề xuất cách bắt trend đúng chất HANA, kịp thời mà không rẻ ti
+  50. bien-soan-giao-trinh                       - Biên soạn giáo trình, tài liệu và bài giảng cho các khoá đào tạo chuẩn hoá, dễ học dễ thực
+  51. bien-tap-giu-giong-brand                   - Biên tập, soát lỗi và chuẩn hoá mọi nội dung về đúng giọng thương hiệu HANA, chống văn pho
+  52. blender-addon-engineer                     - Blender tooling specialist - Builds Python add-ons, asset validators, exporters, and pipel
+  53. blockchain-developer                       - Use this agent when building smart contracts, DApps, and blockchain protocols that require
+  54. blockchain-expert                          - Expert in blockchain development, smart contracts (Solidity, Rust), Web3 integration, DeFi
+  55. blockchain-security-auditor                - Expert smart contract security auditor specializing in vulnerability detection, formal ver
+  56. branding-giac-quan                         - Thiết kế trải nghiệm giác quan (mùi hương, âm nhạc, ánh sáng, chất liệu chạm) tạo dấu ấn t
+  57. brand-strategist                           - Brand strategy specialist focused on brand positioning, identity development, and strategi
+  58. brand-voice-designer                       - Brand voice and tone specialist who develops distinctive, authentic communication personal
+  59. build-engineer                             - Use this agent when you need to optimize build performance, reduce compilation times, or s
+  60. business-analyst                           - Business analysis expert for requirements gathering, process mapping, gap analysis, data a
+  61. business-intelligence-expert               - Business intelligence and analytics expert for data warehousing, ETL pipelines, OLAP, dash
+  62. c4-code                                    - Expert C4 Code-level documentation specialist. Analyzes code directories to create compreh
+  63. c4-component                               - Expert C4 Component-level documentation specialist. Synthesizes C4 Code-level documentatio
+  64. c4-container                               - Expert C4 Container-level documentation specialist. Synthesizes Component-level documentat
+  65. c4-context                                 - Expert C4 Context-level documentation specialist. Creates high-level system context diagra
+  66. ca-nhan-hoa-trai-nghiem                    - Tùy biến trải nghiệm theo từng khách (sở thích, lịch sử, dịp đặc biệt) để khách thấy được 
+  67. capacity-planning                          - Expert in capacity planning, resource forecasting, performance modeling, and cost optimiza
+  68. cassandra-expert                           - Expert in Apache Cassandra NoSQL database for distributed, wide column store systems. Spec
+  69. cham-soc-hau-thu-thuat                     - Soạn hướng dẫn chăm sóc sau điều trị, lịch theo dõi hồi phục, kịch bản nhắc tái khám. Kích
+  70. cham-soc-khach-gioi-thieu                  - Vận hành chương trình khách giới thiệu khách (referral) — tri ân người giới thiệu, đón ngư
+  71. cham-soc-khach-vip                         - Chương trình thành viên, chăm sóc khách VIP, giới thiệu bạn bè, giữ chân. Kích hoạt khi cầ
+  72. cham-soc-lead-nong                         - Bám sát và chăm lead đang quan tâm cao — phản hồi nhanh, nuôi đúng nhịp, chốt trước khi kh
+  73. chanh-van-phong                            - Điều phối toàn hệ thống agent. Kích hoạt khi sếp giao một yêu cầu lớn cần phân rã và phân 
+  74. chaos-engineer                             - Chaos engineering specialist for resilience testing, fault injection, Chaos Monkey, Litmus
+  75. chatbot-tu-van-tu-dong                     - Xây và vận hành chatbot tư vấn tự động trên web/fanpage/Zalo — trả lời nhanh 24/7, lọc lea
+  76. chay-ads-google                            - Thiết lập và tối ưu Google Search & Display Ads, bắt khách đang chủ động tìm dịch vụ thẩm 
+  77. chay-ads-tiktok                            - Thiết lập và tối ưu chiến dịch TikTok Ads (Spark Ads, video, lead form) cho dịch vụ thẩm m
+  78. chien-luoc-gia                             - Lập kế hoạch kinh doanh, OKR/KPI, lộ trình tăng trưởng. Kích hoạt khi cần hoạch định chiến
+  79. chinh-sach-noi-bo                          - Soạn quy chế, nội quy, đảm bảo tuân thủ. Kích hoạt khi cần xây quy định nội bộ.
+  80. chuan-hoa-da-chi-nhanh                     - Chuẩn hoá vận hành đồng nhất giữa các chi nhánh — chất lượng, quy trình, thương hiệu, trải
+  81. chuan-hoa-quy-trinh-dich-vu                - Chuẩn hoá quy trình thực hiện từng dịch vụ thành SOP — đồng đều chất lượng dù ai làm, dễ đ
+  82. chuyen-gia-du-lich-lu-hanh                 - Tư vấn du lịch & lữ hành — thiết kế tour, combo nghỉ dưỡng, trải nghiệm điểm đến, quản lý 
+  83. chuyen-gia-nang-luong-tai-tao              - Tư vấn năng lượng tái tạo & môi trường — điện mặt trời, điện gió, lưu trữ pin, tiết kiệm n
+  84. chuyen-gia-nong-nghiep-cong-nghe-cao       - Tư vấn nông nghiệp công nghệ cao (agritech) — canh tác thông minh, IoT nông trại, tối ưu n
+  85. chuyen-gia-seo                             - Nghiên cứu từ khóa, tối ưu on-page, chiến lược nội dung lên top. Kích hoạt khi cần tăng th
+  86. cicd-pipeline-expert                       - Expert in designing and implementing CI/CD pipelines across multiple platforms. Specialize
+  87. cli-developer                              - Use this agent when building command-line tools and terminal applications that require int
+  88. clinical-trials-expert                     - Clinical trials management expert specializing in electronic data capture (EDC) systems, c
+  89. cloud-architect                            - Cloud architecture expert for designing scalable, secure, and cost-effective cloud solutio
+  90. cloud-cost-optimizer                       - Multi-cloud cost optimization expert specializing in analyzing infrastructure costs across
+  91. codebase-orchestrator                      - Use this agent when you need repository-wide refactor governance with explicit approval lo
+  92. code-reviewer                              - Expert code reviewer for quality, security, performance, and maintainability. Automaticall
+  93. competitive-analyst                        - Use when you need to analyze direct and indirect competitors, benchmark against market lea
+  94. compiler-engineer                          - Compiler design and implementation expert for lexical analysis, parsing, code generation, 
+  95. compliance-auditor                         - Expert technical compliance auditor specializing in SOC 2, ISO 27001, HIPAA, and PCI-DSS a
+  96. computer-vision-expert                     - Expert in computer vision and image processing, specializing in object detection, image se
+  97. conductor-validator                        - Validates Conductor project artifacts for completeness, consistency, and correctness. Use 
+  98. content-editor                             - Content editing specialist focused on content refinement, quality assurance, editorial wor
+  99. content-giao-duc-khach                     - Sản xuất nội dung giáo dục–kiến thức làm đẹp an toàn — xây niềm tin chuyên gia, nuôi lead 
+ 100. content-marketer                           - Use this agent when you need to develop comprehensive content strategies, create SEO-optim
+ 101. content-performance-analyst                - Content performance analysis specialist focused on measuring content effectiveness, attrib
+ 102. content-strategist                         - Content strategy expert for content planning, editorial calendars, brand voice development
+ 103. content-truoc-sau-case                     - Sản xuất nội dung before-after và case khách thật — bằng chứng thuyết phục, đúng quy định,
+ 104. context-manager                            - Use for managing shared state, information retrieval, and data synchronization when multip
+ 105. contract-testing-expert                    - Contract testing specialist for Pact, Spring Cloud Contract, API contract testing, and con
+ 106. conversion-optimizer                       - Conversion rate optimization specialist focused on A/B testing, funnel analysis, and user 
+ 107. copywriter-ban-hang                        - Viết landing page, email, nội dung chốt đơn theo công thức tâm lý. Kích hoạt khi cần nội d
+ 108. copywriter-specialist                      - Copywriting specialist focused on persuasive writing, conversion optimization, and brand v
+ 109. corporate-communications-specialist        - Corporate communications specialist focused on internal communications, executive messagin
+ 110. cpp-pro                                    - Use this agent when building high-performance C++ systems requiring modern C++20/23 featur
+ 111. c-pro                                      - Write efficient C code with proper memory management, pointer arithmetic, and system calls
+ 112. crisis-communication-expert                - Crisis communication specialist focused on managing organizational reputation during emerg
+ 113. crm-specialist                             - Customer Relationship Management specialist focused on CRM strategy, implementation, data 
+ 114. cryptography-expert                        - Expert in cryptographic implementations, encryption algorithms, key management, digital si
+ 115. cs-agile-product-owner                     - Agile product owner agent for epic breakdown, sprint planning, backlog refinement, and INV
+ 116. cs-ceo-advisor                             - Strategic leadership advisor for CEOs covering vision, strategy, board management, investo
+ 117. cs-content-creator                         - AI-powered content creation specialist for brand voice consistency, SEO optimization, and 
+ 118. cs-cto-advisor                             - Technical leadership advisor for CTOs covering technology strategy, team scaling, architec
+ 119. cs-demand-gen-specialist                   - Demand generation and customer acquisition specialist for lead generation, conversion opti
+ 120. cs-engineering-lead                        - Engineering Team Lead agent for coordinating QA, security, data engineering, ML, and front
+ 121. cs-financial-analyst                       - Financial Analyst agent for DCF valuation, financial modeling, budgeting, forecasting, and
+ 122. cs-growth-strategist                       - Growth Strategist agent for revenue operations, sales engineering, customer success, and b
+ 123. csharp-developer                           - Use this agent when building ASP.NET Core web APIs, cloud-native .NET solutions, or modern
+ 124. csharp-expert                              - Expert in modern C# development (.NET 6-8+), ASP.NET Core, Entity Framework Core, Azure in
+ 125. csharp-pro                                 - Write modern C# code with advanced features like records, pattern matching, and async/awai
+ 126. cs-karpathy-reviewer                       - Reviews staged git changes against Karpathy's 4 coding principles. Runs complexity_checker
+ 127. cs-product-analyst                         - Product analytics agent for KPI definition, dashboard setup, experiment design, and test r
+ 128. cs-product-manager                         - Product management agent for feature prioritization, customer discovery, PRD development, 
+ 129. cs-product-strategist                      - Product strategy agent for quarterly OKR planning, competitive landscape analysis, product
+ 130. cs-project-manager                         - Project Manager agent for sprint planning, Jira/Confluence workflows, Scrum ceremonies, an
+ 131. cs-quality-regulatory                      - Quality & Regulatory agent for ISO 13485 QMS, MDR compliance, FDA submissions, GDPR/DSGVO,
+ 132. cs-senior-engineer                         - Senior Engineer agent for architecture decisions, code review, DevOps, and API design. Orc
+ 133. cs-ux-researcher                           - UX research agent for research planning, persona generation, journey mapping, and usabilit
+ 134. cs-wiki-ingestor                           - Dispatched sub-agent that ingests a new source into an LLM Wiki vault. Reads the source, p
+ 135. cs-wiki-librarian                          - Dispatched sub-agent that answers queries against an LLM Wiki vault. Reads index.md first,
+ 136. cs-wiki-linter                             - Dispatched sub-agent that runs a periodic health check on an LLM Wiki vault. Runs mechanic
+ 137. cs-workspace-admin                         - Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gma
+ 138. customer-service                           - Friendly, professional customer service specialist for any industry — handling inquiries, 
+ 139. customer-success-manager                   - Customer success expert specializing in onboarding, retention, upselling, customer health 
+ 140. customer-support                           - Elite AI-powered customer support specialist mastering conversational AI, automated ticket
+ 141. cypress-expert                             - Expert in Cypress for end-to-end testing, component testing, and test automation. Speciali
+ 142. dang-ky-so-huu-tri-tue                     - Bảo hộ thương hiệu, logo, tên dịch vụ, nội dung — đăng ký nhãn hiệu, chống xâm phạm, giữ t
+ 143. danh-gia-cong-nghe-thiet-bi                - Thẩm định máy móc/công nghệ thẩm mỹ trước khi đầu tư — hiệu quả, an toàn, chi phí, hoàn vố
+ 144. danh-gia-hieu-qua-dieu-tri                 - Theo dõi và đánh giá hiệu quả thực tế của các dịch vụ điều trị trên khách — bằng chứng cải
+ 145. danh-gia-hieu-suat                         - Xây hệ thống đánh giá hiệu suất nhân viên (KPI, tiêu chí, chu kỳ review), gắn thưởng với đ
+ 146. danh-gia-sau-dao-tao                       - Đo hiệu quả đào tạo qua kết quả học viên, mức độ áp dụng vào việc thật và phản hồi để cải 
+ 147. dao-expert                                 - Expert in Decentralized Autonomous Organizations (DAOs), specializing in governance mechan
+ 148. dao-tao-ban-hang-noi-bo                    - Đào tạo kỹ năng tư vấn và bán hàng cho đội ngũ theo chuẩn tư vấn tử tế, không ép khách của
+ 149. dao-tao-ky-nang-chot-sale                  - Huấn luyện tư vấn viên kỹ năng chốt sale tinh tế premium — đọc tâm lý, dẫn dắt, chốt mà kh
+ 150. dao-tao-ky-thuat-vien                      - Đào tạo tay nghề và quy trình cho kỹ thuật viên mới và nâng cao theo chuẩn dịch vụ HANA. K
+ 151. dao-tao-onboarding                         - Xây lộ trình hội nhập, tài liệu đào tạo cho nhân viên mới. Kích hoạt khi cần đào tạo nội b
+ 152. dao-tao-quan-ly-cap-trung                  - Đào tạo trưởng nhóm/quản lý cấp trung kỹ năng lãnh đạo, điều phối, kèm cặp — nhân rộng năn
+ 153. data-analyst                               - Use when you need to extract insights from business data, create dashboards and reports, o
+ 154. database-admin                             - Expert database administrator specializing in modern cloud databases, automation, and reli
+ 155. database-administrator                     - Use this agent when optimizing database performance, implementing high-availability archit
+ 156. database-architect                         - Database architecture expert for designing scalable data models, choosing appropriate data
+ 157. database-optimizer                         - Use this agent when you need to analyze slow queries, optimize database performance across
+ 158. data-consolidation-agent                   - AI agent that consolidates extracted sales data into live reporting dashboards with territ
+ 159. data-engineer                              - Data engineering expert for building ETL/ELT pipelines, data warehouses, streaming archite
+ 160. data-quality-engineer                      - Data quality expert for data validation, cleansing, profiling, and governance. Invoked for
+ 161. data-researcher                            - Use this agent when you need to discover, collect, and validate data from multiple sources
+ 162. data-scientist                             - Data science expert for statistical analysis, exploratory data analysis, feature engineeri
+ 163. dat-lich-le-tan                            - Quản lý đặt lịch, nhắc hẹn, giảm no-show, điều phối lịch bác sĩ/phòng. Kích hoạt khi cần x
+ 164. dau-tu-mo-rong                             - Phân tích tài chính cho quyết định đầu tư mở rộng (chi nhánh mới, máy mới, mở dịch vụ), tí
+ 165. debugger                                   - Debugging specialist for finding and fixing bugs, analyzing error logs, troubleshooting te
+ 166. dependency-manager                         - Use this agent when you need to audit dependencies for vulnerabilities, resolve version co
+ 167. deployment-engineer                        - Use this agent when designing, building, or optimizing CI/CD pipelines and deployment auto
+ 168. design-brand-guardian                      - Expert brand strategist and guardian specializing in brand identity development, consisten
+ 169. design-bridge                              - Use this agent when you need to translate a DESIGN.md from the VoltAgent/awesome-design-md
+ 170. design-image-prompt-engineer               - Expert photography prompt engineer specializing in crafting detailed, evocative prompts fo
+ 171. design-inclusive-visuals-specialist        - Representation expert who defeats systemic AI biases to generate culturally accurate, affi
+ 172. design-system-architect                    - Expert design system architect specializing in design tokens, component libraries, theming
+ 173. design-ui-designer                         - Expert UI designer specializing in visual design systems, component libraries, and pixel-p
+ 174. design-ux-architect                        - Technical architecture and UX specialist who provides developers with solid foundations, C
+ 175. design-ux-researcher                       - Expert user experience researcher specializing in user behavior analysis, usability testin
+ 176. design-visual-storyteller                  - Expert visual communication specialist focused on creating compelling visual narratives, m
+ 177. design-whimsy-injector                     - Expert creative specialist focused on adding personality, delight, and playful elements to
+ 178. devops-engineer                            - DevOps expert for CI/CD pipelines, infrastructure as code, container orchestration, and cl
+ 179. devops-incident-responder                  - Use when actively responding to production incidents, diagnosing critical service failures
+ 180. devops-troubleshooter                      - Expert DevOps troubleshooter specializing in rapid incident response, advanced debugging, 
+ 181. devsecops-engineer                         - Expert in DevSecOps practices, security automation, shift-left security, container securit
+ 182. dich-vu-dua-don-vip                        - Tổ chức dịch vụ đưa đón khách VIP — đúng giờ, sang trọng, chu đáo, nâng cảm giác đặc quyền
+ 183. dich-vu-tiep-don-premium                   - Chuẩn hoá nghi thức đón tiếp, phục vụ đồ uống và chăm sóc khách trong lúc chờ/điều trị the
+ 184. dieu-phoi-phong-kham                       - Điều phối ca làm việc, phòng thủ thuật, bác sĩ và KTV theo lịch hẹn trong ngày, tránh chồn
+ 185. dieu-phoi-phong-thu-thuat                  - Điều phối phòng thủ thuật — lịch, kỹ thuật viên, dụng cụ, vô khuẩn — để các ca chạy mượt, 
+ 186. dinh-gia-goi-dich-vu                       - Thiết kế bảng giá, gói combo, upsell/cross-sell, chính sách trả góp. Kích hoạt khi cần địn
+ 187. dinh-gia-ra-mat-dich-vu                    - Định giá và lên kế hoạch ra mắt dịch vụ mới — giá đúng tầm, truyền thông hợp lý, khởi động
+ 188. dinh-huong-noi-dung-ca-nhan                - Vạch trục và lịch nội dung tổng cho thương hiệu cá nhân của sếp trên mọi kênh, đảm bảo nhấ
+ 189. disaster-recovery                          - Expert in disaster recovery planning, business continuity, backup strategies, and recovery
+ 190. django-developer                           - Use when building Django 4+ web applications, REST APIs, or modernizing existing Django pr
+ 191. django-expert                              - Expert in Django web framework including Django 5.x features, Django REST framework, ORM o
+ 192. django-pro                                 - Master Django 5.x with async views, DRF, Celery, and Django Channels. Build scalable web a
+ 193. docker-expert                              - Use this agent when you need to build, optimize, or secure Docker container images and orc
+ 194. docs-architect                             - Creates comprehensive technical documentation from existing codebases. Analyzes architectu
+ 195. documentation-engineer                     - Use this agent when you need to create, architect, or overhaul comprehensive documentation
+ 196. dotnet-architect                           - Expert .NET backend architect specializing in C#, ASP.NET Core, Entity Framework, Dapper, 
+ 197. dotnet-core-expert                         - Use when building .NET Core applications requiring cloud-native architecture, high-perform
+ 198. dotnet-framework-4.8-expert                - Use this agent when working on legacy .NET Framework 4.8 enterprise applications that requ
+ 199. du-bao-doanh-thu                           - Dự báo doanh thu và lưu lượng khách theo mùa/tháng để lập kế hoạch ngân sách, nhân sự, nhậ
+ 200. du-bao-xu-huong-dich-vu                    - Dự báo nhu cầu và xu hướng dịch vụ sắp tới — chuẩn bị nguồn lực, nhân sự, vật tư, marketin
+ 201. dx-optimizer                               - Use this agent when optimizing the complete developer workflow including build times, feed
+ 202. e2e-testing-expert                         - End-to-end testing specialist for Cypress, Playwright, Selenium, TestCafe, and browser aut
+ 203. edtech-expert                              - Education technology specialist for learning management systems, online education platform
+ 204. elasticsearch-expert                       - Expert in Elasticsearch for full-text search, analytics, log aggregation, and distributed 
+ 205. electron-pro                               - Use this agent when building Electron desktop applications that require native OS integrat
+ 206. elixir-expert                              - Elixir language specialist for concurrent systems, Phoenix framework, LiveView, OTP (Open 
+ 207. elixir-pro                                 - Write idiomatic Elixir code with OTP patterns, supervision trees, and Phoenix LiveView. Ma
+ 208. email-copywriter                           - Email copywriting specialist focused on crafting compelling subject lines, persuasive body
+ 209. email-deliverability-expert                - Email deliverability specialist focused on inbox placement optimization, reputation manage
+ 210. email-designer                             - Email design specialist creating visually compelling, responsive email templates that rend
+ 211. email-strategist                           - Email marketing strategy expert specializing in campaign planning, audience segmentation, 
+ 212. email-zalo-automation                      - Xây luồng email/Zalo tự động: nuôi dưỡng lead, nhắc lịch, chăm sóc, win-back khách cũ. Kíc
+ 213. embedded-systems                           - Use when developing firmware for resource-constrained microcontrollers, implementing RTOS-
+ 214. embedded-systems-expert                    - Embedded systems specialist for microcontroller programming, RTOS, hardware interfaces, Io
+ 215. engineering-ai-data-remediation-engineer   - Specialist in self-healing data pipelines — uses air-gapped local SLMs and semantic cluste
+ 216. engineering-ai-engineer                    - Expert AI/ML engineer specializing in machine learning model development, deployment, and 
+ 217. engineering-autonomous-optimization-architect - Intelligent system governor that continuously shadow-tests APIs for performance while enfo
+ 218. engineering-backend-architect              - Senior backend architect specializing in scalable system design, database architecture, AP
+ 219. engineering-cms-developer                  - Drupal and WordPress specialist for theme development, custom plugins/modules, content arc
+ 220. engineering-codebase-onboarding-engineer   - Expert developer onboarding specialist who helps new engineers understand unfamiliar codeb
+ 221. engineering-code-reviewer                  - Expert code reviewer who provides constructive, actionable feedback focused on correctness
+ 222. engineering-database-optimizer             - Expert database specialist focusing on schema design, query optimization, indexing strateg
+ 223. engineering-data-engineer                  - Expert data engineer specializing in building reliable data pipelines, lakehouse architect
+ 224. engineering-devops-automator               - Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline developme
+ 225. engineering-email-intelligence-engineer    - Expert in extracting structured, reasoning-ready data from raw email threads for AI agents
+ 226. engineering-embedded-firmware-engineer     - Specialist in bare-metal and RTOS firmware - ESP32/ESP-IDF, PlatformIO, Arduino, ARM Corte
+ 227. engineering-filament-optimization-specialist - Expert in restructuring and optimizing Filament PHP admin interfaces for maximum usability
+ 228. engineering-frontend-developer             - Expert frontend developer specializing in modern web technologies, React/Vue/Angular frame
+ 229. engineering-git-workflow-master            - Expert in Git workflows, branching strategies, and version control best practices includin
+ 230. engineering-incident-response-commander    - Expert incident commander specializing in production incident management, structured respo
+ 231. engineering-minimal-change-engineer        - Engineering specialist focused on minimum-viable diffs — fixes only what was asked, refuse
+ 232. engineering-mobile-app-builder             - Specialized mobile application developer with expertise in native iOS/Android development 
+ 233. engineering-rapid-prototyper               - Specialized in ultra-fast proof-of-concept development and MVP creation using efficient to
+ 234. engineering-security-engineer              - Expert application security engineer specializing in threat modeling, vulnerability assess
+ 235. engineering-senior-developer               - Premium implementation specialist - Masters Laravel/Livewire/FluxUI, advanced CSS, Three.j
+ 236. engineering-software-architect             - Expert software architect specializing in system design, domain-driven design, architectur
+ 237. engineering-solidity-smart-contract-engineer - Expert Solidity developer specializing in EVM smart contract architecture, gas optimizatio
+ 238. engineering-sre                            - Expert site reliability engineer specializing in SLOs, error budgets, observability, chaos
+ 239. engineering-technical-writer               - Expert technical writer specializing in developer documentation, API references, README fi
+ 240. engineering-threat-detection-engineer      - Expert detection engineer specializing in SIEM rule development, MITRE ATT&CK coverage map
+ 241. engineering-voice-ai-integration-engineer  - Expert in building end-to-end speech transcription pipelines using Whisper-style models an
+ 242. error-coordinator                          - Use this agent when distributed system errors occur and need coordinated handling across m
+ 243. error-detective                            - Use this agent when you need to diagnose why errors are occurring in your system, correlat
+ 244. eval-judge                                 - LLM judge for plugin quality assessment. Scores skills on triggering accuracy, orchestrati
+ 245. eval-orchestrator                          - Orchestrates plugin quality evaluation. Use PROACTIVELY when evaluating, scoring, or certi
+ 246. event-sourcing-architect                   - Expert in event sourcing, CQRS, and event-driven architecture patterns. Masters event stor
+ 247. expo-react-native-expert                   - Use when building mobile applications with Expo and React Native that require native modul
+ 248. fastapi-developer                          - Use when building modern async Python APIs with FastAPI, implementing Pydantic v2 validati
+ 249. fastapi-expert                             - FastAPI framework specialist for high-performance Python APIs, async/await patterns, Pydan
+ 250. fastapi-pro                                - Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and Pydantic V2. Master mi
+ 251. fhir-expert                                - Expert in Fast Healthcare Interoperability Resources (FHIR) including FHIR R4/R5 implement
+ 252. finance-bookkeeper-controller              - Expert bookkeeper and controller specializing in day-to-day accounting operations, financi
+ 253. finance-financial-analyst                  - Expert financial analyst specializing in financial modeling, forecasting, scenario analysi
+ 254. finance-fpa-analyst                        - Expert Financial Planning & Analysis (FP&A) analyst specializing in budgeting, variance an
+ 255. finance-investment-researcher              - Expert investment researcher specializing in market research, due diligence, portfolio ana
+ 256. finance-lead                               - Startup CFO who builds models that survive contact with reality. Handles fundraising, unit
+ 257. finance-tax-strategist                     - Expert tax strategist specializing in tax optimization, multi-jurisdictional compliance, t
+ 258. financial-compliance-expert                - Financial compliance specialist with expertise in KYC/AML procedures, regulatory reporting
+ 259. fintech-engineer                           - Use when building payment systems, financial integrations, or compliance-heavy financial a
+ 260. firmware-analyst                           - Expert firmware analyst specializing in embedded systems, IoT security, and hardware rever
+ 261. flutter-expert                             - Expert in Flutter framework for building beautiful, natively compiled applications for mob
+ 262. frontend-developer                         - Use when building complete frontend applications across React, Vue, and Angular frameworks
+ 263. frontend-security-coder                    - Expert in secure frontend coding practices specializing in XSS prevention, output sanitiza
+ 264. fullstack-developer                        - Use this agent when you need to build complete features spanning database, API, and fronte
+ 265. gallery-researcher                         - >-
+ 266. game-ai-expert                             - Game AI specialist for intelligent NPCs, behavior trees, pathfinding, procedural generatio
+ 267. game-audio-engineer                        - Interactive audio specialist - Masters FMOD/Wwise integration, adaptive music systems, spa
+ 268. game-designer                              - Systems and mechanics architect - Masters GDD authorship, player psychology, economy balan
+ 269. game-developer                             - Expert in game development with Unity, Unreal Engine, game mechanics design, multiplayer n
+ 270. gcp-infrastructure-expert                  - GCP infrastructure optimization specialist with deep expertise in Google Cloud service sel
+ 271. geo-implementation-expert                  - Expert in technical implementation of Generative Engine Optimization (GEO), specializing i
+ 272. geo-strategist                             - Expert in Generative Engine Optimization (GEO) strategy for maximizing visibility in AI-po
+ 273. giai-quyet-mau-thuan-noi-bo                - Hoà giải mâu thuẫn giữa nhân viên/bộ phận — giữ không khí làm việc tích cực, không để xung
+ 274. gitops-expert                              - Expert in GitOps practices for declarative infrastructure and application delivery. Specia
+ 275. git-workflow-manager                       - Use this agent when you need to design, establish, or optimize Git workflows, branching st
+ 276. godot-gameplay-scripter                    - Composition and signal integrity specialist - Masters GDScript 2.0, C# integration, node-b
+ 277. godot-multiplayer-engineer                 - Godot 4 networking specialist - Masters the MultiplayerAPI, scene replication, ENet/WebRTC
+ 278. godot-shader-developer                     - Godot 4 visual effects specialist - Masters the Godot Shading Language (GLSL-like), Visual
+ 279. go-expert                                  - Go language expert for writing idiomatic Go code, designing concurrent systems, and buildi
+ 280. goi-dien-cham-soc-sau-dich-vu              - Gọi chăm sóc khách sau điều trị — hỏi thăm hồi phục, hướng dẫn aftercare, bắt sớm bất thườ
+ 281. goi-von-dau-tu                             - Chuẩn bị hồ sơ và chiến lược gọi vốn mở rộng — pitch, định giá, điều khoản, tiếp cận nhà đ
+ 282. golang-pro                                 - Use when building Go applications requiring concurrent programming, high-performance syste
+ 283. govtech-expert                             - Government technology specialist for digital transformation, civic tech, compliance with g
+ 284. graphic-designer                           - Visual design specialist focused on creating compelling marketing materials, brand identit
+ 285. graphql-architect                          - Use this agent when designing or evolving GraphQL schemas across microservices, implementi
+ 286. graphql-expert                             - GraphQL API expert specializing in schema design, resolver implementation, query optimizat
+ 287. growth-hacker                              - Growth hacking expert specializing in rapid experimentation, viral loops, conversion optim
+ 288. growth-marketer                            - Growth marketing specialist for bootstrapped startups and indie hackers. Builds content en
+ 289. grpc-expert                                - gRPC expert specializing in protocol buffers, service design, streaming APIs, load balanci
+ 290. haskell-pro                                - Expert Haskell engineer specializing in advanced type systems, pure functional design, and
+ 291. healthcare-admin                           - Use when working on healthcare administration tasks including revenue cycle management, HI
+ 292. healthcare-customer-service                - Empathetic healthcare customer service specialist for patient support, billing inquiries, 
+ 293. healthcare-security                        - Expert in healthcare cybersecurity, medical device security, health data protection, zero 
+ 294. hipaa-expert                               - Expert in HIPAA (Health Insurance Portability and Accountability Act) compliance including
+ 295. hl7-expert                                 - Expert in HL7 FHIR, HL7 v2.x message standards, healthcare data interoperability, clinical
+ 296. hoa-nhap-nhan-vien-moi                     - Đón và hoà nhập nhân viên mới (onboarding) — hiểu văn hoá, quy trình, công cụ, gắn bó nhan
+ 297. hop-tac-hang-thiet-bi                      - Xây quan hệ với hãng máy móc, mỹ phẩm, dược mỹ phẩm — giá tốt, đào tạo, bảo chứng công ngh
+ 298. hospitality-guest-services                 - Comprehensive hospitality guest services specialist for hotels, resorts, restaurants, and 
+ 299. ho-tro-ky-thuat-noi-bo                     - Hỗ trợ nhân viên xử lý sự cố máy tính, phần mềm, thiết bị văn phòng — nhanh, không gián đo
+ 300. ho-tro-tra-gop-tai-chinh                   - Cung cấp giải pháp trả góp, trả chậm cho gói dịch vụ giá cao — gỡ rào cản tài chính, mở rộ
+ 301. hr-onboarding                              - Comprehensive HR onboarding specialist for employee orientation, documentation management,
+ 302. hr-pro                                     - Professional, ethical HR partner for hiring, onboarding/offboarding, PTO and leave, perfor
+ 303. hybrid-cloud-architect                     - Expert hybrid cloud architect specializing in complex multi-cloud solutions across AWS/Azu
+ 304. i18n-expert                                - Internationalization specialist for multi-language software support, Unicode handling, loc
+ 305. identity-graph-operator                    - Operates a shared identity graph that multiple AI agents resolve against. Ensures every ag
+ 306. image-generator                            - >-
+ 307. implement                                  - Developer agent. Implements the architect plan step-by-step, guided by AGENTS.md guardrail
+ 308. incident-commander                         - Crisis response expert for managing production incidents, coordinating emergency responses
+ 309. incident-responder                         - Use this agent when an active security breach, service outage, or operational incident req
+ 310. influencer-partnership-expert              - Influencer marketing specialist focused on identifying, vetting, negotiating, and managing
+ 311. ios-developer                              - Develop native iOS applications with Swift/SwiftUI. Masters iOS 18, SwiftUI, UIKit integra
+ 312. iot-engineer                               - Use when designing and deploying IoT solutions requiring expertise in device management, e
+ 313. iot-expert                                 - Expert in Internet of Things (IoT) development, embedded systems programming, sensor integ
+ 314. ipfs-expert                                - Expert in InterPlanetary File System (IPFS), specializing in distributed storage, content 
+ 315. it-ops-orchestrator                        - Use for orchestrating complex IT operations tasks that span multiple domains (PowerShell a
+ 316. java-architect                             - Use this agent when designing enterprise Java architectures, migrating Spring Boot applica
+ 317. java-expert                                - Expert in modern Java development (Java 8-21+), Spring ecosystem, microservices architectu
+ 318. java-pro                                   - Master Java 21+ with modern features like virtual threads, pattern matching, and Spring Bo
+ 319. javascript-expert                          - JavaScript/TypeScript expert for modern web development, Node.js applications, and fronten
+ 320. javascript-pro                             - Use this agent when you need to build, optimize, or refactor modern JavaScript code for br
+ 321. jest-expert                                - Expert in Jest testing framework for unit testing, integration testing, snapshot testing, 
+ 322. julia-pro                                  - Master Julia 1.10+ with modern features, performance optimization, multiple dispatch, and 
+ 323. ke-hoach-ke-nhiem                          - Xây kế hoạch kế nhiệm cho vị trí trọng yếu — không để phụ thuộc một người, phòng khám vận 
+ 324. ke-hoach-mo-chi-nhanh                      - Lập kế hoạch tổng thể mở chi nhánh mới — đầu tư, nhân sự, thiết bị, giấy phép, timeline, đ
+ 325. ke-hoach-tang-truong-dai-han               - Vạch chiến lược tăng trưởng 3–5 năm — mục tiêu, lộ trình, cột mốc, nguồn lực để hệ sinh th
+ 326. ket-noi-networking-nguoi-noi-tieng         - Xây và quản lý mạng lưới quan hệ với người nổi tiếng, chuyên gia, đối tác để cộng hưởng uy
+ 327. ke-toan-quan-tri                           - Cung cấp số liệu kế toán quản trị (giá thành, lợi nhuận theo dịch vụ, điểm hoà vốn) để ra 
+ 328. ke-toan-so-sach                            - Ghi nhận, phân loại giao dịch, lập báo cáo thu chi. Kích hoạt khi cần xử lý sổ sách.
+ 329. khao-sat-gan-ket-nhan-vien                 - Đo mức độ gắn kết, hài lòng của nhân viên — phát hiện sớm nguy cơ nghỉ việc, cải thiện môi
+ 330. khao-sat-hai-long-nps                      - Đo lường mức độ hài lòng và NPS sau dịch vụ — phát hiện điểm yếu trải nghiệm, theo dõi xu 
+ 331. khao-sat-khach-hang                        - Thiết kế khảo sát, đo sự hài lòng (NPS/CSAT), thu insight khách hàng và biến phản hồi thàn
+ 332. khao-sat-trai-nghiem-sau                   - Khảo sát chuyên sâu trải nghiệm khách qua phỏng vấn–nhóm để hiểu insight ẩn, tìm cơ hội cả
+ 333. kiem-soat-chat-luong                       - Giám sát chất lượng quy trình lâm sàng và dịch vụ, chấm điểm tuân thủ SOP, phát hiện sai l
+ 334. kiem-soat-chi-phi-van-hanh                 - Theo dõi và tối ưu chi phí vận hành phòng khám (vật tư, nhân sự, mặt bằng, marketing) để g
+ 335. kiem-toan-noi-bo                           - Rà soát nội bộ tài chính và quy trình — phát hiện sai sót, gian lận, lỗ hổng kiểm soát trư
+ 336. kiem-tra-an-toan-thiet-bi-dien             - Kiểm tra định kỳ an toàn thiết bị y tế và hệ thống điện — phòng cháy, rò điện, sự cố máy g
+ 337. knowledge-synthesizer                      - Use when you need to extract actionable patterns from agent interactions, synthesize insig
+ 338. kotlin-expert                              - Kotlin language specialist for Android development, Kotlin Multiplatform, coroutines, func
+ 339. kotlin-specialist                          - Use when building Kotlin applications requiring advanced coroutine patterns, multiplatform
+ 340. kubernetes-architect                       - Expert Kubernetes architect specializing in cloud-native infrastructure, advanced GitOps w
+ 341. kubernetes-expert                          - Kubernetes specialist for container orchestration, cluster management, deployment strategi
+ 342. kubernetes-specialist                      - Use this agent when you need to design, deploy, configure, or troubleshoot Kubernetes clus
+ 343. ky-su-tu-dong-hoa                          - Thiết kế workflow tự động, kết nối công cụ, viết script lặp việc. Kích hoạt khi cần tự độn
+ 344. language-translator                        - Real-time Spanish ↔ English translation specialist with cultural context, regional dialect
+ 345. lap-content-calendar-tong                  - Lập lịch nội dung tổng cho mọi kênh — đồng bộ chủ đề, tần suất, mùa vụ, chiến dịch, tránh 
+ 346. lap-ngan-sach                              - Xây ngân sách theo phòng ban, giám sát chênh lệch thực tế. Kích hoạt khi cần lập hoặc theo
+ 347. laravel-specialist                         - Use when building Laravel 10+ applications, architecting Eloquent models with complex rela
+ 348. layer2-expert                              - Expert in Layer 2 scaling solutions, specializing in Optimistic Rollups, ZK-Rollups, state
+ 349. legacy-modernizer                          - Use this agent when modernizing legacy systems that need incremental migration strategies,
+ 350. legal-advisor                              - Use this agent when you need to draft contracts, review compliance requirements, develop I
+ 351. legal-billing-time-tracking                - Comprehensive legal billing and time tracking specialist for accurate time capture, invoic
+ 352. legal-client-intake                        - Comprehensive legal client intake specialist for qualifying prospects, collecting case inf
+ 353. legal-compliance-expert                    - Legal and compliance expert specializing in data privacy (GDPR, CCPA), contract management
+ 354. legal-document-review                      - Comprehensive legal document review specialist for contracts, litigation documents, and re
+ 355. level-designer                             - Spatial storytelling and flow specialist - Masters layout theory, pacing architecture, enc
+ 356. license-engineer                           - Use this agent when architecting, implementing, or optimizing end-to-end legal licensing s
+ 357. lich-ca-kip-nhan-su                        - Xếp ca/lịch làm việc nhân sự khớp với lưu lượng khách, đảm bảo đủ người giờ cao điểm mà kh
+ 358. livestream-ban-hang                        - Lên kịch bản và điều phối phiên livestream tư vấn/bán gói dịch vụ, chốt đơn trực tiếp trên
+ 359. llm-architect                              - Use when designing LLM systems for production, implementing fine-tuning or RAG architectur
+ 360. load-testing-expert                        - Load and performance testing specialist for k6, JMeter, Gatling, Locust, and Artillery. In
+ 361. loan-officer-assistant                     - Comprehensive loan officer assistant for mortgage and lending professionals — covering bor
+ 362. localization-engineer                      - Expert in localization engineering, internationalization infrastructure, translation workf
+ 363. lo-trinh-thang-tien                        - Xây lộ trình nghề nghiệp và thăng tiến cho nhân viên — thấy tương lai, có mục tiêu phấn đấ
+ 364. lsp-index-engineer                         - Language Server Protocol specialist building unified code intelligence systems through LSP
+ 365. luyen-noi-truoc-camera                     - Soạn kịch bản và mẹo giúp sếp và đội ngũ nói trước camera tự nhiên, cuốn hút, đúng thông đ
+ 366. m365-admin                                 - Use when automating Microsoft 365 administrative tasks including Exchange Online mailbox p
+ 367. machine-learning-engineer                  - Use this agent when you need to deploy, optimize, or serve machine learning models at scal
+ 368. macos-spatial-metal-engineer               - Native Swift and Metal specialist building high-performance 3D rendering systems and spati
+ 369. malware-analyst                            - Expert malware analyst specializing in defensive malware research, threat intelligence, an
+ 370. marketing-agentic-search-optimizer         - Expert in WebMCP readiness and agentic task completion — audits whether AI agents can actu
+ 371. marketing-ai-citation-strategist           - Expert in AI recommendation engine optimization (AEO/GEO) — audits brand visibility across
+ 372. marketing-app-store-optimizer              - Expert app store marketing specialist focused on App Store Optimization (ASO), conversion 
+ 373. marketing-automation-expert                - Marketing automation specialist focused on workflow design, lead nurturing, platform optim
+ 374. marketing-book-co-author                   - Strategic thought-leadership book collaborator for founders, experts, and operators turnin
+ 375. marketing-carousel-growth-engine           - Autonomous TikTok and Instagram carousel generation specialist. Analyzes any website URL w
+ 376. marketing-content-creator                  - Expert content strategist and creator for multi-platform campaigns. Develops editorial cal
+ 377. marketing-cross-border-ecommerce           - Full-funnel cross-border e-commerce strategist covering Amazon, Shopee, Lazada, AliExpress
+ 378. marketing-growth-hacker                    - Expert growth strategist specializing in rapid user acquisition through data-driven experi
+ 379. marketing-instagram-curator                - Expert Instagram marketing specialist focused on visual storytelling, community building, 
+ 380. marketing-linkedin-content-creator         - Expert LinkedIn content strategist focused on thought leadership, personal brand building,
+ 381. marketing-reddit-community-builder         - Expert Reddit marketing specialist focused on authentic community engagement, value-driven
+ 382. marketing-seo-specialist                   - Expert search engine optimization strategist specializing in technical SEO, content optimi
+ 383. marketing-social-media-strategist          - Expert social media strategist for LinkedIn, Twitter, and professional platforms. Creates 
+ 384. marketing-tiktok-strategist                - Expert TikTok marketing specialist focused on viral content creation, algorithm optimizati
+ 385. marketing-truyen-mieng                     - Thiết kế chương trình giới thiệu khách (referral) để khách cũ dẫn khách mới, biến sự hài l
+ 386. marketing-twitter-engager                  - Expert Twitter marketing specialist focused on real-time engagement, thought leadership bu
+ 387. marketing-video-optimization-specialist    - Video marketing strategist specializing in YouTube algorithm optimization, audience retent
+ 388. market-researcher                          - Use this agent when you need to analyze markets, understand consumer behavior, assess comp
+ 389. martech-stack-architect                    - Marketing technology stack architect specialized in designing, integrating, and optimizing
+ 390. mcp-developer                              - Use this agent when you need to build, debug, or optimize Model Context Protocol (MCP) ser
+ 391. medical-data                               - Expert in healthcare data management, clinical data warehousing, EHR data analytics, medic
+ 392. medical-imaging-expert                     - Medical imaging expert specializing in DICOM standards, PACS integration, medical image pr
+ 393. mermaid-expert                             - Create Mermaid diagrams for flowcharts, sequences, ERDs, and architectures. Masters syntax
+ 394. messaging-architect                        - Strategic messaging framework specialist who designs hierarchical, scalable messaging syst
+ 395. microservices-architect                    - Use when designing distributed system architecture, decomposing monolithic applications in
+ 396. minecraft-bukkit-pro                       - Master Minecraft server plugin development with Bukkit, Spigot, and Paper APIs. Specialize
+ 397. ml-engineer                                - Machine learning engineer expert for building, training, deploying, and monitoring ML mode
+ 398. mlops-engineer                             - MLOps expert for operationalizing machine learning models, building ML pipelines, implemen
+ 399. ml-researcher                              - Machine learning research expert for implementing cutting-edge ML algorithms, conducting e
+ 400. mobile-app-developer                       - Use this agent when developing iOS and Android mobile applications with focus on native or
+ 401. mobile-developer                           - Expert in mobile application development including React Native, Flutter, native iOS (Swif
+ 402. mobile-security-coder                      - Expert in secure mobile coding practices specializing in input validation, WebView securit
+ 403. mongodb-expert                             - MongoDB expert for NoSQL database design, performance optimization, aggregation pipelines,
+ 404. monitoring-expert                          - Observability and monitoring expert for implementing comprehensive monitoring, alerting, l
+ 405. monorepo-architect                         - Expert in monorepo architecture, build systems, and dependency management at scale. Master
+ 406. mua-hang-cung-ung                          - Lập kế hoạch mua hàng và đặt hàng vật tư–thiết bị–mỹ phẩm đúng thời điểm, đúng số lượng, t
+ 407. multi-agent-coordinator                    - Use when coordinating multiple concurrent agents that need to communicate, share state, sy
+ 408. narrative-designer                         - Story systems and dialogue architect - Masters GDD-aligned narrative design, branching dia
+ 409. neo4j-expert                               - Expert in Neo4j graph database for relationship modeling, network analysis, recommendation
+ 410. nestjs-expert                              - Expert in NestJS framework, specializing in enterprise-grade Node.js applications, depende
+ 411. network-engineer                           - Use this agent when designing, optimizing, or troubleshooting cloud and hybrid network inf
+ 412. nextjs-developer                           - Use this agent when building production Next.js 14+ applications that require full-stack d
+ 413. nextjs-expert                              - Next.js framework specialist for App Router, Server Components, Server Actions, ISR, edge 
+ 414. nft-platform-expert                        - Expert in NFT marketplace development, specializing in ERC-721/ERC-1155 standards, marketp
+ 415. nghien-cuu-cong-nghe-lam-dep               - Cập nhật và đánh giá công nghệ thẩm mỹ mới (máy, kỹ thuật, hoạt chất) — chọn cái đáng đưa 
+ 416. nghien-cuu-doi-thu                         - Phân tích đối thủ, định vị, giá, chiến dịch, tìm khoảng trống thị trường. Kích hoạt khi cầ
+ 417. nghien-cuu-mat-bang-chi-nhanh              - Tìm và đánh giá mặt bằng cho chi nhánh mới — vị trí, lưu lượng, tệp dân cư, chi phí, tiềm 
+ 418. nghien-cuu-thi-truong                      - Nghiên cứu thị trường thẩm mỹ — quy mô, xu hướng, nhu cầu, phân khúc — làm nền cho chiến l
+ 419. nghien-cuu-xu-huong-lam-dep                - Nắm bắt xu hướng làm đẹp đang lên (trong nước và quốc tế) — đón đầu nhu cầu, định hướng dị
+ 420. nhac-lich-hen-sap-toi                      - Nhắc khách lịch hẹn và buổi liệu trình sắp tới qua đúng kênh, đúng thời điểm — giảm quên h
+ 421. nhac-tai-kham-lieu-trinh                   - Theo dõi tiến độ liệu trình của từng khách, nhắc lịch tái khám/buổi tiếp theo, phát hiện k
+ 422. nhuong-quyen-franchise                     - Xây mô hình nhân bản/nhượng quyền để mở rộng HANA ra nhiều cơ sở, chuẩn hoá quy trình và b
+ 423. nlp-engineer                               - Expert in Natural Language Processing, specializing in text analysis, language models, nam
+ 424. node-specialist                            - Use this agent when you need to build, optimize, or debug Node.js backend applications, AP
+ 425. observability-engineer                     - Build production-ready monitoring, logging, and tracing systems. Implements comprehensive 
+ 426. observability-expert                       - Expert in observability platforms and practices for distributed systems. Specializes in Op
+ 427. orchestrate                                - Product Orchestrator agent. Reads the active story file, asks clarifying product questions
+ 428. paid-media-auditor                         - Comprehensive paid media auditor who systematically evaluates Google Ads, Microsoft Ads, a
+ 429. paid-media-creative-strategist             - Paid media creative specialist focused on ad copywriting, RSA optimization, asset group de
+ 430. paid-media-paid-social-strategist          - Cross-platform paid social advertising specialist covering Meta (Facebook/Instagram), Link
+ 431. paid-media-ppc-strategist                  - Senior paid media strategist specializing in large-scale search, shopping, and performance
+ 432. paid-media-programmatic-buyer              - Display advertising and programmatic media buying specialist covering managed placements, 
+ 433. paid-media-search-query-analyst            - Specialist in search term analysis, negative keyword architecture, and query-to-intent map
+ 434. paid-media-tracking-specialist             - Expert in conversion tracking architecture, tag management, and attribution modeling acros
+ 435. payment-expert                             - Expert in payment systems integration including Stripe, PayPal, Square, payment processing
+ 436. payment-integration                        - Use this agent when implementing payment systems, integrating payment gateways, or handlin
+ 437. penetration-tester                         - Use this agent when you need to conduct authorized security penetration tests to identify 
+ 438. performance-engineer                       - Performance optimization expert for profiling, load testing, bottleneck analysis, and syst
+ 439. performance-monitor                        - Use when establishing observability infrastructure to track system metrics, detect perform
+ 440. phac-do-dieu-tri                           - Đề xuất phác đồ điều trị cá nhân hoá, chỉ định/chống chỉ định, lộ trình kết hợp dịch vụ. K
+ 441. phan-tich-clv-vong-doi                     - Phân tích giá trị vòng đời khách (CLV) — biết khách đáng đầu tư bao nhiêu để có và giữ, đị
+ 442. phan-tich-du-lieu-marketing                - Đo hiệu quả marketing đa kênh (chi phí/lead, chi phí/khách, ROI, kênh nào ra tiền) để dồn 
+ 443. phan-tich-hanh-vi-khach                    - Phân tích dữ liệu hành vi khách (phân khúc, tần suất, dịch vụ ưa thích, giá trị vòng đời) 
+ 444. phan-tich-hieu-qua-khuyen-mai              - Đo hiệu quả thật của từng chương trình khuyến mãi — doanh thu tăng thêm, biên lợi nhuận, k
+ 445. phan-tich-kinh-doanh                       - Đọc số liệu, dựng dashboard, chỉ ra điểm nghẽn và cơ hội. Kích hoạt khi có dữ liệu doanh t
+ 446. phan-tich-loi-nhuan-dich-vu                - Phân tích lợi nhuận từng dịch vụ/gói — biết dịch vụ nào lãi, dịch vụ nào lỗ để tối ưu danh
+ 447. phan-tich-pheu-chuyen-doi                  - Phân tích phễu từ tiếp cận đến chốt — đo rơi rụng từng tầng, tìm điểm nghẽn, đề xuất tối ư
+ 448. phan-tich-tai-chinh                        - Phân tích báo cáo, dòng tiền, biên lợi nhuận, dự báo. Kích hoạt khi cần phân tích tài chín
+ 449. phan-tich-thi-phan                         - Ước lượng và theo dõi thị phần HANA so đối thủ trong khu vực — biết vị thế, đo tăng trưởng
+ 450. phan-tich-thi-truong-vung                  - Phân tích thị trường thẩm mỹ theo khu vực/quận — cạnh tranh, nhu cầu, tệp khách địa phương
+ 451. phat-trien-dich-vu-moi                     - Nghiên cứu xu hướng và đề xuất dịch vụ/công nghệ thẩm mỹ mới, xây concept dịch vụ từ ý tưở
+ 452. phat-trien-doi-tac                         - Tìm và quản lý đối tác hợp tác (spa, gym, studio, KOL, nhãn hàng). Kích hoạt khi cần phát 
+ 453. phieu-ban-hang                             - Dựng phễu từ lead đến chốt đơn, kèm kịch bản nuôi dưỡng. Kích hoạt khi cần thiết kế hành t
+ 454. phong-van-danh-gia-ung-vien                - Thiết kế và thực hiện phỏng vấn, đánh giá chuyên môn–thái độ–độ phù hợp văn hoá của ứng vi
+ 455. php-expert                                 - PHP language specialist for modern PHP development, Laravel framework, WordPress, Drupal, 
+ 456. php-pro                                    - Use this agent when working with PHP 8.3+ projects that require strict typing, modern lang
+ 457. platform-engineer                          - Use when building or improving internal developer platforms (IDPs), designing self-service
+ 458. playwright                                 - Playwright testing agent. Only runs for FRONTEND tasks. Verifies acceptance criteria in a 
+ 459. playwright-expert                          - Expert in Playwright for modern cross-browser end-to-end testing, component testing, and t
+ 460. podcast-creator                            - Podcast content creation specialist focused on audio strategy, production workflows, distr
+ 461. policy-enforcer                            - Cedar policy author and reviewer for Claude Code tool calls. Writes, audits, and explains 
+ 462. posix-shell-pro                            - Expert in strict POSIX sh scripting for maximum portability across Unix-like systems. Spec
+ 463. postgres-pro                               - Use when you need to optimize PostgreSQL performance, design high-availability replication
+ 464. postgresql-expert                          - PostgreSQL database expert for advanced features, performance tuning, replication, and Pos
+ 465. powershell-5.1-expert                      - Use when automating Windows infrastructure tasks requiring PowerShell 5.1 scripts with RSA
+ 466. powershell-7-expert                        - Use when building cross-platform cloud automation scripts, Azure infrastructure orchestrat
+ 467. powershell-module-architect                - Use this agent when architecting and refactoring PowerShell modules, designing profile sys
+ 468. powershell-security-hardening              - Use this agent when you need to harden PowerShell automation, secure remoting configuratio
+ 469. powershell-ui-architect                    - Use when designing or building desktop graphical interfaces (WinForms, WPF, Metro-style da
+ 470. prd-writer                                 - **PRIMARY AGENT for project planning**: Essential first step for any complex development p
+ 471. product-behavioral-nudge-engine            - Behavioral psychology specialist that adapts software interaction cadences and styles to m
+ 472. product-feedback-synthesizer               - Expert in collecting, analyzing, and synthesizing user feedback from multiple channels to 
+ 473. product-manager                            - Holistic product leader who owns the full product lifecycle — from discovery and strategy 
+ 474. product-sprint-prioritizer                 - Expert product manager specializing in agile sprint planning, feature prioritization, and 
+ 475. product-trend-researcher                   - Expert market intelligence analyst specializing in identifying emerging trends, competitiv
+ 476. project-idea-validator                     - Use this agent when you need an idea pressure-tested with brutal honesty, competitor teard
+ 477. project-management-experiment-tracker      - Expert project manager specializing in experiment design, execution tracking, and data-dri
+ 478. project-management-jira-workflow-steward   - Expert delivery operations specialist who enforces Jira-linked Git workflows, traceable co
+ 479. project-management-project-shepherd        - Expert project manager specializing in cross-functional project coordination, timeline man
+ 480. project-management-studio-operations       - Expert operations manager specializing in day-to-day studio efficiency, process optimizati
+ 481. project-management-studio-producer         - Senior strategic leader specializing in high-level creative and technical project orchestr
+ 482. project-manager                            - **WORKFLOW ORCHESTRATOR**: Coordinates multi-agent workflows after PRD creation. Breaks do
+ 483. project-manager-senior                     - Converts specs to tasks and remembers previous projects. Focused on realistic scope, no ba
+ 484. prompt-crafter                             - >-
+ 485. prompt-engineer                            - Use this agent when you need to design, optimize, test, or evaluate prompts for large lang
+ 486. pr-strategist                              - Public relations strategist focused on media relations, reputation management, crisis comm
+ 487. pr-truyen-thong                            - Xây dựng quan hệ báo chí, soạn thông cáo, bài PR, kịch bản xuất hiện truyền thông cho thươ
+ 488. python-expert                              - Python language expert for writing idiomatic Python code, optimizing performance, and leve
+ 489. python-pro                                 - Use this agent when you need to build type-safe, production-ready Python code for web APIs
+ 490. qa                                         - QA Agent. Tests all acceptance criteria and edge cases from orchestrator-output.md. Genera
+ 491. qa-expert                                  - Use this agent when you need comprehensive quality assurance strategy, test planning acros
+ 492. quan-ly-app-khach-hang                     - Vận hành ứng dụng khách hàng (đặt lịch, tích điểm, theo dõi liệu trình) — trải nghiệm mượt
+ 493. quan-ly-bao-hanh-dich-vu                   - Quản lý chính sách và yêu cầu bảo hành dịch vụ — minh bạch điều kiện, xử lý công bằng, giữ
+ 494. quan-ly-bao-hiem-doanh-nghiep              - Quản lý các loại bảo hiểm doanh nghiệp (tài sản, cháy nổ, gián đoạn kinh doanh) — đủ bảo v
+ 495. quan-ly-cham-cong-phep                     - Quản lý chấm công, ca kíp, nghỉ phép — chính xác, công bằng, làm cơ sở tính lương và xếp l
+ 496. quan-ly-coc-deposit                        - Quản lý tiền cọc, đặt trước dịch vụ — chính sách rõ ràng, đối soát chính xác, giảm khách h
+ 497. quan-ly-cong-dong                          - Xây và nuôi dưỡng cộng đồng khách hàng (group Facebook/Zalo), tạo gắn kết, nội dung tương 
+ 498. quan-ly-cong-luong-payroll                 - Tính công, lương, thưởng, hoa hồng, bảo hiểm cho nhân viên — chính xác, đúng hạn, minh bạc
+ 499. quan-ly-cong-no                            - Quản lý công nợ khách (trả góp, đặt cọc, gói trả nhiều đợt) và thu hồi đúng hạn mà vẫn giữ
+ 500. quan-ly-danh-gia                           - Theo dõi review, soạn phản hồi, chiến lược nâng điểm thương hiệu. Kích hoạt khi cần quản l
+ 501. quan-ly-danh-muc-dich-vu                   - Quản trị toàn bộ danh mục dịch vụ — cấu trúc, vị trí, giá, ưu tiên — để bộ dịch vụ mạch lạ
+ 502. quan-ly-danh-tieng                         - Theo dõi và phản hồi đánh giá trên Google/Facebook/diễn đàn, xây dựng review tích cực, xử 
+ 503. quan-ly-dat-lich-online                    - Vận hành hệ thống đặt lịch trực tuyến — tránh trùng giờ, nhắc lịch tự động, tối ưu công su
+ 504. quan-ly-doi-tac-chien-luoc                 - Xây và quản lý liên minh với đối tác chiến lược (spa, gym, thời trang, tài chính) — mở tệp
+ 505. quan-ly-dong-tien                          - Theo dõi và dự báo dòng tiền vào–ra — đảm bảo luôn đủ tiền vận hành, tránh đứt thanh khoản
+ 506. quan-ly-du-an                              - Lập kế hoạch, phân công, theo dõi mốc, quản trị rủi ro dự án. Kích hoạt khi cần quản lý mộ
+ 507. quan-ly-email-newsletter                   - Xây và gửi email/newsletter nuôi dưỡng khách — chia sẻ kiến thức, ưu đãi, giữ kết nối, kéo
+ 508. quan-ly-fanpage-facebook                   - Vận hành fanpage Facebook HANA — lịch đăng, tương tác, inbox, nuôi cộng đồng nữ 35–65 đúng
+ 509. quan-ly-giang-vien                         - Quản lý đội ngũ giảng viên đào tạo: tuyển chọn, chuẩn hoá, phân lịch và đánh giá chất lượn
+ 510. quan-ly-giay-phep-hanh-nghe                - Theo dõi và duy trì hiệu lực các giấy phép pháp lý của phòng khám (giấy phép hoạt động, ch
+ 511. quan-ly-google-business                    - Tối ưu hồ sơ Google Business Profile (Google Maps), SEO bản đồ địa phương để khách quanh Q
+ 512. quan-ly-group-cong-dong-fb                 - Xây và nuôi group Facebook cộng đồng khách HANA — chia sẻ kiến thức, kết nối, giữ chân và 
+ 513. quan-ly-hinh-anh-kol-chu                   - Quản lý hình ảnh xuất hiện của sếp trên truyền thông và sự kiện sao cho nhất quán, sang tr
+ 514. quan-ly-hoc-vien                           - Quản lý hồ sơ, tiến độ và trải nghiệm học viên từ ghi danh tới tốt nghiệp. Kích hoạt khi c
+ 515. quan-ly-hop-dong-lao-dong                  - Soạn và quản lý hợp đồng lao động, phụ lục, chấm dứt — đúng luật, bảo vệ cả phòng khám và 
+ 516. quan-ly-ho-so-benh-an                      - Quản lý hồ sơ điều trị, bệnh án, phiếu đồng ý — đầy đủ, chính xác, bảo mật, làm chứng cứ v
+ 517. quan-ly-instagram                          - Vận hành Instagram HANA — feed thẩm mỹ nhất quán, Reels, Stories, hashtag, xây hình ảnh pr
+ 518. quan-ly-kenh-ca-nhan-tiktok                - Vận hành kênh TikTok cá nhân của sếp với nội dung chuyên gia gần gũi, xây cộng đồng tin cậ
+ 519. quan-ly-kenh-tiktok-thuong-hieu            - Vận hành kênh TikTok thương hiệu HANA — 6 nhóm content, hook 1-3s, bám trend an toàn, kéo 
+ 520. quan-ly-kho                                - Theo dõi tồn kho, dự báo nhu cầu, cảnh báo điểm đặt hàng. Kích hoạt khi cần quản lý kho.
+ 521. quan-ly-kho-du-lieu                        - Tổ chức, lưu trữ và quản trị kho dữ liệu doanh nghiệp — sạch, có cấu trúc, truy xuất nhanh
+ 522. quan-ly-kho-vat-tu                         - Quản lý kho vật tư–mỹ phẩm–thuốc của phòng khám: tồn kho, hạn dùng, định mức tiêu hao, cản
+ 523. quan-ly-khu-cho-premium                    - Quản lý không gian khu chờ — sạch, sang, tiện nghi, thơm, đồ uống, giải trí nhẹ để khách t
+ 524. quan-ly-kol                                - Tuyển chọn, brief, đo lường KOL/KOC/influencer. Kích hoạt khi cần triển khai chiến dịch ng
+ 525. quan-ly-landing-page                       - Xây và tối ưu landing page cho từng chiến dịch/dịch vụ — chuyển traffic quảng cáo thành le
+ 526. quan-ly-lich-xuat-hien                     - Lên và điều phối lịch sếp xuất hiện trước công chúng (sự kiện, phỏng vấn, hội thảo, livest
+ 527. quan-ly-loyalty-thanh-vien                 - Thiết kế và vận hành chương trình thành viên/loyalty (hạng, tích điểm, đặc quyền) để khách
+ 528. quan-ly-micro-influencer                   - Tìm, hợp tác và quản lý micro-influencer (KOC) nữ 35+ chân thật — reach đúng tệp, chi phí 
+ 529. quan-ly-mxh                                - Lên lịch, viết caption, bắt trend, phân tích tương tác Facebook/TikTok/IG. Kích hoạt khi c
+ 530. quan-ly-ncc                                - Đánh giá, so sánh, quản lý quan hệ nhà cung cấp. Kích hoạt khi cần làm việc với nhà cung c
+ 531. quan-ly-ngan-sach-marketing                - Phân bổ và kiểm soát ngân sách marketing theo kênh và chiến dịch — tối ưu ROI, không tiêu 
+ 532. quan-ly-nha-cung-cap                       - Quản lý quan hệ và đánh giá nhà cung cấp vật tư–thiết bị–mỹ phẩm: hồ sơ, hợp đồng, chất lư
+ 533. quan-ly-phan-hoi-realtime                  - Lắng nghe và xử lý phản hồi khách ngay tại điểm dịch vụ — bắt tín hiệu chưa hài lòng trước
+ 534. quan-ly-phan-mem-phong-kham                - Quản trị phần mềm quản lý phòng khám (lịch hẹn, hồ sơ, thanh toán, kho) — cấu hình, phân q
+ 535. quan-ly-phieu-uu-dai-voucher               - Thiết kế và quản lý voucher, phiếu ưu đãi, gift card — kích cầu đúng lúc mà không phá giá 
+ 536. quan-ly-quang-cao                          - Thiết kế, theo dõi, tối ưu chiến dịch quảng cáo Meta/Google theo ROAS. Kích hoạt khi cần c
+ 537. quan-ly-quang-cao-zalo                     - Chạy và tối ưu quảng cáo trên Zalo (Zalo Ads, ZNS) — tiếp cận tệp Việt trung niên, thu lea
+ 538. quan-ly-qua-tang-tri-an                    - Lên chương trình quà tặng, tri ân khách theo dịp và hạng thành viên — đúng gu premium, tạo
+ 539. quan-ly-quy-du-phong                       - Lập và quản lý quỹ dự phòng rủi ro (sự cố y khoa, biến động doanh thu, khẩn cấp) — phòng k
+ 540. quan-ly-review-google-map                  - Quản lý và tối ưu đánh giá trên Google Map — tăng review thật 5 sao, xử lý review xấu, nân
+ 541. quan-ly-rui-ro                             - Nhận diện, đánh giá, xây kế hoạch ứng phó rủi ro. Kích hoạt khi cần đánh giá rủi ro doanh 
+ 542. quan-ly-san-pham                           - Thu thập yêu cầu, dựng roadmap, ưu tiên tính năng. Kích hoạt khi cần phát triển sản phẩm/d
+ 543. quan-ly-tai-san-co-dinh                    - Quản lý tài sản cố định (máy móc, thiết bị, nội thất) — sổ tài sản, khấu hao, bảo trì, tha
+ 544. quan-ly-thanh-toan-dien-tu                 - Vận hành các kênh thanh toán điện tử (chuyển khoản, ví, thẻ, trả góp) — nhanh, an toàn, đố
+ 545. quan-ly-thiet-bi-y-te                      - Theo dõi máy móc, lịch bảo trì, hiệu chuẩn, vòng đời thiết bị thẩm mỹ. Kích hoạt khi cần q
+ 546. quan-ly-thoi-gian-cho-khach                - Giảm và quản lý thời gian chờ của khách — không để khách đợi lâu, biến thời gian chờ thành
+ 547. quan-ly-threads-x                          - Vận hành Threads và X cho HANA — tone chuyên gia chia sẻ thật, đại dương xanh thẩm mỹ prem
+ 548. quan-ly-thuoc-don-thuoc                    - Quản lý thuốc, vật tư dược, đơn thuốc — đúng quy định kê đơn, kiểm soát hạn dùng, tồn kho,
+ 549. quan-ly-ve-sinh-phong-kham                 - Quản lý vệ sinh tổng thể phòng khám — sạch chuẩn y tế và sạch chuẩn premium ở mọi khu vực,
+ 550. quan-ly-vo-khuan-tiet-trung                - Đảm bảo quy trình vô khuẩn, tiệt trùng dụng cụ, phòng thủ thuật đạt chuẩn — chống nhiễm kh
+ 551. quan-ly-vong-doi-dich-vu                   - Theo dõi vòng đời từng dịch vụ — ra mắt, tăng trưởng, bão hoà, thoái trào — để làm mới hoặ
+ 552. quan-ly-von-luu-dong                       - Tối ưu vốn lưu động — tồn kho, công nợ phải thu, phải trả — để tiền không bị chôn, vận hàn
+ 553. quan-ly-website-ky-thuat                   - Vận hành kỹ thuật website HANA — tốc độ tải, uptime, bảo mật, tương thích di động, cập nhậ
+ 554. quan-ly-youtube                            - Vận hành kênh YouTube HANA — video dài chuyên sâu, Shorts, tối ưu tiêu đề–thumbnail–SEO vi
+ 555. quan-ly-zalo-oa                            - Vận hành Zalo OA HANA — broadcast chăm sóc, ZNS nhắc lịch, tư vấn 1-1, giữ khách cũ quay l
+ 556. quant-analyst                              - Use this agent when you need to develop quantitative trading strategies, build financial m
+ 557. quan-tri-rui-ro-chien-luoc                 - Nhận diện và phòng ngừa rủi ro chiến lược cấp doanh nghiệp — pháp lý, thương hiệu, cạnh tr
+ 558. quan-tri-thuong-hieu-tong                  - Giữ nhất quán và phát triển thương hiệu HANA trên mọi điểm chạm — định vị, hình ảnh, giọng
+ 559. quantum-computing-expert                   - Quantum computing specialist for quantum algorithms, quantum circuits, quantum simulation,
+ 560. qwik-expert                                - Expert in Qwik framework for building instant-loading web applications with resumability, 
+ 561. rails-expert                               - Expert in Ruby on Rails framework including Rails 7+ features, Action Cable, Active Record
+ 562. ra-soat-hop-dong                           - Đọc hợp đồng, chỉ ra điều khoản rủi ro, đề xuất sửa. Kích hoạt khi cần rà soát văn bản phá
+ 563. react-expert                               - React and Next.js expert for building modern web applications, implementing state manageme
+ 564. react-native-expert                        - Expert in React Native for building cross-platform mobile applications. Specializes in nat
+ 565. react-specialist                           - Use when optimizing existing React applications for performance, implementing advanced Rea
+ 566. readme-generator                           - Use this agent when you need a maintainer-ready README built from exact repository reality
+ 567. real-estate-buyer-seller                   - Comprehensive real estate agent assistant for buyer representation, seller representation,
+ 568. receipt-verifier                           - Expert in Ed25519 signed receipts, JCS canonicalization, hash chains, and offline verifica
+ 569. redis-expert                               - Expert in Redis in-memory data structures, caching strategies, pub/sub messaging, and high
+ 570. refactorer                                 - Code refactoring expert for improving code structure, reducing technical debt, and moderni
+ 571. refactoring-specialist                     - Use when you need to transform poorly structured, complex, or duplicated code into clean, 
+ 572. reference-builder                          - Creates exhaustive technical references and API documentation. Generates comprehensive par
+ 573. reinforcement-learning-engineer            - Use when designing RL environments, training agents with reward optimization, implementing
+ 574. reinforcement-learning-expert              - Expert in reinforcement learning, specializing in deep RL algorithms, multi-agent systems,
+ 575. remix-expert                               - Expert in Remix framework for building full-stack web applications with server-side render
+ 576. report-distribution-agent                  - AI agent that automates distribution of consolidated sales reports to representatives base
+ 577. research-analyst                           - Use this agent when you need comprehensive research across multiple sources with synthesis
+ 578. research-engineer                          - Research engineering specialist for building scalable research infrastructure, experiment 
+ 579. retail-customer-returns                    - Comprehensive retail customer returns specialist for processing returns, exchanges, and re
+ 580. retargeting-remarketing                    - Xây chiến dịch bám đuổi khách đã xem nội dung/landing nhưng chưa chốt, dẫn họ quay lại đặt
+ 581. reverse-engineer                           - Expert reverse engineer specializing in binary analysis, disassembly, decompilation, and s
+ 582. review                                     - PR Reviewer agent. Reviews implemented code using a 3-tier taxonomy (🔴 Critical / 🟡 Shou
+ 583. review-policy-author                       - Cedar policy author specialized in gating AI agent review actions (PR comments, reviews, m
+ 584. risk-manager                               - Use this agent when you need to identify, quantify, and mitigate enterprise-level risks ac
+ 585. roblox-avatar-creator                      - Roblox UGC and avatar pipeline specialist - Masters Roblox's avatar system, UGC item creat
+ 586. roblox-experience-designer                 - Roblox platform UX and monetization specialist - Masters engagement loop design, DataStore
+ 587. roblox-systems-scripter                    - Roblox platform engineering specialist - Masters Luau, the client-server security model, R
+ 588. ruby-expert                                - Ruby language specialist for pure Ruby development, metaprogramming, DSL creation, Ruby ge
+ 589. ruby-pro                                   - Write idiomatic Ruby code with metaprogramming, Rails patterns, and performance optimizati
+ 590. rust-engineer                              - Use when building Rust systems where memory safety, ownership patterns, zero-cost abstract
+ 591. rust-expert                                - Rust language expert for systems programming, memory-safe applications, and high-performan
+ 592. rust-pro                                   - Master Rust 1.75+ with modern async patterns, advanced type system features, and productio
+ 593. sales-account-strategist                   - Expert post-sale account strategist specializing in land-and-expand execution, stakeholder
+ 594. sales-automator                            - Draft cold emails, follow-ups, and proposal templates. Creates pricing pages, case studies
+ 595. sales-coach                                - Huấn luyện kỹ năng tư vấn–chốt cho đội sale/tư vấn viên, review hội thoại thực tế, xây kịc
+ 596. sales-data-extraction-agent                - AI agent specialized in monitoring Excel files and extracting key sales metrics (MTD, YTD,
+ 597. sales-deal-strategist                      - Senior deal strategist specializing in MEDDPICC qualification, competitive positioning, an
+ 598. sales-discovery-coach                      - Coaches sales teams on elite discovery methodology — question design, current-state mappin
+ 599. sales-engineer                             - Senior pre-sales engineer specializing in technical discovery, demo engineering, POC scopi
+ 600. sales-outbound-strategist                  - Signal-based outbound specialist who designs multi-channel prospecting sequences, defines 
+ 601. sales-outreach                             - Consultative B2B sales outreach specialist for cold prospecting, lead follow-up, objection
+ 602. sales-pipeline-analyst                     - Revenue operations analyst specializing in pipeline health diagnostics, deal velocity anal
+ 603. sales-proposal-strategist                  - Strategic proposal architect who transforms RFPs and sales opportunities into compelling w
+ 604. san-dau-nguoi-headhunt                     - Săn tìm và tiếp cận nhân sự giỏi (bác sĩ, kỹ thuật viên, quản lý) chủ động — không chờ ứng
+ 605. sang-tao-noi-dung                          - Viết blog, kịch bản video, bài đăng đa nền tảng theo giọng thương hiệu. Kích hoạt khi cần 
+ 606. san-xuat-reels-short                       - Sản xuất video ngắn (Reels, Shorts, TikTok) — quay dựng nhịp nhanh, hook mạnh, đẹp chuẩn p
+ 607. san-xuat-video                             - Viết kịch bản short/reels, video before-after, hậu trường, chuyên gia. Kích hoạt khi cần s
+ 608. san-xuat-video-zalo                        - Sản xuất video và nội dung cho Zalo OA, Zalo Video — phục vụ tệp trung niên Việt, chăm sóc
+ 609. scala-expert                               - Scala language specialist for functional programming, Akka framework, Play framework, Apac
+ 610. scala-pro                                  - Master enterprise-grade Scala development with functional programming, distributed systems
+ 611. scientific-literature-researcher           - Use when you need to search scientific literature and retrieve structured experimental dat
+ 612. scrum-master                               - Use when teams need facilitation, process optimization, velocity improvement, or agile cer
+ 613. search-specialist                          - Use when you need to find specific information across multiple sources using advanced sear
+ 614. security-auditor                           - Security expert for vulnerability assessment, penetration testing, secure coding practices
+ 615. security-engineer                          - Use this agent when implementing comprehensive security solutions across infrastructure, b
+ 616. security-penetration-tester                - Expert in penetration testing, vulnerability assessment, and ethical hacking. Specializes 
+ 617. seeding-review-that                        - Lên kế hoạch seeding nội dung và thu thập review/cảm nhận thật trong hội nhóm, diễn đàn là
+ 618. seo-authority-builder                      - Analyzes content for E-E-A-T signals and suggests improvements to build authority and trus
+ 619. seo-cannibalization-detector               - Analyzes multiple provided pages to identify keyword overlap and potential cannibalization
+ 620. seo-content-auditor                        - Analyzes provided content for quality, E-E-A-T signals, and SEO best practices. Scores con
+ 621. seo-content-planner                        - Creates comprehensive content outlines and topic clusters for SEO. Plans content calendars
+ 622. seo-content-refresher                      - Identifies outdated elements in provided content and suggests updates to maintain freshnes
+ 623. seo-content-writer                         - Writes SEO-optimized content based on provided keywords and topic briefs. Creates engaging
+ 624. seo-expert                                 - Search engine optimization specialist focused on technical SEO, content optimization, and 
+ 625. seo-implementation-expert                  - Expert in technical SEO implementation covering all aspects of on-page optimization, schem
+ 626. seo-keyword-strategist                     - Analyzes keyword usage in provided content, calculates density, suggests semantic variatio
+ 627. seo-meta-optimizer                         - Creates optimized meta titles, descriptions, and URL suggestions based on character limits
+ 628. seo-snippet-hunter                         - Formats content to be eligible for featured snippets and SERP features. Creates snippet-op
+ 629. seo-specialist                             - Use this agent when you need comprehensive SEO optimization encompassing technical audits,
+ 630. seo-strategist                             - Expert in search engine optimization strategy, keyword research, competitive analysis, and
+ 631. seo-structure-architect                    - Analyzes and optimizes content structure including header hierarchy, suggests schema marku
+ 632. service-mesh-expert                        - Expert service mesh architect specializing in Istio, Linkerd, and cloud-native networking 
+ 633. slack-expert                               - Use this agent when developing Slack applications, implementing Slack API integrations, or
+ 634. soan-hop-dong                              - Soạn và rà các loại hợp đồng/biểu mẫu của phòng khám (dịch vụ khách, lao động, nhà cung cấ
+ 635. social-ads-expert                          - Social media advertising specialist focused on paid social campaigns, audience targeting, 
+ 636. social-community-manager                   - Social media community management expert specializing in engagement strategies, community 
+ 637. social-content-creator                     - Social media content creation specialist focused on platform-specific content, visual stor
+ 638. social-strategist                          - Social media strategy expert specializing in platform-specific strategies, content calenda
+ 639. so-hoa-quy-trinh-giay-to                   - Chuyển hồ sơ, phiếu đồng ý, quy trình giấy sang dạng số — giảm thất lạc, tra cứu nhanh, đú
+ 640. solo-founder                               - Your co-founder who doesn't exist yet. Covers product, engineering, marketing, and strateg
+ 641. specialized-chief-of-staff                 - Master coordinator for founders and executives — filters noise, owns processes, enforces c
+ 642. specialized-civil-engineer                 - Expert civil and structural engineer with global standards coverage — Eurocode, DIN, ACI, 
+ 643. specialized-cultural-intelligence-strategist - CQ specialist that detects invisible exclusion, researches global context, and ensures sof
+ 644. specialized-developer-advocate             - Expert developer advocate specializing in building developer communities, creating compell
+ 645. specialized-document-generator             - Expert document creation specialist who generates professional PDF, PPTX, DOCX, and XLSX f
+ 646. specialized-french-consulting-market       - Navigate the French ESN/SI freelance ecosystem — margin models, platform mechanics (Malt, 
+ 647. specialized-korean-business-navigator      - Korean business culture for foreign professionals — 품의 decision process, nunchi reading, K
+ 648. specialized-mcp-builder                    - Expert Model Context Protocol developer who designs, builds, and tests MCP servers that ex
+ 649. specialized-model-qa                       - Independent model QA expert who audits ML and statistical models end-to-end - from documen
+ 650. specialized-salesforce-architect           - Solution architecture for Salesforce platform — multi-cloud design, integration patterns, 
+ 651. specialized-workflow-architect             - Workflow design specialist who maps complete workflow trees for every system, user journey
+ 652. spring-boot-engineer                       - Use this agent when building enterprise Spring Boot 3+ applications requiring microservice
+ 653. spring-expert                              - Expert in Spring Boot framework including Spring Boot 3.x, reactive programming with WebFl
+ 654. sql-pro                                    - Use this agent when you need to optimize complex SQL queries, design efficient database sc
+ 655. sre                                        - Site Reliability Engineer specializing in system reliability, error budgets, SLIs/SLOs, in
+ 656. sre-engineer                               - Use this agent when you need to establish or improve system reliability through SLO defini
+ 657. startup-analyst                            - Expert startup business analyst specializing in market sizing, financial modeling, competi
+ 658. startup-cto                                - Technical co-founder who's been through two startups and learned what actually matters. Ma
+ 659. streaming-data-expert                      - Real-time streaming data expert for Apache Kafka, Spark Streaming, Flink, Kinesis, and eve
+ 660. study-abroad-advisor                       - Full-spectrum study abroad planning expert covering the US, UK, Canada, Australia, Europe,
+ 661. support-analytics-reporter                 - Expert data analyst transforming raw data into actionable business insights. Creates dashb
+ 662. support-executive-summary-generator        - Consultant-grade AI specialist trained to think and communicate like a senior strategy con
+ 663. support-finance-tracker                    - Expert financial analyst and controller specializing in financial planning, budget managem
+ 664. support-infrastructure-maintainer          - Expert infrastructure specialist focused on system reliability, performance optimization, 
+ 665. support-legal-compliance-checker           - Expert legal and compliance specialist ensuring business operations, data handling, and co
+ 666. support-support-responder                  - Expert customer support specialist delivering exceptional customer service, issue resoluti
+ 667. svelte-expert                              - Expert in Svelte framework and SvelteKit for building reactive web applications with minim
+ 668. swift-expert                               - Swift language specialist for iOS, macOS, watchOS, and tvOS development, SwiftUI, UIKit, C
+ 669. symfony-specialist                         - Use when building Symfony 6+/7+/8+ applications, architecting Doctrine ORM entities with c
+ 670. tang-qua-sinh-nhat-khach                   - Quản lý chương trình quà và ưu đãi sinh nhật khách — đúng dịp, đúng gu, tạo cảm xúc gắn bó
+ 671. tao-khoanh-khac-wow                        - Thiết kế những khoảnh khắc bất ngờ tích cực vượt kỳ vọng để khách nhớ và kể lại — vũ khí t
+ 672. task-distributor                           - Use when distributing tasks across multiple agents or workers, managing queues, and balanc
+ 673. tdd-orchestrator                           - Master TDD orchestrator specializing in red-green-refactor discipline, multi-agent workflo
+ 674. team-debugger                              - Hypothesis-driven debugging investigator that investigates one assigned hypothesis, gather
+ 675. team-implementer                           - Parallel feature builder that implements components within strict file ownership boundarie
+ 676. team-lead                                  - Team orchestrator that decomposes work into parallel tasks with file ownership boundaries,
+ 677. team-reviewer                              - Multi-dimensional code reviewer that operates on one assigned review dimension (security, 
+ 678. tech-lead                                  - Technical leadership expert for making architectural decisions, establishing coding standa
+ 679. technical-artist                           - Art-to-engine pipeline specialist - Masters shaders, VFX systems, LOD pipelines, performan
+ 680. technical-writer                           - Use this agent when you need to create, improve, or maintain technical documentation inclu
+ 681. telemedicine-platform-expert               - Telemedicine platform specialist with expertise in WebRTC video streaming, HIPAA-compliant
+ 682. telesale-nuoi-lead                         - Gọi điện/nhắn tin chăm khách đã để lại thông tin nhưng chưa đặt lịch, nuôi dưỡng lead nguộ
+ 683. temporal-python-pro                        - Master Temporal workflow orchestration with Python SDK. Implements durable workflows, saga
+ 684. terminal-integration-specialist            - Terminal emulation, text rendering optimization, and SwiftTerm integration for modern Swif
+ 685. terraform-engineer                         - Use when building, refactoring, or scaling infrastructure as code using Terraform with foc
+ 686. terraform-expert                           - Infrastructure as Code expert specializing in Terraform, cloud resource provisioning, modu
+ 687. terraform-specialist                       - Expert Terraform/OpenTofu specialist mastering advanced IaC automation, state management, 
+ 688. terragrunt-expert                          - Expert Terragrunt specialist mastering infrastructure orchestration, DRY configurations, a
+ 689. test-automator                             - Testing expert for creating comprehensive test suites, test automation frameworks, and ens
+ 690. testing-accessibility-auditor              - Expert accessibility specialist who audits interfaces against WCAG standards, tests with a
+ 691. testing-api-tester                         - Expert API testing specialist focused on comprehensive API validation, performance testing
+ 692. testing-evidence-collector                 - Screenshot-obsessed, fantasy-allergic QA specialist - Default to finding 3-5 issues, requi
+ 693. testing-performance-benchmarker            - Expert performance testing and optimization specialist focused on measuring, analyzing, an
+ 694. testing-reality-checker                    - Stops fantasy approvals, evidence-based certification - Default to "NEEDS WORK", requires 
+ 695. testing-test-results-analyzer              - Expert test analysis specialist focused on comprehensive test result evaluation, quality m
+ 696. testing-tool-evaluator                     - Expert technology assessment specialist focused on evaluating, testing, and recommending t
+ 697. testing-workflow-optimizer                 - Expert process improvement specialist focused on analyzing, optimizing, and automating wor
+ 698. tham-dinh-dau-tu-thiet-bi                  - Thẩm định hiệu quả tài chính khi mua thiết bị/công nghệ mới — hoàn vốn, dòng tiền, rủi ro 
+ 699. theo-doi-gia-doi-thu                       - Theo dõi giá, khuyến mãi và động thái của đối thủ trong khu vực để HANA định giá và phản ứ
+ 700. theo-doi-ket-qua-dai-han                   - Theo dõi kết quả điều trị của khách qua thời gian — duy trì hiệu quả, phát hiện sớm vấn đề
+ 701. theo-doi-ty-le-chot-sale                   - Đo và phân tích tỷ lệ chốt theo tư vấn viên, kênh, dịch vụ — tìm điểm rơi, cải thiện hiệu 
+ 702. thiet-ke-an-pham-in-an                     - Lên ý tưởng và brief thiết kế ấn phẩm in ấn cho phòng khám (poster, standee, menu dịch vụ,
+ 703. thiet-ke-banner-quang-cao                  - Thiết kế banner, ấn phẩm quảng cáo cho ads và landing — bắt mắt, đúng chuẩn brand, tối ưu 
+ 704. thiet-ke-chuong-trinh-dao-tao              - Thiết kế chương trình đào tạo nghề và kỹ năng cho học viên, KTV theo chuẩn HANA. Kích hoạt
+ 705. thiet-ke-hanh-trinh-khach                  - Thiết kế trọn hành trình khách từ chạm đầu đến hậu mãi — mỗi điểm chạm đều premium, nhất q
+ 706. thiet-ke-infographic                       - Thiết kế infographic kiến thức–quy trình–so sánh dịch vụ — trực quan, dễ hiểu, đẹp premium
+ 707. thiet-ke-khong-gian                        - Tư vấn thiết kế và bài trí không gian phòng khám để truyền tải sự premium, sạch sẽ y khoa 
+ 708. threat-modeling-expert                     - Expert in threat modeling methodologies, security architecture review, and risk assessment
+ 709. thue-hoa-don                               - Quản lý xuất hoá đơn, theo dõi nghĩa vụ thuế (GTGT, TNDN), chuẩn bị hồ sơ kê khai đúng hạn
+ 710. thu-gom-rac-thai-lam-sang                  - Vận hành thu gom, phân loại, lưu giữ rác thải lâm sàng hằng ngày tại nguồn — đúng quy trìn
+ 711. thu-nghiem-dich-vu-pilot                   - Chạy thử dịch vụ mới quy mô nhỏ (pilot) trước khi tung rộng — đo phản hồi, hiệu quả, rủi r
+ 712. thu-vien-hinh-anh                          - Tổ chức, gắn nhãn và quản lý kho ảnh/video before-after, tư liệu visual; chuẩn hóa quy các
+ 713. thuyet-phuc-khach-do-du                    - Chuyển hoá khách còn do dự, lo sợ, phân vân giá — bằng bằng chứng, trấn an, tư vấn đúng để
+ 714. tich-hop-he-thong-data                     - Kết nối các hệ thống (phần mềm phòng khám, CRM, ads, kế toán) để dữ liệu chảy thông suốt, 
+ 715. tiep-don-khach-nuoc-ngoai                  - Đón và phục vụ khách nước ngoài/Việt kiều — rào cản ngôn ngữ, văn hoá, thanh toán, lịch tr
+ 716. to-chuc-hop-bao-su-kien-pr                 - Tổ chức họp báo, lễ ra mắt, sự kiện PR — tạo dấu ấn truyền thông, bảo chứng uy tín thương 
+ 717. to-chuc-minigame-tuong-tac                 - Thiết kế minigame, thử thách, tương tác trên social để tăng reach và lead — vui mà vẫn giữ
+ 718. to-chuc-su-kien                            - Lên kế hoạch và điều phối sự kiện, workshop làm đẹp, ngày hội tri ân khách hàng tại phòng 
+ 719. to-chuc-tri-an-khach-than-thiet            - Tổ chức sự kiện, buổi gặp, ưu đãi riêng cho nhóm khách thân thiết — tăng gắn bó và giới th
+ 720. toi-uu-chi-phi-quang-cao                   - Tối ưu chi phí quảng cáo trên mọi kênh — giảm giá mỗi lead/khách, dồn tiền về kênh hiệu qu
+ 721. toi-uu-chuyen-doi-web                      - Phân tích và tối ưu landing page, website, form đặt lịch để tăng tỷ lệ khách để lại thông 
+ 722. toi-uu-cong-suat-lich-hen                  - Tối ưu lấp đầy lịch hẹn và công suất phòng–nhân sự — lấp giờ trống, giãn giờ cao điểm, tăn
+ 723. toi-uu-quy-trinh                           - Vẽ lại quy trình, loại bỏ lãng phí, chuẩn hóa SOP. Kích hoạt khi cần cải tiến vận hành.
+ 724. toi-uu-thue-doanh-nghiep                   - Tối ưu nghĩa vụ thuế hợp pháp — tận dụng chính sách, chi phí hợp lệ, tránh rủi ro bị phạt.
+ 725. tooling-engineer                           - Use this agent when you need to build or enhance developer tools including CLIs, code gene
+ 726. trading-platform-expert                    - Trading platform specialist with expertise in building order matching engines, real-time m
+ 727. trai-nghiem-khach-hang                     - Thiết kế hành trình trải nghiệm tại phòng khám, chuẩn dịch vụ premium, điểm chạm cảm xúc. 
+ 728. trend-analyst                              - Use when analyzing emerging patterns, predicting industry shifts, or developing future sce
+ 729. tro-ly-cskh                                - Trả lời khách, xử lý phàn nàn, soạn kịch bản phản hồi chuẩn. Kích hoạt khi cần chăm sóc kh
+ 730. tuan-thu-an-toan-lao-dong                  - Đảm bảo môi trường làm việc an toàn cho nhân viên — phòng cháy, điện, hoá chất, thiết bị, 
+ 731. tuan-thu-bao-ve-du-lieu-nd13               - Đảm bảo thu thập, lưu trữ, dùng dữ liệu khách đúng Nghị định 13 về bảo vệ dữ liệu cá nhân 
+ 732. tuan-thu-bao-ve-nguoi-tieu-dung            - Đảm bảo chính sách giá, khuyến mãi, cam kết và quy trình của phòng khám tuân thủ luật bảo 
+ 733. tuan-thu-quang-cao-y-te                    - Rà soát nội dung quảng cáo theo Nghị định 38/2021 và quy định Sở Y tế, lọc từ ngữ cấm, cấp
+ 734. tuan-thu-xu-ly-rac-thai-y-te               - Đảm bảo phân loại, lưu giữ, tiêu huỷ rác thải y tế đúng quy định môi trường–y tế — tránh p
+ 735. tutorial-engineer                          - Creates step-by-step tutorials and educational content from code. Transforms complex conce
+ 736. tu-van-phap-ly-tong                        - Tư vấn pháp lý tổng cho mọi mặt vận hành — kinh doanh, lao động, hợp đồng, quảng cáo, y tế
+ 737. tu-van-vien-tham-my                        - Kịch bản tư vấn 1:1 tại phòng khám, đọc nhu cầu, dẫn dắt khách chọn dịch vụ phù hợp. Kích 
+ 738. tuyen-dung                                 - Viết JD, sàng lọc hồ sơ, soạn câu hỏi phỏng vấn. Kích hoạt khi cần tuyển dụng.
+ 739. typescript-expert                          - TypeScript specialist for advanced type systems, type-safe APIs, and enterprise-scale appl
+ 740. typescript-pro                             - Use when implementing TypeScript code requiring advanced type system patterns, complex gen
+ 741. ui-components-expert                       - Expert in modern UI component libraries including shadcn/ui, Material-UI, Chakra UI, Ant D
+ 742. ui-designer                                - Use this agent when designing visual interfaces, creating design systems, building compone
+ 743. ui-ux-designer                             - Create interface designs, wireframes, and design systems. Masters user research, accessibi
+ 744. ui-ux-tester                               - Use this agent when you need exhaustive UI and UX functionality testing driven by document
+ 745. ui-visual-validator                        - Rigorous visual validation expert specializing in UI testing, design system compliance, an
+ 746. ung-pho-su-co-y-khoa-khan                  - Xây và vận hành quy trình ứng phó sự cố y khoa khẩn (sốc phản vệ, biến chứng cấp) — phản ứ
+ 747. unity-architect                            - Data-driven modularity specialist - Masters ScriptableObjects, decoupled systems, and sing
+ 748. unity-developer                            - Build Unity games with optimized C# scripts, efficient rendering, and proper asset managem
+ 749. unity-editor-tool-developer                - Unity editor automation specialist - Masters custom EditorWindows, PropertyDrawers, AssetP
+ 750. unity-multiplayer-engineer                 - Networked gameplay specialist - Masters Netcode for GameObjects, Unity Gaming Services (Re
+ 751. unity-shader-graph-artist                  - Visual effects and material specialist - Masters Unity Shader Graph, HLSL, URP/HDRP render
+ 752. unreal-multiplayer-architect               - Unreal Engine networking specialist - Masters Actor replication, GameMode/GameState archit
+ 753. unreal-systems-engineer                    - Performance and hybrid architecture specialist - Masters C++/Blueprint continuum, Nanite g
+ 754. unreal-technical-artist                    - Unreal Engine visual pipeline specialist - Masters the Material Editor, Niagara VFX, Proce
+ 755. unreal-world-builder                       - Open-world and environment specialist - Masters UE5 World Partition, Landscape, procedural
+ 756. user-behavior-analyst                      - User behavior analysis specialist who uncovers deep insights about how users interact with
+ 757. ux-designer                                - Expert in user experience design, UI design, design systems, user research, wireframing, p
+ 758. ux-researcher                              - Use this agent when you need to conduct user research, analyze user behavior, or generate 
+ 759. vector-database-engineer                   - Expert in vector databases, embedding strategies, and semantic search implementation. Mast
+ 760. video-content-creator                      - Video content specialist focused on creating engaging video marketing content across platf
+ 761. viet-bai-seo-website                       - Viết bài chuẩn SEO cho website/blog phòng khám, kéo khách tự nhiên từ Google bằng nội dung
+ 762. viet-bai-thought-leadership                - Viết bài chia sẻ góc nhìn chuyên gia của sếp để xây uy tín dẫn dắt ngành làm đẹp an toàn. 
+ 763. viet-caption-chuyen-doi                    - Viết caption cho post và video social — hook mạnh, giá trị, cảm xúc, CTA mềm tự nhiên, đún
+ 764. visionos-spatial-engineer                  - Native visionOS spatial computing, SwiftUI volumetric interfaces, and Liquid Glass design 
+ 765. vue-expert                                 - Expert in Vue.js framework including Vue 3 Composition API, Nuxt.js, state management with
+ 766. web-analytics-expert                       - Web analytics specialist focused on data measurement, analysis, and optimization. Expert i
+ 767. website-architect                          - Expert in website strategy, information architecture, and digital experience planning. Spe
+ 768. websocket-engineer                         - Use this agent when implementing real-time bidirectional communication features using WebS
+ 769. websocket-expert                           - WebSocket expert specializing in real-time bidirectional communication, connection managem
+ 770. win-back-khach-cu                          - Phát hiện khách lâu không quay lại và thiết kế chiến dịch kéo họ trở lại đúng nhu cầu, khô
+ 771. windows-infra-admin                        - Use when managing Windows Server infrastructure, Active Directory, DNS, DHCP, and Group Po
+ 772. wordpress-master                           - Use this agent when you need to architect, optimize, or troubleshoot WordPress implementat
+ 773. workflow-orchestrator                      - Use this agent when you need to design, implement, or optimize complex business process wo
+ 774. workshop-cham-soc-tai-nha                  - Thiết kế và tổ chức workshop hướng dẫn khách chăm sóc da, làm đẹp tại nhà để gắn kết và tạ
+ 775. xay-cam-nang-nhuong-quyen                  - Xây bộ cẩm nang nhượng quyền — đóng gói mô hình, quy trình, thương hiệu để nhân bản qua đố
+ 776. xay-cau-chuyen-ca-nhan                     - Khai thác và kể câu chuyện hành trình của sếp một cách chân thật, truyền cảm hứng, gắn với
+ 777. xay-chien-dich-imc                         - Thiết kế chiến dịch truyền thông tích hợp (IMC) — đồng bộ thông điệp qua nhiều kênh quanh 
+ 778. xay-chung-chi-danh-gia                     - Thiết kế tiêu chí đánh giá và cấp chứng chỉ tốt nghiệp đảm bảo học viên đạt chuẩn tay nghề
+ 779. xay-dashboard-bi                           - Xây bảng điều khiển trực quan (doanh thu, lead, chuyển đổi, công suất) để sếp ra quyết địn
+ 780. xay-dashboard-dieu-hanh                    - Xây dashboard điều hành cấp lãnh đạo — gom chỉ số sống còn (doanh thu, dòng tiền, khách, c
+ 781. xay-dung-van-hoa                           - Xây văn hoá nội bộ và thương hiệu tuyển dụng để giữ chân người giỏi, lan toả tinh thần phụ
+ 782. xay-elearning-noi-dung                     - Số hoá nội dung đào tạo thành khoá học online (video bài giảng, quiz, lộ trình) để mở rộng
+ 783. xay-goi-combo-dich-vu                      - Thiết kế gói và combo dịch vụ hấp dẫn — tăng giá trị đơn, đáp ứng nhu cầu trọn vẹn, tối ưu
+ 784. xay-kich-ban-ban-hang                      - Viết kịch bản tư vấn–bán hàng theo từng dịch vụ và tình huống — dẫn dắt tự nhiên, giảm nỗi
+ 785. xay-kich-ban-livestream                    - Viết kịch bản livestream tư vấn–bán hàng — kết cấu giữ người xem, demo, Q&A, ưu đãi live, 
+ 786. xay-mo-hinh-kinh-doanh                     - Thiết kế và tinh chỉnh mô hình kinh doanh — nguồn thu, cấu trúc chi phí, lợi thế cạnh tran
+ 787. xay-personal-brand-chu                     - Xây và phát triển thương hiệu cá nhân Mai Phương Hana thành chuyên gia thẩm mỹ uy tín, kéo
+ 788. xay-thang-luong-thuong                     - Thiết kế hệ thống lương, thưởng, hoa hồng công bằng và tạo động lực — giữ người giỏi, thúc
+ 789. xay-uy-tin-bao-chi-ca-nhan                 - Đưa sếp xuất hiện trên báo chí chính thống dưới góc chuyên gia để xây uy tín và bảo chứng 
+ 790. xr-cockpit-interaction-specialist          - Specialist in designing and developing immersive cockpit-based control systems for XR envi
+ 791. xr-immersive-developer                     - Expert WebXR and immersive technology developer with specialization in browser-based AR/VR
+ 792. xr-interface-architect                     - Spatial interaction designer and interface strategist for immersive AR/VR/XR environments
+ 793. xu-ly-feedback-tieu-cuc                    - Xử lý phản hồi tiêu cực công khai và riêng tư — phản hồi chân thành, xoay chuyển cảm xúc, 
+ 794. xu-ly-khieu-nai-cap-1                      - Tiếp nhận và xử lý khiếu nại thông thường tuyến đầu — lắng nghe, xoa dịu, giải quyết nhanh
+ 795. xu-ly-khung-hoang                          - Lập kịch bản và điều phối xử lý khủng hoảng truyền thông, sự cố khách hàng/y khoa, phản hồ
+ 796. xu-ly-phan-doi                             - Xử lý phản đối (giá, sợ đau, sợ biến chứng, để suy nghĩ), kỹ thuật chốt mềm. Kích hoạt khi
+ 797. xu-ly-tranh-chap-phap-ly                   - Xử lý khiếu nại leo thang và tranh chấp có yếu tố pháp lý (khách đòi bồi thường, tố cáo, t
+ 798. xu-ly-vi-pham-noi-bo                       - Xử lý vi phạm kỷ luật, đạo đức nghề, quy trình của nhân viên — đúng quy định, công bằng, g
+ 799. zero-trust-architect                       - Expert in Zero Trust Architecture, implementing "never trust, always verify" security mode
+ 800. zk-steward                                 - Knowledge-base steward in the spirit of Niklas Luhmann's Zettelkasten. Default perspective

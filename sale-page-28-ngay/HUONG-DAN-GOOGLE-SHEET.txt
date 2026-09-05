@@ -1,0 +1,71 @@
+========================================================
+HƯỚNG DẪN NỐI FORM ĐĂNG KÝ → GOOGLE SHEET
+Lộ trình 28 ngày (799K) — Nguyễn Bảo Nga
+========================================================
+
+Google Sheet đã được tạo sẵn trong folder "1 KHÁCH HÀNG" trên Drive:
+  Tên: Data Đăng ký - Lộ Trình 28 Ngày (799K)
+  Link: https://docs.google.com/spreadsheets/d/1QYGwYSa5Ef_qQQ954d6sadi0dnqK9fEsjwme9gNHJiA/edit
+  ID:   1QYGwYSa5Ef_qQQ954d6sadi0dnqK9fEsjwme9gNHJiA
+
+Form trên sale page sẽ gửi 3 thông tin (Họ tên, SĐT, Email) vào sheet này.
+Cần 1 lần thiết lập "cầu nối" bằng Google Apps Script (miễn phí, ~3 phút):
+
+--------------------------------------------------------
+BƯỚC 1 — Mở trình soạn Apps Script
+--------------------------------------------------------
+1. Mở Google Sheet ở link trên.
+2. Menu: Tiện ích mở rộng (Extensions) → Apps Script.
+
+--------------------------------------------------------
+BƯỚC 2 — Dán đoạn code sau (xoá code mẫu cũ đi)
+--------------------------------------------------------
+
+function doPost(e) {
+  var ss = SpreadsheetApp.openById('1QYGwYSa5Ef_qQQ954d6sadi0dnqK9fEsjwme9gNHJiA');
+  var sh = ss.getSheets()[0];
+  if (sh.getLastRow() === 0) {
+    sh.appendRow(['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Gói']);
+  }
+  var d = JSON.parse(e.postData.contents);
+  sh.appendRow([d.thoigian || new Date(), d.hoten, d.sdt, d.email, d.goi]);
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+Bấm biểu tượng đĩa mềm để LƯU.
+
+--------------------------------------------------------
+BƯỚC 3 — Triển khai (Deploy) thành Web App
+--------------------------------------------------------
+1. Góc phải trên: Deploy (Triển khai) → New deployment (Bản triển khai mới).
+2. Chọn loại: Web app.
+3. Cấu hình:
+      - Execute as (Thực thi với tư cách):  Me (chính bạn)
+      - Who has access (Ai có quyền):        Anyone (Bất kỳ ai)
+4. Bấm Deploy. Lần đầu Google sẽ hỏi cấp quyền → chọn tài khoản → Advanced →
+   "Go to ... (unsafe)" → Allow. (Bình thường, vì đây là script của chính bạn.)
+5. Copy đường link "Web app URL" — dạng:
+      https://script.google.com/macros/s/AKfycb.....xxxx/exec
+
+--------------------------------------------------------
+BƯỚC 4 — Dán link vào sale page
+--------------------------------------------------------
+Mở file index.html, tìm dòng (gần cuối, trong phần <script>):
+
+      var SHEET_ENDPOINT = '';
+
+Dán link vừa copy vào giữa 2 dấu nháy:
+
+      var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycb...../exec';
+
+LƯU file. Xong! Từ giờ mỗi khách điền form → tự động thêm 1 dòng vào Google Sheet.
+
+--------------------------------------------------------
+GHI CHÚ
+--------------------------------------------------------
+- Chưa dán SHEET_ENDPOINT: form vẫn chạy để xem giao diện, nhưng CHƯA lưu về sheet.
+- Nút "Vào nhóm Zalo ngay": sửa biến ZALO_GROUP_LINK trong index.html thành link nhóm Zalo thật;
+  và thay ảnh QR nhóm Zalo (khối [ Chèn mã QR nhóm Zalo ]) bằng ảnh QR thật của nhóm.
+- QR chuyển khoản dùng dịch vụ VietQR tự sinh theo STK 0978459369 (MB Bank) — quét là ra sẵn số tiền.

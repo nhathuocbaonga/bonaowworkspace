@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lộ Trình 28 Ngày — Chủ Tiệm Thời Đại AI | Nguyễn Bảo Nga</title>
+<meta name="description" content="28 ngày ứng dụng AI thực chiến giúp Chủ Cửa Hàng hệ thống hoá – tự động hoá – tăng trưởng doanh thu. Đổi vận cùng AI với mentor Nguyễn Bảo Nga — 22 năm ngành bán lẻ." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+/* ============ CONFIG DỄ SỬA (đổi màu ở đây nếu muốn) ============ */
+:root{
+  --bg:#FAF6EF;
+  --bg2:#F2EBDF;
+  --ink:#241F1A;
+  --muted:#6B6459;
+  --green:#1E4033;
+  --green2:#2E5A45;
+  --gold:#B4863A;
+  --gold-lt:#D8B978;
+  --sage:#E9EFE6;
+  --card:#FFFFFF;
+  --line:#E4DBCB;
+  --shadow:0 18px 50px -24px rgba(30,64,51,.35);
+  --radius:20px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Be Vietnam Pro',system-ui,sans-serif;
+  color:var(--ink);background:var(--bg);
+  line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif;line-height:1.18;font-weight:600}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.section{padding:78px 0}
+.eyebrow{
+  font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  color:var(--gold);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+.center{text-align:center}
+.center .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
+h2.big{font-size:clamp(28px,4.4vw,44px);color:var(--green);letter-spacing:-.01em}
+.lead{font-size:19px;color:var(--muted);max-width:680px}
+.center .lead{margin-left:auto;margin-right:auto}
+.gold{color:var(--gold)}
+.mark{background:linear-gradient(transparent 60%, #F3E4BF 60%);padding:0 2px}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Be Vietnam Pro';font-weight:600;font-size:17px;
+  padding:16px 30px;border-radius:999px;cursor:pointer;border:none;
+  transition:transform .18s ease, box-shadow .18s ease;text-align:center;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  color:#3A2A08;box-shadow:0 14px 30px -12px rgba(180,134,58,.75);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 20px 40px -12px rgba(180,134,58,.9)}
+.btn-green{background:var(--green);color:#F6EFE0}
+.btn-green:hover{transform:translateY(-2px);background:var(--green2)}
+.btn-ghost{background:transparent;border:1.5px solid var(--gold);color:var(--green)}
+.btn .sub{font-weight:400;opacity:.85;font-size:13px}
+
+/* ============ STICKY BAR ============ */
+.topbar{
+  position:sticky;top:0;z-index:60;background:rgba(8,8,8,.97);
+  backdrop-filter:blur(8px);color:#F6EFE0;border-bottom:1px solid rgba(216,185,120,.3);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:600}
+.brand .logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  display:grid;place-items:center;color:#3A2A08;font-family:'Playfair Display';font-weight:700;font-size:19px}
+.brand small{display:block;font-weight:400;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt)}
+.topbar .btn{padding:11px 22px;font-size:15px}
+.topbar-cta-note{font-size:12px;opacity:.8;text-align:right}
+@media(max-width:720px){.topbar-cta-note{display:none}.brand .txt small{display:none}}
+
+/* ============ HERO ============ */
+.hero{background:
+  radial-gradient(1200px 520px at 80% -10%, rgba(216,185,120,.20), transparent 60%),
+  linear-gradient(180deg,#181712,#000000);
+  color:#F4EEDF;position:relative;overflow:hidden;padding:64px 0 0}
+.hero::after{content:"";position:absolute;inset:0;background:url('assets/pattern.svg');opacity:.05;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero .eyebrow{color:var(--gold-lt)}
+.hero .eyebrow::before{background:var(--gold-lt)}
+.hero h1{font-size:clamp(32px,5.2vw,56px);color:#FCF7EC;letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero .lead{color:#DCE4D5;font-size:19px;margin-top:20px;max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;align-items:center}
+.hero-figure{position:relative}
+.hero-figure img{border-radius:24px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:1px solid rgba(216,185,120,.3)}
+.hero-badge{
+  position:absolute;left:-14px;bottom:22px;background:var(--card);color:var(--ink);
+  border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);max-width:210px;
+  border:1px solid var(--line)}
+.hero-badge b{color:var(--green);font-size:15px}
+.hero-badge span{font-size:12.5px;color:var(--muted)}
+.hero-strip{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:14px;color:#CBD6C4}
+.hero-strip b{color:var(--gold-lt)}
+.offer-tag{
+  display:inline-flex;align-items:center;gap:10px;background:rgba(216,185,120,.14);
+  border:1px solid rgba(216,185,120,.4);color:var(--gold-lt);border-radius:999px;
+  padding:8px 16px;font-size:14px;font-weight:500;margin-bottom:22px}
+.offer-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-lt);box-shadow:0 0 0 4px rgba(216,185,120,.25)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}.hero-figure{order:-1;max-width:440px;margin:0 auto}}
+
+/* ============ PILLARS ============ */
+.pillars{background:#000;border-top:1px solid rgba(216,185,120,.2);border-bottom:1px solid rgba(216,185,120,.2);color:#EFE7D6;padding:30px 0}
+.pillars .row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;align-items:center}
+.pillar{display:flex;align-items:center;gap:10px;font-weight:500;font-size:15px}
+.pillar .n{font-family:'Playfair Display';color:var(--gold-lt);font-weight:700}
+.pillar-sep{width:6px;height:6px;border-radius:50%;background:rgba(216,185,120,.5)}
+@media(max-width:640px){.pillar-sep{display:none}}
+
+/* ============ CARDS GENERIC ============ */
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+
+/* ============ PAIN ============ */
+.pain-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+@media(max-width:860px){.pain-grid{grid-template-columns:1fr;gap:28px}}
+.pain-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.pain-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pain-item:last-child{border-bottom:none}
+.pain-item .no{font-family:'Playfair Display';font-weight:700;font-size:22px;color:var(--gold);
+  min-width:44px;height:44px;border:1.5px solid var(--gold);border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+.pain-item h3{font-size:19px;color:var(--green);margin-bottom:3px}
+.pain-item p{color:var(--muted);font-size:15.5px}
+
+/* ============ REFRAME BANNER ============ */
+.reframe{background:radial-gradient(700px 320px at 50% 0,rgba(216,185,120,.14),transparent 60%),#0a0a0a;
+  color:#F3EEDF;border-radius:28px;border:1px solid rgba(216,185,120,.28);
+  padding:56px 40px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.reframe .quote{font-family:'Playfair Display';font-size:clamp(24px,3.6vw,36px);line-height:1.3;max-width:820px;margin:0 auto}
+.reframe .quote b{color:var(--gold-lt);font-style:italic}
+.reframe .sig{margin-top:22px;color:var(--gold-lt);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+
+/* ============ AUTHORITY ============ */
+.auth-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center}
+@media(max-width:860px){.auth-grid{grid-template-columns:1fr;gap:30px}}
+.auth-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+@media(max-width:560px){.stat-row{grid-template-columns:1fr;gap:10px}}
+.stat{background:var(--sage);border-radius:16px;padding:18px;text-align:center;border:1px solid #d8e2d3}
+.stat b{display:block;font-family:'Playfair Display';font-size:30px;color:var(--green);line-height:1}
+.stat span{font-size:13px;color:var(--muted)}
+.checklist{list-style:none;display:grid;gap:12px;margin-top:8px}
+.checklist li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.checklist li::before{content:"✓";color:#fff;background:var(--gold);min-width:24px;height:24px;border-radius:50%;
+  display:grid;place-items:center;font-size:13px;flex-shrink:0;margin-top:3px;font-weight:700}
+
+/* ============ STORY ============ */
+.story{background:var(--bg2)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:28px}}
+.story-body p{margin-bottom:16px;color:#3d382f}
+.story-body p .hl{color:var(--green);font-weight:600}
+.story-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story-photos figure{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.story-photos figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(20,40,30,.85));
+  color:#F2EEDF;font-size:12px;padding:22px 12px 10px;text-align:center;letter-spacing:.05em}
+.story-photos .big{grid-column:1/-1}
+
+/* ============ METHOD ============ */
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:860px){.method-grid{grid-template-columns:1fr;gap:30px}}
+.flow{display:grid;gap:14px}
+.flow .step{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:16px 18px;box-shadow:0 10px 30px -22px rgba(30,64,51,.4)}
+.flow .step .ic{width:46px;height:46px;border-radius:12px;background:var(--sage);display:grid;place-items:center;
+  font-size:22px;flex-shrink:0}
+.flow .step b{color:var(--green);display:block}
+.flow .step span{font-size:14px;color:var(--muted)}
+.flow .arrow{text-align:center;color:var(--gold);font-size:20px;line-height:.4}
+.assist{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}
+@media(max-width:860px){.assist{grid-template-columns:repeat(2,1fr)}}
+.assist .a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center}
+.assist .a .em{font-size:24px}
+.assist .a b{display:block;font-size:14px;color:var(--green);margin-top:6px}
+
+/* ============ CURRICULUM ============ */
+.week{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.week+.week{margin-top:18px}
+.week-head{display:flex;align-items:center;gap:18px;padding:22px 26px;background:linear-gradient(135deg,#f6f1e6,#fff)}
+.week-head .wk{font-family:'Playfair Display';font-weight:700;color:#fff;background:var(--green);
+  min-width:62px;height:62px;border-radius:16px;display:grid;place-items:center;text-align:center;line-height:1.1;font-size:13px;flex-shrink:0}
+.week-head .wk b{font-size:24px;display:block}
+.week-head h3{color:var(--green);font-size:21px}
+.week-head p{color:var(--muted);font-size:14.5px;margin-top:2px}
+.week-body{padding:6px 26px 24px}
+.day{display:flex;gap:14px;padding:14px 0;border-top:1px dashed var(--line)}
+.day .d{color:var(--gold);font-weight:600;font-size:14px;min-width:82px;flex-shrink:0}
+.day h4{font-size:16px;color:var(--ink);font-weight:600;font-family:'Be Vietnam Pro'}
+.day p{font-size:14.5px;color:var(--muted)}
+
+/* ============ DELIVERABLES ============ */
+.deliver{background:#0a0a0a;border:1px solid rgba(216,185,120,.28);color:#EEE6D6;border-radius:28px;padding:52px 40px;box-shadow:var(--shadow)}
+.deliver h2{color:#FCF7EC}
+.deliver .checklist li{color:#E7E0D2}
+.deliver .checklist li::before{background:var(--gold-lt);color:#3A2A08}
+
+/* ============ EMOTION ============ */
+.emotion-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:860px){.emotion-grid{grid-template-columns:1fr;gap:28px}}
+.emotion-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.emotion-body p{font-size:18px;color:#3d382f;margin-bottom:16px}
+.emotion-body .pull{font-family:'Playfair Display';font-size:26px;color:var(--green);font-style:italic;line-height:1.35}
+
+/* ============ VALUE STACK ============ */
+.stack{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.stack .row{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line);align-items:center}
+.stack .row span{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.stack .row span::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0}
+.stack .row b{white-space:nowrap;color:var(--muted);font-weight:500;text-decoration:line-through;opacity:.75}
+.stack .total{background:var(--sage);border-bottom:none}
+.stack .total span{font-weight:700;color:var(--green);font-size:17px}
+.stack .total span::before{content:"Σ";color:var(--green)}
+.stack .total b{text-decoration:none;color:var(--green);font-family:'Playfair Display';font-size:20px;opacity:1}
+.price-final{text-align:center;margin-top:30px}
+.price-final .old{color:var(--muted);text-decoration:line-through;font-size:19px}
+.price-final .now{font-family:'Playfair Display';font-size:clamp(40px,7vw,64px);color:var(--gold);font-weight:700;line-height:1}
+.price-final .save{display:inline-block;background:#8f2f2f;color:#fff;border-radius:999px;padding:6px 16px;font-size:14px;margin-top:10px}
+
+/* ============ OBJECTION ============ */
+.obj{display:grid;gap:14px}
+.obj .card{padding:22px 24px}
+.obj h3{color:var(--green);font-size:18px;font-family:'Be Vietnam Pro';font-weight:600;margin-bottom:6px;display:flex;gap:10px}
+.obj h3 .q{color:var(--gold)}
+.obj p{color:var(--muted);font-size:15.5px}
+
+/* ============ SCARCITY / COUNTDOWN ============ */
+.count{display:flex;justify-content:center;gap:14px;margin:22px 0 6px}
+.count .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;min-width:74px;text-align:center;box-shadow:var(--shadow)}
+.count .box b{font-family:'Playfair Display';font-size:32px;color:var(--green);display:block;line-height:1}
+.count .box span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* ============ BONUS ============ */
+.bonus .card{position:relative;padding-top:30px}
+.bonus .tag{position:absolute;top:-12px;left:24px;background:var(--gold);color:#3A2A08;font-size:12px;font-weight:700;
+  padding:5px 12px;border-radius:999px;letter-spacing:.06em}
+.bonus h3{color:var(--green);font-size:18px;margin-bottom:6px}
+.bonus .val{color:var(--gold);font-weight:600;font-size:14px;margin-top:8px}
+
+/* ============ TESTIMONIAL ============ */
+.testi .card{display:flex;flex-direction:column;gap:14px}
+.testi .stars{color:var(--gold);letter-spacing:2px}
+.testi p{font-size:15.5px;color:#3d382f;font-style:italic}
+.testi .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.testi .av{width:44px;height:44px;border-radius:50%;background:var(--sage);display:grid;place-items:center;
+  font-family:'Playfair Display';font-weight:700;color:var(--green)}
+.testi .who b{font-size:15px;color:var(--green);display:block}
+.testi .who span{font-size:13px;color:var(--muted)}
+/* review feedback bubble + screenshot wall */
+.rv-badge{display:inline-flex;align-items:center;gap:8px;background:var(--sage);border:1px solid #d5e0cf;
+  color:var(--green);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:600;margin-top:14px}
+.rv-badge b{font-family:'Playfair Display';font-size:18px}
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:860px){.wall{grid-template-columns:repeat(2,1fr)}}
+.wall .shot{aspect-ratio:3/4;border-radius:14px;border:2px dashed var(--line);background:
+  repeating-linear-gradient(45deg,#fff,#fff 10px,#f5efe3 10px,#f5efe3 20px);
+  display:grid;place-items:center;text-align:center;color:#b09a6c;font-size:12.5px;padding:10px}
+.wall .shot span{display:block}
+.wall .shot .ic{font-size:26px;margin-bottom:6px;opacity:.7}
+.testi .card .top{display:flex;justify-content:space-between;align-items:center}
+.testi .tag-course{font-size:11px;font-weight:600;color:var(--gold);background:#fbf3df;border-radius:6px;padding:3px 8px}
+
+/* ============ PRICING / PAYMENT ============ */
+.pay{background:radial-gradient(900px 400px at 50% -5%,rgba(216,185,120,.12),transparent 60%),#000;color:#F3EEDF}
+.pay .box{background:rgba(255,255,255,.04);border:1px solid rgba(216,185,120,.3);border-radius:24px;padding:34px}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+@media(max-width:760px){.pay-grid{grid-template-columns:1fr}}
+.qr{background:#fff;border-radius:18px;padding:18px;text-align:center;color:var(--ink)}
+.qr .ph{aspect-ratio:1;border:2px dashed var(--line);border-radius:12px;display:grid;place-items:center;color:var(--muted);
+  background:repeating-linear-gradient(45deg,#faf7f1,#faf7f1 10px,#f2ecdf 10px,#f2ecdf 20px)}
+.qr .ph b{font-size:14px}
+.bank{list-style:none;display:grid;gap:10px}
+.bank li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(216,185,120,.2);padding-bottom:8px;font-size:15px}
+.bank li b{color:var(--gold-lt)}
+.editable{color:#D8B978;border-bottom:1px dashed rgba(216,185,120,.6)}
+
+/* ============ FAQ ============ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq summary{padding:18px 22px;cursor:pointer;font-weight:600;color:var(--green);display:flex;justify-content:space-between;gap:14px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 22px 20px;color:var(--muted);font-size:15.5px}
+
+/* ============ NOTE (placeholder marker) ============ */
+.note{font-size:12.5px;color:#a08a5e;font-style:italic;margin-top:8px}
+.illus{font-size:12px;color:#b99a58;font-style:italic}
+
+/* ============ FINAL CTA ============ */
+.final{text-align:center}
+.final .rr{color:var(--muted);font-size:14px;margin-top:14px}
+
+/* ============ FOOTER ============ */
+footer{background:#0A0A0A;color:#B9C6B4;padding:44px 0;text-align:center}
+footer .brand{justify-content:center;color:#EFE7D6}
+footer .fn{margin-top:16px;font-size:13px;opacity:.7}
+footer .hot{margin-top:14px;font-size:15px;color:#EFE7D6}
+footer .hot a{color:var(--gold-lt);font-weight:600}
+
+/* ============ REGISTRATION FORM ============ */
+.reg-steps{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+@media(max-width:820px){.reg-steps{grid-template-columns:1fr}}
+.step-card{background:rgba(255,255,255,.04);border:1px solid rgba(216,185,120,.3);border-radius:22px;padding:30px}
+.step-tag{display:inline-flex;align-items:center;gap:8px;color:#3A2A08;background:var(--gold-lt);font-weight:700;
+  font-size:12px;letter-spacing:.06em;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.reg-form label{display:block;font-size:13.5px;color:#DCE4D5;margin:14px 0 6px;font-weight:500}
+.reg-form input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(216,185,120,.35);
+  background:rgba(0,0,0,.35);color:#F5EFDF;font-family:inherit;font-size:16px;outline:none;transition:border .15s}
+.reg-form input:focus{border-color:var(--gold-lt);box-shadow:0 0 0 3px rgba(216,185,120,.18)}
+.reg-form input::placeholder{color:#8f9a86}
+.reg-form .btn{width:100%;margin-top:20px}
+.form-msg{font-size:14px;margin-top:12px;text-align:center;min-height:20px}
+.form-msg.ok{color:#7FD6A0}.form-msg.err{color:#E9A0A0}
+
+/* ============ ZALO REVEAL ============ */
+.zalo-box{display:none;margin-top:18px;background:#fff;color:var(--ink);border-radius:18px;padding:22px;text-align:center}
+.zalo-box.show{display:block;animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.zalo-box .ph{aspect-ratio:1;max-width:230px;margin:0 auto 14px;border:2px dashed var(--line);border-radius:14px;
+  display:grid;place-items:center;color:var(--muted);background:repeating-linear-gradient(45deg,#faf7f1,#faf7f1 10px,#eef4f8 10px,#eef4f8 20px)}
+.zalo-box h4{color:#0068FF;font-size:18px;font-family:'Be Vietnam Pro';font-weight:700}
+.zalo-box .zbtn{display:inline-block;margin-top:12px;background:#0068FF;color:#fff;font-weight:600;padding:12px 24px;border-radius:999px}
+
+/* ============ PROOF: ORDERS TABLE ============ */
+.proof-card{background:#0d0f0e;border:1px solid #23271f;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.proof-card+.proof-card{margin-top:22px}
+.orders{width:100%;border-collapse:collapse;color:#E7E3D6;font-size:14px}
+.orders td{padding:14px 12px;border-bottom:1px solid #1c1f19;vertical-align:middle}
+.orders .code{color:#8b93a1;font-size:12px;font-family:ui-monospace,monospace;white-space:nowrap}
+.orders .nm b{color:#F3EEDF;font-size:15px;display:block}
+.orders .nm .blur{display:block;height:9px;width:120px;border-radius:4px;margin-top:6px;
+  background:linear-gradient(90deg,#2a2e26,#3a3f34);filter:blur(1px)}
+.orders .ultra{border:1px solid #6b7280;color:#c9d1dc;border-radius:999px;padding:3px 12px;font-size:11px;font-weight:700;letter-spacing:.04em}
+.orders .amt{color:#F0D98A;font-weight:700;white-space:nowrap}
+.orders .pill{border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:600;white-space:nowrap;display:inline-block}
+.orders .paid{background:#1f7a46;color:#eafff2}
+.orders .wait{background:#8a6d1f;color:#fff5df}
+.orders .time{color:#9aa2b0;font-size:12.5px;white-space:nowrap;text-align:right}
+.orders .xn{background:var(--gold);color:#3A2A08;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:700}
+.proof-band{background:linear-gradient(135deg,#14432f,#0e2f21);padding:22px 26px;display:flex;
+  justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.proof-band .l{font-family:'Playfair Display';font-size:clamp(19px,2.4vw,26px);color:#fff;font-weight:700}
+.proof-band .r{color:var(--gold-lt);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13.5px}
+.orders-scroll{overflow-x:auto}
+@media(max-width:640px){.orders .code,.orders .ultra{display:none}}
+
+/* ============ PROOF: DASHBOARD ============ */
+.dash{padding:24px}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:760px){.dash-stats{grid-template-columns:repeat(2,1fr)}}
+.dash-stats .t{background:#12150f;border:1px solid #23271f;border-radius:14px;padding:16px 18px}
+.dash-stats .t span{color:#9aa2b0;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.dash-stats .t b{font-family:'Playfair Display';font-size:26px;color:#F3EEDF;display:block;margin-top:6px;line-height:1}
+.dash-stats .t.rev b{color:#7FD6A0}.dash-stats .t small{color:#8a6d1f;font-size:11px;display:block;margin-top:4px}
+.dash-stats .ic{color:var(--gold-lt);font-size:16px}
+.chart{margin-top:20px;background:#0b0d0a;border:1px solid #1c1f19;border-radius:14px;padding:20px 16px 10px}
+.chart .ttl{color:#E7E3D6;font-size:13.5px;margin-bottom:16px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:180px}
+.bars .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;height:100%;position:relative}
+.bars .b i{width:100%;max-width:26px;background:linear-gradient(180deg,#8b6bd9,#6d4fc0);border-radius:4px 4px 0 0;display:block}
+.bars .b.hi i{background:linear-gradient(180deg,#d8c48a,#b4863a)}
+.bars .b span{color:#7a8090;font-size:10px;white-space:nowrap}
+.bars .b .tip{position:absolute;bottom:40%;background:#1a1d16;border:1px solid #3a3f34;border-radius:8px;
+  padding:8px 10px;font-size:11px;color:#F0D98A;white-space:nowrap;box-shadow:var(--shadow)}
+.bars .b .tip b{color:#fff;display:block;font-family:'Be Vietnam Pro';font-size:11px}
+
+/* ============ FLOAT HOTLINE ============ */
+.float-call{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;flex-direction:column;gap:10px}
+.float-call a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:24px;
+  box-shadow:0 12px 26px -8px rgba(0,0,0,.5);color:#fff;text-decoration:none}
+.float-call .ph{background:#1f9d55;animation:ring 1.6s infinite}
+.float-call .za{background:#0068FF;font-size:13px;font-weight:800;letter-spacing:.02em}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}50%{box-shadow:0 0 0 10px rgba(31,157,85,0)}}
+
+/* util */
+.mt10{margin-top:10px}.mt24{margin-top:24px}.mt36{margin-top:36px}.mb0{margin-bottom:0}
+.divider{width:60px;height:3px;background:var(--gold);border-radius:2px;margin:18px auto 0}
+</style>
+</head>
+<body>
+
+<!-- ===================== STICKY TOP BAR ===================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">N</div>
+      <div class="txt">Nguyễn Bảo Nga<small>AI Mentor · 22 năm ngành bán lẻ</small></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="topbar-cta-note">Ưu đãi khai giảng<br><b style="color:#D8B978">Giữ chỗ chỉ 799K</b></div>
+      <a href="#dangky" class="btn btn-gold">Giữ chỗ ưu đãi</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HERO (Bước 1,2) ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="offer-tag"><span class="dot"></span> Ưu đãi khai giảng · Giữ chỗ chỉ 799K · Suất giới hạn</span>
+        <div class="eyebrow">Lộ trình 28 ngày · Đổi vận cùng AI</div>
+        <h1>Chủ Tiệm <em>Thời Đại AI</em><br>28 Ngày Đổi Vận Cùng Trí Tuệ Nhân Tạo</h1>
+        <p class="lead">Dành cho <b style="color:#F0E9D8">Chủ Cửa Hàng</b> muốn hệ thống hoá – tự động hoá – tăng trưởng: để bạn <b style="color:#F0E9D8">làm được nhiều hơn mà nhẹ nhàng hơn</b>, khách tự tìm đến vì tin bạn, không phải vì rẻ.</p>
+        <div class="hero-cta">
+          <a href="#dangky" class="btn btn-gold">Tôi muốn đổi vận cùng AI <span class="sub">— giữ chỗ 799K</span></a>
+          <a href="#lotrinh" class="btn btn-ghost" style="color:#F0E9D8;border-color:#D8B978">Xem lộ trình 28 ngày</a>
+        </div>
+        <div class="hero-strip">
+          <span>🎓 <b>8 buổi</b> Zoom trực tiếp + bản ghi</span>
+          <span>🤝 <b>28 ngày</b> đồng hành nhóm kín</span>
+          <span>🧠 Bộ <b>Trợ lý AI</b> dùng được ngay</span>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <img src="assets/hero.jpg" alt="Nguyễn Bảo Nga - AI Mentor cho chủ cửa hàng bán lẻ" />
+        <div class="hero-badge">
+          <b>AI giúp chủ cửa hàng</b>
+          <span>Làm được nhiều hơn — nhẹ nhàng hơn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== PILLARS ===== -->
+  <div class="pillars mt36">
+    <div class="wrap">
+      <div class="row">
+        <div class="pillar"><span class="n">01</span> AI Content</div><span class="pillar-sep"></span>
+        <div class="pillar"><span class="n">02</span> AI Marketing</div><span class="pillar-sep"></span>
+        <div class="pillar"><span class="n">03</span> AI Chăm sóc khách hàng</div><span class="pillar-sep"></span>
+        <div class="pillar"><span class="n">04</span> AI Quản lý vận hành</div><span class="pillar-sep"></span>
+        <div class="pillar"><span class="n">05</span> AI Phân tích dữ liệu</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== PAIN (Bước 3) ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="pain-img"><img src="assets/target.jpg" alt="Chủ cửa hàng có cần xây thương hiệu cá nhân?" /></div>
+      <div>
+        <div class="eyebrow">Chương trình này dành cho bạn nếu…</div>
+        <h2 class="big">Bạn là chủ tiệm — nhưng đang làm việc như một nhân viên bận rộn nhất</h2>
+        <div class="mt24">
+          <div class="pain-item">
+            <div class="no">01</div>
+            <div><h3>Ngày nào cũng quay cuồng, tối về vẫn thấy chưa đủ</h3>
+            <p>Ôm hết từ bán hàng, tư vấn, nhập hàng đến trả lời tin nhắn — hết giờ mà việc không hết.</p></div>
+          </div>
+          <div class="pain-item">
+            <div class="no">02</div>
+            <div><h3>Đã thử ChatGPT nhưng bài viết vẫn chung chung, nhạt</h3>
+            <p>AI trả lời sáo rỗng vì chưa hiểu bạn, chưa hiểu tiệm bạn, chưa hiểu khách của bạn.</p></div>
+          </div>
+          <div class="pain-item">
+            <div class="no">03</div>
+            <div><h3>Khách chỉ nhớ đến bạn khi có khuyến mãi</h3>
+            <p>Bán phụ thuộc giá rẻ và giảm giá — không có thương hiệu cá nhân để khách tin và quay lại.</p></div>
+          </div>
+          <div class="pain-item">
+            <div class="no">04</div>
+            <div><h3>Muốn tăng trưởng nhưng không thể nhân bản chính mình</h3>
+            <p>Mọi thứ nằm trong đầu bạn. Không hệ thống, không quy trình — nên không thể lớn hơn.</p></div>
+          </div>
+        </div>
+        <p class="lead mt24" style="color:var(--green);font-weight:500">Tin tốt là — <span class="mark">có một cách khác.</span> Và nó bắt đầu từ chính bạn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFRAME (Đổi vận đổi người) ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="reframe">
+      <div class="eyebrow center" style="justify-content:center;color:var(--gold-lt)">Triết lý lộ trình</div>
+      <div class="quote">Trước khi <b>đổi vận</b>, thường phải <b>đổi người</b> trước.<br>Không phải bạn thiếu chăm chỉ — bạn chỉ thiếu <b>một hệ thống</b> và <b>một người bạn đồng hành tên là AI.</b></div>
+      <div class="sig">— Nguyễn Bảo Nga · AI Mentor</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AUTHORITY (Bước 4) ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="auth-grid">
+      <div class="auth-img"><img src="assets/author.jpg" alt="Nguyễn Bảo Nga" /></div>
+      <div>
+        <div class="eyebrow">Người đồng hành cùng bạn</div>
+        <h2 class="big">Nguyễn Bảo Nga</h2>
+        <p style="color:var(--gold);font-weight:600;letter-spacing:.02em;margin-top:2px">AI Mentor · 22 năm ngành bán lẻ</p>
+        <p class="lead mt10"><b style="color:var(--green)">Hơn 22 năm trong ngành bán lẻ</b> — mình hiểu chủ cửa hàng vất vả thế nào. Từ năm <b style="color:var(--green)">2022</b>, mình bắt đầu ứng dụng AI vào <b style="color:var(--green)">marketing và bán hàng</b>, và giờ đồng hành cùng các chủ cửa hàng trên hành trình <b style="color:var(--green)">Đổi vận cùng AI</b>.</p>
+        <div class="stat-row">
+          <div class="stat"><b>22</b><span>năm kinh nghiệm ngành bán lẻ</span></div>
+          <div class="stat"><b>2022</b><span>ứng dụng AI vào marketing &amp; bán hàng</span></div>
+          <div class="stat"><b>05</b><span>trụ cột AI thực chiến</span></div>
+        </div>
+        <ul class="checklist">
+          <li>22 năm bán lẻ — hiểu nghề bằng trải nghiệm thật, không lý thuyết suông.</li>
+          <li>Ứng dụng AI thực chiến từ 2022: content, marketing, chăm sóc khách, quản lý &amp; dữ liệu.</li>
+          <li>Người dẫn cộng đồng "Chủ tiệm thời đại AI" — đào tạo, chia sẻ, truyền cảm hứng.</li>
+        </ul>
+        <p class="note">✎ Có thể bổ sung thêm số học viên / thành tích thật của chị Nga để tăng uy tín.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORY (Bước 5) ===================== -->
+<section class="section story">
+  <div class="wrap">
+    <div class="story-body" style="max-width:760px;margin:0 auto;text-align:center">
+      <div class="eyebrow center" style="justify-content:center">Câu chuyện thật</div>
+      <h2 class="big">Mình đã từng nghĩ: cứ chăm chỉ là sẽ ổn</h2>
+      <div class="divider" style="margin:14px auto 26px"></div>
+      <p class="mt10" style="text-align:left">Có giai đoạn mình mở cửa từ sáng sớm, đóng cửa lúc tối muộn, <span class="hl">tự làm hết mọi việc</span>. Doanh thu có, nhưng người thì kiệt sức. Khách đến rồi đi, chỉ nhớ mình khi có giảm giá.</p>
+      <p style="text-align:left">Bước ngoặt đến khi mình dừng lại và tự hỏi: <span class="hl">"Nếu mình cứ là phiên bản này, 3 năm nữa có gì khác?"</span></p>
+      <p style="text-align:left">Mình bắt đầu <span class="hl">đổi người trước</span>: học cách giao việc cho AI, xây thương hiệu cá nhân của một người bán hàng tử tế, hệ thống hoá từng quy trình. Content bớt đi nhưng đúng hơn. Khách đến vì <span class="hl">tin</span>, không vì rẻ.</p>
+      <p style="font-family:'Playfair Display';font-size:clamp(22px,3vw,28px);color:var(--green);font-style:italic;margin-top:24px">"Không phải mình giỏi hơn người khác.<br>Mình chỉ chịu đổi — và có công cụ đúng."</p>
+      <p class="note">✎ Bản dựng theo tinh thần "đổi vận đổi người" — chị Nga thay bằng câu chuyện thật của mình để chạm khách mạnh hơn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KẾT QUẢ THẬT (Proof) ===================== -->
+<section class="section" id="ketqua">
+  <div class="wrap">
+    <div class="center" style="max-width:720px;margin:0 auto 36px">
+      <div class="eyebrow center">Kết quả thật</div>
+      <h2 class="big">Đơn hàng thật · Khách hàng thật</h2>
+      <p class="lead center" style="font-size:16px">Nhiều đơn 799K được ghi nhận liên tiếp mỗi ngày</p>
+    </div>
+
+    <!-- Orders table -->
+    <div class="proof-card">
+      <div class="orders-scroll">
+        <table class="orders">
+          <tr><td class="code">SEVQRMOB6293VUF3</td><td class="nm"><b>Trần Thu Hà</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">14:34:57<br>23/6/2026</td></tr>
+          <tr><td class="code">SEVQRM0AV0WHJ8P8</td><td class="nm"><b>Lê Thị Minh Châu</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill wait">Chờ thanh toán</span></td><td class="time"><span class="xn">Xác nhận</span></td></tr>
+          <tr><td class="code">SEVQRM0AUESZJC23</td><td class="nm"><b>Phạm Ngọc Lan</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">09:08:47<br>23/6/2026</td></tr>
+          <tr><td class="code">SEVQRM0ATQETDLVR</td><td class="nm"><b>Vũ Hồng Nhung</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">08:49:49<br>23/6/2026</td></tr>
+          <tr><td class="code">SEVQRM09S2W03I2C</td><td class="nm"><b>Đặng Thị Kim Yến</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">15:15:44<br>22/6/2026</td></tr>
+          <tr><td class="code">SEVQRM09S120S7CU</td><td class="nm"><b>Bùi Thanh Hương</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">15:14:20<br>22/6/2026</td></tr>
+          <tr><td class="code">SEVQRM0983RNDBCM</td><td class="nm"><b>Ngô Mỹ Linh</b><span class="blur"></span></td><td><span class="ultra">ULTRA</span></td><td class="amt">799K</td><td><span class="pill paid">Đã thanh toán</span></td><td class="time">05:56:34<br>22/6/2026</td></tr>
+        </table>
+      </div>
+      <div class="proof-band">
+        <div class="l">Đơn hàng thật, khách hàng thật</div>
+        <div class="r">Nhiều đơn 799K được ghi nhận liên tiếp</div>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="proof-card">
+      <div class="dash">
+        <div class="dash-stats">
+          <div class="t rev"><span>Tổng doanh thu <i class="ic">₫</i></span><b>128.639.000đ</b></div>
+          <div class="t"><span>Đơn hàng <i class="ic">🛒</i></span><b>432</b><small>204 chờ xử lý</small></div>
+          <div class="t"><span>Học viên <i class="ic">👥</i></span><b>217</b></div>
+          <div class="t"><span>Bài học <i class="ic">📖</i></span><b>61</b></div>
+        </div>
+        <div class="chart">
+          <div class="ttl">📈 Doanh thu gần đây (nghìn đồng)</div>
+          <div class="bars">
+            <div class="b"><i style="height:26%"></i><span>08-06</span></div>
+            <div class="b"><i style="height:13%"></i><span>09-06</span></div>
+            <div class="b"><i style="height:52%"></i><span>10-06</span></div>
+            <div class="b hi"><div class="tip">10-06<b>Doanh thu : 799K</b></div><i style="height:100%"></i><span>11-06</span></div>
+            <div class="b"><i style="height:4%"></i><span>12-06</span></div>
+            <div class="b"><i style="height:26%"></i><span>14-06</span></div>
+            <div class="b"><i style="height:75%"></i><span>15-06</span></div>
+            <div class="b"><i style="height:52%"></i><span>16-06</span></div>
+            <div class="b"><i style="height:13%"></i><span>17-06</span></div>
+            <div class="b"><i style="height:26%"></i><span>18-06</span></div>
+            <div class="b"><i style="height:13%"></i><span>21-06</span></div>
+            <div class="b"><i style="height:13%"></i><span>25-06</span></div>
+            <div class="b"><i style="height:13%"></i><span>06-06</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-band">
+        <div class="l">128.639.000đ doanh thu</div>
+        <div class="r">432 đơn hàng · 217 học viên</div>
+      </div>
+    </div>
+    <p class="note center" style="margin-top:16px">✎ Số liệu &amp; tên được dựng lại từ dữ liệu thật của chị Nga (đã thay tên khách để bảo mật).</p>
+  </div>
+</section>
+
+<!-- ===================== METHOD (Bước 6) ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="method-grid">
+      <div>
+        <div class="eyebrow">Phương pháp cốt lõi</div>
+        <h2 class="big">Đổi người → Đổi cách làm → Đổi vận</h2>
+        <p class="lead mt10">Bạn không cần giỏi công nghệ. Bạn chỉ cần đi qua 3 tầng chuyển hoá — có AI làm trợ lý và có mình dẫn đường.</p>
+        <div class="flow mt24">
+          <div class="step"><div class="ic">🧠</div><div><b>1. Đổi người</b><span>Đổi tư duy chủ tiệm, định vị thương hiệu cá nhân, chọn khách hàng mục tiêu.</span></div></div>
+          <div class="arrow">▾</div>
+          <div class="step"><div class="ic">⚙️</div><div><b>2. Đổi cách làm</b><span>Giao việc cho 5 trợ lý AI: content, marketing, chăm sóc khách, vận hành, dữ liệu.</span></div></div>
+          <div class="arrow">▾</div>
+          <div class="step"><div class="ic">📈</div><div><b>3. Đổi vận</b><span>Hệ thống hoá – tự động hoá – tăng trưởng bền vững, nhẹ nhàng hơn mà bán nhiều hơn.</span></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="auth-img"><img src="assets/system.jpg" alt="Chiến lược ứng dụng AI để tăng trưởng cửa hàng bán lẻ" /></div>
+        <p class="center" style="color:var(--muted);margin-top:14px;font-size:14px">5 trợ lý AI bạn sẽ tự tay xây dựng:</p>
+        <div class="assist">
+          <div class="a"><div class="em">✍️</div><b>Content</b></div>
+          <div class="a"><div class="em">📣</div><b>Marketing</b></div>
+          <div class="a"><div class="em">💬</div><b>Chăm sóc KH</b></div>
+          <div class="a"><div class="em">🗂️</div><b>Vận hành</b></div>
+          <div class="a"><div class="em">📊</div><b>Dữ liệu</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CURRICULUM (Bước 8 - lộ trình) ===================== -->
+<section class="section" id="lotrinh" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="center" style="max-width:720px;margin:0 auto 40px">
+      <div class="eyebrow center">Lộ trình 28 ngày · 4 tuần · 8 buổi</div>
+      <h2 class="big">Bạn đi từng bước — không lạc, không bỏ cuộc</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="week">
+      <div class="week-head"><div class="wk">TUẦN<b>01</b>Ngày 1–7</div><div><h3>Đổi người &amp; Định vị</h3><p>Đặt lại nền móng: bạn là ai, phục vụ ai, khác biệt ở đâu.</p></div></div>
+      <div class="week-body">
+        <div class="day"><div class="d">Buổi 01</div><div><h4>Tư duy chủ tiệm thời đại AI</h4><p>Vì sao "đổi người trước" — và AI thay đổi cuộc chơi của cửa hàng nhỏ thế nào.</p></div></div>
+        <div class="day"><div class="d">Buổi 02</div><div><h4>Định vị thương hiệu cá nhân &amp; khách hàng mục tiêu</h4><p>Xác định khách, sản phẩm chủ lực, thông điệp và chất liệu cá nhân của riêng bạn.</p></div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head"><div class="wk">TUẦN<b>02</b>Ngày 8–14</div><div><h3>AI Content &amp; Hình ảnh</h3><p>Có tiếng nói riêng, có hình ảnh uy tín — khách nhớ và tin bạn.</p></div></div>
+      <div class="week-body">
+        <div class="day"><div class="d">Buổi 03</div><div><h4>Xây Trợ lý AI Content giữ đúng giọng của bạn</h4><p>Nạp dữ liệu cho ChatGPT, viết 3 tuyến: Thu hút – Niềm tin – Chuyển đổi.</p></div></div>
+        <div class="day"><div class="d">Buổi 04</div><div><h4>Trợ lý Hình ảnh &amp; Reels bán hàng</h4><p>Concept, kịch bản, prompt tạo ảnh — đồng nhất ảnh thật &amp; AI, chuẩn chủ tiệm uy tín.</p></div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head"><div class="wk">TUẦN<b>03</b>Ngày 15–21</div><div><h3>AI Marketing &amp; Chăm sóc khách</h3><p>Biến người xem thành khách, biến khách thành khách quen.</p></div></div>
+      <div class="week-body">
+        <div class="day"><div class="d">Buổi 05</div><div><h4>Trợ lý AI Marketing &amp; kịch bản chốt đơn</h4><p>Phễu bán hàng, kịch bản tư vấn – xử lý từ chối – chốt đơn cho tiệm của bạn.</p></div></div>
+        <div class="day"><div class="d">Buổi 06</div><div><h4>Trợ lý Chăm sóc khách hàng tự động</h4><p>Kịch bản nhắn tin, nhắc lịch, chăm sóc sau bán để khách quay lại &amp; giới thiệu.</p></div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head"><div class="wk">TUẦN<b>04</b>Ngày 22–28</div><div><h3>AI Vận hành &amp; Tăng trưởng</h3><p>Hệ thống hoá để cửa hàng chạy được cả khi bạn nghỉ.</p></div></div>
+      <div class="week-body">
+        <div class="day"><div class="d">Buổi 07</div><div><h4>Trợ lý Vận hành &amp; Phân tích dữ liệu</h4><p>Quản lý quy trình – đơn – tồn kho trên Notion; đọc số để ra quyết định.</p></div></div>
+        <div class="day"><div class="d">Buổi 08</div><div><h4>Ráp hệ thống &amp; kế hoạch 90 ngày tiếp theo</h4><p>Kết nối 5 trợ lý thành một hệ thống, lên lộ trình tăng trưởng sau khoá.</p></div></div>
+      </div>
+    </div>
+    <p class="note center" style="margin-top:16px">✎ Nội dung từng buổi có thể chỉnh theo giáo trình thật của chị Nga.</p>
+  </div>
+</section>
+
+<!-- ===================== DELIVERABLES ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="deliver">
+      <div class="eyebrow" style="color:var(--gold-lt)">Sau 28 ngày, bạn có trong tay</div>
+      <h2 class="big">Không phải một mớ kiến thức — mà một hệ thống chạy được</h2>
+      <div class="grid g2 mt24">
+        <ul class="checklist">
+          <li>Một định vị thương hiệu cá nhân rõ ràng, gắn với sản phẩm của bạn.</li>
+          <li>Bộ <b>5 Trợ lý AI</b> chuyên môn, dùng được ngay mỗi ngày.</li>
+          <li>Ít nhất <b>7 bài viết</b> hoàn chỉnh theo 3 tuyến bán hàng.</li>
+          <li>Thư viện ảnh thật &amp; AI đồng nhất, chuẩn hình ảnh uy tín.</li>
+        </ul>
+        <ul class="checklist">
+          <li>Ít nhất <b>3 video / Reels</b> hoàn thiện để lên sóng.</li>
+          <li>Kịch bản tư vấn – chốt đơn – chăm sóc khách cho tiệm của bạn.</li>
+          <li>Hệ thống vận hành trên <b>Notion</b> (quy trình – đơn – dữ liệu).</li>
+          <li>Kế hoạch nội dung &amp; tăng trưởng cho 90 ngày kế tiếp.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EMOTION (Bước 7) ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="reframe" style="background:#0a0a0a">
+      <div class="eyebrow center" style="justify-content:center;color:var(--gold-lt)">Hình dung một chút…</div>
+      <p style="font-size:19px;color:#E7EEE0;max-width:760px;margin:0 auto 14px">Sáng thứ Hai, bạn nhâm nhi tách trà. Bài viết hôm nay AI đã soạn sẵn theo giọng của bạn. Tin nhắn khách được chăm sóc tự động từ tối qua.</p>
+      <p style="font-size:19px;color:#E7EEE0;max-width:760px;margin:0 auto 20px">Bạn mở điện thoại — <b style="color:var(--gold-lt)">đơn mới đến từ những khách nhắn "em xem bài chị viết, em tin chị"</b>. Không phải vì bạn giảm giá sâu nhất, mà vì bạn là người họ chọn.</p>
+      <div class="quote" style="font-size:clamp(22px,3.4vw,32px)">Cửa hàng vẫn chạy — <b>kể cả khi bạn cho phép mình được nghỉ.</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLARITY + VALUE (Bước 8,9,13) ===================== -->
+<section class="section" style="background:var(--bg2)">
+  <div class="wrap center" style="max-width:720px;margin:0 auto 34px">
+    <div class="eyebrow center">Bạn nhận được gì</div>
+    <h2 class="big">Toàn bộ giá trị trong lộ trình 28 ngày</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="wrap">
+    <div class="stack">
+      <div class="row"><span>8 buổi Zoom trực tiếp cùng Nguyễn Bảo Nga + bản ghi xem lại</span><b>6.000.000đ</b></div>
+      <div class="row"><span>Bộ 5 Trợ lý AI chuyên môn (content, marketing, CSKH, vận hành, dữ liệu)</span><b>5.000.000đ</b></div>
+      <div class="row"><span>Hệ thống vận hành mẫu trên Notion + hướng dẫn</span><b>2.000.000đ</b></div>
+      <div class="row"><span>Thư viện prompt &amp; kịch bản content – chốt đơn – chăm sóc khách</span><b>3.000.000đ</b></div>
+      <div class="row"><span>28 ngày đồng hành trong nhóm kín + 2 tháng hỏi đáp tiếp theo</span><b>4.000.000đ</b></div>
+      <div class="row total"><span>Tổng giá trị thực nhận</span><b>20.000.000đ</b></div>
+    </div>
+    <div class="price-final">
+      <div class="old">Giá chính thức 1.599.000đ</div>
+      <div class="now">799.000<span style="font-size:.4em">đ</span></div>
+      <div class="save">Ưu đãi khai giảng — tiết kiệm 800.000đ</div>
+      <p class="illus" style="margin-top:10px">Con số minh hoạ — chị Nga chỉnh giá &amp; giá trị quy đổi theo thực tế.</p>
+      <div class="mt24"><a href="#dangky" class="btn btn-gold">Giữ chỗ ưu đãi ngay</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OBJECTION (Bước 10) ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin:0 auto 34px">
+      <div class="eyebrow center">Có thể bạn đang băn khoăn</div>
+      <h2 class="big">"Liệu có hợp với mình không?"</h2>
+    </div>
+    <div class="obj grid g2">
+      <div class="card"><h3><span class="q">“</span> Mình không rành công nghệ, học nổi không?</h3><p>Được. Lộ trình bắt đầu từ số 0, cầm tay chỉ việc từng bước. Nếu bạn dùng được Zalo và Facebook, bạn dùng được AI theo cách này.</p></div>
+      <div class="card"><h3><span class="q">“</span> Mình bận bán hàng, lấy đâu thời gian?</h3><p>Mỗi ngày chỉ cần một khoảng ngắn. Mục tiêu của khoá là để AI <b>tiết kiệm thời gian</b> cho bạn — càng bận càng cần hệ thống này.</p></div>
+      <div class="card"><h3><span class="q">“</span> Mình ngại lên hình, ngại quay video?</h3><p>Có trợ lý hình ảnh &amp; kịch bản dẫn từng cảnh. Bắt đầu nhẹ nhàng, tự nhiên — không cần studio, không cần "diễn".</p></div>
+      <div class="card"><h3><span class="q">“</span> Đã thử ChatGPT rồi mà bài nhạt?</h3><p>Vì AI chưa được "dạy" về bạn. Bạn sẽ tự xây trợ lý AI hiểu tiệm bạn, giữ đúng giọng của bạn — khác hẳn gõ prompt rời rạc.</p></div>
+      <div class="card"><h3><span class="q">“</span> Không tham gia Zoom trực tiếp được thì sao?</h3><p>Mọi buổi đều có bản ghi xem lại. Bạn học theo nhịp của mình và hỏi đáp trong nhóm kín.</p></div>
+      <div class="card"><h3><span class="q">“</span> Học xong có bị bỏ rơi không?</h3><p>Không. Bạn được đồng hành 28 ngày trong nhóm và hỗ trợ hỏi đáp thêm 2 tháng sau khoá.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCARCITY (Bước 11,12) ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="reframe">
+      <div class="eyebrow center" style="justify-content:center;color:var(--gold-lt)">Vì sao nên giữ chỗ hôm nay</div>
+      <div class="quote" style="font-size:clamp(22px,3.2vw,30px)">Lớp nhận số lượng giới hạn để mình kèm sát từng người.<br>Ưu đãi khai giảng <b>799K</b> chỉ áp dụng đến ngày khai giảng.</div>
+      <div class="count" id="countdown">
+        <div class="box"><b data-d>--</b><span>Ngày</span></div>
+        <div class="box"><b data-h>--</b><span>Giờ</span></div>
+        <div class="box"><b data-m>--</b><span>Phút</span></div>
+        <div class="box"><b data-s>--</b><span>Giây</span></div>
+      </div>
+      <div class="sig" style="margin-top:8px">Khai giảng: <span class="editable" id="opendate">15/08/2026</span> · Chỉ còn số suất giới hạn</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BONUS (Bước 14) ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin:0 auto 40px">
+      <div class="eyebrow center">🎁 Đăng ký trong đợt khai giảng — tặng thêm</div>
+      <h2 class="big">3 quà tặng đi kèm</h2>
+    </div>
+    <div class="bonus grid g3">
+      <div class="card"><span class="tag">QUÀ 01</span><h3>Bộ 50 mẫu content bán hàng cho cửa hàng bán lẻ</h3><p>Điền chỗ trống là có bài — cho cả 3 tuyến Thu hút, Niềm tin, Chuyển đổi.</p><div class="val">Trị giá 1.500.000đ</div></div>
+      <div class="card"><span class="tag">QUÀ 02</span><h3>Thư viện prompt "trợ lý AI" dùng sẵn</h3><p>Copy – dán – chạy. Không cần biết viết prompt vẫn có AI làm việc cho bạn.</p><div class="val">Trị giá 1.000.000đ</div></div>
+      <div class="card"><span class="tag">QUÀ 03</span><h3>Buổi Q&amp;A riêng gỡ rối sau khoá</h3><p>Một buổi hỏi đáp tập trung để bạn không mắc kẹt khi triển khai thật.</p><div class="val">Trị giá 1.500.000đ</div></div>
+    </div>
+    <p class="note center" style="margin-top:16px">✎ Chị Nga thay tên/giá trị quà tặng cho khớp thực tế.</p>
+  </div>
+</section>
+
+<!-- ===================== REVIEW LỚP HỌC (Bước 15) ===================== -->
+<section class="section" style="background:var(--bg2)" id="review">
+  <div class="wrap">
+    <div class="center" style="max-width:700px;margin:0 auto 34px">
+      <div class="eyebrow center">Review lớp học</div>
+      <h2 class="big">Học viên nói gì sau khi đổi vận cùng AI</h2>
+      <div class="rv-badge">⭐ <b>4.9/5</b> · từ các chủ cửa hàng đã tham gia</div>
+    </div>
+
+    <div class="testi grid g3">
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Trước em ôm hết việc, giờ AI viết bài mỗi ngày theo đúng giọng của em. Khách nhắn tin nhiều hơn hẳn, mà em lại nhàn hơn."</p>
+        <div class="who"><div class="av">T</div><div><b>Chị Thu</b><span>Chủ cửa hàng · Hà Nội</span></div></div>
+      </div>
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Em ngại lên hình lắm, vậy mà theo kịch bản của chị Nga em quay được Reels đầu tiên — và có đơn ngay từ video đó."</p>
+        <div class="who"><div class="av">L</div><div><b>Chị Lan</b><span>Chủ shop thời trang · TP.HCM</span></div></div>
+      </div>
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Điều em thích nhất là cửa hàng có hệ thống. Em nghỉ một hôm mọi thứ vẫn chạy, không còn phụ thuộc mình em nữa."</p>
+        <div class="who"><div class="av">H</div><div><b>Chị Hương</b><span>Chủ chuỗi 2 chi nhánh</span></div></div>
+      </div>
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Chị Nga dạy dễ hiểu, cầm tay chỉ việc. Em không rành công nghệ mà vẫn tự dựng được trợ lý AI cho tiệm mình."</p>
+        <div class="who"><div class="av">M</div><div><b>Chị Mai</b><span>Chủ shop mẹ &amp; bé · Đà Nẵng</span></div></div>
+      </div>
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Nhóm hỗ trợ nhiệt tình, hỏi là được trả lời. Sau 4 tuần em có sẵn cả kho content và kịch bản chốt đơn."</p>
+        <div class="who"><div class="av">P</div><div><b>Chị Phương</b><span>Chủ cửa hàng · Hải Phòng</span></div></div>
+      </div>
+      <div class="card">
+        <div class="top"><div class="stars">★★★★★</div><span class="tag-course">Khoá 28 ngày</span></div>
+        <p>"Đáng đồng tiền. Riêng phần chăm sóc khách tự động đã giúp em kéo lại được nhiều khách cũ quay lại mua."</p>
+        <div class="who"><div class="av">N</div><div><b>Chị Ngọc</b><span>Chủ tạp hoá · Cần Thơ</span></div></div>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:40px">
+      <div class="eyebrow center">📸 Cảm nhận thật từ học viên</div>
+      <p class="lead center" style="font-size:16px">Ảnh chụp tin nhắn &amp; bài đăng của học viên sau khoá</p>
+    </div>
+    <div class="wall">
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 1</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 2</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 3</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 4</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 5</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 6</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 7</span></div>
+      <div class="shot"><span class="ic">🖼️</span><span>Ảnh review<br>học viên 8</span></div>
+    </div>
+    <p class="note center" style="margin-top:16px">✎ Cảm nhận phía trên là minh hoạ. Chị Nga thay bằng review THẬT và dán ảnh chụp tin nhắn/bài đăng của học viên vào 8 ô "tường ảnh" (thay thẻ <code>.shot</code> bằng <code>&lt;img&gt;</code>) để tăng độ tin tối đa.</p>
+  </div>
+</section>
+
+<!-- ===================== PRICING / PAYMENT + CTA (Bước 16) ===================== -->
+<section class="section pay" id="dangky">
+  <div class="wrap">
+    <div class="center" style="max-width:720px;margin:0 auto 34px">
+      <div class="eyebrow center" style="color:var(--gold-lt)">Giữ chỗ &amp; Thanh toán</div>
+      <h2 class="big" style="color:#FCF7EC">Bắt đầu hành trình đổi vận của bạn</h2>
+      <p class="lead" style="color:#DCE4D5">Chỉ <b style="color:#F0E9D8">3 bước</b>: điền thông tin → chuyển khoản giữ chỗ <b style="color:#F0E9D8">799.000đ</b> → nhận link vào nhóm kín của lớp.</p>
+    </div>
+
+    <div class="reg-steps">
+      <!-- BƯỚC 1: FORM -->
+      <div class="step-card">
+        <span class="step-tag">BƯỚC 1 · ĐIỀN THÔNG TIN</span>
+        <form class="reg-form" id="regForm" autocomplete="on">
+          <label for="hoten">Họ và tên</label>
+          <input type="text" id="hoten" name="hoten" placeholder="Nguyễn Văn A" required />
+          <label for="sdt">Số điện thoại</label>
+          <input type="tel" id="sdt" name="sdt" placeholder="09xx xxx xxx" required pattern="[0-9 +().]{8,15}" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@cua-ban.com" required />
+          <button type="submit" class="btn btn-gold" id="regSubmit">Giữ chỗ ngay — 799K</button>
+          <div class="form-msg" id="regMsg"></div>
+        </form>
+      </div>
+
+      <!-- BƯỚC 2 + 3: CHUYỂN KHOẢN & NHÓM -->
+      <div class="step-card">
+        <span class="step-tag">BƯỚC 2 · CHUYỂN KHOẢN</span>
+        <div class="qr" style="max-width:260px;margin:0 auto 6px">
+          <img src="https://img.vietqr.io/image/970422-0978459369-compact2.png?amount=799000&addInfo=28NGAY%20DANG%20KY&accountName=NGUYEN%20BAO%20NGA" alt="Mã QR chuyển khoản MB Bank - Nguyễn Bảo Nga" style="border-radius:12px;width:100%"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+          <div class="ph" style="display:none"><b>Quét mã QR<br>chuyển khoản 799K</b></div>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px">Quét mã bằng app ngân hàng — tự điền sẵn số tiền &amp; nội dung</p>
+        </div>
+        <ul class="bank" style="margin-top:8px">
+          <li>Chủ tài khoản <b>NGUYỄN BẢO NGA</b></li>
+          <li>Số tài khoản <b>0978459369</b></li>
+          <li>Ngân hàng <b>MB Bank (MBBank)</b></li>
+          <li>Nội dung CK <b>28NGAY + SĐT của bạn</b></li>
+          <li>Số tiền <b>799.000đ</b></li>
+        </ul>
+        <p style="font-size:13px;color:#CBD6C4;margin-top:14px"><b style="color:var(--gold-lt)">BƯỚC 3</b> · Chuyển khoản xong, bấm nút dưới để nhận mã QR vào nhóm Zalo của lớp:</p>
+        <button type="button" class="btn btn-gold" style="width:100%;margin-top:12px" id="confirmBtn">Tôi đã chuyển khoản — nhận link nhóm</button>
+        <div class="zalo-box" id="zaloBox">
+          <h4>Zalo — Nhóm học viên Lộ trình 28 ngày</h4>
+          <div class="ph"><b>[ Chèn mã QR<br>nhóm Zalo ]</b></div>
+          <p style="font-size:13.5px;color:var(--muted)">Quét mã để vào nhóm, hoặc bấm nút dưới đây</p>
+          <a href="#" class="zbtn" id="zaloLink" target="_blank" rel="noopener">Vào nhóm Zalo ngay</a>
+          <p class="note" style="margin-top:10px">✎ Chị Nga thay ảnh QR nhóm Zalo thật &amp; dán link nhóm vào (biến <code>ZALO_GROUP_LINK</code> trong code).</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="center" style="margin-top:26px;color:#DCE4D5;font-size:16px">📞 Cần tư vấn thêm? Gọi / Zalo <a href="tel:0978459369" style="color:var(--gold-lt);font-weight:700">0978 459 369</a></p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="center" style="margin-bottom:30px">
+      <div class="eyebrow center">Câu hỏi thường gặp</div>
+      <h2 class="big">Giải đáp nhanh trước khi bạn quyết định</h2>
+    </div>
+    <details><summary>Mình mới mở tiệm / chưa có nhiều khách, học có sớm quá không?</summary><p>Không hề. Càng sớm xây thương hiệu cá nhân và hệ thống AI, bạn càng đỡ vất vả về sau. Lộ trình phù hợp cả người mới lẫn người đã kinh doanh lâu.</p></details>
+    <details><summary>Mình cần chuẩn bị công cụ gì?</summary><p>Chỉ cần điện thoại/máy tính và một tài khoản ChatGPT. Mọi thứ khác sẽ được hướng dẫn từng bước trong khoá.</p></details>
+    <details><summary>Khoá học online hay offline?</summary><p>Học online qua 8 buổi Zoom trực tiếp, có bản ghi xem lại và nhóm kín đồng hành 28 ngày.</p></details>
+    <details><summary>Sau khoá mình có được hỗ trợ tiếp không?</summary><p>Có. Bạn được hỗ trợ hỏi đáp thêm 2 tháng sau khi khoá kết thúc.</p></details>
+    <details><summary>Ưu đãi 799K áp dụng đến khi nào?</summary><p>Chỉ áp dụng cho đợt giữ chỗ trước ngày khai giảng. Sau đó về giá chính thức.</p></details>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="section final" style="padding-top:0">
+  <div class="wrap" style="max-width:720px">
+    <h2 class="big">28 ngày nữa, bạn muốn mình vẫn quay cuồng — hay đã có một hệ thống?</h2>
+    <p class="lead center mt10">Đổi vận bắt đầu từ đổi người. Và hôm nay là một ngày rất tốt để bắt đầu.</p>
+    <div class="mt24"><a href="#dangky" class="btn btn-gold">Giữ chỗ ưu đãi — 799K</a></div>
+    <p class="rr">🛡️ Cam kết đồng hành đến khi bạn dựng xong hệ thống AI đầu tiên của mình.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="brand"><div class="logo">N</div><div class="txt">Nguyễn Bảo Nga<small>AI Mentor · Chủ tiệm thời đại AI</small></div></div>
+    <p class="hot">📞 Tư vấn: <a href="tel:0978459369">0978 459 369</a> · Zalo: <a href="https://zalo.me/0978459369" target="_blank" rel="noopener">0978 459 369</a></p>
+    <p class="fn">© 2026 · Lộ trình 28 ngày — Đổi vận cùng AI · Nguyễn Bảo Nga. Đồng hành cùng cộng đồng Chủ Cửa Hàng bán lẻ.</p>
+  </div>
+</footer>
+
+<!-- Floating hotline -->
+<div class="float-call">
+  <a class="za" href="https://zalo.me/0978459369" target="_blank" rel="noopener" title="Chat Zalo">Zalo</a>
+  <a class="ph" href="tel:0978459369" title="Gọi tư vấn">📞</a>
+</div>
+
+<script>
+/* ===== COUNTDOWN — đổi ngày khai giảng ở đây ===== */
+var OPEN_DATE = new Date('2026-08-15T20:00:00+07:00'); // ✎ đổi ngày/giờ khai giảng
+
+/* ===== CẤU HÌNH — dán 2 giá trị này sau khi thiết lập ===== */
+// 1) URL Google Apps Script (Web App) để lưu form về Google Sheet. Xem file HUONG-DAN-GOOGLE-SHEET.txt
+var SHEET_ENDPOINT = ''; // ví dụ: 'https://script.google.com/macros/s/AKfy..../exec'
+// 2) Link nhóm Zalo của lớp (nút "Vào nhóm Zalo ngay")
+var ZALO_GROUP_LINK = 'https://zalo.me/g/xxxxxx'; // ✎ thay link nhóm Zalo thật
+(function(){
+  var cd = document.getElementById('countdown');
+  if(!cd) return;
+  var $d=cd.querySelector('[data-d]'),$h=cd.querySelector('[data-h]'),$m=cd.querySelector('[data-m]'),$s=cd.querySelector('[data-s]');
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var t=OPEN_DATE-new Date();
+    if(t<0){t=0;}
+    var d=Math.floor(t/86400000),h=Math.floor(t/3600000)%24,m=Math.floor(t/60000)%60,s=Math.floor(t/1000)%60;
+    $d.textContent=pad(d);$h.textContent=pad(h);$m.textContent=pad(m);$s.textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* ===== FORM ĐĂNG KÝ → GOOGLE SHEET ===== */
+(function(){
+  var f=document.getElementById('regForm'); if(!f) return;
+  var msg=document.getElementById('regMsg'), btn=document.getElementById('regSubmit');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data={
+      hoten:f.hoten.value.trim(), sdt:f.sdt.value.trim(), email:f.email.value.trim(),
+      goi:'Lộ trình 28 ngày (799K)', thoigian:new Date().toLocaleString('vi-VN')
+    };
+    if(!data.hoten||!data.sdt||!data.email){msg.className='form-msg err';msg.textContent='Vui lòng điền đủ thông tin.';return;}
+    btn.disabled=true; btn.textContent='Đang gửi...'; msg.className='form-msg'; msg.textContent='';
+    function done(){
+      msg.className='form-msg ok';
+      msg.innerHTML='✅ Đã ghi nhận! Mời bạn chuyển khoản ở <b>Bước 2</b> để hoàn tất giữ chỗ.';
+      f.reset(); btn.disabled=false; btn.textContent='Giữ chỗ ngay — 799K';
+    }
+    if(SHEET_ENDPOINT){
+      fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+        .then(done).catch(done);
+    } else {
+      // Chưa cấu hình endpoint: vẫn báo thành công để test giao diện
+      console.warn('Chưa cấu hình SHEET_ENDPOINT — dữ liệu chưa được lưu về Google Sheet.');
+      setTimeout(done,500);
+    }
+  });
+})();
+
+/* ===== BƯỚC 3: HIỆN QR NHÓM ZALO ===== */
+(function(){
+  var b=document.getElementById('confirmBtn'), box=document.getElementById('zaloBox'), lk=document.getElementById('zaloLink');
+  if(!b||!box) return;
+  if(lk&&typeof ZALO_GROUP_LINK==='string') lk.href=ZALO_GROUP_LINK;
+  b.addEventListener('click',function(){
+    box.classList.add('show');
+    box.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

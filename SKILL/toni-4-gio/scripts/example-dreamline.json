@@ -1,0 +1,54 @@
+{
+  "timeframe": 6,
+  "items": [
+    {
+      "type": "HAVING",
+      "item": "Macbook M4 Max 16 inch cho production",
+      "one_time_vnd": 90000000,
+      "monthly_vnd": 0,
+      "action_24h": "Search 3 dealer authorized SG + check trade-in M2"
+    },
+    {
+      "type": "HAVING",
+      "item": "1 căn airbnb cho coaching retreat ở Đà Lạt",
+      "one_time_vnd": 0,
+      "monthly_vnd": 15000000,
+      "action_24h": "Search 5 listing trên Airbnb/Booking với capacity 12 người"
+    },
+    {
+      "type": "BEING",
+      "item": "300 học viên Mầm Non Tài Chính tốt nghiệp cohort 2027",
+      "one_time_vnd": 0,
+      "monthly_vnd": 0,
+      "action_24h": "List 30 ứng viên đầu tiên từ database 2dm.vn + lên flow chiêu sinh"
+    },
+    {
+      "type": "BEING",
+      "item": "Chạy 5km dưới 28 phút",
+      "one_time_vnd": 5000000,
+      "monthly_vnd": 0,
+      "action_24h": "Đặt lịch tập 4 buổi/tuần + chốt PT 1 buổi đầu tuần sau"
+    },
+    {
+      "type": "DOING",
+      "item": "1 mini-retirement 14 ngày Phú Quốc với gia đình",
+      "one_time_vnd": 50000000,
+      "monthly_vnd": 0,
+      "action_24h": "Chốt 3 ngày trong calendar T11/2026 + đặt deposit khách sạn"
+    },
+    {
+      "type": "DOING",
+      "item": "Speak ở 3 hội thảo tài chính cá nhân tại HCM",
+      "one_time_vnd": 0,
+      "monthly_vnd": 0,
+      "action_24h": "Email 5 BTC hội thảo gần nhất với CV speaker + 3 topic options"
+    },
+    {
+      "type": "DOING",
+      "item": "Học khoá Stoic philosophy online (Tim Ferriss recommend)",
+      "one_time_vnd": 8000000,
+      "monthly_vnd": 0,
+      "action_24h": "Compare 3 khoá Stoic + book 30 phút/ngày trong calendar"
+    }
+  ]
+}
