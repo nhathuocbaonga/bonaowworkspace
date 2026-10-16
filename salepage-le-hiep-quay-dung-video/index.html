@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Làm Chủ Quay Dựng Video Chuyển Đổi — Lê Hiệp</title>
+<meta name="description" content="Khóa học giúp chủ shop, chủ spa và người kinh doanh bằng chuyên môn tự lên ý tưởng, quay và dựng video trên điện thoại, ứng dụng AI để làm nhanh hơn.">
+<meta property="og:title" content="Làm Chủ Quay Dựng Video Chuyển Đổi — cùng Lê Hiệp">
+<meta property="og:description" content="Để khách biết bạn, tin bạn và nhắn tin hỏi về sản phẩm, dịch vụ của bạn.">
+<meta property="og:image" content="images/le-hiep.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5F2E8; --paper:#FBF9F3; --ink:#172E25; --ink-2:#2E4A3E; --muted:#5E6F66;
+  --line:#DCD6C4; --green:#1F4A3A; --amber:#E2A33B; --amber-2:#C7861F; --rose:#B4553C;
+  --radius:18px; --shadow:0 18px 50px -24px rgba(23,46,37,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Be Vietnam Pro",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px;margin:0 auto}
+section{padding:88px 0}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-2)}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin:14px 0 18px}
+h2 em,h1 em{font-family:Lora,serif;font-style:italic;font-weight:500;color:var(--green)}
+.lead{font-size:19px;color:var(--ink-2)}
+.serif{font-family:Lora,serif}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 17px/1 "Be Vietnam Pro",sans-serif;padding:18px 28px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.btn-primary{background:var(--amber);color:var(--ink);box-shadow:0 10px 24px -10px rgba(199,134,31,.8)}
+.btn-primary:hover{transform:translateY(-2px);background:#EBB14F}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{transform:translateY(-2px);background:var(--green)}
+.btn-block{width:100%}
+
+/* Header */
+header{position:sticky;top:0;z-index:40;background:rgba(245,242,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;font-size:15px;letter-spacing:.04em}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--amber);font-size:17px}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:600}
+.nav-links a{text-decoration:none;opacity:.8}.nav-links a:hover{opacity:1}
+.nav .btn{padding:12px 20px;font-size:15px}
+
+/* Hero */
+.hero{padding:56px 0 72px;background:radial-gradient(1100px 500px at 85% -10%,rgba(226,163,59,.18),transparent 60%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;grid-template-areas:"head video" "body video";column-gap:48px;align-items:center}
+.hero-head{grid-area:head;align-self:end}.hero-body{grid-area:body;align-self:start}.hero-video{grid-area:video}
+.logo .short{display:none}
+.nav .btn{white-space:nowrap}
+.hero h1{font-size:clamp(36px,5.4vw,62px);font-weight:800;margin:18px 0 18px}
+.hero h1 .hl{background:linear-gradient(transparent 62%,rgba(226,163,59,.45) 62%);padding:0 4px}
+.hero .sub{font-size:19px;color:var(--ink-2);margin-bottom:26px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.price-hint{font-size:15px;color:var(--muted)}
+.price-hint b{color:var(--ink)}
+.video-card{background:var(--ink);border-radius:24px;padding:12px;box-shadow:var(--shadow);position:relative}
+.video-card .tag{position:absolute;top:-14px;left:24px;background:var(--amber);color:var(--ink);font-size:13px;font-weight:800;padding:7px 14px;border-radius:999px;letter-spacing:.04em;z-index:2}
+.video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#0f1f19}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-cap{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#CFD8D2;font-size:14px;padding:12px 6px 4px}
+.video-cap a{color:var(--amber);font-weight:700;text-decoration:none;white-space:nowrap}
+.trio{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-weight:700;font-size:16px}
+.trio span{display:flex;align-items:center;gap:10px}
+.trio span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--amber)}
+
+/* Pain */
+.pain{background:var(--paper)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.pain-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.pain-card .n{font-family:Lora,serif;font-size:40px;color:var(--rose);line-height:1}
+.pain-card h3{font-size:20px;margin:14px 0 10px}
+.pain-card p{color:var(--muted);font-size:16px}
+
+/* Agitate */
+.agitate{background:var(--ink);color:#E9EEE9}
+.agitate h2{color:#fff}.agitate h2 em{color:var(--amber)}
+.agitate .lead{color:#C6D2CB}
+.cost-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.cost{border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px 24px;display:flex;gap:16px}
+.cost i{font-style:normal;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(226,163,59,.16);color:var(--amber);font-weight:800}
+.turn{margin-top:40px;padding:26px 28px;border-left:4px solid var(--amber);background:rgba(255,255,255,.05);border-radius:0 var(--radius) var(--radius) 0;font-size:19px}
+
+/* Story */
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.portrait{position:sticky;top:96px}
+.portrait .frame{border-radius:24px;overflow:hidden;background:#EEECE6;box-shadow:var(--shadow)}
+.portrait figcaption{margin-top:16px;font-size:15px;color:var(--muted)}
+.portrait figcaption b{display:block;font-size:20px;color:var(--ink)}
+.letter p{margin-bottom:18px;color:var(--ink-2)}
+.letter h3{font-size:22px;margin:34px 0 14px}
+.quote{font-family:Lora,serif;font-size:22px;line-height:1.5;color:var(--green);border-left:3px solid var(--amber);padding:6px 0 6px 22px;margin:26px 0}
+.sign{font-family:Lora,serif;font-style:italic;font-size:26px;color:var(--green);margin-top:10px}
+
+/* Solution */
+.solution{background:var(--paper)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column}
+.pillar .num{font:800 14px/1 "Be Vietnam Pro";letter-spacing:.12em;color:var(--amber-2)}
+.pillar h3{font-size:21px;margin:14px 0 14px}
+.pillar ul{list-style:none;display:grid;gap:10px;color:var(--muted);font-size:16px;margin-bottom:20px}
+.pillar li{padding-left:24px;position:relative}
+.pillar li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.pillar .goal{margin-top:auto;background:var(--cream);border-radius:12px;padding:14px 16px;font-size:15px}
+.pillar .goal b{color:var(--green)}
+
+/* Benefits / fit */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.fit{border-radius:22px;padding:32px}
+.fit.yes{background:#fff;border:1.5px solid var(--green)}
+.fit.no{background:transparent;border:1.5px dashed var(--line)}
+.fit h3{font-size:20px;margin-bottom:18px}
+.fit ul{list-style:none;display:grid;gap:12px}
+.fit li{padding-left:30px;position:relative;font-size:16px}
+.fit.yes li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:12px;display:grid;place-items:center;font-weight:800}
+.fit.no li{color:var(--muted)}
+.fit.no li::before{content:"–";position:absolute;left:4px;color:var(--rose);font-weight:800}
+.after{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.after div{background:var(--ink);color:#E9EEE9;border-radius:18px;padding:22px}
+.after b{display:block;color:var(--amber);font-size:15px;margin-bottom:6px}
+.after span{font-size:15px}
+
+/* Proof */
+.proof{background:var(--paper)}
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px}
+.case{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+.case .metric{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.case .metric b{font-size:40px;font-weight:800;color:var(--green);line-height:1}
+.case .metric span{color:var(--muted);font-size:15px}
+.case p{color:var(--ink-2);font-size:16px}
+.case small{display:block;margin-top:14px;color:var(--muted);font-size:13px}
+
+/* Pricing */
+.pricing .head{text-align:center}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:26px;padding:36px 32px;display:flex;flex-direction:column;position:relative}
+.plan.best{background:var(--ink);color:#E9EEE9;border-color:var(--ink);box-shadow:var(--shadow)}
+.plan .ribbon{position:absolute;top:-14px;right:28px;background:var(--amber);color:var(--ink);font-size:13px;font-weight:800;padding:7px 14px;border-radius:999px}
+.plan .pname{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-2)}
+.plan.best .pname{color:var(--amber)}
+.plan .price{font-size:52px;font-weight:800;line-height:1;margin:16px 0 8px}
+.plan .price small{font-size:22px}
+.plan .pdesc{color:var(--muted);margin-bottom:22px;font-size:16px}
+.plan.best .pdesc{color:#C6D2CB}
+.plan ul{list-style:none;display:grid;gap:12px;margin-bottom:28px;font-size:16px}
+.plan li{padding-left:28px;position:relative}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.plan.best li::before{color:var(--amber)}
+.plan li.plus{font-weight:700}
+.plan .btn{margin-top:auto}
+.compare{margin:28px auto 0;max-width:760px;text-align:center;color:var(--muted);font-size:16px}
+.compare b{color:var(--ink)}
+.lifetime{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;margin-top:22px;font-size:15px;font-weight:600}
+.lifetime span{display:flex;gap:8px;align-items:center}
+.lifetime span::before{content:"●";color:var(--amber);font-size:10px}
+
+/* Guarantee */
+.promise{background:var(--green);color:#E9EEE9}
+.promise-box{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center}
+.seal{width:150px;height:150px;border-radius:50%;border:2px dashed var(--amber);display:grid;place-items:center;text-align:center;font-weight:800;color:var(--amber);font-size:14px;line-height:1.3;letter-spacing:.06em;padding:18px}
+.promise h2{color:#fff}.promise h2 em{color:var(--amber)}
+.promise p{color:#D5DED8}
+.promise .note{margin-top:14px;font-size:14px;color:#AFC0B6}
+
+/* FAQ */
+.faq-list{margin-top:36px;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 24px}
+summary{list-style:none;cursor:pointer;padding:20px 32px 20px 0;font-weight:700;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;font-weight:500;color:var(--amber-2);transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 0 22px;color:var(--ink-2);font-size:16px}
+
+/* Final CTA */
+.final{background:var(--ink);color:#E9EEE9;text-align:center}
+.final h2{color:#fff;font-size:clamp(30px,4.6vw,48px)}
+.final h2 em{color:var(--amber)}
+.final .lead{color:#C6D2CB;max-width:640px;margin:0 auto 32px}
+.final-ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.final .btn-ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.final .btn-ghost:hover{background:#fff;color:var(--ink)}
+.ps{max-width:640px;margin:44px auto 0;text-align:left;font-size:16px;color:#C6D2CB;border-top:1px solid rgba(255,255,255,.14);padding-top:26px}
+.ps b{color:var(--amber)}
+footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align:center}
+
+/* Sticky mobile bar */
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:14px;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:80;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Reviews (ảnh tin nhắn thật) */
+.reviews{padding:72px 0;background:var(--paper)}
+.rv-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.rv-shot{background:#fff;border:1px solid var(--line);border-radius:22px;padding:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.rv-shot img{border-radius:14px;width:100%}
+.rv-shot figcaption{font-size:14px;color:var(--muted);padding:10px 6px 4px}
+.lightbox{position:fixed;inset:0;z-index:75;background:rgba(10,20,16,.85);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-height:92vh;max-width:100%;border-radius:12px}
+@media (max-width:720px){.rv-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:28px -16px 0;padding:0 16px 8px}.rv-shot{flex:0 0 78%;scroll-snap-align:center}}
+
+/* Zalo demo modal */
+.zm{position:fixed;inset:0;z-index:70;background:rgba(10,20,16,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.zm.open{display:flex}
+.zm-box{width:100%;max-width:400px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);animation:zmIn .22s ease}
+@keyframes zmIn{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+.zm-top{display:flex;align-items:center;gap:12px;background:#0068FF;color:#fff;padding:14px 16px}
+.zm-top img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.6)}
+.zm-top b{display:block;font-size:16px}.zm-top small{font-size:12px;opacity:.85}
+.zm-x{margin-left:auto;background:none;border:0;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.zm-body{background:#E9EEF5;padding:18px 16px}
+.zm-bubble{background:#fff;border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:15px;color:#1b1b1b;max-width:90%;margin-bottom:16px}
+.zm-label{display:block;font-size:13px;color:#5b6573;margin-bottom:6px}
+.zm-body textarea{width:100%;border:1px solid #c9d3e0;border-radius:12px;padding:12px;font:15px/1.5 "Be Vietnam Pro",sans-serif;resize:none;background:#fff}
+.zm-foot{padding:14px 16px 18px;display:grid;gap:8px;text-align:center}
+.zm-send{background:#0068FF;color:#fff;border:0;border-radius:999px;padding:15px;font:700 16px "Be Vietnam Pro",sans-serif;cursor:pointer}
+.zm-send:hover{background:#0057d6}
+.zm-demo{font-size:12px;color:#8a94a3}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:960px){
+  .hero-grid,.story-grid{grid-template-columns:1fr;gap:36px}
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"head" "video" "body";row-gap:24px}
+  .portrait{position:static;max-width:420px}
+  .pain-grid,.pillars{grid-template-columns:1fr}
+  .after{grid-template-columns:1fr 1fr}
+  .nav-links a:not(.btn){display:none}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .wrap{padding:0 16px}
+  .hero{padding:28px 0 52px}
+  .hero .sub,.lead{font-size:17px}
+  .cost-list,.fit-grid,.proof-grid,.plans{grid-template-columns:1fr}
+  .after{grid-template-columns:1fr}
+  .promise-box{grid-template-columns:1fr;justify-items:start}
+  .seal{width:120px;height:120px;font-size:12px}
+  .plan{padding:30px 22px}
+  .plan .price{font-size:44px}
+  .hero-ctas .btn{flex:1 1 100%}
+  .nav .btn{padding:10px 16px;font-size:14px}
+  .logo .full{display:none}.logo .short{display:inline}
+  .hero h1{margin-bottom:0}
+  .video-cap{flex-direction:column;align-items:flex-start;gap:4px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;align-items:center;justify-content:space-between;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(23,46,37,.97);color:#fff;transform:translateY(110%);transition:transform .25s}
+  .mbar.show{transform:none}
+  .mbar small{display:block;font-size:12px;color:#AFC0B6}
+  .mbar b{font-size:16px}
+  .mbar .btn{padding:13px 18px;font-size:15px}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>H</b><span class="full">LÊ HIỆP · VIDEO BRANDING</span><span class="short">LÊ HIỆP</span></a>
+    <nav class="nav-links">
+      <a href="#cau-chuyen">Câu chuyện</a>
+      <a href="#lo-trinh">Lộ trình</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+      <a class="btn btn-dark" href="#goi-hoc">Chọn gói học</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- BƯỚC 1 · TIÊU ĐỀ + VIDEO: thu hút sự chú ý, nói rõ lời hứa -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-head">
+        <span class="eyebrow">Dành cho chủ shop &amp; người kinh doanh bằng chuyên môn</span>
+        <h1>Làm chủ quay dựng <span class="hl">video chuyển đổi</span></h1>
+      </div>
+      <div class="hero-body">
+        <p class="sub">Tự lên ý tưởng, tự quay, tự dựng trên điện thoại — có AI hỗ trợ để làm nhanh hơn. Để khách <b>biết bạn, tin bạn</b> và <b>nhắn tin hỏi</b> về sản phẩm, dịch vụ của bạn.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#goi-hoc">Chọn gói học cùng Hiệp →</a>
+          <a class="btn btn-ghost" href="#lo-trinh">Xem lộ trình</a>
+        </div>
+        <p class="price-hint">Tự học <b>499.000đ</b> · Đồng hành <b>799.000đ</b> · Mua một lần, học trọn đời</p>
+      </div>
+      <div class="hero-video">
+        <div class="video-card">
+          <span class="tag">▶ XEM TRƯỚC KHI ĐĂNG KÝ</span>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/5WqdTVus1G4?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Giới thiệu khóa học — Lê Hiệp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-cap">
+            <span>Giới thiệu khóa học · Hiệp Lê Chia Sẻ</span>
+            <a href="https://www.youtube.com/watch?v=5WqdTVus1G4" target="_blank" rel="noopener">Xem trên YouTube ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trio">
+      <span>Khách biết đến bạn</span><span>Tin tưởng bạn</span><span>Có lý do lựa chọn bạn</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIN NHẮN HỌC VIÊN: chỉ hiện khi có ảnh thật images/review-1.jpg, review-2.jpg, review-3.jpg -->
+<section class="reviews" id="hoc-vien" hidden>
+  <div class="wrap">
+    <div class="narrow" style="text-align:center">
+      <span class="eyebrow">Học viên nhắn Hiệp</span>
+      <h2>Những tin nhắn <em>Hiệp nhận được.</em></h2>
+    </div>
+    <div class="rv-row" id="rv-row"></div>
+  </div>
+</section>
+
+<!-- BƯỚC 2 · NỖI ĐAU: khách thấy mình trong đó -->
+<section class="pain">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center">
+      <span class="eyebrow">Bạn có thấy mình ở đây?</span>
+      <h2>Bạn muốn làm video để có khách.<br><em>Nhưng vẫn đang mắc ở đâu đó.</em></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card rv">
+        <div class="n">01</div>
+        <h3>Muốn bắt đầu, nhưng chưa biết làm từ đâu</h3>
+        <p>Không biết nói gì, viết kịch bản thế nào, quay ra sao rồi dựng thành một video hoàn chỉnh. Ý định làm video cứ dời từ ngày này sang ngày khác.</p>
+      </div>
+      <div class="pain-card rv">
+        <div class="n">02</div>
+        <h3>Đã quay, đã đăng, nhưng chưa đúng khách</h3>
+        <p>Bạn có kiến thức, có kinh nghiệm, nhưng chưa biết chia sẻ thế nào để người đang cần nhận ra giá trị của mình.</p>
+      </div>
+      <div class="pain-card rv">
+        <div class="n">03</div>
+        <h3>Có lượt xem, nhưng không có người nhắn</h3>
+        <p>Người xem dừng lại rồi đi. Xem xong, họ chẳng đọng lại ấn tượng gì về bạn hay sản phẩm của bạn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 3 · KHOÉT SÂU: cái giá của việc tiếp tục như cũ -->
+<section class="agitate">
+  <div class="wrap narrow">
+    <span class="eyebrow">Nếu cứ tiếp tục như vậy</span>
+    <h2>Điều đáng tiếc nhất không phải là video chưa đẹp.<br><em>Mà là khách không nhìn thấy giá trị thật của bạn.</em></h2>
+    <p class="lead">Sự am hiểu khi tư vấn, sự tận tâm trong công việc, những kinh nghiệm bạn tích lũy mỗi ngày — đó đều là lý do để khách chọn bạn. Nhưng nếu chúng không xuất hiện trong video, khách sẽ không biết.</p>
+    <div class="cost-list">
+      <div class="cost rv"><i>1</i><div>Mỗi lần bật camera lại mất cả buổi — quay đi quay lại vì quên lời, càng quay càng sốt ruột.</div></div>
+      <div class="cost rv"><i>2</i><div>Đăng đều nhưng rời rạc, thiếu thông điệp — công sức bỏ ra nhiều mà khách vẫn không nhớ mình.</div></div>
+      <div class="cost rv"><i>3</i><div>Cứ nghĩ phải giỏi hơn, có thành tựu lớn hơn mới đáng chia sẻ — nên mãi chưa bắt đầu.</div></div>
+      <div class="cost rv"><i>4</i><div>Phụ thuộc người quay dựng thuê — mỗi lần muốn giới thiệu sản phẩm lại phải chờ, phải tốn thêm.</div></div>
+    </div>
+    <div class="turn rv">Tin tốt là: bạn không cần trở thành người khác. Điều bạn biết vẫn ở đó. Bạn chỉ cần <b>một cách làm phù hợp</b> — biết chuẩn bị gì, làm từng phần ra sao và xử lý chỗ nào khi bị mắc.</div>
+  </div>
+</section>
+
+<!-- BƯỚC 4 · CÂU CHUYỆN + UY TÍN NGƯỜI DẠY -->
+<section id="cau-chuyen">
+  <div class="wrap story-grid">
+    <figure class="portrait rv">
+      <div class="frame"><img src="images/le-hiep.jpg" alt="Lê Hiệp" width="640" height="636" loading="lazy"></div>
+      <figcaption><b>Lê Hiệp</b>Đồng hành làm video cho chủ spa, chủ shop và cửa hàng dịch vụ</figcaption>
+    </figure>
+    <div class="letter">
+      <span class="eyebrow">Một lá thư từ Hiệp</span>
+      <h2>Bạn có kinh nghiệm, có điều muốn chia sẻ. <em>Nhưng cứ bật camera là mọi thứ trở nên khó khăn.</em></h2>
+      <p>Chào bạn, Hiệp đây.</p>
+      <p>Có lần Hiệp quay video cho một chị chủ spa. Chị cần quay nhanh để còn đi gặp khách, nhưng 45 phút trôi qua, một kịch bản khoảng 45 giây vẫn chưa xong. Chị hiểu điều mình muốn nói. Nhưng cứ cố nhớ hết lời, chị lại quên, rồi càng quay càng sốt ruột.</p>
+      <p>Hiệp nhận ra cảm giác quen thuộc ấy. Mình cũng từng ngại giọng nói, sợ nói sai, sợ người khác đánh giá.</p>
+      <p>Hiệp đề nghị chị nghỉ một chút, bình tĩnh lại rồi nói từng câu, từng ý nhỏ. Sau đó, hai chị em mất thêm khoảng 10 phút để quay xong.</p>
+      <div class="quote">Điều chị biết vẫn ở đó. Khi có cách thực hiện phù hợp, chị đã nói ra được điều mình muốn chia sẻ.</div>
+
+      <h3>Đăng đều rồi, khách đã hiểu điều bạn muốn nói chưa?</h3>
+      <p>Hiệp gặp nhiều người rất chịu khó quay và đăng. Có những video rất chỉn chu, rất đẹp — nhưng xem xong, người xem vẫn không đọng lại nhiều vì nội dung rời rạc, thiếu thông điệp rõ ràng.</p>
+      <p>Vì vậy Hiệp luôn hỏi kỹ: <b>video này dành cho ai? Muốn khách hiểu điều gì? Điều gì trong công việc của mình thực sự có ích với họ?</b> Khi những câu hỏi ấy được làm rõ, video bắt đầu cho thấy người chia sẻ am hiểu ra sao, tư vấn có tận tâm không.</p>
+
+      <h3>Một phản hồi khiến Hiệp nhớ mãi</h3>
+      <p>Một chị khách muốn thêm thật nhiều hiệu ứng cho sinh động. Hiệp trao đổi với chị về điều cần giữ: lời chia sẻ phải rõ, câu chuyện dễ theo dõi, người xem nhớ được điều chị muốn nói. Chị đồng ý giữ bản dựng. Sau khi đăng, chị báo lại đã có hai khách hàng từ video ấy.</p>
+      <p>Từ những lần đồng hành như thế, Hiệp đưa toàn bộ kinh nghiệm vào khóa <b>Làm Chủ Quay Dựng Video Chuyển Đổi</b> — để bạn tự làm được những video thể hiện giá trị của mình.</p>
+      <div class="sign">— Lê Hiệp</div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 5 · GIẢI PHÁP: giới thiệu khóa học, 3 trụ cột -->
+<section class="solution" id="lo-trinh">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center">
+      <span class="eyebrow">Giải pháp · 3 trụ cột của khóa học</span>
+      <h2>Có ý tưởng để nói. <em>Có kỹ năng để tự làm thành video.</em></h2>
+      <p class="lead">Ba phần học nối liền từ nội dung đến quay dựng, giúp bạn chủ động tạo video cho công việc kinh doanh của mình.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv">
+        <span class="num">TRỤ CỘT 01 · NỘI DUNG</span>
+        <h3>Biến điều mình giỏi thành nội dung khách muốn xem</h3>
+        <ul>
+          <li>Tìm ý tưởng từ kiến thức và trải nghiệm trong công việc</li>
+          <li>Phát triển kịch bản có thông điệp rõ, gần điều khách quan tâm</li>
+          <li>Dùng AI hỗ trợ sáng tạo nội dung, hết loay hoay "hôm nay quay gì?"</li>
+        </ul>
+        <div class="goal"><b>Bạn hướng tới:</b> có ý tưởng và kịch bản sẵn sàng cho buổi quay.</div>
+      </div>
+      <div class="pillar rv">
+        <span class="num">TRỤ CỘT 02 · QUAY</span>
+        <h3>Tự tin trước ống kính, chủ động quay bằng điện thoại</h3>
+        <ul>
+          <li>Tự setup và quay để nói rõ ràng, tự nhiên</li>
+          <li>Chuẩn bị trước khi quay để bớt lúng túng</li>
+          <li>Hạn chế những lần quay lại vì chưa rõ cần làm gì</li>
+        </ul>
+        <div class="goal"><b>Bạn hướng tới:</b> tự chuẩn bị và thực hiện buổi quay của mình.</div>
+      </div>
+      <div class="pillar rv">
+        <span class="num">TRỤ CỘT 03 · DỰNG</span>
+        <h3>Làm chủ CapCut trên điện thoại, tự dựng video chuyển đổi</h3>
+        <ul>
+          <li>Biến các đoạn đã quay thành video cuốn hút</li>
+          <li>Thể hiện rõ giá trị, khơi gợi mong muốn tìm hiểu ở khách</li>
+          <li>Kết hợp AI để dựng nhanh, tạo cảnh phụ, giữ dấu ấn riêng</li>
+        </ul>
+        <div class="goal"><b>Bạn hướng tới:</b> tự dựng video hoàn chỉnh, tiết kiệm thời gian nhờ AI.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 6 · LỢI ÍCH + DÀNH CHO AI -->
+<section>
+  <div class="wrap">
+    <div class="narrow" style="text-align:center">
+      <span class="eyebrow">Khóa học này dành cho ai?</span>
+      <h2>Phù hợp nhất nếu bạn đang <em>kinh doanh bằng chính chuyên môn của mình.</em></h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit yes rv">
+        <h3>Khóa học dành cho bạn nếu…</h3>
+        <ul>
+          <li>Bạn là chủ shop, chủ spa, chủ cửa hàng dịch vụ, người bán hàng bằng chuyên môn</li>
+          <li>Bạn chưa từng quay dựng, hoặc đã làm nhưng chưa có khách nhắn hỏi</li>
+          <li>Bạn ngại camera, hay quên lời và muốn có cách chuẩn bị bài bản</li>
+          <li>Bạn muốn tự làm video trên điện thoại, không phụ thuộc người khác</li>
+          <li>Bạn muốn dùng AI để làm nội dung và dựng nhanh hơn</li>
+        </ul>
+      </div>
+      <div class="fit no rv">
+        <h3>Có thể chưa phù hợp nếu…</h3>
+        <ul>
+          <li>Bạn tìm một công thức "viral" hay cam kết số đơn hàng cố định</li>
+          <li>Bạn muốn học dựng phim chuyên nghiệp trên máy tính, phần mềm nặng</li>
+          <li>Bạn không có thời gian thực hành — khóa học cần bạn tự làm từng phần</li>
+        </ul>
+      </div>
+    </div>
+    <div class="after">
+      <div class="rv"><b>Sau khóa học</b><span>Biết mỗi video dành cho ai và muốn khách hiểu điều gì</span></div>
+      <div class="rv"><b>Sau khóa học</b><span>Có kịch bản trong tay trước mỗi buổi quay</span></div>
+      <div class="rv"><b>Sau khóa học</b><span>Tự quay bằng điện thoại, bớt quay đi quay lại</span></div>
+      <div class="rv"><b>Sau khóa học</b><span>Tự dựng hoàn chỉnh trên CapCut, có AI hỗ trợ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 7 · BẰNG CHỨNG: câu chuyện thật từ quá trình đồng hành -->
+<section class="proof">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center">
+      <span class="eyebrow">Từ những lần đồng hành thật</span>
+      <h2>Khi có cách làm đúng, <em>mọi thứ nhẹ đi rất nhiều.</em></h2>
+    </div>
+    <div class="proof-grid">
+      <div class="case rv">
+        <div class="metric"><b>45′ → 10′</b><span>cho một kịch bản 45 giây</span></div>
+        <p>Chị chủ spa quay 45 phút chưa xong vì cố nhớ hết lời. Đổi sang nói từng câu, từng ý nhỏ — thêm khoảng 10 phút là xong video.</p>
+        <small>Chia sẻ từ quá trình Hiệp quay cùng khách</small>
+      </div>
+      <div class="case rv">
+        <div class="metric"><b>2 khách</b><span>đến từ một video</span></div>
+        <p>Thay vì thêm nhiều hiệu ứng, bản dựng giữ lời chia sẻ rõ ràng và câu chuyện dễ theo dõi. Sau khi đăng, chị khách báo lại đã có hai khách hàng từ video ấy.</p>
+        <small>Kết quả của từng người khác nhau, phụ thuộc thực hành và sản phẩm</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 8 · ƯU ĐÃI + GIÁ: so sánh 2 gói -->
+<section class="pricing" id="goi-hoc">
+  <div class="wrap">
+    <div class="head narrow">
+      <span class="eyebrow">Chọn cách học phù hợp</span>
+      <h2>Mua một lần. <em>Học trọn đời.</em></h2>
+      <p class="lead">Cả hai gói đều có đầy đủ nội dung khóa học. Bạn xem lại khi cần, thực hành theo thời gian của mình.</p>
+    </div>
+    <div class="plans">
+      <div class="plan rv">
+        <span class="pname">Gói tự học</span>
+        <div class="price">499.000<small>đ</small></div>
+        <p class="pdesc">Có lộ trình để chủ động học và thực hành — dành cho bạn muốn tự sắp xếp thời gian.</p>
+        <ul>
+          <li>Toàn bộ video bài học</li>
+          <li>Tài liệu và bài tập thực hành</li>
+          <li>Kịch bản, quay dựng và ứng dụng AI</li>
+          <li>Truy cập khóa học trọn đời</li>
+        </ul>
+        <a class="btn btn-dark btn-block js-buy" data-goi="Tự học 499.000đ" href="#dang-ky">Chọn gói tự học — 499.000đ</a>
+      </div>
+      <div class="plan best rv">
+        <span class="ribbon">CÓ HIỆP ĐỒNG HÀNH</span>
+        <span class="pname">Gói đồng hành</span>
+        <div class="price">799.000<small>đ</small></div>
+        <p class="pdesc">Có Hiệp cùng gỡ những chỗ bạn còn vướng — dành cho bạn muốn có nơi đặt câu hỏi.</p>
+        <ul>
+          <li>Toàn bộ quyền lợi gói tự học</li>
+          <li class="plus">Mỗi tuần 1 buổi Zoom trong 3 tháng</li>
+          <li class="plus">Hỏi đáp, trao đổi qua nhóm Zalo</li>
+          <li class="plus">Sau 3 tháng nhóm vẫn duy trì, hỗ trợ đến khi bạn tự quay và dựng được video hoàn chỉnh</li>
+        </ul>
+        <a class="btn btn-primary btn-block js-buy" data-goi="Đồng hành 799.000đ" href="#dang-ky">Chọn gói đồng hành — 799.000đ</a>
+      </div>
+    </div>
+    <p class="compare">Chỉ thêm <b>300.000đ</b> để có lịch Zoom hằng tuần và nơi hỏi đáp khi thực hành còn vướng. Nếu bạn lo mua rồi lại mắc ở một bước chưa biết xử lý, gói đồng hành được thiết kế cho đúng lúc ấy.</p>
+    <div class="lifetime"><span>Học trên điện thoại</span><span>Truy cập trọn đời</span><span>Học theo thời gian của bạn</span></div>
+  </div>
+</section>
+
+<!-- BƯỚC 9a · CAM KẾT GIẢM RỦI RO -->
+<section class="promise">
+  <div class="wrap promise-box">
+    <div class="seal">HỖ TRỢ<br>ĐẾN KHI<br>LÀM ĐƯỢC</div>
+    <div>
+      <span class="eyebrow">Cam kết của Hiệp · gói đồng hành</span>
+      <h2>Kết thúc lịch Zoom, <em>bạn vẫn có nơi để hỏi.</em></h2>
+      <p>Sau 3 tháng, nhóm Zalo tiếp tục được duy trì. Nếu bạn chưa tự quay và dựng được video hoàn chỉnh, Hiệp tiếp tục hỏi đáp, hỗ trợ trong nhóm cho đến khi bạn làm được. Bạn mang phần đang thực hành và chỗ còn vướng vào nhóm để cùng tìm cách giải quyết.</p>
+      <p class="note">Khóa học trang bị kỹ năng, không bảo đảm số tin nhắn hay đơn hàng — kết quả phụ thuộc vào việc thực hành, người xem và sản phẩm của bạn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 9b · XỬ LÝ BĂN KHOĂN -->
+<section id="hoi-dap">
+  <div class="wrap narrow">
+    <div style="text-align:center">
+      <span class="eyebrow">Trước khi chọn gói học</span>
+      <h2>Những điều bạn <em>còn băn khoăn.</em></h2>
+    </div>
+    <div class="faq-list">
+      <details open><summary>Tôi chưa từng quay dựng, có học được không?</summary><p>Có. Khóa học hướng dẫn từ cách tìm ý tưởng, phát triển kịch bản đến tự quay và dựng video hoàn chỉnh trên điện thoại. Bạn thực hành từng phần để rèn kỹ năng. Nếu muốn có nơi hỏi khi gặp khó, bạn có thể chọn gói đồng hành cùng Hiệp.</p></details>
+      <details><summary>Tôi đã làm video nhưng chưa có khách nhắn hỏi. Khóa học giúp gì thêm?</summary><p>Bạn sẽ học cách đưa kiến thức và kinh nghiệm của mình thành nội dung có thông điệp rõ ràng, giúp người xem hiểu giá trị bạn mang lại. Kết hợp với kỹ năng quay dựng, mục tiêu là tạo những video để khách biết bạn, tin bạn và muốn hỏi về sản phẩm, dịch vụ của bạn. Kết quả còn phụ thuộc vào việc thực hành, người xem và sản phẩm; khóa học không bảo đảm số tin nhắn hoặc đơn hàng.</p></details>
+      <details><summary>Tôi ngại camera, nói hay quên lời thì sao?</summary><p>Bạn có thể bắt đầu bằng những đoạn ngắn và rèn dần qua từng lần quay. Hiệp hướng dẫn cách chuẩn bị để bạn biết mình cần nói gì, quay thế nào và bớt áp lực phải làm tốt ngay lần đầu. Với gói đồng hành, bạn có thể trao đổi vướng mắc trong nhóm và các buổi Zoom.</p></details>
+      <details><summary>AI hỗ trợ gì trong khóa học?</summary><p>AI giúp bạn phát triển nội dung, chuẩn bị cấu trúc video để quay thuận tiện hơn và tạo cảnh phụ hỗ trợ quá trình dựng. Bạn vẫn làm chủ câu chuyện và cách thể hiện của mình, đồng thời biết ứng dụng AI để tiết kiệm thời gian thực hiện.</p></details>
+      <details><summary>Tôi bận, không học liên tục được thì sao?</summary><p>Bạn mua một lần và được truy cập nội dung khóa học trọn đời, có thể chủ động sắp xếp thời gian học và xem lại khi cần. Riêng gói đồng hành có một buổi Zoom mỗi tuần trong 3 tháng. Sau thời gian này, nhóm Zalo vẫn được duy trì để tiếp tục hỏi đáp, hỗ trợ.</p></details>
+      <details><summary>Hết 3 tháng mà tôi vẫn chưa làm được thì sao?</summary><p>Với gói đồng hành, Hiệp tiếp tục hỏi đáp, hỗ trợ qua nhóm Zalo cho đến khi bạn tự quay và dựng được video hoàn chỉnh. Bạn mang phần đang làm và chỗ còn vướng vào nhóm để được hướng dẫn tiếp.</p></details>
+      <details><summary>Tôi nên chọn gói nào?</summary><p>Chọn gói tự học 499.000đ nếu bạn muốn chủ động xem bài và thực hành, với đầy đủ nội dung và quyền truy cập trọn đời. Chọn gói đồng hành 799.000đ nếu muốn có thêm Zoom hằng tuần trong 3 tháng và nhóm Zalo hỗ trợ đến khi tự quay dựng được video hoàn chỉnh.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BƯỚC 9c · KÊU GỌI HÀNH ĐỘNG CUỐI -->
+<section class="final" id="dang-ky">
+  <div class="wrap">
+    <span class="eyebrow">Bắt đầu cùng Hiệp</span>
+    <h2>Bắt đầu làm những video <em>để khách hiểu và tin bạn hơn.</em></h2>
+    <p class="lead">Bạn có kiến thức và kinh nghiệm để chia sẻ. Cùng Hiệp rèn kỹ năng đưa những giá trị ấy thành video, với AI hỗ trợ sáng tạo nội dung và dựng nhanh hơn.</p>
+    <div class="final-ctas">
+      <a class="btn btn-primary js-buy" data-goi="Đồng hành 799.000đ" href="#goi-hoc">Đăng ký gói đồng hành — 799.000đ</a>
+      <a class="btn btn-ghost js-buy" data-goi="Tự học 499.000đ" href="#goi-hoc">Gói tự học — 499.000đ</a>
+    </div>
+    <div class="ps">
+      <p><b>P.S.</b> Bạn không cần đợi đến khi giỏi hơn hay có thành tựu lớn hơn mới bắt đầu chia sẻ. Điều bạn biết hôm nay đã có ích cho ai đó đang cần — chỉ cần một cách làm phù hợp để đưa nó thành video.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© Lê Hiệp · Làm Chủ Quay Dựng Video Chuyển Đổi</footer>
+
+<div class="mbar" id="mbar">
+  <div><small>Tự học 499k · Đồng hành 799k</small><b>Học trọn đời</b></div>
+  <a class="btn btn-primary" href="#goi-hoc">Chọn gói →</a>
+</div>
+<div class="zm" id="zalo-modal" role="dialog" aria-modal="true" aria-label="Đăng ký qua Zalo">
+  <div class="zm-box">
+    <div class="zm-top">
+      <img src="images/le-hiep.jpg" alt="" width="40" height="40">
+      <div><b>Lê Hiệp</b><small>Zalo · thường trả lời trong ngày</small></div>
+      <button class="zm-x" data-close aria-label="Đóng">×</button>
+    </div>
+    <div class="zm-body">
+      <div class="zm-bubble in">Chào bạn 👋 Hiệp đây. Bạn quan tâm gói <b id="zm-goi"></b> đúng không? Gửi tin nhắn bên dưới, Hiệp sẽ gửi hướng dẫn đăng ký và thanh toán nhé.</div>
+      <label class="zm-label" for="zm-msg">Tin nhắn của bạn (đã soạn sẵn)</label>
+      <textarea id="zm-msg" rows="3"></textarea>
+    </div>
+    <div class="zm-foot">
+      <button class="zm-send" id="zm-send">Gửi qua Zalo</button>
+      <span class="zm-demo">Bản demo — chưa nối số Zalo thật</span>
+    </div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== CẤU HÌNH ĐĂNG KÝ =====
+   Điền link nhận đăng ký (Zalo của Hiệp, Google Form, trang thanh toán...).
+   Nút đăng ký sẽ mở link này và chép sẵn tin nhắn "Đăng ký gói ..." để khách dán.
+   Để trống thì nút chỉ cuộn tới phần chọn gói. */
+const DANG_KY_URL = "";   // ví dụ: "https://zalo.me/09xxxxxxxx"
+const ZALO_DEMO = true;   // true: hiện hộp chat Zalo minh hoạ, chưa nối link thật
+
+/* ===== ẢNH TIN NHẮN HỌC VIÊN =====
+   Thả ảnh chụp tin nhắn THẬT vào images/ đúng tên dưới đây; ảnh nào có thì hiện.
+   caption: ghi chú ngắn (để trống nếu không cần). */
+const REVIEWS = [
+  {src:"images/review-1.jpg", caption:""},
+  {src:"images/review-2.jpg", caption:""},
+  {src:"images/review-3.jpg", caption:""},
+];
+(function(){
+  const sec=document.getElementById('hoc-vien'), row=document.getElementById('rv-row');
+  const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
+  lb.addEventListener('click',()=>lb.classList.remove('open'));
+  REVIEWS.forEach((r,i)=>{
+    const img=new Image();
+    img.onload=()=>{
+      const f=document.createElement('figure'); f.className='rv-shot'; f.style.order=i;
+      img.alt='Tin nhắn học viên '+(i+1); img.loading='lazy'; f.appendChild(img);
+      if(r.caption){const c=document.createElement('figcaption');c.textContent=r.caption;f.appendChild(c);}
+      f.addEventListener('click',()=>{lbImg.src=r.src;lb.classList.add('open');});
+      row.appendChild(f); sec.hidden=false;
+    };
+    img.src=r.src;
+  });
+})();
+
+(function(){
+  const toast = document.getElementById('toast');
+  function say(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(say.t);say.t=setTimeout(()=>toast.classList.remove('show'),3200);}
+
+  const zm = document.getElementById('zalo-modal');
+  const zmMsg = document.getElementById('zm-msg');
+  const closeZ = ()=>{zm.classList.remove('open');document.body.style.overflow='';};
+  zm.addEventListener('click', e=>{ if(e.target===zm || e.target.closest('[data-close]')) closeZ(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeZ(); });
+  document.getElementById('zm-send').addEventListener('click', ()=>{
+    const m = zmMsg.value.trim();
+    try{ navigator.clipboard && navigator.clipboard.writeText(m); }catch(_){}
+    if(DANG_KY_URL){ window.open(DANG_KY_URL,'_blank','noopener'); closeZ(); }
+    else say('Bản demo: đã chép tin nhắn. Khi có số Zalo của Hiệp, nút này sẽ mở chat thật.');
+  });
+
+  document.querySelectorAll('.js-buy').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const goi = btn.dataset.goi;
+      const msg = 'Chào Hiệp, mình muốn đăng ký khóa Làm Chủ Quay Dựng Video Chuyển Đổi — gói ' + goi + '.';
+      if(ZALO_DEMO || DANG_KY_URL){
+        e.preventDefault();
+        zmMsg.value = msg;
+        document.getElementById('zm-goi').textContent = goi;
+        zm.classList.add('open');document.body.style.overflow='hidden';
+      }
+    });
+  });
+
+  // Hiện thanh CTA trên mobile sau khi qua hero, ẩn khi tới phần chọn gói
+  const mbar = document.getElementById('mbar');
+  const hero = document.querySelector('.hero');
+  const plans = document.getElementById('goi-hoc');
+  const fin = document.getElementById('dang-ky');
+  let pastHero=false, nearPlans=false;
+  const upd=()=>mbar.classList.toggle('show', pastHero && !nearPlans);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(([en])=>{pastHero=!en.isIntersecting;upd();}).observe(hero);
+    const seen=new Set();
+    const po=new IntersectionObserver(ens=>{ens.forEach(en=>en.isIntersecting?seen.add(en.target):seen.delete(en.target));nearPlans=seen.size>0;upd();});
+    po.observe(plans);po.observe(fin);
+    const ro=new IntersectionObserver(ens=>ens.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  } else {
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+  }
+})();
+</script>
+</body>
+</html>
