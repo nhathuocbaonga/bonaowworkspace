@@ -48,8 +48,12 @@ header{position:sticky;top:0;z-index:40;background:rgba(245,242,232,.92);backdro
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;font-size:15px;letter-spacing:.04em}
 .logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--amber);font-size:17px}
-.nav-links{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:600}
-.nav-links a{text-decoration:none;opacity:.8}.nav-links a:hover{opacity:1}
+.nav{gap:20px}
+.nav-links{display:flex;gap:4px;align-items:center;font-size:15px;font-weight:600;margin-left:auto}
+.nav-links a{text-decoration:none;color:var(--ink-2);padding:8px 12px;border-radius:999px;transition:background .15s,color .15s;white-space:nowrap}
+.nav-links a:hover{background:rgba(23,46,37,.07);color:var(--ink)}
+.nav-links a.active{background:var(--ink);color:var(--cream)}
+section[id]{scroll-margin-top:72px}
 .nav .btn{padding:12px 20px;font-size:15px}
 
 /* Hero */
@@ -193,8 +197,33 @@ details p{padding:0 0 22px;color:var(--ink-2);font-size:16px}
 .ps b{color:var(--amber)}
 footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align:center}
 
-/* Sticky mobile bar */
-.mbar{display:none}
+/* Dock: nút đăng ký giữa dưới */
+.dock-cta{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:55;display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--ink);font:800 17px/1 "Be Vietnam Pro",sans-serif;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;padding:18px 34px;border-radius:999px;text-decoration:none;box-shadow:0 14px 34px -10px rgba(199,134,31,.9),0 0 0 4px rgba(255,255,255,.65);transition:transform .15s,background .15s}
+.dock-cta:hover{background:#EBB14F;transform:translateX(-50%) translateY(-2px)}
+.dock-cta .pulse{width:10px;height:10px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 0 rgba(180,85,60,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(180,85,60,0)}100%{box-shadow:0 0 0 0 rgba(180,85,60,0)}}
+
+/* Zalo nổi góc phải */
+.zalo-fab{position:fixed;right:20px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:56;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.zf-text{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 14px;box-shadow:0 10px 26px -14px rgba(0,0,0,.35);text-align:right;line-height:1.3}
+.zf-text b{display:block;font-size:14px}.zf-text small{font-size:13px;color:#0068FF;font-weight:700}
+.zf-ava{position:relative;width:60px;height:60px;border-radius:50%;border:3px solid #0068FF;background:#fff;box-shadow:0 10px 24px -8px rgba(0,104,255,.6)}
+.zf-ava img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top}
+.zf-ava i{position:absolute;right:-6px;bottom:-4px;background:#0068FF;color:#fff;font:800 10px/1 "Be Vietnam Pro",sans-serif;font-style:normal;padding:4px 6px;border-radius:999px;border:2px solid #fff}
+.zf-ava::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid #0068FF;animation:ring 2.2s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.45);opacity:0}}
+
+/* Popup góc trái */
+.nudge{position:fixed;left:20px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:54;display:flex;align-items:center;gap:12px;max-width:330px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:16px;padding:12px 34px 12px 12px;box-shadow:0 18px 40px -18px rgba(23,46,37,.45);transform:translateY(140%);opacity:0;transition:transform .4s ease,opacity .4s ease;pointer-events:none}
+.nudge.show{transform:none;opacity:1;pointer-events:auto}
+.nudge img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;flex:none}
+.nudge b{display:block;font-size:14px;line-height:1.3}
+.nudge{cursor:pointer}
+.nudge:hover{border-left-color:#0068FF}
+.nudge span{display:block;font-size:13px;color:#0068FF;font-weight:600;line-height:1.4;margin-top:2px}
+.nudge-x{position:absolute;top:6px;right:8px;background:none;border:0;font-size:18px;color:var(--muted);cursor:pointer;line-height:1}
+footer{padding-bottom:110px}
+@media (prefers-reduced-motion:reduce){.dock-cta .pulse,.zf-ava::after{animation:none}}
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:14px;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:80;max-width:calc(100% - 32px);text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -238,7 +267,12 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
   .portrait{position:static;max-width:420px}
   .pain-grid,.pillars{grid-template-columns:1fr}
   .after{grid-template-columns:1fr 1fr}
-  .nav-links a:not(.btn){display:none}
+  header .nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:0;row-gap:6px}
+  .nav-cta{margin-left:auto}
+  .nav-links{order:3;width:100%;margin:0 -20px;padding:2px 20px 10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nudge{display:none}
+  .zf-text{display:none}
 }
 @media (max-width:720px){
   body{font-size:16px}
@@ -257,12 +291,11 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
   .logo .full{display:none}.logo .short{display:inline}
   .hero h1{margin-bottom:0}
   .video-cap{flex-direction:column;align-items:flex-start;gap:4px}
-  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;align-items:center;justify-content:space-between;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(23,46,37,.97);color:#fff;transform:translateY(110%);transition:transform .25s}
-  .mbar.show{transform:none}
-  .mbar small{display:block;font-size:12px;color:#AFC0B6}
-  .mbar b{font-size:16px}
-  .mbar .btn{padding:13px 18px;font-size:15px}
-  footer{padding-bottom:96px}
+  .nav-links{margin:0 -16px;padding:2px 16px 10px}
+  .dock-cta{font-size:15px;padding:16px 26px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  .zalo-fab{right:12px;bottom:calc(84px + env(safe-area-inset-bottom))}
+  .zf-ava{width:52px;height:52px}
+  .nudge{display:flex;left:12px;right:12px;max-width:none;bottom:calc(84px + env(safe-area-inset-bottom));padding-right:30px;margin-right:70px}
 }
 </style>
 </head>
@@ -271,19 +304,22 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top"><b>H</b><span class="full">LÊ HIỆP · VIDEO BRANDING</span><span class="short">LÊ HIỆP</span></a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links" aria-label="Các phần của trang">
+      <a href="#video">Video</a>
+      <a href="#van-de">Vấn đề</a>
       <a href="#cau-chuyen">Câu chuyện</a>
       <a href="#lo-trinh">Lộ trình</a>
+      <a href="#goi-hoc">Học phí</a>
       <a href="#hoi-dap">Hỏi đáp</a>
-      <a class="btn btn-dark" href="#goi-hoc">Chọn gói học</a>
     </nav>
+    <a class="btn btn-primary nav-cta js-open-zalo" href="#dang-ky">Đăng ký ngay</a>
   </div>
 </header>
 
 <main id="top">
 
 <!-- BƯỚC 1 · TIÊU ĐỀ + VIDEO: thu hút sự chú ý, nói rõ lời hứa -->
-<section class="hero">
+<section class="hero" id="video">
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-head">
@@ -329,7 +365,7 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
 </section>
 
 <!-- BƯỚC 2 · NỖI ĐAU: khách thấy mình trong đó -->
-<section class="pain">
+<section class="pain" id="van-de">
   <div class="wrap">
     <div class="narrow" style="text-align:center">
       <span class="eyebrow">Bạn có thấy mình ở đây?</span>
@@ -592,9 +628,20 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
 
 <footer>© Lê Hiệp · Làm Chủ Quay Dựng Video Chuyển Đổi</footer>
 
-<div class="mbar" id="mbar">
-  <div><small>Tự học 499k · Đồng hành 799k</small><b>Học trọn đời</b></div>
-  <a class="btn btn-primary" href="#goi-hoc">Chọn gói →</a>
+<!-- Nút đăng ký cố định giữa dưới -->
+<a class="dock-cta js-open-zalo" href="#dang-ky"><span class="pulse"></span>Đăng ký ngay</a>
+
+<!-- Zalo nổi góc phải dưới -->
+<a class="zalo-fab js-open-zalo" id="zalo-fab" href="#dang-ky" aria-label="Nhắn Zalo Lê Hiệp để đăng ký">
+  <span class="zf-text"><b>Nhắn Zalo đăng ký</b><small id="zf-phone">Lê Hiệp</small></span>
+  <span class="zf-ava"><img src="images/le-hiep.jpg" alt="" width="56" height="56"><i>Zalo</i></span>
+</a>
+
+<!-- Popup góc trái dưới, 1 phút / lần -->
+<div class="nudge" id="nudge" role="status" aria-live="polite">
+  <img src="images/le-hiep.jpg" alt="" width="44" height="44">
+  <div><b id="nudge-title"></b><span id="nudge-text"></span></div>
+  <button class="nudge-x" aria-label="Đóng">×</button>
 </div>
 <div class="zm" id="zalo-modal" role="dialog" aria-modal="true" aria-label="Đăng ký qua Zalo">
   <div class="zm-box">
@@ -622,8 +669,22 @@ footer{background:#10221B;color:#8FA399;font-size:14px;padding:28px 0;text-align
    Điền link nhận đăng ký (Zalo của Hiệp, Google Form, trang thanh toán...).
    Nút đăng ký sẽ mở link này và chép sẵn tin nhắn "Đăng ký gói ..." để khách dán.
    Để trống thì nút chỉ cuộn tới phần chọn gói. */
-const DANG_KY_URL = "";   // ví dụ: "https://zalo.me/09xxxxxxxx"
-const ZALO_DEMO = true;   // true: hiện hộp chat Zalo minh hoạ, chưa nối link thật
+const ZALO_PHONE = "";    // số Zalo của Hiệp, ví dụ "0912345678" → tự hiện số + tự tạo link zalo.me
+const DANG_KY_URL = ZALO_PHONE ? "https://zalo.me/" + ZALO_PHONE.replace(/\D/g,"") : "";
+const ZALO_DEMO = true;   // true: hiện hộp chat Zalo minh hoạ trước khi mở Zalo
+
+/* ===== POPUP GÓC TRÁI (1 phút / lần) =====
+   SIGNUPS: chỉ điền người đăng ký THẬT (vd {name:"Chị Lan", place:"Hải Phòng", goi:"Đồng hành"}).
+   Khi SIGNUPS trống, popup luân phiên các thông tin thật về khóa học. */
+const SIGNUPS = [];
+const NUDGE_EVERY_MS = 60000;
+const NUDGE_INFO = [
+  {t:"Bạn đang phân vân chọn gói nào?", s:"Nhắn Hiệp để được tư vấn gói phù hợp →", goi:""},
+  {t:"Chưa từng quay dựng video?", s:"Hỏi Hiệp xem bạn nên bắt đầu từ đâu →", goi:""},
+  {t:"Ngại camera, hay quên lời?", s:"Nhắn Hiệp kể chỗ bạn đang vướng →", goi:""},
+  {t:"Muốn có người kèm khi tự làm?", s:"Tìm hiểu gói Đồng hành 799.000đ →", goi:"Đồng hành 799.000đ"},
+  {t:"Muốn tự học theo giờ của mình?", s:"Tìm hiểu gói Tự học 499.000đ →", goi:"Tự học 499.000đ"},
+];
 
 /* ===== ẢNH TIN NHẮN HỌC VIÊN =====
    Thả ảnh chụp tin nhắn THẬT vào images/ đúng tên dưới đây; ảnh nào có thì hiện.
@@ -661,36 +722,56 @@ const REVIEWS = [
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeZ(); });
   document.getElementById('zm-send').addEventListener('click', ()=>{
     const m = zmMsg.value.trim();
-    try{ navigator.clipboard && navigator.clipboard.writeText(m); }catch(_){}
+    try{ navigator.clipboard && navigator.clipboard.writeText(m).catch(()=>{}); }catch(_){}
     if(DANG_KY_URL){ window.open(DANG_KY_URL,'_blank','noopener'); closeZ(); }
     else say('Bản demo: đã chép tin nhắn. Khi có số Zalo của Hiệp, nút này sẽ mở chat thật.');
   });
 
-  document.querySelectorAll('.js-buy').forEach(btn=>{
+  const openZalo = (goi)=>{
+    const intro = document.querySelector('.zm-bubble');
+    zmMsg.value = goi
+      ? 'Chào Hiệp, mình muốn đăng ký khóa Làm Chủ Quay Dựng Video Chuyển Đổi — gói ' + goi + '.'
+      : 'Chào Hiệp, mình muốn đăng ký khóa Làm Chủ Quay Dựng Video Chuyển Đổi. Hiệp tư vấn giúp mình gói phù hợp nhé.';
+    intro.innerHTML = goi
+      ? 'Chào bạn 👋 Hiệp đây. Bạn quan tâm gói <b>'+goi+'</b> đúng không? Gửi tin nhắn bên dưới, Hiệp sẽ gửi hướng dẫn đăng ký và thanh toán nhé.'
+      : 'Chào bạn 👋 Hiệp đây. Bạn gửi tin nhắn bên dưới, Hiệp sẽ tư vấn gói phù hợp và hướng dẫn đăng ký nhé.';
+    zm.classList.add('open');document.body.style.overflow='hidden';
+  };
+  document.querySelectorAll('.js-buy, .js-open-zalo').forEach(btn=>{
     btn.addEventListener('click', e=>{
-      const goi = btn.dataset.goi;
-      const msg = 'Chào Hiệp, mình muốn đăng ký khóa Làm Chủ Quay Dựng Video Chuyển Đổi — gói ' + goi + '.';
-      if(ZALO_DEMO || DANG_KY_URL){
-        e.preventDefault();
-        zmMsg.value = msg;
-        document.getElementById('zm-goi').textContent = goi;
-        zm.classList.add('open');document.body.style.overflow='hidden';
-      }
+      if(!ZALO_DEMO && DANG_KY_URL) return;          // mở thẳng zalo.me qua href
+      e.preventDefault(); openZalo(btn.dataset.goi || '');
     });
   });
+  if(DANG_KY_URL){
+    document.querySelectorAll('.js-open-zalo').forEach(a=>{a.href=DANG_KY_URL;a.target='_blank';a.rel='noopener';});
+    document.getElementById('zf-phone').textContent = ZALO_PHONE.replace(/(\d{4})(\d{3})(\d+)/,'$1 $2 $3');
+    document.querySelector('.zm-demo').textContent = 'Zalo ' + ZALO_PHONE;
+  }
 
-  // Hiện thanh CTA trên mobile sau khi qua hero, ẩn khi tới phần chọn gói
-  const mbar = document.getElementById('mbar');
-  const hero = document.querySelector('.hero');
-  const plans = document.getElementById('goi-hoc');
-  const fin = document.getElementById('dang-ky');
-  let pastHero=false, nearPlans=false;
-  const upd=()=>mbar.classList.toggle('show', pastHero && !nearPlans);
+  // Popup góc trái, mỗi NUDGE_EVERY_MS hiện 1 lần trong 6 giây
+  const nudge=document.getElementById('nudge'), nT=document.getElementById('nudge-title'), nS=document.getElementById('nudge-text');
+  let ni=0, nOff=false, nGoi='', nHide;
+  nudge.querySelector('.nudge-x').addEventListener('click',e=>{e.stopPropagation();nudge.classList.remove('show');nOff=true;});
+  nudge.addEventListener('click',()=>{nudge.classList.remove('show');openZalo(nGoi);});
+  const showNudge=()=>{
+    if(nOff || zm.classList.contains('open')) return;
+    if(SIGNUPS.length){ const p=SIGNUPS[ni++%SIGNUPS.length]; nT.textContent=p.name+(p.place?' · '+p.place:''); nS.textContent='Đã đăng ký gói '+p.goi; nGoi=''; }
+    else { const p=NUDGE_INFO[ni++%NUDGE_INFO.length]; nT.textContent=p.t; nS.textContent=p.s; nGoi=p.goi; }
+    nudge.classList.add('show'); clearTimeout(nHide); nHide=setTimeout(()=>nudge.classList.remove('show'),8000);
+  };
+  nudge.addEventListener('mouseenter',()=>clearTimeout(nHide));
+  nudge.addEventListener('mouseleave',()=>{nHide=setTimeout(()=>nudge.classList.remove('show'),3000);});
+  setTimeout(()=>{showNudge();setInterval(showNudge,NUDGE_EVERY_MS);},8000);
+
+  // Header: đánh dấu mục đang xem
+  const navA=[...document.querySelectorAll('#nav-links a')];
+  const secs=navA.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if('IntersectionObserver' in window){
-    new IntersectionObserver(([en])=>{pastHero=!en.isIntersecting;upd();}).observe(hero);
-    const seen=new Set();
-    const po=new IntersectionObserver(ens=>{ens.forEach(en=>en.isIntersecting?seen.add(en.target):seen.delete(en.target));nearPlans=seen.size>0;upd();});
-    po.observe(plans);po.observe(fin);
+    const so=new IntersectionObserver(ens=>ens.forEach(en=>{ if(en.isIntersecting){
+      navA.forEach(a=>{const on=a.getAttribute('href')==='#'+en.target.id;a.classList.toggle('active',on);if(on&&a.scrollIntoView&&innerWidth<960)a.parentNode.scrollTo({left:a.offsetLeft-40,behavior:'smooth'});});
+    }}),{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(s=>so.observe(s));
     const ro=new IntersectionObserver(ens=>ens.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}}),{threshold:.12});
     document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
   } else {
