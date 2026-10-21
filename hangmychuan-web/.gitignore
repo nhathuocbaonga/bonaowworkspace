@@ -1,3 +1,6 @@
 # Ảnh gốc từ Drive (~210MB) và ảnh trung gian – không đưa lên repo
 _nguon/anh-goc/
 _nguon/anh-web/
+
+.vercel
+.env*
