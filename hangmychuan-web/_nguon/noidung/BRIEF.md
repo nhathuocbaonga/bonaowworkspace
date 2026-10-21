@@ -35,4 +35,11 @@ Ghi một file JSON (UTF-8) là một mảng, mỗi phần tử:
   "ghi_chu": "chỉ ghi khi tên trên web sai mẫu, hoặc không tìm được thông tin"
 }
 ```
+## Riêng hàng Order (input-5 đến input-8)
+- Không có ảnh cửa hàng: xác định mẫu theo `ten_tren_web` + ảnh `anh_web`. Tên ghi "của Mỹ" thì lấy nhãn bản Mỹ; tên/ảnh là bản Úc, Đức… thì theo đúng bản đó.
+- Đồ gia dụng, thiết bị (máy hút chân không, bàn chải điện, tăm nước, máy cạo râu, ga trải giường, bình nước, viên giặt/xả, ly Starbucks…): `noi_dau` = 3 phiền toái thường ngày mà sản phẩm giải quyết; `cong_dung` = 3–5 điểm nổi bật theo mô tả hãng; `lieu_dung` = cách dùng/bảo quản ngắn gọn; `luu_y` = cảnh báo an toàn của hãng (nếu có), ví dụ viên giặt để xa trẻ em; đồ điện dùng điện 110V cần bộ đổi nguồn.
+- Thực phẩm (thịt hộp, đường ăn kiêng, bột pha…): `lieu_dung` = cách dùng/bảo quản theo nhãn.
+- Thuốc không kê đơn bản Mỹ (Advil, Tylenol, Zyrtec, Nexium, Aleve, Pepcid…): bắt buộc ghi đúng độ tuổi, liều tối đa/24 giờ và cảnh báo chính trên nhãn Drug Facts.
+- Nếu `ten_tren_web` sai/thiếu so với nhãn (hàm lượng, số viên) thì ghi tên đúng vào `ten_chuan` và giải thích trong `ghi_chu`.
+
 Giữ nguyên `id`. Làm đủ mọi sản phẩm trong file input; món nào không tra được thì vẫn viết `noi_dau`/`cong_dung` thận trọng và đặt `do_tin_cay` = "thap".
