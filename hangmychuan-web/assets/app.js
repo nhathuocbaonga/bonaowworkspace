@@ -77,6 +77,7 @@
     zalo: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5z"/><path d="M8 8h4l-4 5h4M15 8v5"/>',
     msg: '<path d="M12 3C7 3 3 6.6 3 11c0 2.4 1.2 4.6 3 6v4l3.6-2c.8.2 1.6.3 2.4.3 5 0 9-3.6 9-8s-4-8.3-9-8.3"/><path d="m7.5 13 3-3 2.5 2 3.5-3"/>',
     check: '<path d="M20 6 9 17l-5-5"/>',
+    dot: '<circle cx="12" cy="12" r="3.5" fill="currentColor"/>',
     shield: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
     chat: '<path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12"/><path d="M8 11h.01M12 11h.01M16 11h.01"/>',
     bolt: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -376,14 +377,32 @@
       (p.off ? '<div class="save">-' + p.off + "% · Tiết kiệm " + vnd(p.old - p.price) + "</div>" : "") +
       '<div class="pd-cta"><button class="btn btn-primary" type="button" data-order="' + p.slug + '">' + ic("zalo") + "Đặt qua Zalo</button>" +
       '<a class="btn btn-outline" href="' + CONTACT.tel + '">' + ic("phone") + "Gọi " + CONTACT.phone + "</a></div>" +
-      '<p class="muted" style="font-size:.875rem">Bấm "Đặt qua Zalo": web tự chép tin nhắn có tên và giá sản phẩm, chị dán vào Zalo là xong. Hoặc <a href="' + CONTACT.messenger + '" target="_blank" rel="noopener">nhắn Fanpage</a>.</p>' +
-      (p.group === "vitamin-tpcn" ? '<div class="note">' + TPCN_NOTE + "</div>" : "") +
-      '<ul class="pd-meta">' + "<li>" + ic("box") + (p.stock ? "<strong>Có sẵn tại cửa hàng – giao ngay</strong>" + (p.one ? " · shop chỉ có 1 chiếc" : "") : "<strong>Hàng order</strong> – shop báo thời gian hàng về khi chốt đơn") + "</li>" + "<li>" + ic("check") + "Hàng nhập chính hãng</li><li>" + ic("check") + "Tư vấn cách dùng qua Zalo</li><li>" + ic("check") + "Shop báo rõ giá, phí giao trước khi chốt</li></ul>" +
-      '<div class="pd-more"><h3>Thông tin sản phẩm</h3><p>Chi tiết thành phần, cách dùng và hạn sử dụng của lô hàng hiện có, chị nhắn Zalo để shop gửi ảnh nhãn thật và tư vấn cụ thể.</p></div>' +
+      '<p class="pd-stock">' + ic("box") + (p.stock ? "<strong>Có sẵn tại cửa hàng – giao ngay</strong>" + (p.one ? " · shop chỉ có 1 chiếc" : "") : "<strong>Hàng order</strong> – shop báo thời gian hàng về khi chốt đơn") + "</p>" +
+      productInfo(p) +
       "</div></div>" +
       (related.length ? '<section style="padding-bottom:var(--sec)"><div class="section-head"><h2>Có thể bạn quan tâm</h2></div><div class="rail">' + related.map(function (x) { return card(x); }).join("") + "</div></section>" : "") +
       "</div>";
     return { title: p.name + " – Hàng Mỹ Chuẩn", html: html, active: p.group, product: p };
+  }
+
+  // Nội dung chi tiết (nỗi lo – công dụng – liều dùng) lấy từ data/info.js, tra theo nhãn thật
+  var INFO = window.HMC_INFO || {};
+  function productInfo(p) {
+    var f = INFO[p.id];
+    var tpcn = p.group === "vitamin-tpcn" ? '<p class="pd-tpcn">' + TPCN_NOTE + "</p>" : "";
+    if (!f) {
+      return '<div class="pd-block"><h3>Thông tin sản phẩm</h3><p>Thành phần, cách dùng và hạn sử dụng của lô hàng hiện có, chị nhắn Zalo để shop gửi ảnh nhãn thật và tư vấn cụ thể.</p></div>' + tpcn;
+    }
+    function list(items, cls, icon) {
+      return '<ul class="' + cls + '">' + items.map(function (t) { return "<li>" + ic(icon) + "<span>" + esc(t) + "</span></li>"; }).join("") + "</ul>";
+    }
+    var fashion = p.group === "thoi-trang";
+    return (f.noi_dau && f.noi_dau.length ? '<div class="pd-block pd-pain"><h3>' + (fashion ? "Chị đang băn khoăn?" : "Bạn có đang gặp?") + "</h3>" + list(f.noi_dau, "pain-list", "dot") + "</div>" : "") +
+      (f.cong_dung && f.cong_dung.length ? '<div class="pd-block"><h3>' + (fashion ? "Điểm nổi bật" : "Công dụng chính") + "</h3>" + list(f.cong_dung, "use-list", "check") + "</div>" : "") +
+      (f.thanh_phan_chinh ? '<p class="pd-line"><strong>Thành phần chính:</strong> ' + esc(f.thanh_phan_chinh) + "</p>" : "") +
+      (f.lieu_dung ? '<div class="pd-dose"><strong>' + (fashion ? "Cách dùng & bảo quản" : "Liều dùng") + "</strong><p>" + esc(f.lieu_dung) + "</p></div>" : "") +
+      (f.luu_y && f.luu_y.length ? '<div class="pd-warn"><strong>Lưu ý</strong>' + list(f.luu_y, "warn-list", "dot") + "</div>" : "") +
+      tpcn;
   }
 
   function pageAbout() {
