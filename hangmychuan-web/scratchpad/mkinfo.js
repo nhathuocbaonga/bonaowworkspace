@@ -21,8 +21,11 @@ const expectedProducts = [
 const expectedIds = new Set(expectedProducts.map((product) => product.id));
 
 const records = [];
-for (let batch = 1; batch <= 8; batch += 1) {
-  const file = path.join(sourceDir, `output-${batch}.json`);
+const files = fs.readdirSync(sourceDir)
+  .filter((name) => /^output-\d+\.json$/.test(name))
+  .sort((a, b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
+for (const name of files) {
+  const file = path.join(sourceDir, name);
   const items = JSON.parse(fs.readFileSync(file, "utf8"));
   if (!Array.isArray(items)) throw new Error(`${path.basename(file)} không phải mảng JSON`);
   records.push(...items);

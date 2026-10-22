@@ -13,6 +13,7 @@
   };
   var BANK = { bank: "Seabank", number: "0984542459", holder: "NGUYEN THI NGA" };
   var TPCN_NOTE = "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.";
+  var AFF = window.HMC_AFFILIATE || {};
 
   var GROUPS = [
     { slug: "vitamin-tpcn", name: "Vitamin & TPCN", full: "Vitamin & Thực phẩm chức năng", desc: "Bổ sung dưỡng chất hằng ngày cho cả nhà." },
@@ -34,7 +35,8 @@
       { slug: "gan", name: "Gan – Thanh lọc", icon: "liver" },
       { slug: "than", name: "Thận – Tiết niệu", icon: "kidney" },
       { slug: "giam-can", name: "Cân nặng – Đường huyết", icon: "down" },
-      { slug: "phu-nu", name: "Sức khỏe phụ nữ", icon: "female" }
+      { slug: "phu-nu", name: "Sức khỏe phụ nữ", icon: "female" },
+      { slug: "nam-gioi", name: "Sức khỏe nam giới", icon: "male" }
     ],
     "suc-khoe": [
       { slug: "giam-dau", name: "Giảm đau – Hạ sốt" }, { slug: "di-ung", name: "Dị ứng – Cảm – Ho" },
@@ -48,18 +50,22 @@
     ],
     "thuc-pham-tieu-dung": [{ slug: "thuc-pham", name: "Thực phẩm – Đồ uống" }, { slug: "sua-dinh-duong", name: "Sữa dinh dưỡng" }, { slug: "gia-dung", name: "Gia dụng – Giặt xả" }],
     "thoi-trang": [{ slug: "giay-dep", name: "Giày dép" }, { slug: "quan-ao", name: "Quần áo" }, { slug: "phu-kien", name: "Phụ kiện" }],
-    "me-be": [{ slug: "vitamin-be", name: "Vitamin – Sữa cho bé" }, { slug: "cham-soc-be", name: "Tắm gội – Chăm sóc bé" }, { slug: "suc-khoe-be", name: "Sức khỏe cho bé" }]
+    "me-be": [{ slug: "me-bau", name: "Mẹ bầu & sau sinh" }, { slug: "vitamin-be", name: "Vitamin – Sữa cho bé" }, { slug: "cham-soc-be", name: "Tắm gội – Chăm sóc bé" }, { slug: "suc-khoe-be", name: "Sức khỏe cho bé" }]
   };
 
   var decoder = document.createElement("textarea");
   function decode(s) { decoder.innerHTML = s || ""; return decoder.value; }
   // Hàng có sẵn tại cửa hàng (ảnh nền trắng trong images/sp) đứng trước danh mục cũ
   var STOCK = (window.HMC_STOCK || []).map(function (s) {
-    return { id: s.id, slug: s.id, name: s.name, brand: s.brand, price: s.price, old: s.old || 0, group: s.group, sub: s.sub, img: "images/sp/" + s.id + ".webp", stock: true, one: !!s.one };
+    var ext = s.id === "nb-melatonin-gummy" ? ".jpg" : ".webp";
+    return { id: s.id, slug: s.id, name: s.name, brand: s.brand, price: s.price, old: s.old || 0, group: s.group, sub: s.sub, img: s.img || "images/sp/" + s.id + ext, stock: true, one: !!s.one, gift: !!s.gift };
   });
   // món cũ được gắn "stock":true trong products.js cũng tính là hàng có sẵn
   var OLD = window.HMC_PRODUCTS || [];
   STOCK = STOCK.concat(OLD.filter(function (p) { return p.stock; }));
+  // Ảnh Melatonin cũ từng bị méo ở hero; giữ sản phẩm ở cuối danh sách hàng có sẵn.
+  var melatoninIndex = STOCK.findIndex(function (p) { return p.id === "nb-melatonin-gummy"; });
+  if (melatoninIndex >= 0) STOCK.push(STOCK.splice(melatoninIndex, 1)[0]);
   var P = STOCK.concat(OLD.filter(function (p) { return !p.stock; })).map(function (p) {
     p.name = decode(p.name);
     p.brand = decode(p.brand);
@@ -99,6 +105,8 @@
     down: '<rect x="3" y="12" width="18" height="8" rx="2"/><path d="M12 9V3M9 6l3 3 3-3"/>',
     stomach: '<path d="M9 3v4c0 2-3 2.5-3 6a6 6 0 0 0 6 6c4 0 7-2.5 7-6 0-2.5-2-4-4.5-4-2 0-2.5 1.5-4.5 1.5V3"/>',
     female: '<circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/>',
+    male: '<circle cx="10" cy="14" r="5"/><path d="M14 10l6-6M15 4h5v5"/>',
+    gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 1 1 4.5-1.5A2.5 2.5 0 1 1 16.5 8"/>',
     pill: '<rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="m9 9 6 6"/>'
   };
   function ic(name) {
@@ -114,6 +122,9 @@
   function inGroup(g) { return P.filter(function (p) { return p.group === g; }); }
   function link(path) { return "#/" + path; }
   function $(s, r) { return (r || document).querySelector(s); }
+  function cleanRef(value) { return String(value || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 24); }
+  function activeRef() { try { return cleanRef(localStorage.getItem("hmc_aff_ref")); } catch (e) { return ""; } }
+  function saveRef(value) { try { localStorage.setItem("hmc_aff_ref", cleanRef(value)); } catch (e) {} }
 
   var toastTimer;
   function toast(msg) {
@@ -134,8 +145,9 @@
     });
   }
   function orderZalo(p) {
+    var ref = activeRef();
     var msg = p
-      ? "Chào shop, mình muốn đặt: " + p.name + (p.price ? " – giá " + vnd(p.price) : " – shop báo giá giúp mình") + ". Số lượng: 1. Shop kiểm tra còn hàng và báo phí giao giúp mình nhé. Link: " + location.origin + location.pathname + link("san-pham/" + p.slug)
+      ? "Chào shop, mình muốn đặt: " + p.name + (p.price ? " – giá " + vnd(p.price) : " – shop báo giá giúp mình") + (p.gift ? " (kèm quà tặng " + GIFT_NAME + ")" : "") + ". Số lượng: 1. Shop kiểm tra còn hàng và báo phí giao giúp mình nhé." + (ref ? " Mã đại lý/affiliate: " + ref + "." : "") + " Link: " + location.origin + location.pathname + link("san-pham/" + p.slug)
       : "Chào shop, mình cần tư vấn sản phẩm.";
     var copying = copyText(msg);
     var win = window.open(CONTACT.zalo, "_blank", "noopener");
@@ -151,6 +163,7 @@
       '<a class="p-img" href="' + url + '" tabindex="-1" aria-hidden="true">' +
       (p.off ? '<span class="badge">-' + p.off + "%</span>" : "") +
       (p.stock ? '<span class="badge-stock">Có sẵn</span>' : '<span class="badge-stock order">Order</span>') +
+      (p.gift ? '<span class="badge-gift">' + ic("gift") + "Tặng sủi</span>" : "") +
       '<img src="' + p.img + '" alt="' + alt + '" width="640" height="640"' + (eager ? "" : ' loading="lazy"') + ' decoding="async"></a>' +
       '<div class="p-brand label">' + esc(p.brand || "Chính hãng") + "</div>" +
       '<a class="p-name" href="' + url + '">' + esc(p.name) + "</a>" +
@@ -378,6 +391,7 @@
       '<div class="pd-cta"><button class="btn btn-primary" type="button" data-order="' + p.slug + '">' + ic("zalo") + "Đặt qua Zalo</button>" +
       '<a class="btn btn-outline" href="' + CONTACT.tel + '">' + ic("phone") + "Gọi " + CONTACT.phone + "</a></div>" +
       '<p class="pd-stock">' + ic("box") + (p.stock ? "<strong>Có sẵn tại cửa hàng – giao ngay</strong>" + (p.one ? " · shop chỉ có 1 chiếc" : "") : "<strong>Hàng order</strong> – shop báo thời gian hàng về khi chốt đơn") + "</p>" +
+      giftBox(p) +
       productInfo(p) +
       "</div></div>" +
       (related.length ? '<section style="padding-bottom:var(--sec)"><div class="section-head"><h2>Có thể bạn quan tâm</h2></div><div class="rail">' + related.map(function (x) { return card(x); }).join("") + "</div></section>" : "") +
@@ -387,6 +401,14 @@
 
   // Nội dung chi tiết (nỗi lo – công dụng – liều dùng) lấy từ data/info.js, tra theo nhãn thật
   var INFO = window.HMC_INFO || {};
+  // Quà tặng: món có gift=true (đối thủ bán dưới giá niêm yết) được tặng kèm 1 tub sủi
+  var GIFT_ID = "multinutri-orange";
+  var GIFT_NAME = "1 tub viên sủi Multinutri Orange 20 viên trị giá 49.900đ";
+  function giftBox(p) {
+    if (!p.gift) return "";
+    return '<a class="pd-gift" href="' + link("san-pham/" + GIFT_ID) + '">' + ic("gift") +
+      "<span><strong>Quà tặng kèm</strong>Tặng " + GIFT_NAME + " khi mua sản phẩm này.</span></a>";
+  }
   function productInfo(p) {
     var f = INFO[p.id];
     var tpcn = p.group === "vitamin-tpcn" ? '<p class="pd-tpcn">' + TPCN_NOTE + "</p>" : "";
@@ -403,6 +425,59 @@
       (f.lieu_dung ? '<div class="pd-dose"><strong>' + (fashion ? "Cách dùng & bảo quản" : "Liều dùng") + "</strong><p>" + esc(f.lieu_dung) + "</p></div>" : "") +
       (f.luu_y && f.luu_y.length ? '<div class="pd-warn"><strong>Lưu ý</strong>' + list(f.luu_y, "warn-list", "dot") + "</div>" : "") +
       tpcn;
+  }
+
+  function pageAffiliate(q) {
+    var ref = cleanRef(q.get("ref"));
+    if (ref) saveRef(ref);
+    ref = ref || activeRef();
+    var theThao = OLD.filter(function (p) { return p.id.indexOf("g2-") === 0; });
+    var featured = theThao.filter(function (p) { return p.price; }).slice(0, 8);
+    var refNote = ref
+      ? '<div class="aff-ref-live">' + ic("check") + '<span>Đang ghi nhận đơn qua mã đại lý <strong>' + esc(ref) + '</strong></span></div>'
+      : '';
+    var html = '<section class="aff-hero"><div class="container"><div class="aff-hero-grid"><div>' +
+      '<span class="eyebrow label">Đồng hành cùng Hàng Mỹ Chuẩn</span><h1>Trang bán hàng dành cho đại lý & affiliate</h1>' +
+      '<p class="lead">Không cần tự làm website. Đại lý dùng chính trang này để giới thiệu sản phẩm; khi khách đặt qua Zalo, mã giới thiệu được gửi kèm để đối soát.</p>' + refNote +
+      '<div class="hero-cta"><a class="btn btn-primary" href="' + AFF.formUrl + '" target="_blank" rel="noopener">Đăng ký làm đại lý ' + ic("arrow") + '</a>' +
+      '<a class="btn btn-outline" href="#aff-link">Tạo link giới thiệu</a></div></div>' +
+      '<div class="aff-card on-dark"><span>Chính sách Thế Thảo Pharma</span><strong>8%</strong><p>Hoa hồng nhóm A</p><hr><strong>5%</strong><p>Hoa hồng nhóm B</p></div>' +
+      '</div></div></section>' +
+      '<section class="section"><div class="container"><div class="section-head"><div><h2>Chính sách rõ ràng, dễ đối soát</h2><p class="muted">Áp dụng theo nhóm đại lý được Hàng Mỹ Chuẩn phê duyệt.</p></div></div>' +
+      '<div class="policy-grid"><article><span class="policy-tag">NHÓM A</span><h3>Hoa hồng 8%</h3><p>Áp dụng cho hàng Thế Thảo Pharma, tính trên giá bán lẻ thực thu của đơn đủ điều kiện.</p></article>' +
+      '<article><span class="policy-tag b">NHÓM B</span><h3>Hoa hồng 5%</h3><p>Áp dụng cho hàng Thế Thảo Pharma, tính trên giá bán lẻ thực thu của đơn đủ điều kiện.</p></article>' +
+      '<article><span class="policy-tag import">HÀNG NHẬP</span><h3>Giá giao = giá nhập × 1,20</h3><p>Hàng Mỹ/Canada do Bảo Nga nhập trực tiếp từ Walmart hoặc Costco. Chưa gồm VAT và phí vận chuyển.</p></article></div></div></section>' +
+      '<section class="section bg-cream" id="aff-link"><div class="container"><div class="aff-link-box"><div><span class="eyebrow label">Công cụ cho đại lý</span><h2>Tạo link giới thiệu riêng</h2><p>Nhập đúng mã đã được cấp. Khách mở link rồi đặt hàng, tin nhắn Zalo sẽ tự kèm mã của đại lý.</p></div>' +
+      '<div class="aff-link-form"><label for="aff-code">Mã đại lý/affiliate</label><div class="row"><input id="aff-code" type="text" maxlength="24" autocomplete="off" placeholder="Ví dụ: DL001" value="' + esc(ref) + '"><button class="btn btn-primary" type="button" data-aff-copy>Tạo & chép link</button></div><output id="aff-link-result">' + (ref ? esc(location.origin + location.pathname + '#/dai-ly?ref=' + ref) : 'Link giới thiệu sẽ hiện ở đây') + '</output><small>Chỉ dùng mã đã được Hàng Mỹ Chuẩn phê duyệt.</small></div>' +
+      '</div></div></section>' +
+      '<section class="section"><div class="container"><div class="section-head"><div><h2>Sản phẩm Thế Thảo nổi bật</h2><p class="muted">Khách xem giá bán lẻ và đặt trực tiếp qua Zalo.</p></div><a href="' + link('tat-ca') + '">Xem toàn bộ sản phẩm →</a></div>' + grid(featured, 4) + '</div></section>' +
+      '<section class="section bg-navy50"><div class="container"><div class="steps-aff"><div><b>1</b><h3>Đăng ký</h3><p>Điền biểu mẫu, đội ngũ liên hệ xác minh.</p></div><div><b>2</b><h3>Nhận mã</h3><p>Được duyệt nhóm A hoặc B và cấp mã riêng.</p></div><div><b>3</b><h3>Chia sẻ & nhận hoa hồng</h3><p>Gửi link cho khách, theo dõi đơn và đối soát.</p></div></div><p class="aff-manager-link"><a href="' + link('quan-ly') + '">Dành cho quản lý →</a></p></div></section>';
+    return { title: "Chương trình đại lý – Hàng Mỹ Chuẩn", html: html, active: "dai-ly" };
+  }
+
+  function pageDashboard() {
+    var theThao = OLD.filter(function (p) { return p.id.indexOf("g2-") === 0; });
+    var imported = STOCK.filter(function (p) { return ["multinutri-orange", "lv-belt-damier", "lv-wallet-damier"].indexOf(p.id) < 0; });
+    var rows = theThao.map(function (p) {
+      return '<tr data-manage-row="' + esc(norm(p.name + ' ' + p.brand)) + '"><td><strong>' + esc(p.name) + '</strong><small>' + esc(p.brand || 'Chính hãng') + '</small></td><td>' + vnd(p.price) + '</td><td>' + (p.price ? vnd(Math.round(p.price * (AFF.groupA || .08))) : '—') + '</td><td>' + (p.price ? vnd(Math.round(p.price * (AFF.groupB || .05))) : '—') + '</td></tr>';
+    }).join("");
+    var html = '<div class="container manage"><nav class="crumb" aria-label="Đường dẫn"><a href="#/">Trang chủ</a> › Quản lý đại lý</nav>' +
+      '<div class="manage-head"><div><span class="eyebrow label">Dashboard vận hành</span><h1>Quản lý đại lý & affiliate</h1><p>Tra chính sách, tính giá giao, kiểm tra hoa hồng và mở dữ liệu đăng ký tại một nơi.</p></div><a class="btn btn-primary" href="' + AFF.sheetUrl + '" target="_blank" rel="noopener">Mở Google Sheet quản lý ' + ic("arrow") + '</a></div>' +
+      '<div class="metric-grid"><article><span>Tổng sản phẩm</span><strong>' + P.length + '</strong></article><article><span>Hàng Thế Thảo</span><strong>' + theThao.length + '</strong></article><article><span>Hàng nhập đang quản lý</span><strong>' + imported.length + '</strong></article><article><span>Nhóm hoa hồng</span><strong>A · B</strong></article></div>' +
+      '<section class="manage-section"><div class="section-head"><div><h2>Công cụ tính nhanh</h2><p class="muted">Kết quả chỉ là phép tính theo chính sách; giá nhập phải dùng số thực tế đã xác nhận.</p></div></div>' +
+      '<div class="calc-grid"><article class="calc-card"><h3>Giá giao hàng nhập trực tiếp</h3><label for="import-cost">Tổng giá nhập thực tế</label><input id="import-cost" data-calc-import type="number" min="0" step="1000" inputmode="numeric" placeholder="Nhập số tiền"><div class="calc-result"><span>Giá giao đại lý</span><output id="import-result">0đ</output></div><p>Giá nhập × 1,20. Chưa bao gồm VAT và phí ship.</p></article>' +
+      '<article class="calc-card"><h3>Hoa hồng Thế Thảo</h3><label for="commission-price">Giá bán lẻ thực thu</label><input id="commission-price" data-calc-commission type="number" min="0" step="1000" inputmode="numeric" placeholder="Nhập giá bán"><label for="commission-group">Nhóm đại lý</label><select id="commission-group" data-calc-commission><option value="0.08">Nhóm A – 8%</option><option value="0.05">Nhóm B – 5%</option></select><div class="calc-result"><span>Hoa hồng dự kiến</span><output id="commission-result">0đ</output></div></article></div></section>' +
+      '<section class="manage-section"><div class="section-head"><div><h2>Bảng hoa hồng Thế Thảo Pharma</h2><p class="muted">Tính theo giá bán lẻ đang hiển thị trên website.</p></div><label class="manage-search"><span class="sr-only">Tìm sản phẩm</span><input type="search" data-manage-search placeholder="Tìm tên hoặc thương hiệu…"></label></div>' +
+      '<div class="manage-table-wrap"><table class="manage-table"><thead><tr><th>Sản phẩm</th><th>Giá bán lẻ</th><th>Nhóm A · 8%</th><th>Nhóm B · 5%</th></tr></thead><tbody>' + rows + '</tbody></table></div></section>' +
+      '<div class="manage-note"><strong>Nguyên tắc dữ liệu:</strong> thông tin cá nhân người đăng ký chỉ nằm trong Google Sheet riêng. Dashboard công khai này không tải hoặc hiển thị dữ liệu cá nhân.</div></div>';
+    return { title: "Dashboard đại lý – Hàng Mỹ Chuẩn", html: html };
+  }
+
+  function updateManageCalculators() {
+    var cost = $("#import-cost"), importOut = $("#import-result");
+    if (cost && importOut) importOut.textContent = cost.value ? vnd(Math.round(Number(cost.value) * (1 + (AFF.importMarkup || .20)))) : "0đ";
+    var price = $("#commission-price"), group = $("#commission-group"), commissionOut = $("#commission-result");
+    if (price && group && commissionOut) commissionOut.textContent = price.value ? vnd(Math.round(Number(price.value) * Number(group.value || 0))) : "0đ";
   }
 
   function pageAbout() {
@@ -440,11 +515,15 @@
     var path = qi >= 0 ? h.slice(0, qi) : h;
     var q = new URLSearchParams(qi >= 0 ? h.slice(qi + 1) : "");
     var parts = path.split("/").filter(Boolean).map(decodeURIComponent);
+    var incomingRef = cleanRef(q.get("ref"));
+    if (incomingRef) saveRef(incomingRef);
     var page;
     if (!parts.length) page = pageHome();
     else if (parts[0] === "danh-muc" && parts[1]) page = pageCategory(parts[1], q);
     else if (parts[0] === "san-pham" && parts[1]) page = pageProduct(parts[1]);
     else if (parts[0] === "tim-kiem") page = pageSearch(q);
+    else if (parts[0] === "dai-ly") page = pageAffiliate(q);
+    else if (parts[0] === "quan-ly") page = pageDashboard();
     else if (parts[0] === "gioi-thieu") page = pageAbout();
     else if (parts[0] === "giam-gia" || parts[0] === "tat-ca" || parts[0] === "co-san") page = pageFlat(parts[0], q);
     else page = pageNotFound();
@@ -514,7 +593,7 @@
   function initChrome() {
     $("#catnav").innerHTML = GROUPS.map(function (g) { return '<li><a data-nav="' + g.slug + '" href="' + link("danh-muc/" + g.slug) + '">' + g.name + "</a></li>"; }).join("") +
       '<li><a class="instock" data-nav="co-san" href="' + link("co-san") + '">Hàng có sẵn</a></li>' +
-      '<li><a class="sale" data-nav="giam-gia" href="' + link("giam-gia") + '">Đang giảm giá</a></li><li><a data-nav="gioi-thieu" href="' + link("gioi-thieu") + '">Giới thiệu</a></li>';
+      '<li><a class="sale" data-nav="giam-gia" href="' + link("giam-gia") + '">Đang giảm giá</a></li><li><a data-nav="dai-ly" href="' + link("dai-ly") + '">Đại lý</a></li><li><a data-nav="gioi-thieu" href="' + link("gioi-thieu") + '">Giới thiệu</a></li>';
     $("#ftr-cats").innerHTML = GROUPS.map(function (g) { return '<li><a href="' + link("danh-muc/" + g.slug) + '">' + g.full + "</a></li>"; }).join("") + '<li><a href="' + link("giam-gia") + '">Đang giảm giá</a></li>';
     document.querySelectorAll("[data-ic]").forEach(function (el) { el.insertAdjacentHTML("afterbegin", ic(el.getAttribute("data-ic"))); });
     $("#year").textContent = new Date().getFullYear();
@@ -525,6 +604,16 @@
       if (o) { e.preventDefault(); orderZalo(BY_SLUG[o.getAttribute("data-order")]); return; }
       var c = e.target.closest("[data-copy]");
       if (c) { copyText(c.getAttribute("data-copy")).then(function () { toast("Đã chép số tài khoản"); }); return; }
+      var aff = e.target.closest("[data-aff-copy]");
+      if (aff) {
+        var input = $("#aff-code"), code = cleanRef(input && input.value);
+        if (!code) { toast("Chị nhập mã đại lý đã được cấp"); if (input) input.focus(); return; }
+        saveRef(code);
+        var url = location.origin + location.pathname + "#/dai-ly?ref=" + encodeURIComponent(code);
+        $("#aff-link-result").textContent = url;
+        copyText(url).then(function () { toast("Đã tạo và chép link giới thiệu"); });
+        return;
+      }
       var z = e.target.closest("[data-zoom]");
       if (z) { openZoom(z.querySelector("img").src); return; }
       if (e.target.closest("[data-keep-scroll]")) keepScroll = true;
@@ -534,6 +623,7 @@
       if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-zoom]")) { e.preventDefault(); openZoom(e.target.querySelector("img").src); }
     });
     document.addEventListener("change", function (e) {
+      if (e.target.matches("[data-calc-commission]")) { updateManageCalculators(); return; }
       if (!e.target.matches("[data-sort]")) return;
       var h = location.hash.replace(/^#\/?/, ""), qi = h.indexOf("?");
       var path = qi >= 0 ? h.slice(0, qi) : h;
@@ -542,6 +632,13 @@
       q.delete("xem");
       keepScroll = true;
       location.hash = "#/" + path + (q.toString() ? "?" + q : "");
+    });
+    document.addEventListener("input", function (e) {
+      if (e.target.matches("[data-calc-import],[data-calc-commission]")) updateManageCalculators();
+      if (e.target.matches("[data-manage-search]")) {
+        var term = norm(e.target.value).trim();
+        document.querySelectorAll("[data-manage-row]").forEach(function (row) { row.hidden = term && row.getAttribute("data-manage-row").indexOf(term) < 0; });
+      }
     });
     var hdr = $(".hdr");
     function onScroll() {
