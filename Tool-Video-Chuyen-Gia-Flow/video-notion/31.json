@@ -1,0 +1,176 @@
+{
+ "ma": "duoc-si",
+ "da": "2026-11-18_duoc-si-40s",
+ "anh": "00-bao-nga-duoc-si.png",
+ "so": 31,
+ "chu_de": "Dược sĩ",
+ "tieu_de": "Dược sĩ xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "thumb": [
+  "Dược sĩ giỏi",
+  "mà khách chưa biết?"
+ ],
+ "mo_ta": "Trang phục: áo blouse dược sĩ màu trắng sạch sẽ mặc ngoài áo sơ mi xanh nhạt, cổ áo gọn. Bối cảnh: quầy tư vấn của một nhà thuốc hiện đại sáng sủa, phía sau là kệ thuốc gọn gàng xếp các hộp thuốc nhiều màu (nhãn mờ, không đọc được chữ), ánh sáng trắng ấm, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Dược sĩ nhà thuốc (mặt thật)",
+  "nganh": "Dược sĩ / nhà thuốc",
+  "trang_phuc": "clean white pharmacist coat over a light blue shirt",
+  "boi_canh": "bright modern pharmacy counter with neatly arranged medicine shelves softly blurred behind",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#0E8A6E",
+   "accent_text": "#FFFFFF",
+   "dark": "#0F2A24",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Dược sĩ có chuyên môn, tư vấn tận tâm, nhưng khách quanh khu vực vẫn chưa biết đến mình? Mỗi ngày anh chị bận tư vấn, kiểm hàng, quản lý nhà thuốc,",
+  "muốn làm video chia sẻ kiến thức thì không có thời gian quay dựng, viết kịch bản. Những câu hỏi khách thường gặp về đọc hướng dẫn sử dụng, bảo quản thuốc",
+  "đều có thể thành nội dung hữu ích. Bảo Nga ây ai sẽ hướng dẫn anh chị ứng dụng ây ai lên ý tưởng, viết kịch bản và sản xuất video,",
+  "giúp xây hình ảnh dược sĩ gần gũi, chuyên nghiệp. Anh chị kiểm tra kỹ thông tin chuyên môn trước khi chia sẻ để giữ sự tin cậy với khách hàng."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "chuyên môn",
+    "chu": "CÓ CHUYÊN MÔN",
+    "icon": "💊",
+    "am": "pop",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa biết đến mình",
+    "chu": "KHÁCH CHƯA BIẾT",
+    "icon": "🤷‍♀️",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "bận tư vấn",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "bận tư vấn",
+      "chu": "Tư vấn",
+      "icon": "💬"
+     },
+     {
+      "tu": "kiểm hàng",
+      "chu": "Kiểm hàng",
+      "icon": "📦"
+     },
+     {
+      "tu": "quản lý nhà thuốc",
+      "chu": "Quản lý nhà thuốc",
+      "icon": "🏥"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "viết kịch bản",
+    "anh": "broll_nha_thuoc_ban_ron.png"
+   },
+   {
+    "loai": "dau",
+    "tu": "không có thời gian",
+    "chu": "HẾT GIỜ!",
+    "icon": "⏰"
+   },
+   {
+    "loai": "keyword",
+    "tu": "câu hỏi",
+    "chu": "CÂU HỎI CỦA KHÁCH",
+    "icon": "❓",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "bảo quản thuốc",
+    "chu": "BẢO QUẢN THUỐC",
+    "icon": "💊",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "nội dung hữu ích",
+    "chu": "NỘI DUNG HỮU ÍCH",
+    "icon": "💡",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "Bảo Nga ây ai",
+    "chu": "BẢO NGA AI",
+    "icon": "✨",
+    "am": "ding"
+   },
+   {
+    "loai": "so_do",
+    "tu": "lên ý tưởng",
+    "ding": true,
+    "den": "*",
+    "muc": [
+     {
+      "tu": "lên ý tưởng",
+      "chu": "Ý tưởng",
+      "icon": "💡"
+     },
+     {
+      "tu": "viết kịch bản",
+      "chu": "Kịch bản",
+      "icon": "📝"
+     },
+     {
+      "tu": "sản xuất video",
+      "chu": "Video",
+      "icon": "🎬"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "xây hình ảnh",
+    "den": "chuyên nghiệp",
+    "anh": "broll_video_nha_thuoc.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "kiểm tra kỹ",
+    "chu": "KIỂM TRA KỸ",
+    "icon": "✅",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "tin cậy",
+    "chu": "GIỮ SỰ TIN CẬY",
+    "icon": "🤝",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_nha_thuoc_ban_ron.png": "Ảnh chân thực 9:16 dọc: quầy nhà thuốc đang bận, nhiều hộp thuốc xếp chờ kiểm, sổ nhập hàng mở, máy quét mã vạch, chiếc điện thoại màn hình tối; chỉ thấy đôi bàn tay phụ nữ mặc áo blouse trắng đang kiểm hàng, không thấy mặt người. Ánh sáng trắng ấm, cảm giác bận rộn. Không có chữ đọc được, không logo, không số.",
+  "broll_video_nha_thuoc.png": "Ảnh chân thực 9:16 dọc: một chiếc điện thoại trên giá đỡ đang quay video trong nhà thuốc sạch sẽ, màn hình điện thoại hiển thị cận cảnh vỉ thuốc và hộp thuốc đặt trên quầy, bên cạnh có đèn vòng nhỏ, kệ thuốc mờ phía sau. Không có người trong ảnh. Ánh sáng mềm. Không có chữ đọc được, không logo, không số."
+ }
+}

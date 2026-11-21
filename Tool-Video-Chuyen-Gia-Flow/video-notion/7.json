@@ -1,0 +1,165 @@
+{
+ "so": 7,
+ "ma": "yoga-fitness",
+ "chu_de": "Huấn luyện viên yoga – fitness",
+ "tieu_de": "Huấn luyện viên yoga fitness xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "anh": "00-bao-nga-yoga.png",
+ "thumb": [
+  "HLV yoga giỏi",
+  "mà kênh ít người biết?"
+ ],
+ "mo_ta": "Trang phục: áo khoác thể thao kéo khoá màu xanh ngọc mặc ngoài áo thun thể thao trắng, gọn gàng năng động, phong cách huấn luyện viên yoga. Bối cảnh: phòng tập yoga sáng sủa, sàn gỗ sáng, vài tấm thảm yoga cuộn gọn, cây xanh, cửa sổ lớn ánh sáng tự nhiên, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Huấn luyện viên yoga fitness (mặt thật)",
+  "nganh": "Yoga / fitness",
+  "trang_phuc": "teal zip-up sports jacket over a white athletic t-shirt",
+  "boi_canh": "bright yoga studio with light wooden floor, rolled yoga mats, green plants and large windows with natural light",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#0F9D8A",
+   "accent_text": "#FFFFFF",
+   "dark": "#0E2A26",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Anh chị là huấn luyện viên yoga, fitness, dạy học viên cả ngày nhưng kênh cá nhân vẫn ít người biết đến? Có chuyên môn, có bài tập hay,",
+  "nhưng quay một video rồi mất hàng giờ chỉnh sửa thì làm sao duy trì đều đặn? Hãy chia sẻ những điều học viên thường quan tâm:",
+  "cách bắt đầu, lưu ý khi tập động tác hay duy trì thói quen vận động. Anh chị nhớ kiểm tra hướng dẫn an toàn trước khi đăng nhé.",
+  "Không cần pờ rom, không cần câu lệnh, chỉ một nút bấm thành một video đúng ngành nghề, để ây ai giúp thương hiệu anh chị lan toả mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "yoga",
+    "chu": "HLV YOGA – FITNESS",
+    "icon": "🧘‍♀️",
+    "am": "pop",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "ít người biết đến",
+    "chu": "ÍT NGƯỜI BIẾT",
+    "icon": "📉",
+    "am": "impact"
+   },
+   {
+    "loai": "keyword",
+    "tu": "bài tập hay",
+    "chu": "BÀI TẬP HAY",
+    "icon": "💪",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "chỉnh sửa",
+    "anh": "broll_yoga_chinh_sua.png"
+   },
+   {
+    "loai": "dau",
+    "tu": "hàng giờ",
+    "chu": "MẤT HÀNG GIỜ!",
+    "icon": "⏰"
+   },
+   {
+    "loai": "keyword",
+    "tu": "học viên thường quan tâm",
+    "chu": "ĐIỀU HỌC VIÊN QUAN TÂM",
+    "icon": "❓",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "cách bắt đầu",
+    "den": "vận động",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "cách bắt đầu",
+      "chu": "Cách bắt đầu",
+      "icon": "🚀"
+     },
+     {
+      "tu": "lưu ý",
+      "chu": "Lưu ý động tác",
+      "icon": "⚠️"
+     },
+     {
+      "tu": "thói quen",
+      "chu": "Thói quen vận động",
+      "icon": "🏃‍♀️"
+     }
+    ]
+   },
+   {
+    "loai": "broll",
+    "tu": "Anh chị nhớ",
+    "den": "*",
+    "anh": "broll_yoga_quay_video.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "an toàn",
+    "chu": "KIỂM TRA AN TOÀN",
+    "icon": "✅",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "câu lệnh",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "LAN TOẢ MỖI NGÀY",
+    "icon": "📈",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_yoga_chinh_sua.png": "Ảnh chân thực 9:16 dọc: buổi tối, laptop trên bàn gỗ hiển thị phần mềm chỉnh sửa video có dòng thời gian dài (chữ mờ không đọc được), bên cạnh là thảm yoga cuộn, bình nước, khăn tập, đồng hồ treo tường chỉ khuya, đôi bàn tay phụ nữ trên bàn phím, không thấy mặt người. Cảm giác mệt mỏi. Không có chữ đọc được, không logo, không số.",
+  "broll_yoga_quay_video.png": "Ảnh chân thực 9:16 dọc: phòng tập yoga sáng sủa, một chiếc điện thoại trên chân máy đang quay video, màn hình điện thoại hiển thị một người phụ nữ đang tập tư thế yoga trên thảm nhìn từ xa (không rõ mặt), đèn vòng nhỏ, cây xanh, ánh sáng tự nhiên. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-7-yoga-fitness"
+}

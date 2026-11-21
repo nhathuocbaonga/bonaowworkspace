@@ -1,0 +1,225 @@
+{
+ "ma": "thoi-trang",
+ "da": "2026-11-18_shop-thoi-trang-nu-40s",
+ "anh": "00-bao-nga-thoi-trang.png",
+ "so": 8,
+ "chu_de": "Chủ shop thời trang nữ",
+ "tieu_de": "Chủ shop thời trang nữ xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "thumb": [
+  "Đăng ảnh mãi",
+  "khách vẫn chưa chú ý?"
+ ],
+ "mo_ta": "Trang phục: áo blazer màu hồng pastel thanh lịch mặc ngoài áo lụa trắng, phong cách chủ shop thời trang hiện đại. Bối cảnh: shop thời trang nữ sang trọng, phía sau là giá treo quần áo nhiều màu nhã nhặn, kệ túi xách, gương lớn, đèn vàng ấm, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Chủ shop thời trang nữ (mặt thật)",
+  "nganh": "Thời trang nữ",
+  "trang_phuc": "elegant pastel pink blazer over a white silk top",
+  "boi_canh": "chic women's fashion boutique with clothing racks, handbag shelves, large mirror and warm lighting",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#C2185B",
+   "accent_text": "#FFFFFF",
+   "dark": "#2A1420",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 1,
+ "canh": [
+  "Shop thời trang có nhiều mẫu đẹp, hàng mới về liên tục, nhưng đăng ảnh mãi khách vẫn chưa chú ý? Mỗi ngày chị vừa chọn hàng, chốt đơn, đóng gói,",
+  "vừa phải nghĩ cách phối đồ và quay video. Thuê người quay dựng thì tốn chi phí, tự làm lại mất quá nhiều thời gian. Bảo Nga ây ai sẽ hướng dẫn chị",
+  "ứng dụng ây ai để lên ý tưởng, viết kịch bản và hỗ trợ sản xuất video cho shop. Từ một bộ đồ, chị có thể chia sẻ nhiều góc nhìn:",
+  "phối đi làm, đi chơi hay kết hợp phụ kiện. Nội dung xuất hiện đều đặn giúp khách hiểu phong cách và nhớ đến người chủ shop."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "nhiều mẫu đẹp",
+    "chu": "NHIỀU MẪU ĐẸP",
+    "icon": "👗",
+    "am": "pop",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa chú ý",
+    "chu": "KHÁCH CHƯA CHÚ Ý",
+    "icon": "📉",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "chọn hàng",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "chọn hàng",
+      "chu": "Chọn hàng",
+      "icon": "👚"
+     },
+     {
+      "tu": "chốt đơn",
+      "chu": "Chốt đơn",
+      "icon": "💬"
+     },
+     {
+      "tu": "đóng gói",
+      "chu": "Đóng gói",
+      "icon": "📦"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "quay video",
+    "anh": "broll_shop_ban_ron.png"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "",
+    "den": "quay video",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "",
+      "chu": "Chọn hàng",
+      "icon": "👚"
+     },
+     {
+      "tu": "",
+      "chu": "Chốt đơn",
+      "icon": "💬"
+     },
+     {
+      "tu": "",
+      "chu": "Đóng gói",
+      "icon": "📦"
+     },
+     {
+      "tu": "phối đồ",
+      "chu": "Phối đồ",
+      "icon": "👗"
+     },
+     {
+      "tu": "quay video",
+      "chu": "Quay video",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "tốn chi phí",
+    "chu": "TỐN CHI PHÍ",
+    "icon": "💸",
+    "am": "impact"
+   },
+   {
+    "loai": "dau",
+    "tu": "mất quá nhiều thời gian",
+    "chu": "MẤT THỜI GIAN!",
+    "icon": "⏰"
+   },
+   {
+    "loai": "keyword",
+    "tu": "Bảo Nga ây ai",
+    "chu": "BẢO NGA AI",
+    "icon": "✨",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "so_do",
+    "tu": "lên ý tưởng",
+    "ding": true,
+    "den": "cho shop",
+    "muc": [
+     {
+      "tu": "lên ý tưởng",
+      "chu": "Ý tưởng",
+      "icon": "💡"
+     },
+     {
+      "tu": "viết kịch bản",
+      "chu": "Kịch bản",
+      "icon": "📝"
+     },
+     {
+      "tu": "sản xuất video",
+      "chu": "Video",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một bộ đồ",
+    "chu": "1 BỘ ĐỒ",
+    "icon": "👗",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "nhiều góc nhìn",
+    "chu": "NHIỀU GÓC NHÌN",
+    "icon": "✨",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "đi làm",
+    "den": "phụ kiện",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "đi làm",
+      "chu": "Đi làm",
+      "icon": "💼"
+     },
+     {
+      "tu": "đi chơi",
+      "chu": "Đi chơi",
+      "icon": "🌸"
+     },
+     {
+      "tu": "phụ kiện",
+      "chu": "Phụ kiện",
+      "icon": "👜"
+     }
+    ]
+   },
+   {
+    "loai": "broll",
+    "tu": "Nội dung",
+    "den": "*",
+    "anh": "broll_video_thoi_trang.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "nhớ đến",
+    "chu": "KHÁCH NHỚ CHỦ SHOP",
+    "icon": "❤️",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "VIDEO",
+    "tu_khoa": "VIDEO"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_shop_ban_ron.png": "Ảnh chân thực 9:16 dọc: góc đóng gói của một shop thời trang nữ đang bận, nhiều túi giấy và hộp quà xếp chồng, quần áo gấp gọn chờ đóng gói, cuộn băng dính, điện thoại màn hình tối; chỉ thấy đôi bàn tay phụ nữ đang gói hàng, không thấy mặt người. Ánh sáng ấm, cảm giác bận rộn. Không có chữ đọc được, không logo, không số.",
+  "broll_video_thoi_trang.png": "Ảnh chân thực 9:16 dọc: một chiếc điện thoại trên giá đỡ đang quay video trong shop thời trang nữ sang trọng, màn hình điện thoại hiển thị một bộ trang phục công sở treo trên ma-nơ-canh không đầu kèm túi xách, bên cạnh có đèn vòng nhỏ, giá treo quần áo mờ phía sau. Không có người trong ảnh. Ánh sáng mềm ấm. Không có chữ đọc được, không logo, không số."
+ }
+}

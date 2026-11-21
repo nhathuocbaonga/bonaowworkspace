@@ -1,0 +1,162 @@
+{
+ "ma": "bao-hiem",
+ "da": "2026-11-20_nhan-vien-bao-hiem-40s",
+ "anh": "00-bao-nga-bao-hiem.png",
+ "so": 2,
+ "chu_de": "Nhân viên bảo hiểm",
+ "tieu_de": "Nhân viên bảo hiểm xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "thumb": [
+  "Làm bảo hiểm mà",
+  "khách cứ né mặt mình?"
+ ],
+ "mo_ta": "Trang phục: áo blazer màu xanh navy đứng dáng mặc ngoài áo sơ mi lụa trắng, phong cách chuyên viên tư vấn bảo hiểm chuyên nghiệp. Bối cảnh: văn phòng tư vấn hiện đại sáng sủa, bàn làm việc có laptop, tập hồ sơ và cây xanh nhỏ, cửa kính phía sau, ánh sáng tự nhiên, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Tư vấn bảo hiểm (mặt thật)",
+  "nganh": "Bảo hiểm",
+  "trang_phuc": "tailored navy blue blazer over a white silk blouse",
+  "boi_canh": "bright modern consulting office with laptop, document folders, small plant and glass wall softly blurred",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#1F4E9A",
+   "accent_text": "#FFFFFF",
+   "dark": "#0E1F3A",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Làm bảo hiểm nỗi khổ lớn nhất là chưa kịp tư vấn thì khách đã sợ bị chèo kéo, gọi điện không ai bắt máy, nhắn tin chẳng ai trả lời,",
+  "đăng bài cả tuần cũng không ai quan tâm. Vậy làm sao để khách chủ động tìm đến và tin anh chị? Câu trả lời là xây thương hiệu cá nhân.",
+  "Bảo Nga hướng dẫn ứng dụng ây ai tự động sản xuất video hàng loạt bằng chính gương mặt anh chị. Không cần pờ rom, không cần câu lệnh,",
+  "chỉ một nút bấm thành một video đúng ngành nghề. Thay vì mệt mỏi đi tìm khách, hãy để ây ai giúp thương hiệu của anh chị lan toả mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "nỗi khổ lớn nhất",
+    "chu": "NỖI KHỔ LỚN NHẤT",
+    "icon": "😩",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "chèo kéo",
+    "chu": "KHÁCH SỢ BỊ CHÈO KÉO",
+    "icon": "🙅‍♀️",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "gọi điện",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "gọi điện",
+      "chu": "Gọi không ai bắt máy",
+      "icon": "📵"
+     },
+     {
+      "tu": "nhắn tin",
+      "chu": "Nhắn không ai trả lời",
+      "icon": "💬"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "quan tâm",
+    "anh": "broll_bao_hiem_that_vong.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "chủ động tìm đến",
+    "chu": "KHÁCH TỰ TÌM ĐẾN?",
+    "icon": "🧲",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "thương hiệu cá nhân",
+    "chu": "THƯƠNG HIỆU CÁ NHÂN",
+    "icon": "⭐",
+    "am": "ding",
+    "giu": 1.2
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "video hàng loạt",
+    "chu": "VIDEO HÀNG LOẠT",
+    "icon": "🎬",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "gương mặt",
+    "chu": "BẰNG CHÍNH GƯƠNG MẶT BẠN",
+    "icon": "🙂",
+    "am": "ding"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "*",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "đúng ngành nghề",
+    "chu": "ĐÚNG NGÀNH NGHỀ",
+    "icon": "🎯",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "LAN TOẢ MỖI NGÀY",
+    "icon": "📈",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_bao_hiem_that_vong.png": "Ảnh chân thực 9:16 dọc: bàn làm việc của nhân viên tư vấn bảo hiểm cuối ngày, điện thoại trên bàn màn hình hiện danh sách cuộc gọi nhỡ (chữ mờ không đọc được), tập hợp đồng và tờ rơi xếp chồng, ly cà phê nguội, một bàn tay phụ nữ chống lên trán, không thấy mặt người. Ánh sáng chiều hơi tối, cảm giác mệt mỏi. Không có chữ đọc được, không logo, không số."
+ }
+}

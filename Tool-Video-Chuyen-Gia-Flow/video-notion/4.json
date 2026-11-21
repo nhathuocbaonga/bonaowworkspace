@@ -1,0 +1,166 @@
+{
+ "so": 4,
+ "ma": "lam-video-tu-dong",
+ "chu_de": "Làm video tự động",
+ "tieu_de": "Làm video tự động bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "anh": "00-bao-nga-studio-ai.png",
+ "thumb": [
+  "Đừng ngồi cắt ghép",
+  "video nữa anh chị ơi!"
+ ],
+ "mo_ta": "(dùng ảnh studio ây ai đã có)",
+ "ho_so": {},
+ "cta": 1,
+ "canh": [
+  "Đừng ngồi cắt ghép video nữa anh chị ơi! Chỉ một cú click là có video tự động, giúp anh chị sản xuất hàng loạt video,",
+  "xây nhiều kênh truyền thông mà không cần ngày nào cũng quay dựng. Bảo Nga đã xây hệ thống bot và app tự động hoá quy trình làm nội dung,",
+  "từ lên ý tưởng, viết kịch bản, tạo giọng đọc đến dựng video hoàn chỉnh. Dù anh chị bán hàng online, làm bất động sản hay nhà thuốc,",
+  "đều có thể ứng dụng ây ai để xây thương hiệu. Không cần giỏi công nghệ, không cần biết quay dựng, Bảo Nga ây ai hướng dẫn anh chị từng bước."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "dau",
+    "tu": "cắt ghép",
+    "chu": "ĐỪNG CẮT GHÉP NỮA!",
+    "icon": "✂️"
+   },
+   {
+    "loai": "keyword",
+    "tu": "một cú click",
+    "chu": "1 CÚ CLICK",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "hàng loạt video",
+    "chu": "VIDEO HÀNG LOẠT",
+    "icon": "🎬",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "nhiều kênh",
+    "chu": "NHIỀU KÊNH TRUYỀN THÔNG",
+    "icon": "📡",
+    "am": "pop"
+   },
+   {
+    "loai": "broll",
+    "tu": "Bảo Nga",
+    "den": "*",
+    "anh": "broll_he_thong_video.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "bot và app",
+    "chu": "BOT + APP TỰ ĐỘNG",
+    "icon": "🤖",
+    "am": "ding",
+    "giu": 1.2
+   }
+  ],
+  [
+   {
+    "loai": "so_do",
+    "tu": "lên ý tưởng",
+    "ding": true,
+    "den": "hoàn chỉnh",
+    "muc": [
+     {
+      "tu": "lên ý tưởng",
+      "chu": "Ý tưởng",
+      "icon": "💡"
+     },
+     {
+      "tu": "viết kịch bản",
+      "chu": "Kịch bản",
+      "icon": "📝"
+     },
+     {
+      "tu": "giọng đọc",
+      "chu": "Giọng đọc",
+      "icon": "🎙️"
+     },
+     {
+      "tu": "dựng video",
+      "chu": "Video",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "bán hàng online",
+    "den": "*",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "bán hàng online",
+      "chu": "Bán hàng online",
+      "icon": "🛒"
+     },
+     {
+      "tu": "bất động sản",
+      "chu": "Bất động sản",
+      "icon": "🏠"
+     },
+     {
+      "tu": "nhà thuốc",
+      "chu": "Nhà thuốc",
+      "icon": "💊"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "xây thương hiệu",
+    "chu": "XÂY THƯƠNG HIỆU",
+    "icon": "⭐",
+    "am": "ding"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần giỏi công nghệ",
+    "den": "quay dựng",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần giỏi công nghệ",
+      "chu": "Không cần giỏi công nghệ",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần biết quay dựng",
+      "chu": "Không cần biết quay dựng",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "từng bước",
+    "chu": "HƯỚNG DẪN TỪNG BƯỚC",
+    "icon": "🪜",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "VIDEO",
+    "tu_khoa": "VIDEO"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_he_thong_video.png": "Ảnh chân thực 9:16 dọc: bàn làm việc hiện đại với màn hình lớn hiển thị giao diện phần mềm dựng video có dòng thời gian nhiều đoạn clip màu sắc, bên cạnh là điện thoại đang phát video ngắn, micro thu âm và đèn vòng nhỏ, ánh sáng studio sáng. Không có người trong ảnh. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-4-lam-video-tu-dong"
+}

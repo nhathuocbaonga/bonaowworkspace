@@ -1,0 +1,199 @@
+{
+ "ma": "dinh-duong",
+ "da": "2026-11-18_chuyen-gia-dinh-duong-40s",
+ "anh": "00-bao-nga-dinh-duong.png",
+ "so": 6,
+ "chu_de": "Chuyên gia dinh dưỡng",
+ "tieu_de": "Chuyên gia dinh dưỡng xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "thumb": [
+  "Chuyên gia dinh dưỡng",
+  "vẫn ít người biết?"
+ ],
+ "mo_ta": "Trang phục: áo blouse trắng thanh lịch mặc ngoài áo len mỏng màu xanh lá mạ nhạt, cổ áo gọn. Bối cảnh: phòng tư vấn dinh dưỡng sáng sủa, trên bàn gỗ sáng có rổ rau củ tươi, đĩa trái cây, ly nước, chậu cây xanh, cửa sổ ánh sáng tự nhiên, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Chuyên gia dinh dưỡng (mặt thật)",
+  "nganh": "Dinh dưỡng",
+  "trang_phuc": "elegant white coat over a light green thin knit top",
+  "boi_canh": "bright nutrition consultation room with fresh vegetables, fruit bowl and green plants, natural window light",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#E0702A",
+   "accent_text": "#FFFFFF",
+   "dark": "#1E2A14",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 1,
+ "canh": [
+  "Anh chị là chuyên gia dinh dưỡng, có kiến thức và kinh nghiệm nhưng xây kênh mãi vẫn chưa tiếp cận được nhiều người? Mỗi ngày bận tư vấn, xây thực đơn",
+  "và theo sát khách hàng, đến khi nghĩ đến quay video lại không còn thời gian. Hãy tưởng tượng những câu hỏi anh chị trả lời mỗi ngày",
+  "về bữa ăn cân đối hay cách đọc nhãn thực phẩm được chuyển thành video dễ hiểu. Bảo Nga ây ai sẽ hướng dẫn anh chị dùng ây ai lên ý tưởng,",
+  "viết kịch bản và sản xuất video. Anh chị vẫn kiểm tra chuyên môn trước khi đăng, còn công cụ giúp giảm bớt những việc lặp lại."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "chuyên gia dinh dưỡng",
+    "chu": "CHUYÊN GIA DINH DƯỠNG",
+    "icon": "🥗",
+    "am": "pop",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa tiếp cận được nhiều người",
+    "chu": "ÍT NGƯỜI BIẾT",
+    "icon": "📉",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "bận tư vấn",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "bận tư vấn",
+      "chu": "Tư vấn",
+      "icon": "💬"
+     },
+     {
+      "tu": "xây thực đơn",
+      "chu": "Xây thực đơn",
+      "icon": "📋"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "",
+    "den": "thời gian",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "",
+      "chu": "Tư vấn",
+      "icon": "💬"
+     },
+     {
+      "tu": "",
+      "chu": "Xây thực đơn",
+      "icon": "📋"
+     },
+     {
+      "tu": "theo sát khách hàng",
+      "chu": "Theo sát khách",
+      "icon": "👥"
+     },
+     {
+      "tu": "quay video",
+      "chu": "Quay video",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "dau",
+    "tu": "không còn thời gian",
+    "chu": "QUÁ TẢI!",
+    "icon": "⚠️"
+   },
+   {
+    "loai": "broll",
+    "tu": "Hãy tưởng tượng",
+    "den": "*",
+    "anh": "broll_tu_van_dinh_duong.png"
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "bữa ăn cân đối",
+    "chu": "BỮA ĂN CÂN ĐỐI",
+    "icon": "🥦",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "đọc nhãn thực phẩm",
+    "chu": "ĐỌC NHÃN THỰC PHẨM",
+    "icon": "🏷️",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "video dễ hiểu",
+    "chu": "VIDEO DỄ HIỂU",
+    "icon": "🎬",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "Bảo Nga ây ai",
+    "chu": "BẢO NGA AI",
+    "icon": "✨",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "so_do",
+    "tu": "",
+    "ding": true,
+    "den": "sản xuất video",
+    "muc": [
+     {
+      "tu": "",
+      "chu": "Ý tưởng",
+      "icon": "💡"
+     },
+     {
+      "tu": "viết kịch bản",
+      "chu": "Kịch bản",
+      "icon": "📝"
+     },
+     {
+      "tu": "sản xuất video",
+      "chu": "Video",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "kiểm tra chuyên môn",
+    "chu": "KIỂM TRA CHUYÊN MÔN",
+    "icon": "✅",
+    "am": "pop"
+   },
+   {
+    "loai": "broll",
+    "tu": "còn công cụ",
+    "den": "*",
+    "anh": "broll_video_dinh_duong.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "giảm bớt",
+    "chu": "BỚT VIỆC LẶP LẠI",
+    "icon": "⏰",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "VIDEO",
+    "tu_khoa": "VIDEO"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_tu_van_dinh_duong.png": "Ảnh chân thực 9:16 dọc: bàn tư vấn dinh dưỡng nhìn từ trên xuống, đĩa bữa ăn cân đối gồm rau xanh, cá hồi, cơm gạo lứt, trái cây, bên cạnh là tờ thực đơn viết tay (chữ mờ không đọc được), ly nước chanh, đôi bàn tay phụ nữ cầm bút, không thấy mặt người. Ánh sáng tự nhiên. Không có chữ đọc được, không logo, không số.",
+  "broll_video_dinh_duong.png": "Ảnh chân thực 9:16 dọc: một chiếc điện thoại trên giá đỡ đang quay video trong căn bếp sáng sủa, màn hình điện thoại hiển thị cận cảnh đĩa salad rau củ nhiều màu, bên cạnh có đèn vòng nhỏ, rổ rau củ tươi. Không có người trong ảnh. Ánh sáng mềm. Không có chữ đọc được, không logo, không số."
+ }
+}

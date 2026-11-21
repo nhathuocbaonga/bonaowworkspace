@@ -1,0 +1,191 @@
+{
+ "ma": "cafe",
+ "da": "2026-11-18_chu-quan-cafe-v2",
+ "anh": "00-bao-nga-cafe.png",
+ "so": 19,
+ "chu_de": "Chủ quán cà phê",
+ "tieu_de": "Chủ quán cà phê xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "thumb": [
+  "Cà phê ngon, quán đẹp",
+  "mà ít người biết?"
+ ],
+ "mo_ta": "(ảnh do chị gửi 18/11/2026)",
+ "ho_so": {
+  "ten": "Bảo Nga – Chủ quán cà phê (ảnh chị gửi)",
+  "nganh": "Quán cà phê",
+  "trang_phuc": "brown canvas barista apron with leather straps over a cream silk blouse, holding a latte cup",
+  "boi_canh": "cozy specialty coffee shop counter with espresso machine, pastry display, plants and warm pendant light",
+  "co_tay": "small gold watch with brown leather strap on left wrist",
+  "concept": {
+   "accent": "#8B5A2B",
+   "accent_text": "#FFFFFF",
+   "dark": "#2A1A10",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": "còn kênh của quán vẫn được chăm sóc thường xuyên. Comment từ ZOOM để Nga hướng dẫn anh chị sử dụng app làm video tự động cho ngành nghề của mình nhé.",
+ "canh": [
+  "Quán cà phê có đồ uống ngon, góc ngồi đẹp, nhưng đăng bài hoài vẫn chưa nhiều người biết đến? Có thể khách hàng chưa nhìn thấy câu chuyện",
+  "và trải nghiệm riêng mà quán của anh chị mang lại. Một buổi sáng pha cà phê, món nước theo mùa hay câu chuyện người chủ quán",
+  "đều có thể thành video gần gũi. Không cần cầu kỳ, quan trọng là chia sẻ đều đặn và đúng tinh thần của quán. Không cần phải nghĩ ý tưởng,",
+  "viết lời thoại và dựng video. Anh chị chỉ cần một nút bấm là có video để đăng ngay. Anh chị có thời gian chăm khách,"
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "đồ uống ngon",
+    "chu": "ĐỒ UỐNG NGON",
+    "icon": "☕",
+    "am": "pop",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "góc ngồi đẹp",
+    "chu": "GÓC NGỒI ĐẸP",
+    "icon": "🌿",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa nhiều người biết đến",
+    "chu": "ÍT NGƯỜI BIẾT",
+    "icon": "📉",
+    "am": "impact"
+   }
+  ],
+  [
+   {
+    "loai": "keyword",
+    "tu": "trải nghiệm riêng",
+    "chu": "TRẢI NGHIỆM RIÊNG",
+    "icon": "✨",
+    "am": "ding"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "buổi sáng",
+    "den": "*",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "buổi sáng",
+      "chu": "Buổi sáng pha cà phê",
+      "icon": "☕"
+     },
+     {
+      "tu": "món nước theo mùa",
+      "chu": "Món theo mùa",
+      "icon": "🍹"
+     },
+     {
+      "tu": "người chủ quán",
+      "chu": "Chuyện chủ quán",
+      "icon": "💬"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "gần gũi",
+    "anh": "broll_video_cafe.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "đều đặn",
+    "chu": "ĐỀU ĐẶN",
+    "icon": "📅",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "tinh thần của quán",
+    "chu": "ĐÚNG TINH THẦN QUÁN",
+    "icon": "❤️",
+    "am": "ding"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "nghĩ ý tưởng",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "nghĩ ý tưởng",
+      "chu": "Không cần nghĩ ý tưởng",
+      "icon": "✖️"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "",
+    "den": "dựng video",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "",
+      "chu": "Không cần nghĩ ý tưởng",
+      "icon": "✖️"
+     },
+     {
+      "tu": "viết lời thoại",
+      "chu": "Không cần viết lời thoại",
+      "icon": "✖️"
+     },
+     {
+      "tu": "dựng video",
+      "chu": "Không cần dựng video",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.3
+   },
+   {
+    "loai": "keyword",
+    "tu": "đăng ngay",
+    "chu": "CÓ VIDEO ĐĂNG NGAY",
+    "icon": "🚀",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "chăm khách",
+    "chu": "THÊM THỜI GIAN CHĂM KHÁCH",
+    "icon": "⏰",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "thường xuyên",
+    "anh": "broll_quan_cafe.png"
+   },
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_video_cafe.png": "Ảnh chân thực 9:16 dọc: một chiếc điện thoại trên giá đỡ đang quay video ở quầy pha chế quán cà phê ấm cúng, màn hình điện thoại hiển thị cận cảnh ly latte đang được rót tạo hình chiếc lá, bên cạnh có đèn vòng nhỏ, máy pha espresso, chỉ thấy đôi bàn tay đang rót sữa, không thấy mặt người. Ánh sáng vàng ấm. Không có chữ đọc được, không logo, không số.",
+  "broll_quan_cafe.png": "Ảnh chân thực 9:16 dọc: không gian quán cà phê ấm cúng buổi sáng, bàn gỗ có ly cà phê và bánh sừng bò, cây xanh, đèn thả vàng ấm, vài vị khách ngồi trò chuyện nhìn từ phía sau và mờ, không thấy rõ mặt ai. Không có chữ đọc được, không logo, không số."
+ }
+}

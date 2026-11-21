@@ -1,0 +1,172 @@
+{
+ "so": 1,
+ "ma": "chuyen-gia-marketing",
+ "chu_de": "Chuyên gia marketing",
+ "anh": "00-bao-nga-marketing.png",
+ "thumb": [
+  "Tốn tiền quảng cáo",
+  "mà chưa ra khách?"
+ ],
+ "mo_ta": "Trang phục: áo blazer màu đỏ rượu vang thanh lịch mặc ngoài áo lụa đen, phong cách chuyên gia marketing hiện đại. Bối cảnh: văn phòng agency marketing sáng sủa, phía sau là bảng kính có giấy note nhiều màu và màn hình lớn hiển thị biểu đồ tăng trưởng mờ (không đọc được chữ), cây xanh, ánh sáng tự nhiên, hậu cảnh hơi mờ. Khung hình từ ngực trở lên (medium close-up), nhìn thẳng ống kính, mỉm cười nhẹ khép môi, ảnh chân thực như chụp máy ảnh thật, không đeo nhẫn, không đồng hồ, không có chữ hay logo.",
+ "ho_so": {
+  "ten": "Bảo Nga – Chuyên gia marketing (mặt thật)",
+  "nganh": "Marketing",
+  "trang_phuc": "elegant burgundy blazer over a black silk top",
+  "boi_canh": "bright modern marketing agency office with colorful sticky notes on a glass board and a large screen with a blurred growth chart",
+  "co_tay": "no watch, no bracelet",
+  "concept": {
+   "accent": "#E4572E",
+   "accent_text": "#FFFFFF",
+   "dark": "#2A1210",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Anh chị có sản phẩm tốt nhưng thương hiệu vẫn chưa đủ sức lan toả. Mỗi tháng tốn không ít tiền cho quảng cáo, nhân sự và sản xuất video,",
+  "nhưng hiệu quả thu về lại chưa tương xứng. Đây là bài toán Bảo Nga muốn giúp chủ doanh nghiệp giải quyết bằng hệ thống marketing ây ai tự động.",
+  "Không cần pờ rom, không cần câu lệnh, chỉ một nút bấm thành một video đúng ngành nghề, giúp anh chị nhân bản hàng trăm kênh truyền thông hiệu quả.",
+  "Thay vì mệt mỏi đi tìm khách, hãy để ây ai giúp thương hiệu của anh chị lan toả và có thêm khách hàng chủ động mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "sản phẩm tốt",
+    "chu": "SẢN PHẨM TỐT",
+    "icon": "🏆",
+    "am": "pop",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa đủ sức lan toả",
+    "chu": "CHƯA LAN TOẢ",
+    "icon": "📉",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "quảng cáo",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "quảng cáo",
+      "chu": "Quảng cáo",
+      "icon": "💸"
+     },
+     {
+      "tu": "nhân sự",
+      "chu": "Nhân sự",
+      "icon": "👥"
+     },
+     {
+      "tu": "sản xuất video",
+      "chu": "Sản xuất video",
+      "icon": "🎬"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "tương xứng",
+    "anh": "broll_marketing_ton_kem.png"
+   },
+   {
+    "loai": "dau",
+    "tu": "chưa tương xứng",
+    "chu": "CHƯA TƯƠNG XỨNG!",
+    "icon": "⚠️"
+   },
+   {
+    "loai": "keyword",
+    "tu": "bài toán",
+    "chu": "BÀI TOÁN CHỦ DOANH NGHIỆP",
+    "icon": "🧩",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "marketing ây ai tự động",
+    "chu": "MARKETING AI TỰ ĐỘNG",
+    "icon": "🤖",
+    "am": "ding",
+    "giu": 1.2
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "câu lệnh",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "hàng trăm kênh",
+    "chu": "HÀNG TRĂM KÊNH",
+    "icon": "📡",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "đi tìm khách",
+    "anh": "broll_marketing_kenh.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "THƯƠNG HIỆU LAN TOẢ",
+    "icon": "📈",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "chủ động",
+    "chu": "KHÁCH CHỦ ĐỘNG TÌM ĐẾN",
+    "icon": "🧲",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_marketing_ton_kem.png": "Ảnh chân thực 9:16 dọc: bàn làm việc của chủ doanh nghiệp, laptop mở trang quảng cáo với biểu đồ đi ngang (chữ mờ không đọc được), xấp hoá đơn chi phí, máy tính cầm tay, ly cà phê, một bàn tay phụ nữ day trán, không thấy mặt người. Ánh sáng chiều, cảm giác lo lắng. Không có chữ đọc được, không logo, không số.",
+  "broll_marketing_kenh.png": "Ảnh chân thực 9:16 dọc: nhiều chiếc điện thoại xếp hàng trên bàn trắng, mỗi màn hình hiển thị một video ngắn khác nhau về sản phẩm và người tư vấn (mờ, không đọc được chữ), ánh sáng studio sáng, cảm giác nhân bản nhiều kênh truyền thông. Không có người trong ảnh. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-1-chuyen-gia-marketing"
+}
