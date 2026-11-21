@@ -632,6 +632,8 @@ def lap(kb, cats_goc, mocs, tong, dir_du_an, log=print):
                     # tu rỗng = hiện ngay từ đầu cảnh (nối tiếp cảnh trước); sơ đồ thì so le 0,35s cho có nhịp
                     dk = a + (0.35 * k if loai == "so_do" else 0)
                     rm = (dk, dk) if not m.get("tu") else luc(m["tu"], a)
+                    if rm and hook and i == 0 and rm[0] < 2.65:      # không hiện cùng lúc khung HOOK
+                        rm = (2.65 + 0.12 * len(muc), rm[1])
                     if rm:
                         muc.append((man_hinh(m.get("chu") or m["tu"]), m.get("icon"), rm[0]))
                         am.append(("pop" if loai == "danh_sach" else "whoosh", rm[0], -9 if loai == "danh_sach" else -12))

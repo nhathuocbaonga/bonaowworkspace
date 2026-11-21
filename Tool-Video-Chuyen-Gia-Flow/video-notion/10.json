@@ -1,0 +1,161 @@
+{
+ "so": 10,
+ "ma": "me-va-be",
+ "chu_de": "Chủ cửa hàng mẹ và bé",
+ "anh": "00-bao-nga-me-be.png",
+ "anh_nguon": "D:/NGUYEN BAO NGA/APP SẢN PHẨM SỐ/30-video-ads-app-247/tiem me va be.webp",
+ "thumb": [
+  "Bán đồ mẹ và bé,",
+  "chỉ đăng giá tốt là chưa đủ:",
+  "phụ huynh còn cần",
+  "thấy điều gì?"
+ ],
+ "mo_ta": "(ảnh thật của chị trong thư mục 30-video-ads-app-247)",
+ "ho_so": {
+  "ten": "Bảo Nga – Chủ cửa hàng mẹ và bé (ảnh thật)",
+  "nganh": "Mẹ và bé",
+  "trang_phuc": "soft pink silk bow-tie blouse with white trousers, holding a baby wash bottle",
+  "boi_canh": "bright mother and baby shop with pink shelves of baby products, a plush bunny toy and a baby stroller",
+  "co_tay": "small gold watch with a white strap on the left wrist",
+  "concept": {
+   "accent": "#E05A8A",
+   "accent_text": "#FFFFFF",
+   "dark": "#3A1A28",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 1,
+ "canh": [
+  "Kinh doanh mẹ và bé, anh chị hiểu rằng phụ huynh không chỉ quan tâm đến giá mà còn cần sự an tâm khi chọn sản phẩm cho con.",
+  "Nhưng nếu mỗi ngày chỉ đăng ảnh và khuyến mãi, làm sao khách biết cửa hàng tư vấn tận tâm như thế nào? Những câu hỏi quen thuộc như",
+  "chọn đồ theo độ tuổi, chuẩn bị đồ cho bé hay đọc thông tin trên bao bì có thể thành video hữu ích. Anh chị kiểm tra kỹ trước khi đăng.",
+  "Không cần pờ rom, không cần câu lệnh, chỉ một nút bấm thành một video đúng ngành nghề, để ây ai giúp thương hiệu anh chị lan toả mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "phụ huynh",
+    "chu": "PHỤ HUYNH CẦN GÌ?",
+    "icon": "👩‍👧",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "an tâm",
+    "chu": "SỰ AN TÂM",
+    "icon": "🛡️",
+    "am": "ding",
+    "giu": 1.4
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "khuyến mãi",
+    "anh": "broll_me_be_khuyen_mai.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "tư vấn tận tâm",
+    "chu": "TƯ VẤN TẬN TÂM?",
+    "icon": "💬",
+    "am": "impact"
+   },
+   {
+    "loai": "keyword",
+    "tu": "câu hỏi quen thuộc",
+    "chu": "CÂU HỎI QUEN THUỘC",
+    "icon": "❓",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "chọn đồ theo độ tuổi",
+    "den": "bao bì",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "chọn đồ theo độ tuổi",
+      "chu": "Chọn theo độ tuổi",
+      "icon": "👶"
+     },
+     {
+      "tu": "chuẩn bị đồ cho bé",
+      "chu": "Chuẩn bị đồ cho bé",
+      "icon": "🎒"
+     },
+     {
+      "tu": "đọc thông tin",
+      "chu": "Đọc bao bì",
+      "icon": "🏷️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "video hữu ích",
+    "chu": "VIDEO HỮU ÍCH",
+    "icon": "🎬",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "kiểm tra kỹ",
+    "chu": "KIỂM TRA KỸ",
+    "icon": "✅",
+    "am": "pop"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "câu lệnh",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "LAN TOẢ MỖI NGÀY",
+    "icon": "📈",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "VIDEO",
+    "tu_khoa": "VIDEO"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_me_be_khuyen_mai.png": "Ảnh chân thực 9:16 dọc: điện thoại cầm tay hiển thị trang bán hàng đồ mẹ và bé toàn ảnh sản phẩm và nhãn giảm giá giống nhau (chữ mờ không đọc được), phía sau là kệ sữa, bình sữa, đồ chơi trẻ em màu hồng pastel mờ, chỉ thấy bàn tay phụ nữ, không thấy mặt người. Ánh sáng mềm. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-10-me-va-be"
+}

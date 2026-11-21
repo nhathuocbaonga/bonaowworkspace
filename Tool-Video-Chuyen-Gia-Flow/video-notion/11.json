@@ -1,0 +1,181 @@
+{
+ "so": 11,
+ "ma": "dien-thoai-cong-nghe",
+ "chu_de": "Chủ cửa hàng điện thoại – công nghệ",
+ "tieu_de": "Chủ cửa hàng điện thoại xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "anh": "00-bao-nga-dien-thoai.png",
+ "anh_nguon": "D:/NGUYEN BAO NGA/APP SẢN PHẨM SỐ/30-video-ads-app-247/ban dien thoai.webp",
+ "thumb": [
+  "Chủ cửa hàng điện thoại:",
+  "những câu khách hỏi mỗi ngày",
+  "có thể giúp anh chị",
+  "xây kênh ra sao?"
+ ],
+ "mo_ta": "(ảnh thật của chị trong thư mục 30-video-ads-app-247)",
+ "ho_so": {
+  "ten": "Bảo Nga – Chủ cửa hàng điện thoại (ảnh thật)",
+  "nganh": "Điện thoại / công nghệ",
+  "trang_phuc": "royal blue polo shirt with white collar trim, holding a silver smartphone",
+  "boi_canh": "modern phone store with glass display counters, shelves of boxed phones and tablets, bright clean lighting",
+  "co_tay": "smartwatch with a white band on the left wrist",
+  "concept": {
+   "accent": "#0A57D6",
+   "accent_text": "#FFFFFF",
+   "dark": "#0F1933",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Mỗi ngày khách hỏi điện thoại nào phù hợp, chọn dung lượng bao nhiêu, pin ra sao, nhưng cửa hàng của anh chị vẫn chưa có thời gian làm video?",
+  "Vừa tư vấn, kiểm hàng, xử lý đơn, vừa tự nghĩ nội dung và dựng clip là việc không hề đơn giản. Anh chị có thể chia sẻ mẹo chọn máy,",
+  "bảo quản thiết bị hay chọn phụ kiện phù hợp. Chỉ cần kiểm tra thông số và giá trước khi đăng, cửa hàng đã có thêm nội dung để xây uy tín.",
+  "Không cần pờ rom, không cần câu lệnh, chỉ một nút bấm thành một video đúng ngành nghề, để ây ai giúp thương hiệu anh chị lan toả mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "điện thoại nào",
+    "den": "pin ra sao",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "điện thoại nào",
+      "chu": "Máy nào phù hợp?",
+      "icon": "📱"
+     },
+     {
+      "tu": "dung lượng",
+      "chu": "Dung lượng bao nhiêu?",
+      "icon": "💾"
+     },
+     {
+      "tu": "pin ra sao",
+      "chu": "Pin ra sao?",
+      "icon": "🔋"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "chưa có thời gian",
+    "chu": "CHƯA CÓ THỜI GIAN",
+    "icon": "⏰",
+    "am": "impact"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "tư vấn",
+    "den": "dựng clip",
+    "giu_them": 0.2,
+    "muc": [
+     {
+      "tu": "tư vấn",
+      "chu": "Tư vấn",
+      "icon": "💬"
+     },
+     {
+      "tu": "kiểm hàng",
+      "chu": "Kiểm hàng",
+      "icon": "📦"
+     },
+     {
+      "tu": "xử lý đơn",
+      "chu": "Xử lý đơn",
+      "icon": "🧾"
+     },
+     {
+      "tu": "dựng clip",
+      "chu": "Dựng clip",
+      "icon": "🎬"
+     }
+    ]
+   },
+   {
+    "loai": "dau",
+    "tu": "không hề đơn giản",
+    "chu": "QUÁ TẢI!",
+    "icon": "⚠️"
+   },
+   {
+    "loai": "keyword",
+    "tu": "mẹo chọn máy",
+    "chu": "MẸO CHỌN MÁY",
+    "icon": "💡",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "phù hợp",
+    "anh": "broll_dien_thoai_phu_kien.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "thông số và giá",
+    "chu": "KIỂM TRA THÔNG SỐ & GIÁ",
+    "icon": "✅",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "uy tín",
+    "chu": "XÂY UY TÍN",
+    "icon": "⭐",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "câu lệnh",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "LAN TOẢ MỖI NGÀY",
+    "icon": "📈",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_dien_thoai_phu_kien.png": "Ảnh chân thực 9:16 dọc: mặt quầy kính cửa hàng điện thoại nhìn từ trên xuống, một chiếc điện thoại đặt cạnh ốp lưng, cáp sạc, củ sạc, tai nghe không dây và miếng dán màn hình xếp gọn gàng, ánh sáng trắng sạch. Không có người trong ảnh. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-11-dien-thoai-cong-nghe"
+}

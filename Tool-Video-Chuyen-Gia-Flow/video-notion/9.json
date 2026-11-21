@@ -1,0 +1,172 @@
+{
+ "so": 9,
+ "ma": "tiem-vang-trang-suc",
+ "chu_de": "Chủ tiệm vàng – trang sức",
+ "tieu_de": "Chủ tiệm vàng trang sức xây kênh bằng ây ai - 40 giây - Bảo Nga ây ai",
+ "anh": "00-bao-nga-trang-suc.png",
+ "anh_nguon": "D:/NGUYEN BAO NGA/APP SẢN PHẨM SỐ/30-video-ads-app-247/ban trang suc.webp",
+ "thumb": [
+  "Tiệm vàng đăng ảnh",
+  "và giá mỗi ngày, nhưng",
+  "khách ở xa vẫn chưa tin mua?",
+  "Vì sao vậy?"
+ ],
+ "mo_ta": "(ảnh thật của chị trong thư mục 30-video-ads-app-247)",
+ "ho_so": {
+  "ten": "Bảo Nga – Chủ tiệm vàng trang sức (ảnh thật)",
+  "nganh": "Vàng / trang sức",
+  "trang_phuc": "elegant navy blue short-sleeve dress with a fabric rose brooch on the shoulder",
+  "boi_canh": "luxury gold jewelry store with glass display cases of gold necklaces, white lilies and warm golden lighting",
+  "co_tay": "thin gold bangle bracelet on the left wrist",
+  "concept": {
+   "accent": "#C9962B",
+   "accent_text": "#141418",
+   "dark": "#1B1E33",
+   "sub_text": "#FFFFFF",
+   "font": "be_vietnam"
+  }
+ },
+ "cta": 0,
+ "canh": [
+  "Tiệm vàng, trang sức có nhiều mẫu đẹp nhưng làm sao để khách ở xa biết đến và tin tưởng cửa hàng của anh chị? Nếu ngày nào cũng chỉ đăng",
+  "ảnh sản phẩm và giá bán, khách rất khó cảm nhận được sự khác biệt. Hãy chia sẻ cách chọn trang sức theo dịp, cách bảo quản",
+  "hay câu chuyện đằng sau một bộ sưu tập. Mỗi nội dung hữu ích là cơ hội để khách biết đến chuyên môn và sự tận tâm của anh chị.",
+  "Không cần pờ rom, không cần câu lệnh, chỉ một nút bấm thành một video đúng ngành nghề, để ây ai giúp thương hiệu anh chị lan toả mỗi ngày."
+ ],
+ "hu": [
+  [
+   {
+    "loai": "keyword",
+    "tu": "nhiều mẫu đẹp",
+    "chu": "NHIỀU MẪU ĐẸP",
+    "icon": "💍",
+    "am": "pop"
+   },
+   {
+    "loai": "keyword",
+    "tu": "khách ở xa",
+    "chu": "KHÁCH Ở XA CHƯA TIN?",
+    "icon": "🤔",
+    "am": "impact"
+   }
+  ],
+  [
+   {
+    "loai": "broll",
+    "tu": "*",
+    "den": "khác biệt",
+    "anh": "broll_trang_suc_gia.png"
+   },
+   {
+    "loai": "keyword",
+    "tu": "sự khác biệt",
+    "chu": "KHÓ THẤY KHÁC BIỆT",
+    "icon": "📉",
+    "am": "impact"
+   },
+   {
+    "loai": "danh_sach",
+    "tu": "chọn trang sức theo dịp",
+    "den": "*",
+    "giu_them": 0,
+    "muc": [
+     {
+      "tu": "chọn trang sức theo dịp",
+      "chu": "Chọn theo dịp",
+      "icon": "🎁"
+     },
+     {
+      "tu": "cách bảo quản",
+      "chu": "Cách bảo quản",
+      "icon": "✨"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "",
+    "den": "bộ sưu tập",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "",
+      "chu": "Chọn theo dịp",
+      "icon": "🎁"
+     },
+     {
+      "tu": "",
+      "chu": "Cách bảo quản",
+      "icon": "✨"
+     },
+     {
+      "tu": "câu chuyện",
+      "chu": "Chuyện bộ sưu tập",
+      "icon": "📖"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "nội dung hữu ích",
+    "chu": "NỘI DUNG HỮU ÍCH",
+    "icon": "💡",
+    "am": "ding"
+   },
+   {
+    "loai": "keyword",
+    "tu": "tận tâm",
+    "chu": "CHUYÊN MÔN + TẬN TÂM",
+    "icon": "🤝",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "danh_sach",
+    "tu": "Không cần pờ rom",
+    "den": "câu lệnh",
+    "giu_them": 0.3,
+    "muc": [
+     {
+      "tu": "Không cần pờ rom",
+      "chu": "Không cần prompt",
+      "icon": "✖️"
+     },
+     {
+      "tu": "không cần câu lệnh",
+      "chu": "Không cần câu lệnh",
+      "icon": "✖️"
+     }
+    ]
+   },
+   {
+    "loai": "keyword",
+    "tu": "một nút bấm",
+    "chu": "1 NÚT BẤM",
+    "icon": "👆",
+    "am": "impact",
+    "giu": 1.2
+   },
+   {
+    "loai": "keyword",
+    "tu": "lan toả",
+    "chu": "LAN TOẢ MỖI NGÀY",
+    "icon": "📈",
+    "am": "ding"
+   }
+  ],
+  [
+   {
+    "loai": "cta",
+    "tu": "ZOOM",
+    "tu_khoa": "ZOOM"
+   }
+  ]
+ ],
+ "broll": {
+  "broll_trang_suc_gia.png": "Ảnh chân thực 9:16 dọc: màn hình điện thoại cầm tay đang lướt mạng xã hội, hiển thị lưới ảnh vòng cổ và nhẫn vàng kèm bảng giá giống nhau (chữ mờ không đọc được), phía sau là quầy kính trưng bày trang sức vàng mờ, ánh sáng vàng ấm, chỉ thấy bàn tay, không thấy mặt người. Không có chữ đọc được, không logo, không số."
+ },
+ "da": "2026-11-21_notion-9-tiem-vang-trang-suc"
+}

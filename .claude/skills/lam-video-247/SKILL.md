@@ -9,7 +9,8 @@ Tool: `D:\BỘ NÃO BRAIN\bộ não\Tool-Video-Chuyen-Gia-Flow\` · lệnh chạ
 
 ## 1. Lấy dữ liệu
 - Notion data source `collection://41bfc15b-b8c9-80f7-a799-000bb0d29bac` (DB "30 Kịch Bản ADS APP 247").
-  Cột: `Số thứ tự` (title, có thể dạng "8 (1)" = bản sửa của số 8), `Chủ đề`, `Kịch bản`, `Hộp kiểm đã tạo video` (checkbox).
+  Cột: `Số thứ tự` (title, có thể dạng "8 (1)" = bản sửa của số 8), `Chủ đề`, `Kịch bản`, `Hook thu hút tò mò`, `Hook nỗi đau giải pháp`, `Hộp kiểm đã tạo video` (checkbox).
+- Chị đã cho TOÀN QUYỀN: làm trọn gói, không hỏi ý kiến (trừ đăng công khai lên mạng).
 - "làm video số N" → lấy đúng hàng số N (dù đã tích vẫn làm lại nếu chị yêu cầu đích danh).
 - "làm video tiếp theo" / "K video tiếp theo" → các hàng CHƯA tích hộp kiểm, xếp theo số thứ tự tăng dần, lấy K hàng đầu (mặc định 1). Bỏ hàng đã tích.
 
@@ -19,7 +20,8 @@ Mẫu xem các file sẵn có (1, 2, 4, 6, 7, 8, 19, 31). Quy tắc:
 - Dùng NGUYÊN VĂN kịch bản Notion, chỉ rút bớt cho vừa. Bỏ câu hứa quá ("hàng ngàn khách hàng", "triệu view"). Không bịa số liệu.
 - Lời đọc: "AI" → "ây ai", "prompt" → "pờ rom" (màn hình tự ghi "AI"/"prompt"). Xưng "Bảo Nga", không "tôi"/"cô Nga".
 - `cta`: 0 = câu ZOOM, 1 = câu VIDEO (theo từ khoá trong Notion; "Tham gia cộng đồng" → 0). Câu riêng thì ghi chuỗi.
-- `thumb`: 2 dòng hook giật tít (≤ ~22 ký tự/dòng), đánh nỗi đau ngành.
+- `thumb` (chị chốt 21/11/2026): lấy NGUYÊN VĂN cột Notion `Hook thu hút tò mò` (nếu trống thì `Hook nỗi đau giải pháp`; cả hai trống mới tự viết), chia 2–4 dòng ≤ ~28 ký tự, ngắt ở dấu câu/chữ nối. Dòng 1 thanh đỏ chữ vàng, các dòng sau thanh trắng.
+- ẢNH (chị chốt 21/11/2026): lấy ảnh thật của chị trong `D:\NGUYEN BAO NGA\APP SẢN PHẨM SỐ\30-video-ads-app-247\` đúng ngành (vd `ban trang suc.webp`, `tiem me va be.webp`, `ban dien thoai.webp`, `bat dong san.webp`, `thiet bi gia dung.webp`, `chu cua hang thuc pham sach.webp`, `chu khach san homstay.webp`, `chu quan an F&B.webp`, `huong dan vien du lich.webp`, `kien truc su.webp`, `ke toan.webp`, `luat su.webp`, `Coach.webp`, `giao vien tieng anh.webp`, `streamer facebooker tiktoker.webp`, `xay kenh affiliate.webp`, `chuyen vien tu van bao hiem.webp`, `mentor AI.webp`...). Xem ảnh rồi chép thành PNG `anh-nhan-vat/00-bao-nga-<ngành>.png`, ghi `ho_so` tả ĐÚNG trang phục, bối cảnh, đồng hồ/vòng tay trong ảnh. Dùng thẳng làm khung đầu (không tạo ảnh AI).
 - `anh`: ảnh khung đầu `anh-nhan-vat/00-bao-nga-<ngành>.png`. Có sẵn: bac-si, bao-hiem, cafe, dinh-duong, duoc-si, my-pham, spa, studio-ai, thoi-trang, marketing, yoga. Ngành mới → đặt tên mới + viết `mo_ta` (trang phục + bối cảnh đúng ngành, câu KHUNG chuẩn) và `ho_so` (tiếng Anh + concept màu riêng ngành); tool tự tạo ảnh từ mặt thật của chị.
 - `hu`: hiệu ứng từng cảnh (keyword / danh_sach / so_do / dau / broll / cta). Mọi `tu`/`den` phải là cụm có trong lời cảnh đó. 1–2 b-roll/video, mô tả ảnh không chữ, không mặt người.
 - Kiểm tra nhanh trước khi chạy: từ khoá hiệu ứng có trong lời, mỗi cảnh ≤ 31 tiếng.
